@@ -3,7 +3,7 @@ const UserRouter = express.Router();
 const user = require("../models/user");
 
 UserRouter.post("/register", async (req, res) => {
-  const { name, surname, email, password, phone } = req.body;
+  const { name, surname, email, password, age, direction, phone } = req.body;
   try {
     let userFind = await user.findOne({ email });
     if (userFind) {
@@ -12,7 +12,15 @@ UserRouter.post("/register", async (req, res) => {
         message: "usuario ya registrado",
       });
     }
-    if (!name || !surname || !email || !password || !phone) {
+    if (
+      !name ||
+      !surname ||
+      !email ||
+      !password ||
+      !age ||
+      !direction ||
+      !phone
+    ) {
       return res.status(400).send({
         sucess: false,
         message: "No Completastes todos los pasos",
@@ -35,6 +43,8 @@ UserRouter.post("/register", async (req, res) => {
       surname,
       email,
       password,
+      age,
+      direction,
       phone,
     });
     await myUser.save();

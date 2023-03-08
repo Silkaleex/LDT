@@ -21,10 +21,20 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    age: {
+      type: Number,
+      maxlength: 2,
+      minlength: 2,
+      required: true,
+    },
     phone: {
       type: Number,
       maxlength: 9,
       minlength: 9,
+      required: true,
+    },
+    direction: {
+      type: String,
       required: true,
     },
   },
