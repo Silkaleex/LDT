@@ -1,0 +1,108 @@
+.imagen {
+  background-image: url("https://images.pexels.com/photos/53874/pexels-photo-53874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  padding:1px;
+}
+
+.contenedorHome {
+  margin: 1% auto;
+  text-align: center;
+  background-color: #ffffff99;
+  width: 50%;
+  padding: 7% 0%;
+}
+
+.tituloHome {
+  width: 69%;
+  text-align: left;
+  margin: 0px auto;
+  color: #000;
+  padding: 0% 2%;
+}
+.fraseHome {
+  width: 65%;
+  font-size: 19px;
+  text-align: left;
+  margin: 0px auto;
+}
+
+.cajaEnlacesHome {
+  margin: 4% 35%;
+  text-align: center;
+  text-decoration: none;
+}
+
+.enlacesHomeA {
+  display: flex;
+  margin: 5% auto;
+  padding: 1% 4%;
+  width: 107%;
+  text-decoration: none;
+  color: #ffff;
+  background: rgb(255, 46, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 46, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 49%
+  );
+}
+.enlacesHomeA:hover {
+  display: flex;
+  margin: 5% auto;
+  padding: 1% 4%;
+  width: 107%;
+  text-decoration: none;
+  color: #ffff;
+  background: rgb(84, 15, 0);
+  background: linear-gradient(
+    267deg,
+    rgba(84, 15, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 49%
+  );
+  transition:1s all;
+  text-shadow:0 1px 1px #000;
+}
+.enlacesHomeB {
+  display: flex;
+  margin: 5% auto;
+  padding: 1% 4%;
+  width: 80%;
+  text-decoration: none;
+  color: #ffff;
+  background: rgb(255, 46, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(255, 46, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 49%
+  );
+}
+.enlacesHomeB:hover {
+  display: flex;
+  margin: 5% auto;
+  padding: 1% 4%;
+  width: 80%;
+  text-decoration: none;
+  color: #ffff;
+  background: rgb(84, 15, 0);
+  background: linear-gradient(
+    267deg,
+    rgba(84, 15, 0, 1) 0%,
+    rgba(255, 0, 0, 1) 49%
+  );
+  transition:1s all;
+  text-shadow:0 1px 1px #000;
+}
+
+.imgCarrousel {
+  width: 23%;
+  margin: 0% auto;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 100% 100%;
+  background-color: #000;
+}

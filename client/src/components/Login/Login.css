@@ -1,0 +1,106 @@
+
+.caja {
+    background-image: url(https://images.pexels.com/photos/1629212/pexels-photo-1629212.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 75.3px;
+}
+.contenido{
+    width: 50%;
+    background-color: #e9c56a9c;
+    margin:-5% auto;
+
+}
+.titulo{
+    text-align: center;
+    margin:0% auto;
+    color:#e76f51;
+    text-shadow: 0 1px 1px #000;
+}
+.formulario{
+    width: 60%;
+    padding: 20px;
+    text-align: center;
+    margin:0% auto;
+}
+.titleLabel{
+    display: flex;
+    color:#e76f51;
+    text-shadow: 0 1px 1px #000;
+    font-size:25px;
+    letter-spacing:2px;
+}
+
+.labelForm{
+    display: flex;
+    color: #e76f51;
+    text-shadow: 0 1px 1px #000;
+    font-size: 25px;
+    letter-spacing: 2px;
+}
+
+.botonSubmit1 {
+    margin: 8.7% 0% 5% 27%;
+    background-color: #264653;
+    padding: 3% 2%;
+    transition: 1s all;
+    border-radius: 5px;
+    text-shadow: 0 1px 1px #000;
+    cursor: pointer;
+}
+
+.botonSubmit1:hover{
+    margin: 8.7% 0% 5% 27%;
+    background-color: #2a9d8f;
+    color:white;
+    padding: 3% 2%;
+    transition: 1s all;
+    border-radius: 5px;
+    text-shadow: 0 1px 1px #000;
+    cursor: pointer;
+}
+.link{
+    font-size: 13px;
+    letter-spacing:2px;
+    text-decoration: none;
+    text-shadow: 0 1px 1px #000;
+    color:white;
+    cursor:pointer;
+}
+.botonSubmit{
+    background-color: #264653;
+    color:white;
+    font-size: 15px;
+    letter-spacing:2px;
+    text-shadow: 0 1px 1px #000;
+    padding:2% 5%;
+    transition:1s all;
+    border-radius:5px;
+    cursor:pointer;
+}
+.botonSubmit:hover{
+    background-color: #2a9d8f;
+    color:white;
+    font-size: 15px;
+    letter-spacing:2px;
+    text-shadow: 0 1px 1px #000;
+    padding:2% 5%;
+    transition:1s all;
+    border-radius:10px;
+    cursor:pointer;
+}
+.alertaRoja{
+    background-color: #ef233c;
+    text-shadow:0 0 2px #fff;
+    text-align:center;
+    margin:0px auto;
+}
+.alertaAzul{
+    background-color: #bde0fe;
+    text-shadow:0 0 2px #000;
+    text-align:center;
+    width:50%;
+    margin:0px auto;
+    border:1px solid #a2d2ff
+}

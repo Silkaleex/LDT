@@ -1,0 +1,81 @@
+.caja1{
+    margin: 1% 0%;
+    background-image: url(https://images.pexels.com/photos/1629212/pexels-photo-1629212.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 0px;
+    padding: 26.3px;
+}
+
+.subcaja1{
+    padding:10px;
+    width: 50%;
+    background-color: #e9c56a9c;
+    margin:0px auto;
+}
+.tituloPrin{
+    text-align: center;
+    margin:0% auto;
+    color:#e76f51;
+    text-shadow: 0 1px 1px #000;
+}
+.form{
+    padding: 0px;
+    width: 50%;
+    text-align: center;
+    margin: 4% auto;
+}
+
+.nombreLabel{
+    display:flex;
+    margin: 0% 3%;
+    color:#e76f51;
+    text-shadow: 0 1px 1px #000;
+    font-size:20px;
+    letter-spacing:2px;
+}
+.botonEnvio{
+    background-color: #264653;
+    color:white;
+    font-size: 15px;
+    letter-spacing:2px;
+    text-shadow: 0 1px 1px #000;
+    padding:2% 5%;
+    transition:1s all;
+    border-radius:5px;
+    cursor:pointer;
+}
+.botonEnvio:hover{
+    background-color: #2a9d8f;
+    color:white;
+    font-size: 15px;
+    letter-spacing:2px;
+    text-shadow: 0 1px 1px #000;
+    padding:2% 5%;
+    transition:1s all;
+    border-radius:10px;
+    cursor:pointer;
+}
+
+.botonLogin {
+    margin: 0% 0% 3% 35%;
+    background-color: #264653;
+    padding: 3% 6%;
+    font-size: 13px;
+    transition: 1s all;
+    border-radius: 5px;
+    text-shadow: 0 2px 2px #000;
+    cursor: pointer;
+}
+
+.botonLogin:hover{
+    margin: 0% 0% 3% 35%;
+    background-color: #2a9d8f;
+    color:white;
+    padding: 3% 6%;
+    font-size: 13px;
+    transition: 1s all;
+    border-radius: 5px;
+    text-shadow: 0 2px 2px #000;
+    cursor: pointer;
+}

@@ -1,0 +1,93 @@
+/*Como Admin*/
+.fondoNotasAdm{
+    background-image: url("https://images.pexels.com/photos/5766466/pexels-photo-5766466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 1.4%;
+}
+.contenedorNotasAdm{
+    margin:0px auto;
+    width: 50%;
+ 
+}
+.tituloNotaAdm{
+    text-shadow: 1px 1px 1px #000;
+    color:#fafaff;
+    text-align: center;
+    margin: 3% 0%;
+
+}
+.contenidoNotaAdm{
+    background-color: #5e548eb2;
+    text-shadow: 1px 1px 1px #000;
+    padding: 2% 2%;
+}
+
+.enlacesNotaAdm{
+    text-decoration: none;
+    font-size: 0px;
+    color: #fafaff;
+    text-shadow: 1px 1px 1px #000;
+    transition:1s all;
+
+}
+.enlacesNotaAdm:hover{
+    text-decoration: none;
+    font-size: 0px;
+    color: #231942;
+    text-shadow: 1px 1px 1px #fff;
+    transition:1s all;
+
+}
+.eliminarNotaAdm{
+    margin: 0% 93%;
+
+}
+/*Como Usuario*/
+
+.fondoNotasUs{
+    background-image: url("https://images.pexels.com/photos/771322/pexels-photo-771322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 1.4%;
+}
+.contenedorNotasUs{
+    margin:0px auto;
+    width: 50%;
+ 
+}
+.tituloNotaUs{
+    text-shadow: 1px 1px 1px #000;
+    color:#e0e1dd;
+    text-align: center;
+    margin: 3% 0%;
+
+}
+.contenidoNotaUs{
+    background-color: #1b263ba0;
+    text-shadow: 1px 1px 1px #000;
+    padding: 2% 2%;
+}
+
+.enlacesNotaUs{
+    text-decoration: none;
+    font-size: 0px;
+    color: #e0e1dd;
+    text-shadow: 1px 1px 1px #000;
+    transition:1s all;
+
+}
+.enlacesNotaUs:hover{
+    text-decoration: none;
+    font-size: 0px;
+    color: #fafaff;
+    text-shadow: 1px 1px 1px #e4d9ff; 
+    transition:1s all;
+
+}
+.eliminarNotaUs{
+    margin: 0% 93%;
+
+}

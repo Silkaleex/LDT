@@ -1,0 +1,21 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Alkatra&display=swap');
+
+:root{
+  --main-color: #e76f51;
+  --main-color: #f4a261;
+  --main-color: #e9c46a;
+  --main-color: #2a9d8f;
+  --main-color: #264653;
+}
+body {
+  margin: 0;
+  font-family: -apple-system,'Ubuntu','Alkatra', cursive;;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
