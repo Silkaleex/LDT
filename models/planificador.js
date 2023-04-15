@@ -1,10 +1,10 @@
 const mongoose = require("mongoose");
-const calendarSchema = new mongoose.Schema({
+const planificadorSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
   },
-  calendar: {
+  description: {
     type: String,
     required: true,
   },
@@ -14,4 +14,4 @@ const calendarSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("calendario", calendarSchema);
+module.exports = mongoose.model("Planificador", planificadorSchema);

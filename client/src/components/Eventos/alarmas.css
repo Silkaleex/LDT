@@ -1,81 +1,52 @@
-/*Como Administrador*/
-.fondoNotaAdm {
-  background-image: url("https://images.pexels.com/photos/11516396/pexels-photo-11516396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+.fondoAlmAdm {
+  background-image: url("https://images.pexels.com/photos/382297/pexels-photo-382297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  padding: 10.7%;
+  padding: 10% 0% 27.6% 0%;
 }
-.contenedorNotaAdm {
+.contenedorAlmAdm {
   width: 30%;
   margin: 0% auto;
 }
-.descripcionNotaAdm {
+.descripcionAlmAdm {
   background-color: #5e548ed9;
   text-shadow: 1px 1px 1px #000;
   color: #fafaff;
-  padding: 5%;
-  margin: -6.8% 0% 0% 0%;
-  width: 108%;
+  padding: 13% 18%;
+  margin: -24% 0% 0% 0%;
 }
-.cajaBotonesAdm {
-  display: flex;
-  align-items: center;
+.cajaBotAlmAdm {
+  margin: 15% 0% 0% 0%;
 }
-.botonAdm {
+.botonAlmAdm {
   color: #fafaff;
   background-color: #231942;
   text-decoration: none;
+  transition: 1s all;
   padding: 0% 3%;
   border-radius: 1%;
+  margin: 0% 60% 0% 0%;
   border-bottom: 2px solid #fafaff;
   border-right: 2px solid #fafaff;
   border-left: 2px solid #231942;
   border-top: 2px solid #231942;
   transition: 1s all;
 }
-.botonAdm:hover {
+.botonAlmAdm:hover {
   background-color: #231942;
   color: #fafaff;
   text-decoration: none;
   transition: 1s all;
   padding: 0% 3%;
   border-radius: 1%;
+  margin: 0% 60% 0% 0%;
   border-bottom: 2px solid #231942;
   border-right: 2px solid #231942;
   border-left: 2px solid #fafaff;
   border-top: 2px solid #fafaff;
-  transition: 1s all;
 }
-.modificarNoAdm {
-  text-decoration: none;
-  color: #fcbf49;
-  background-color: #f77f00;
-  text-shadow: 1px 1px 1px #000;
-  padding: 0% 1%;
-  border-bottom: 2px solid #fcbf49;
-  border-right: 2px solid #fcbf49;
-  border-left: 2px solid #f77f00;
-  border-top: 2px solid #f77f00;
-  font-size: 15px;
-  transition:1s all;
-  margin: 0% 3%;
-}
-.modificarNoAdm:hover {
-  text-decoration: none;
-  background-color: #fcbf49;
-  color: #f77f00;
-  text-shadow: 1px 1px 1px #000;
-  padding: 0% 1%;
-  border-bottom: 2px solid #f77f00;
-  border-right: 2px solid #f77f00;
-  border-left: 2px solid #fcbf49;
-  border-top: 2px solid #fcbf49;
-  font-size: 15px;
-  transition:1s all;  
-  margin: 0% 3%;
-}
-.botonDelAdm {
+.botonDelAlmAdm {
   background-color: #d90429;
   color: #e4d9ff;
   border-bottom: 2px solid #e4d9ff;
@@ -83,9 +54,12 @@
   border-left: 2px solid #d90429;
   border-top: 2px solid #d90429;
   transition: 1s all;
-  font-size: 13px;
+  width: 13%;
+  height: 13%;
+  cursor: pointer;
 }
-.botonDelAdm:hover {
+
+.botonDelAlmAdm:hover {
   background-color: #d90429;
   color: #e4d9ff;
   border-top: 2px solid #e4d9ff;
@@ -93,9 +67,11 @@
   border-right: 2px solid #d90429;
   border-bottom: 2px solid #d90429;
   transition: 1s all;
-  font-size: 13px;
+  width: 13%;
+  height: 13%;
+  cursor: pointer;
 }
-/*Como usuario*/
+/*Alarma usuario*/
 .fondoNotaUs {
   background-image: url(https://images.pexels.com/photos/7718755/pexels-photo-7718755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
   background-size: cover;
@@ -113,10 +89,11 @@
   color: #e0e1dd;
   padding: 5%;
 }
-.cajaBotonesUs {
-  margin: 0% 22%;
+.cajaBotUs {
+  margin: 0% 0%;
+  padding: 8% 0% 0% 0%;
 }
-.botonUs {
+.botonUsAl {
   color: #e0e1dd;
   background-color: #1b263b;
   border-bottom: 2px solid #e0e1dd;
@@ -126,46 +103,23 @@
   text-decoration: none;
   transition: 1s all;
   border-radius: 1%;
+  margin: 0% 70% 0% 0%;
   padding: 0% 2%;
 }
-.botonUs:hover {
-  background-color: #e0e1dd;
-  color: #04052e;
-  text-shadow: 1px 1px 1px #e4d9ff;
+.botonUsAl:hover {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  border-bottom: 2px solid #1b263b;
+  border-right: 2px solid #1b263b;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
   text-decoration: none;
   transition: 1s all;
   border-radius: 1%;
+  margin: 0% 70% 0% 0%;
   padding: 0% 2%;
 }
-.modificarNoUs {
-  text-decoration: none;
-  color: #fcbf49;
-  background-color: #f77f00;
-  text-shadow: 1px 1px 1px #000;
-  padding: 0% 1%;
-  border-bottom: 2px solid #fcbf49;
-  border-right: 2px solid #fcbf49;
-  border-left: 2px solid #f77f00;
-  border-top: 2px solid #f77f00;
-  font-size: 15px;
-  transition:1s all;
-  margin: 0% 5%;
-}
-.modificarNoUs:hover {
-  text-decoration: none;
-  background-color: #fcbf49;
-  color: #f77f00;
-  text-shadow: 1px 1px 1px #000;
-  padding: 0% 1%;
-  border-bottom: 2px solid #f77f00;
-  border-right: 2px solid #f77f00;
-  border-left: 2px solid #fcbf49;
-  border-top: 2px solid #fcbf49;
-  font-size: 15px;
-  transition:1s all;
-  margin: 0% 5%;
-}
-.botonNotaUs {
+.botonAlEv {
   background-color: #d90429;
   color: #e4d9ff;
   border-bottom: 2px solid #e4d9ff;
@@ -173,8 +127,10 @@
   border-left: 2px solid #d90429;
   border-top: 2px solid #d90429;
   transition: 1s all;
+  width: 5%;
+  height: 5%;
 }
-.botonNotaUs:hover {
+.botonAlEv:hover {
   background-color: #d90429;
   color: #e4d9ff;
   border-top: 2px solid #e4d9ff;
@@ -182,4 +138,6 @@
   border-right: 2px solid #d90429;
   border-bottom: 2px solid #d90429;
   transition: 1s all;
+  width: 5%;
+  height: 5%;
 }

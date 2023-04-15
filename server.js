@@ -14,10 +14,14 @@ app.use(cors())
 const userRouter = require("./routes/UserRouter");
 const NotesRouter = require("./routes/NotesRouter");
 const calendarRouter = require("./routes/calendarioRouter");
+const alarmaRouter = require("./routes/alarmaRouter")
+const planificadorRouter = require("./routes/planificadorRouter")
 
 app.use("/api", userRouter);
 app.use("/api", NotesRouter);
 app.use("/api", calendarRouter);
+app.use("/api", alarmaRouter);
+app.use("/api", planificadorRouter);
 
 const URL = process.env.mongo_db;
 

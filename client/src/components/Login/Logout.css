@@ -1,0 +1,23 @@
+.imagenFondoLogout{
+    background-image: url("https://images.pexels.com/photos/2730173/pexels-photo-2730173.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2% 0% 20.4% 0%;
+}
+.textoLogout{
+    margin: 15% 0% 0% 15%;
+    text-align: center;
+    color: #fafaff;
+    background-color: #ffc4007b;
+    text-shadow: 1px 1px 1px #000;
+    border-bottom: 10px solid #003566;
+    border-right: 10px solid #003566;
+    border-left: 3px solid #ffd60a;
+    border-top: 3px solid #ffd60a;
+    width: 70%;
+    letter-spacing: 2px;
+}
+.icnLogEd{
+    color:#a30;
+}

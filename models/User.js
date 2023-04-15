@@ -30,6 +30,18 @@ const userSchema = new mongoose.Schema(
         ref: "calendario",
       },
     ],
+    alarma: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "alarma",
+      },
+    ],
+    planning: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "planificador",
+      },
+    ],
     banned: [
       {
         type: Boolean,

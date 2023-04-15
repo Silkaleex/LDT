@@ -1,0 +1,65 @@
+.fondoEvAdm {
+    background-image: url("https://images.pexels.com/photos/382297/pexels-photo-382297.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 9% 0% 18.6% 0%;
+  }
+  .contenedorEvAdm {
+    width: 30%;
+    margin: 0% auto;
+  }
+  .descripcionEvAdm {
+    background-color: #5e548ed9;
+    text-shadow: 1px 1px 1px #000;
+    color: #fafaff;
+    padding: 5%;
+    margin: -24% 0% 0% 0%;
+
+  }
+  .botonEvAdm {
+    color: #fafaff;
+    background-color: #231942;
+    text-decoration: none;
+    transition: 1s all;
+    padding: 0% 3%;
+    border-radius: 1%;
+    margin: 0% 33% 0% 0%;
+    border-bottom: 2px solid #fafaff;
+    border-right: 2px solid #fafaff;
+    border-left: 2px solid #231942;
+    border-top: 2px solid #231942;
+    transition:1s all;
+  }
+  .botonEvAdm:hover {
+    background-color: #231942;
+    color: #fafaff;
+    text-decoration: none;
+    transition: 1s all;
+    padding: 0% 3%;
+    border-radius: 1%;
+    margin: 0% 33% 0% 0%;
+    border-bottom: 2px solid #231942;
+    border-right: 2px solid #231942;
+    border-left: 2px solid #fafaff;
+    border-top: 2px solid  #fafaff;
+    transition:1s all;
+  }
+  .botonDelEvAdm {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    transition: 1s all;
+  }
+  .botonDelEvAdm:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    border-left: 2px solid #e4d9ff;
+    border-right: 2px solid #d90429;
+    border-bottom: 2px solid #d90429;
+    transition: 1s all;
+  }

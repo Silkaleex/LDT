@@ -39,27 +39,33 @@
 .listas {
   margin: 0% 10%;
 }
-/*Color Navbar Admin*/
+
+.datosUs{
+  display:block;
+  width: 200%;
+}
+/*Navbar Admin*/
 .cajaAdm {
   background-color: #5e548e;
 }
+
 .tAdmin{
   color: #fafaff;
-  margin: 1% 1%;
   letter-spacing: 2px;
   text-shadow: 1px 1px 1px #000;
 }
 .containerAdm {
-  display: flex;
-
+display:flex;
+padding: 2% 0% 2% 1%;
 }
 .listaAd {
   display: flex;
-  list-style: none;
-  margin: 6% 67% auto;
-  width: 59%;
+  margin: 0% 20%;
 }
-
+.listasAdm{
+  margin: 0% 5%;
+  list-style: none;
+}
 .listaAdmin {
   text-decoration: none;
   color: #fafaff;
@@ -72,4 +78,7 @@
   color: #231942;
   text-shadow: 1px 1px 1px #fff;
   transition:1s all;
+}
+.datosAdm{
+  display:block;
 }

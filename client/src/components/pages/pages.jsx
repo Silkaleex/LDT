@@ -11,6 +11,12 @@ import TodasLasAlarmas from "../Eventos/TodasLasAlarmas";
 import Alarma from"../Eventos/Alarmas"
 import Planificador from "../Planificador/Planificador";
 import Usuario from '../Usuario/user'
+import ModificacionNota from '../modificacion/ModifcacionNota'
+import DatosUsuario from '../PerfilUsuario/DatosUsuario'
+import Logout from "../Login/Logout";
+import NewNot from "../Notas/NewNot";
+import NewAlm from "../Eventos/NewAlarm"
+
 const Pages = () => {
   return (
   
@@ -24,16 +30,23 @@ const Pages = () => {
         {/* Notas */}
         <Route path="/tNotas" element={<TodasLasNotas />} />
         <Route path="/notas/:notaId" element={<Notas />} />
+        <Route path="/newNot" element={<NewNot />} />
         {/* Eventos */}
         <Route path="/tEvento" element={<TodosLosEventos />} />
         <Route path="/evento/:eventoId" element={<Eventos />} />
         {/* Alarmas */}
         <Route path="/tAlarma" element={<TodasLasAlarmas />} />
-        <Route path="/alarma" element={<Alarma />} />
+        <Route path="/alarma/:alarmaId" element={<Alarma />} />
+        <Route path="/newAlm" element={<NewAlm/>}/>
         {/* PLanificador */}
         <Route path="/planificador" element={<Planificador />} />
         {/*Perfil Usuario */}
         <Route path="/usuario" element={<Usuario />} />
+        <Route path="/datosUsuario" element={<DatosUsuario/>}/>
+        {/*Modificacion */}
+        <Route path="/modify/:notaId" element={<ModificacionNota/>} />
+        {/* Logout */}
+        <Route path="/logout" element={<Logout/>} />
       </Routes>
 
   );

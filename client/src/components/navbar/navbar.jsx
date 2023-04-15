@@ -1,6 +1,8 @@
 import React from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
+
+import {BsFillPersonXFill,BsBoxArrowInLeft}  from "react-icons/bs";
 const NavBar = () => {
   //setItem es para definir
   //getItem es para coger un valor de esa variable
@@ -11,42 +13,52 @@ const NavBar = () => {
   const NavUser = () => {
     return (
       <>
-          <nav>
-             <div className="cajaGenUs">
-              <div className="cajaUser">
-                <h4 className="tUsuario">Bienvenido {name}</h4>
-                <div>
-                  <ul className="listaUser"> 
-                   <li className="listas"> 
-                      <Link className="listaUser" to="/usuario">
-                        Usuario
-                        </Link>
-                    </li> 
-                     <li className="listas"> 
-                      <Link className="listaUser" to="/tNotas">
-                        Notas
-                        </Link>
-                     </li> 
-                     <li className="listas"> 
-                      <Link className="listaUser" to="/tEvento">
-                        Eventos
-                        </Link>
-                     </li> 
-                     <li className="listas"> 
-                      <Link className="listaUser" to="/planificador">
-                        Planificador
-                        </Link>
-                     </li> 
-                    <li className="listas"> 
-                      <Link className="listaUser" to="/tAlarma">
-                        Alarma
-                        </Link>
-                     </li> 
-                  </ul>
-                </div>
-              </div>
+        <nav>
+          <div className="cajaGenUs">
+            <div className="cajaUser">
+              <h4 className="tUsuario">Bienvenido {name}</h4>
+            
+                <ul className="listaUser">
+                  <li className="listas">
+                    <Link className="listaUser" to="/usuario">
+                      Usuario
+                    </Link>
+                  </li>
+                  <li className="listas">
+                    <Link className="listaUser" to="/tNotas">
+                      Notas
+                    </Link>
+                  </li>
+                  <li className="listas">
+                    <Link className="listaUser" to="/tEvento">
+                      Eventos
+                    </Link>
+                  </li>
+                  <li className="listas">
+                    <Link className="listaUser" to="/planificador">
+                      Planificador
+                    </Link>
+                  </li>
+                  <li className="listas">
+                    <Link className="listaUser" to="/tAlarma">
+                      Alarma
+                    </Link>
+                  </li>
+                  <li className="listas">
+                    <Link className="listaUser datosUs" to="/DatosUsuario">
+                      Tus Datos
+                    </Link>
+                  </li>
+                  <li className="listas">
+                    <Link className="listaUser datosUs" to="/logout">
+                    <BsBoxArrowInLeft/>
+                    </Link>
+                  </li>
+                </ul>
+            
             </div>
-          </nav>
+          </div>
+        </nav>
       </>
     );
   };
@@ -54,42 +66,51 @@ const NavBar = () => {
   const NavAdmin = () => {
     return (
       <>
-       <nav>
-             <div className="cajaAdm">
-              <div className="containerAdm">
-                <h4 className="tAdmin">Bienvenido {name}</h4>
-                <div>
-                  <ul className="listaAd"> 
-                   <li className="listasAdm"> 
-                      <Link className="listaAdmin" to="/usuario">
-                        Usuario
-                        </Link>
-                    </li> 
-                     <li className="listas"> 
-                      <Link className="listaAdmin" to="/tNotas">
-                        Notas
-                        </Link>
-                     </li> 
-                     <li className="listas"> 
-                      <Link className="listaAdmin" to="/tEvento">
-                        Eventos
-                        </Link>
-                     </li> 
-                     <li className="listas"> 
-                      <Link className="listaAdmin" to="/planificador">
-                        Planificador
-                        </Link>
-                     </li> 
-                    <li className="listas"> 
-                      <Link className="listaAdmin" to="/tAlarma">
-                        Alarma
-                        </Link>
-                     </li> 
-                  </ul>
-                </div>
+        <nav>
+          <div className="cajaAdm ">
+            <div className="containerAdm">
+              <h4 className="tAdmin">Bienvenido {name}</h4>
+          
+                <ul className="listaAd">
+                  <li className="listasAdm">
+                    <Link className="listaAdmin" to="/usuario">
+                      Usuario
+                    </Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link className="listaAdmin" to="/tNotas">
+                      Notas
+                    </Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link className="listaAdmin" to="/tEvento">
+                      Eventos
+                    </Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link className="listaAdmin" to="/planificador">
+                      Planificador
+                    </Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link className="listaAdmin" to="/tAlarma">
+                      Alarma
+                    </Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link className="listaAdmin datosAdm" to="/DatosUsuario">
+                     Perfil
+                    </Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link className="listaAdmin datosAdm " to="/logout">
+                      <BsFillPersonXFill/>
+                    </Link>
+                  </li>
+                </ul>
               </div>
             </div>
-          </nav>
+        </nav>
       </>
     );
   };

@@ -1,4 +1,148 @@
- .enlacesEvento {
-    position: absolute;
-    transform: translate(0px, -95px);
-  }
+/*Caja Admin*/
+.fondoAdmEv{
+  background-image: url("https://images.pexels.com/photos/9439257/pexels-photo-9439257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  margin: -15px auto;
+  background-size: cover;
+  background-position: center;
+}
+.cajaAdminis{
+  margin:0px auto;
+  padding: 2% 0% 10.3% 0%;
+
+}
+.tAdminEv{
+  text-align: center;
+  color:#fafaff;
+  text-shadow: 1px 1px 1px #000;
+}
+.cartaEvento{
+  background-color: #5e548eb2;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+  width: 30%;
+  margin: 1% auto;
+
+}
+.cartaEvDm{
+  width: 100%;
+}
+.accederEvento{
+  color:#fafaff;
+  background-color: #231942;
+  text-shadow: 1px 1px 1px#000;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition:1s all;
+  padding: 0% 5%;
+  border:1px groove #231942;
+}
+.accederEvento:hover{
+  background-color:#9f86c0;
+  color: #231942;
+  text-shadow: 1px 1px 1px#fafaff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition:1s all;
+  padding: 0% 5%;
+  border:1px groove #231942;
+}
+.botonElEvento {
+  color: #fafaff;
+  background-color: #231942;
+  text-shadow: 1px 1px 1px#000;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 1s all;
+  margin: 0% 20%;
+  padding: 0% 2%;
+  border-radius: 50%;
+  border:1px groove #231942;
+}
+.botonElEvento:hover {
+  background-color:#9f86c0;
+  color: #231942;
+  text-shadow: 1px 1px 1px#fafaff;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 1s all;
+  margin: 0% 20%;
+  padding: 0% 2%;
+  border-radius: 50%;
+  border:1px groove #231942;
+}
+/*Caja Usuario*/
+.fondoUsEv{
+  background-image: url("https://images.pexels.com/photos/1410226/pexels-photo-1410226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  margin: -15px auto;
+  background-size: cover;
+  background-position: center;
+}
+.cajaUsEv{
+  margin:0px auto;
+  padding: 2% 0% 10.3% 0%;
+
+}
+.tUsEv{
+  text-align: center;
+  color:#e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+}
+.cartaEventoUs{
+  background-color: #1b263ba0;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+  width: 30%;
+  margin: 1% auto;
+
+}
+.cartaEvUs{
+  width: 100%;
+}
+.accederEventoUS{
+  background-color:#04052e;
+ color: #e4d9ff;
+  text-shadow: 1px 1px 1px#000;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition:1s all;
+  padding: 0% 5%;
+  border-radius:30%;
+  border:1px groove #231942;
+}
+.accederEventoUS:hover{
+ color:#04052e;
+ background-color: #e4d9ff;
+  text-shadow: 1px 1px 1px#e0e1dd;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition:1s all;
+  padding: 0% 5%;
+  border-radius:30%;
+  border:1px groove #231942;
+}
+.botonElEventoUs {
+  color: #e0e1dd;
+  background-color:#04052e;
+  text-shadow: 1px 1px 1px#000;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 1s all;
+  margin: 0% 20%;
+  padding: 0% 2%;
+  border-radius: 50%;
+  border:1px groove #231942;
+}
+.botonElEventoUs:hover {
+  background-color: #e0e1dd;
+  color:#04052e;
+  text-shadow: 1px 1px 1px#e0e1dd;
+  text-decoration: none;
+  letter-spacing: 1px;
+  transition: 1s all;
+  margin: 0% 20%;
+  padding: 0% 2%;
+  border-radius: 50%;
+  border:1px groove #231942;
+}

@@ -1,0 +1,229 @@
+/*Como Admin*/
+.cajaAdmAlm{
+    background-image: url("https://images.pexels.com/photos/1262304/pexels-photo-1262304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 4% 0% 19.6% 0%;
+}
+.containerAlmAdm{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: -2% 0%;
+}
+.labelAlmAdm{
+    background-color:#5e548ea9;
+    margin:1% 0%;
+    letter-spacing: 2px;
+    color:#fafaff;
+    font-size: 20px;
+    text-shadow: 1px 1px 1px #000;
+}
+.tareasAdmAlm{
+    resize: none;
+}
+
+.inputAlmAdm{
+    background-color:#5e548ea9;
+    border-bottom: 2px solid #fafaff;
+    border-right: 2px solid #fafaff;
+    border-left: 2px solid #231942;
+    border-top: 2px solid #231942;
+    color: #fafaff;
+    text-shadow: 1px 1px 1px #000;
+    transition:1s all;
+}
+
+.inputAlmAdm:focus{
+    background-color:#5e548ea9;
+    border: 2px groove #fafaff;
+    color: #fafaff;
+    text-shadow: 1px 1px 1px #000;
+    transition:1s all;
+}
+.inputAlmAdm:hover{
+    background-color:#5e548ea9;
+    border-bottom: 2px solid  #231942;
+    border-right: 2px solid  #231942;
+    border-left: 2px solid #fafaff;
+    border-top: 2px solid #fafaff;
+    transition:1s all;
+}
+.containerBotonesAdm{
+    display: grid;
+    align-items: end;
+    align-content: stretch;
+    justify-content: center;
+    justify-items: center;
+}
+.botonAddAlmAdm{
+    margin: 12% 0%;
+    text-decoration: none;
+    color: #a7c957;
+    background-color: #6a994e;
+    text-shadow: 1px 1px 1px #3d405b;
+     padding: -1% 48%;
+    border-bottom: 2px solid #a7c957;
+    border-right: 2px solid #a7c957;
+    border-left: 2px solid #6a994e;
+    border-top: 2px solid #6a994e;
+    font-size: 15px;
+    transition:1s all;
+}
+.botonAddAlmAdm:hover {
+    margin: 12% 0%;
+    text-decoration: none;
+    background-color: #a7c957;
+    color: #6a994e;
+    text-shadow: 1px 1px 1px #000;
+       padding: -1% 48%;
+    border-bottom: 2px solid #6a994e;
+    border-right: 2px solid #6a994e;
+    border-left: 2px solid #a7c957;
+    border-top: 2px solid #a7c957;
+    font-size: 15px;
+    transition:1s all;
+  }
+
+.botonVolAlmAdm{
+    color: #fafaff;
+    background-color: #231942;
+    text-decoration: none;
+    padding: 0% 3%;
+    border-radius: 1%;
+    border-bottom: 2px solid #fafaff;
+    border-right: 2px solid #fafaff;
+    border-left: 2px solid #231942;
+    border-top: 2px solid #231942;
+    transition: 1s all;
+}
+
+.botonVolAlmAdm:hover {
+    background-color: #231942;
+    color: #fafaff;
+    text-decoration: none;
+    transition: 1s all;
+    padding: 0% 3%;
+    border-radius: 1%;
+    border-bottom: 2px solid #231942;
+    border-right: 2px solid #231942;
+    border-left: 2px solid #fafaff;
+    border-top: 2px solid #fafaff;
+    transition: 1s all;
+  }
+  /*Como Usuario*/
+  .cajaUsAlm{
+    background-image: url(https://images.pexels.com/photos/171198/pexels-photo-171198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 5% 0% 20.4% 0%;
+}
+.containerAlmUs{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: -2% 0%;
+}
+.labelAlmUs{
+    background-color:#1b263b;
+    border:1px groove #fafaff;
+    padding:0% 2%;
+    margin:1% 0%;
+    letter-spacing: 2px;
+    color:#e0e1dd;
+    font-size: 20px;
+}
+.tareasAlmUs{
+    resize: none;
+}
+
+.inputAlmUs{
+    background-color:#1b263ba2;
+    color: #e0e1dd;
+    border-bottom: 2px solid #e0e1dd;
+    border-right: 2px solid #e0e1dd;
+    border-left: 2px solid #1b263ba2;
+    border-top: 2px solid #1b263ba2;
+    text-shadow: 1px 1px 1px #000;
+    transition:1s all;
+}
+
+.inputUs:focus{
+    background-color:#1b263ba2;
+    border: 2px groove #e0e1dd;
+    color: #e0e1dd;
+    text-shadow: 1px 1px 1px #000;
+    transition:1s all;
+}
+.inputUs:hover{
+    background-color:#1b263ba2;
+    border-bottom: 2px solid  #1b263ba2;
+    border-right: 2px solid  #1b263ba2;
+    border-left: 2px solid #e0e1dd;
+    border-top: 2px solid #e0e1dd;
+    transition:1s all;
+}
+.containerBotonesUs{
+    display: grid;
+    align-items: end;
+    align-content: stretch;
+    justify-content: center;
+    justify-items: center;
+}
+.botonAddAlmUs{
+    margin: 12% 0%;
+    text-decoration: none;
+    color: #a7c957;
+    background-color: #6a994e;
+    text-shadow: 1px 1px 1px #3d405b;
+     padding: -1% 48%;
+    border-bottom: 2px solid #a7c957;
+    border-right: 2px solid #a7c957;
+    border-left: 2px solid #6a994e;
+    border-top: 2px solid #6a994e;
+    font-size: 15px;
+    transition:1s all;
+}
+.botonAddAlmUs:hover {
+    margin: 12% 0%;
+    text-decoration: none;
+    background-color: #a7c957;
+    color: #6a994e;
+    text-shadow: 1px 1px 1px #000;
+       padding: -1% 48%;
+    border-bottom: 2px solid #6a994e;
+    border-right: 2px solid #6a994e;
+    border-left: 2px solid #a7c957;
+    border-top: 2px solid #a7c957;
+    font-size: 15px;
+    transition:1s all;
+  }
+
+.botonVolAlmUs{
+    color: #fafaff;
+    background-color: #231942;
+    text-decoration: none;
+    padding: 0% 3%;
+    border-radius: 1%;
+    border-bottom: 2px solid #fafaff;
+    border-right: 2px solid #fafaff;
+    border-left: 2px solid #231942;
+    border-top: 2px solid #231942;
+    transition: 1s all;
+}
+
+.botonVolAlmUs:hover {
+    background-color: #231942;
+    color: #fafaff;
+    text-decoration: none;
+    transition: 1s all;
+    padding: 0% 3%;
+    border-radius: 1%;
+    border-bottom: 2px solid #231942;
+    border-right: 2px solid #231942;
+    border-left: 2px solid #fafaff;
+    border-top: 2px solid #fafaff;
+    transition: 1s all;
+  }

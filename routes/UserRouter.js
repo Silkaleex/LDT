@@ -216,6 +216,50 @@ UserRouter.get("/user", auth, async (req, res) => {
     });
   }
 });
+UserRouter.get("/toNotes", auth, async (req, res) => {
+  try {
+    let Notas = await user.findById(req.user.id).populate({path:'notes', select:'title tareas fecha'});
+    if (!Notas) {
+      return res.status(400).send({
+        success: false,
+        message: "Notas no encontradas",
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      message: "Tus Notas se encontraron correctamente",
+      Notas,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+UserRouter.get("/toAlarms", auth, async (req, res) => {
+  try {
+    let alarmas = await user.findById(req.user.id).populate({path:'alarma', select:'title alarm'});
+    if (!alarmas) {
+      return res.status(400).send({
+        success: false,
+        message: "Alarma no encontrada",
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      message: "Alarmas encontradas correctamente",
+      alarmas,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
 UserRouter.delete("/user", auth, async (req, res) => {
   try {
     await user.findByIdAndDelete(req.user.id);

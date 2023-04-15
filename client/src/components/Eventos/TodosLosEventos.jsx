@@ -1,28 +1,86 @@
+/* eslint-disable eqeqeq */
 import React from "react";
-// import axios from "axios";
-import './todosLosEventos.css'
-// import { useState, useEffect } from "react";
-// import { Link } from "react-router-dom";
-// import { AiFillCloseCircle } from "react-icons/ai";
+import axios from "axios";
+import "./todosLosEventos.css";
+import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
-// const TodasLasNotas = () => {
-//   const [event, setEvent] = useState([]);
-//   const token = localStorage.getItem("token");
-//   const role = localStorage.getItem("role");
-//   const getEvent = async () => {
-//     const response = await axios.get("http://localhost:5000/api/toCalen", {
-//       headers: {
-//         Authorization: token,
-//       },
-//     });
-//     setEvent(response.data.event);
-//   }
-// }
-function TodosLosEventos() {
+const TodosLosEventos = () => {
+  const [event, setEvent] = useState([]);
+  const token = localStorage.getItem("token");
+  const role = localStorage.getItem("role");
+
+  const getEvent = async () => {
+    const response = await axios.get("http://localhost:5000/api/toCalen", {
+      headers: {
+        Authorization: token,
+      },
+    });
+    console.log(response);
+    setEvent(response.data.calendars);
+  };
+
+  useEffect(() => {
+    getEvent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
   return (
     <>
+      {role == 1 ? (
+        <div className="fondoAdmEv">
+          <div className="cajaAdminis">
+            <h1 className="tAdminEv">Tus Eventos</h1>
+            {event.map((evento) => {
+              return (
+                <div key={evento._id}>
+                  <div className="card cartaEvento">
+                    <div className="card-body cartaEvDm">
+                      <h2>{evento.title}</h2>
+                      <h3>{evento.calendar}</h3>
+
+                      <Link
+                        to={`/evento/${evento._id}`}
+                        className="card-link accederEvento"
+                      >
+                        Acceder a Evento
+                      </Link>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      ) : (
+        <div className="fondoUsEv">
+          <div className="cajaUsEv">
+            <h1 className="tUsEv">Tus Eventos</h1>
+            {event.map((evento) => {
+              return (
+                <div key={evento._id}>
+                  <div className="card cartaEventoUs">
+                    <div className="card-body cartaEvUs">
+                      <h2>{evento.title}</h2>
+                      <h3>{evento.calendar}</h3>
+                      <div>
+                        <Link
+                          to={`/evento/${evento._id}`}
+                          className="card-link accederEventoUS"
+                        >
+                          Acceder a Eventos
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
     </>
   );
-}
+};
 
 export default TodosLosEventos;

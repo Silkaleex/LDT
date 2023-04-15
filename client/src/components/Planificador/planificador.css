@@ -1,0 +1,45 @@
+.fondoPlanAdm{
+    background-image: url("https://images.pexels.com/photos/760710/pexels-photo-760710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+.contenedorPlanAdm{
+    text-shadow: 1px 1px 1px #000;
+    padding: 2.1% 2%;
+}
+.tituloPlanAdm{
+    text-shadow: 1px 1px 1px #000;
+    color:#fafaff;
+    text-align: center;
+    margin: 0% 0%;
+}
+.contenidoPlanAdm{
+    background-color: #5e548eb2;
+    text-shadow: 1px 1px 1px #000;
+    padding: 1.45% 2%;
+    width: 50%;
+    margin: 0px auto;
+}
+.enlacesPLanAdm{
+    text-decoration: none;
+    font-size: 20px;
+    color: #fafaff;
+    text-shadow: 1px 1px 1px #000;
+    transition:1s all;
+}
+.enlacesPlan:hover{
+    text-decoration: none;
+    font-size: 20px;
+    color: #231942;
+    text-shadow: 1px 1px 1px #fff;
+    transition:1s all;
+
+}
+.eliminarPlanAdm{
+    color: #fafaff;
+    margin: 0% 0% 4% 0%;
+    box-shadow:1px 1px 1px 1px #000;
+    transition:1s all;
+
+}

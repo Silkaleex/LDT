@@ -1,17 +1,17 @@
 const express = require("express");
-const calendario = require("../models/calendario");
-const calendarRouter = express.Router();
+const alarma = require("../models/alarma");
+const alarmaRouter = express.Router();
 const User = require("../models/User");
 const UserRouter = require("./UserRouter");
 const auth = require("../middeleware/auth");
 
 
-calendarRouter.post("/calendars", auth, async (req, res) => {
+alarmaRouter.post("/alarms", auth, async (req, res) => {
   try {
-    const { title, calendar  } = req.body;
+    const { title, alarm  } = req.body;
     let userId = await User.findById(req.user.id);
 
-    if (!title  || !calendar) {
+    if (!title || !alarm) {
       return res.status(400).send({
         success: false,
         message: "No completastes todos los pasos",
@@ -29,26 +29,19 @@ calendarRouter.post("/calendars", auth, async (req, res) => {
         message: "No completastes todos los pasos",
       });
     }
-    
-    if (calendar.length != 10) {
-      return res.status(400).send({
-        success: false,
-        message: "No completastes todos los pasos",
-      });
-    }
-    let newCalendar = new calendario({
+    let newAlarma = new alarma({
       title,
-      calendar,
+      alarm,
       user: userId,
     });
 
     await User.findByIdAndUpdate(userId, {
       $push: {
-        calendar: newCalendar._id,
+        alarma : newAlarma._id,
       },
     });
 
-    await newCalendar.save();
+    await newAlarma.save();
 
     return res.status(200).send({
       success: true,
@@ -61,10 +54,10 @@ calendarRouter.post("/calendars", auth, async (req, res) => {
     });
   }
 });
-calendarRouter.get("/toCalen", auth, async (req, res) => {
+alarmaRouter.get("/alarms", auth, async (req, res) => {
   try {
-    let calendars = await calendario.find({}).populate()
-    if (!calendars) {
+    let alarm = await alarma.find({}).populate()
+    if (!alarm) {
       return res.status(400).send({
         success: false,
         message: "Eventos no encontrados",
@@ -73,32 +66,7 @@ calendarRouter.get("/toCalen", auth, async (req, res) => {
     return res.status(200).send({
       success: true,
       message: "Tus eventos fueron Encontrados correctamente",
-      calendars
-    });
-  } catch (error) {
-    return res.status(500).send({
-      success: false,
-      message: error.message,
-    });
-  }
-});//Eliminar Ruta, esta ruta esta mal
-calendarRouter.get("/calendars/:id", auth, async (req, res) => {
-  try {
-    const { id } = req.params;
-    let calendars = await calendario.findById(id).populate({
-      path: "user",
-      select: "name ",
-    });
-    if (!calendars) {
-      return res.status(400).send({
-        success: false,
-        message: "Eventos no encontrados",
-      });
-    }
-    return res.status(200).send({
-      success: true,
-      message: "Tus eventos fueron Encontrados correctamente",
-      calendars,
+      alarm
     });
   } catch (error) {
     return res.status(500).send({
@@ -107,16 +75,41 @@ calendarRouter.get("/calendars/:id", auth, async (req, res) => {
     });
   }
 });
-calendarRouter.put("/calendars/:id", async (req, res) => {
+ alarmaRouter.get("/alarms/:id", auth, async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, calendar,  } = req.body;
-
-    await calendario.findByIdAndUpdate(id, {
-      title,
-      calendar,
+    let alarms = await alarma.findById(id).populate({
+      path: "user",
+      select: "name ",
     });
-    if (!title || !calendar) {
+    if (!alarms) {
+      return res.status(400).send({
+        success: false,
+        message: "Alarma no encontrada",
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      message: "Tu Alarma fue Encontrada correctamente",
+      alarms,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+alarmaRouter.put("/alarms/:id", auth, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { title, alarm } = req.body;
+
+    await alarma.findByIdAndUpdate(id, {
+      title,
+      alarm
+    });
+    if (!title || !alarm) {
       return res.status(400).send({
         succcess: false,
         message: "No completastes todos los campos",
@@ -124,7 +117,7 @@ calendarRouter.put("/calendars/:id", async (req, res) => {
     }
     return res.status(200).send({
       success: true,
-      message: "evento modificado",
+      message: "Alarma modificado",
     });
   } catch (error) {
     return res.status(500).send({
@@ -133,10 +126,10 @@ calendarRouter.put("/calendars/:id", async (req, res) => {
     });
   }
 });
-calendarRouter.delete("/calendars/:id", auth, async (req, res) => {
+UserRouter.delete("/alarms/:id", auth, async (req, res) => {
     try {
     const { id } = req.params;
-    await calendario.findByIdAndDelete(id);
+    await alarma.findByIdAndDelete(id);
     if (!id) {
       return res.status(400).send({
         success: false,
@@ -154,4 +147,4 @@ calendarRouter.delete("/calendars/:id", auth, async (req, res) => {
     });
   }
 });
-module.exports = calendarRouter;
+module.exports = alarmaRouter;

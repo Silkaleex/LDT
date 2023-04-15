@@ -1,63 +1,55 @@
 const express = require("express");
-const Notes = require("../models/Notes");
-const NotesRouter = express.Router();
+const Planificador = require("../models/planificador");
+const planificadorRouter = express.Router();
 const User = require("../models/User");
 const auth = require("../middeleware/auth");
 
-NotesRouter.post("/notas", auth, async (req, res) => {
+planificadorRouter.post("/planificador", auth, async (req, res) => {
   try {
-    const { title, tareas, fecha } = req.body;
+    const { title, description } = req.body;
     let userId = await User.findById(req.user.id);
-    if (!userId) {
-      return res.status(400).send({
-        success: false,
-        message: "No estas logeado",
-      });
-    }
-    if (!title || !tareas || !fecha) {
-      return res.status(400).send({
-        success: false,
-        message: "No has completado todos los campos",
-      });
-    }
 
+    if (!title || !description) {
+      return res.status(400).send({
+        success: false,
+        message: "No completastes todos los pasos",
+      });
+    }
     if (title.length < 3) {
       return res.status(400).send({
         success: false,
-        message: "No has completado todos los campos",
+        message: "No completastes todos los pasos",
       });
     }
     if (title.length > 30) {
       return res.status(400).send({
         success: false,
-        message: "No has completado todos los campos",
+        message: "No completastes todos los pasos",
       });
     }
-    if (fecha.length < 8) {
+
+    if (description.length > 400) {
       return res.status(400).send({
         success: false,
-        message: "No has completado todos los campos",
+        message: "No completastes todos los pasos",
       });
     }
-
-    let newNotes = new Notes({
+    let newPlanificador = new Planificador({
       title,
-      tareas,
-      fecha,
+      description,
+      user: userId,
     });
-
     await User.findByIdAndUpdate(userId, {
       $push: {
-        notes: newNotes._id,
+        planning: newPlanificador._id,
       },
     });
 
-    await newNotes.save();
+    await newPlanificador.save();
 
     return res.status(200).send({
       success: true,
-      message: "Notas creadas correctamente",
-      newNotes,
+      message: "Tu Planificador se guardó correctamente",
     });
   } catch (error) {
     return res.status(500).send({
@@ -66,24 +58,23 @@ NotesRouter.post("/notas", auth, async (req, res) => {
     });
   }
 });
-
-NotesRouter.get("/notas/:id", auth, async (req, res) => {
+planificadorRouter.get("/planificador/:id", auth, async (req, res) => {
   try {
     const { id } = req.params;
-    let notas = await Notes.findById(id).populate({
+    let plan = await Planificador.findById(id).populate({
       path: "user",
       select: "name ",
     });
-    if (!notas) {
+    if (!plan) {
       return res.status(400).send({
         success: false,
-        message: "Notas no encontradas",
+        message: "Planificador no encontrado",
       });
     }
     return res.status(200).send({
       success: true,
-      message: "Notas encontradas con exito",
-      notas,
+      message: "Tus Planificador fue Encontrado correctamente",
+      plan,
     });
   } catch (error) {
     return res.status(500).send({
@@ -92,23 +83,21 @@ NotesRouter.get("/notas/:id", auth, async (req, res) => {
     });
   }
 });
-NotesRouter.put("/notas/:id", async (req, res) => {
+planificadorRouter.put("/planificador/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, tareas, fecha } = req.body;
+    const {title, planificador } = req.body;
 
-    await Notes.findByIdAndUpdate(id, { title, tareas, fecha });
-    const notas =  await Notes.findById(id)
-
-    if (!title || !tareas || !fecha) {
+    await Planificador.findByIdAndUpdate(id);
+    if (!title || !planificador) {
       return res.status(400).send({
-        success: false,
+        succcess: false,
         message: "No completastes todos los campos",
       });
     }
     return res.status(200).send({
       success: true,
-      message: "Notas modificadas con exito",
+      message: "evento modificado",
     });
   } catch (error) {
     return res.status(500).send({
@@ -117,19 +106,19 @@ NotesRouter.put("/notas/:id", async (req, res) => {
     });
   }
 });
-NotesRouter.delete("/notas/:id", auth, async (req, res) => {
+planificadorRouter.delete("/planificador/:id", auth, async (req, res) => {
   try {
     const { id } = req.params;
-    await Notes.findByIdAndDelete(id);
+    await Planificador.findByIdAndDelete(id);
     if (!id) {
       return res.status(400).send({
         success: false,
-        message: "No se a encontrado la nota que buscabas",
+        message: "No se a encontrado la Evento que buscabas",
       });
     }
     return res.status(200).send({
       success: true,
-      message: "Tu nota ha sido eliminada",
+      message: "Tu Evento ha sido eliminado",
     });
   } catch (error) {
     return res.status(500).send({
@@ -138,4 +127,4 @@ NotesRouter.delete("/notas/:id", auth, async (req, res) => {
     });
   }
 });
-module.exports = NotesRouter;
+module.exports = planificadorRouter;

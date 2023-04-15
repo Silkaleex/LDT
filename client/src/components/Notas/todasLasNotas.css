@@ -4,12 +4,11 @@
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    padding: 1.4%;
+    padding: 1% 0% 27% 0%;
 }
 .contenedorNotasAdm{
-    margin:0px auto;
+    margin:-3px auto;
     width: 50%;
- 
 }
 .tituloNotaAdm{
     text-shadow: 1px 1px 1px #000;
@@ -23,10 +22,13 @@
     text-shadow: 1px 1px 1px #000;
     padding: 2% 2%;
 }
-
+.bordeCajaEnlcAdm{
+    border-bottom:3px solid #231942;
+    margin:1% 0%
+}
 .enlacesNotaAdm{
     text-decoration: none;
-    font-size: 0px;
+    font-size: 20px;
     color: #fafaff;
     text-shadow: 1px 1px 1px #000;
     transition:1s all;
@@ -34,29 +36,42 @@
 }
 .enlacesNotaAdm:hover{
     text-decoration: none;
-    font-size: 0px;
+    font-size: 20px;
     color: #231942;
     text-shadow: 1px 1px 1px #fff;
     transition:1s all;
 
 }
-.eliminarNotaAdm{
-    margin: 0% 93%;
-
+.cajaCirculoNotAdm{
+    margin: 2% 49%;
+}
+.circuloNotaAdm{
+    background-color: #3b17a7;
+    border-radius: 50%;
+    color: #fafaff;
+    border: 3px groove #fafaff;
+    transition:1s all;
+    padding: 0% 30%;
+}
+.circuloNotaAdm:hover{
+    color: #231942;
+    border-radius: 50%;
+    background-color: #9f86c0;
+    border: 3px groove #5e548e;
+    transition:1s all;
+    padding: 0% 30%;
 }
 /*Como Usuario*/
-
 .fondoNotasUs{
-    background-image: url("https://images.pexels.com/photos/771322/pexels-photo-771322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url(https://images.pexels.com/photos/771322/pexels-photo-771322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    padding: 1.4%;
+    padding: 1% 0% 26.4% 0%;
 }
-.contenedorNotasUs{
-    margin:0px auto;
+.contenedorNotasUs {
+    margin: 0% auto;
     width: 50%;
- 
 }
 .tituloNotaUs{
     text-shadow: 1px 1px 1px #000;
@@ -70,7 +85,10 @@
     text-shadow: 1px 1px 1px #000;
     padding: 2% 2%;
 }
-
+.bordeCajaEnlcUs{
+    border-bottom:3px solid #e0e1dd;
+    margin:2% 0%;
+}
 .enlacesNotaUs{
     text-decoration: none;
     font-size: 0px;
@@ -87,7 +105,23 @@
     transition:1s all;
 
 }
-.eliminarNotaUs{
-    margin: 0% 93%;
 
+.cajaCirculoNotUs{
+    margin: 2% 49%;
+}
+.circuloNotaUs{
+    background-color: #04052e;
+    border-radius: 50%;
+    color: #e4d9ff;
+    border: 3px groove #e4d9ff;
+    transition:1s all;
+    padding: 0% 30%;
+}
+.circuloNotaUs:hover{
+    color: #04052e;
+    border-radius: 50%;
+    background-color: #e4d9ff;
+    border: 3px groove #04052e;
+    transition:1s all;
+    padding: 0% 30%;
 }
