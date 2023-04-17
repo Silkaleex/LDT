@@ -17,7 +17,7 @@ const TodosLosEventos = () => {
       },
     });
     console.log(response);
-     setEvent(response.data.eventos.calendar);
+    setEvent(response.data.eventos.calendar);
   };
 
   useEffect(() => {
@@ -28,65 +28,64 @@ const TodosLosEventos = () => {
   return (
     <>
       {role == 1 ? (
-        <div className="fondoAdmEv">
-          <div className="cajaAdminis">
-            <h1 className="tAdminEv">Tus Eventos</h1>
+        <div className="fondoAdmCal">
+          <div className="cajaAdminisCal">
+            <h1 className="tAdminCal">Tus Eventos</h1>
             {event.map((evento) => {
               return (
                 <div key={evento._id}>
-                  <div className="card cartaEvento">
-                    <div className="card-body cartaEvDm">
+                  <div className="card cartaEventoCal">
+                    <div className="card-body cartaCalAdm">
                       <h2>{evento.title}</h2>
                       <h3>{evento.calendar}</h3>
 
                       <Link
-                        to={`/evento/${evento._id}`}
-                        className="card-link accederEvento"
+                        to={`/calendar/${evento._id}`}
+                        className="card-link accederCal"
                       >
                         Acceder a Evento
                       </Link>
                     </div>
                   </div>
-                  <div className="cajaCirculoAlmAdm">
-              <Link to="/newCal" className="circuloAlmAdm">
-                <CgNotes />
-              </Link>
-            </div>
                 </div>
               );
             })}
-          </div>
-        </div>
-      ) : (
-        <div className="fondoUsEv">
-          <div className="cajaUsEv">
-            <h1 className="tUsEv">Tus Eventos</h1>
-            {event.map((evento) => {
-              return (
-                <div key={evento._id}>
-                  <div className="card cartaEventoUs">
-                    <div className="card-body cartaEvUs">
-                      <h2>{evento.title}</h2>
-                      <h3>{evento.calendar}</h3>
-                      <div>
-                        <Link
-                          to={`/calendar/${evento._id}`}
-                          className="card-link accederEventoUS"
-                        >
-                          Acceder a Eventos
-                        </Link>
-                      </div>
-                    </div>
-                    <div className="cajaCirculoAlmAdm">
-              <Link to="/newCal" className="circuloAlmAdm">
+            <div className="cajaCirculoCalAdm">
+              <Link to="/newCal" className="circuloCalAdm">
                 <CgNotes />
               </Link>
             </div>
+          </div>
+        </div>
+      ) : (
+        <div className="fondoUsCalen">
+          <div className="cajaUsCalen">
+            <h1 className="tusCal">Tus Eventos</h1>
+            {event.map((evento) => {
+              return (
+                <div key={evento._id}>
+                  <div className="card cartaCalUs">
+                    <div className="card-body letraCalUs">
+                      <h2>{evento.title}</h2>
+                      <h3>{evento.calendar}</h3>
+
+                      <Link
+                        to={`/calendar/${evento._id}`}
+                        className="card-link accederCalUs"
+                      >
+                        Acceder a Eventos
+                      </Link>
+                    </div>
                   </div>
                 </div>
               );
             })}
           </div>
+                    <div className="cajaCirculoCalUs">
+                      <Link to="/newCal" className="circuloCalUs">
+                        <CgNotes />
+                      </Link>
+                    </div>
         </div>
       )}
     </>

@@ -1,21 +1,21 @@
 /*Caja Admin*/
-.fondoAdmEv{
+.fondoAdmCal{
   background-image: url("https://images.pexels.com/photos/9439257/pexels-photo-9439257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size: cover;
   background-position: center;
   padding: 0% 0% 11.9% 0%;
 }
-.cajaAdminis{
+.cajaAdminisCal{
   margin:0px auto;
   padding: 2% 0% 10.3% 0%;
 
 }
-.tAdminEv{
+.tAdminCal{
   text-align: center;
   color:#fafaff;
   text-shadow: 1px 1px 1px #000;
 }
-.cartaEvento{
+.cartaEventoCal{
   background-color: #5e548eb2;
   color: #fafaff;
   text-shadow: 1px 1px 1px #000;
@@ -24,10 +24,30 @@
   margin: 1% auto;
 
 }
-.cartaEvDm{
+.cajaCirculoCalAdm{
+  margin: 2% 49%;
+}
+.circuloCalAdm{
+  background-color: #3b17a7;
+  border-radius: 50%;
+  color: #fafaff;
+  border: 3px groove #fafaff;
+  transition:1s all;
+  padding: 0% 20%;
+}
+.circuloCalAdm:hover{
+  color: #231942;
+  border-radius: 50%;
+  background-color: #9f86c0;
+  border: 3px groove #5e548e;
+  transition:1s all;
+  padding: 0% 20%;
+}
+.cartaCalAdm{
   width: 100%;
 }
-.accederEvento{
+
+.accederCal{
   color:#fafaff;
   background-color: #231942;
   text-shadow: 1px 1px 1px#000;
@@ -37,7 +57,7 @@
   padding: 0% 5%;
   border:1px groove #231942;
 }
-.accederEvento:hover{
+.accederCal:hover{
   background-color:#9f86c0;
   color: #231942;
   text-shadow: 1px 1px 1px#fafaff;
@@ -47,102 +67,65 @@
   padding: 0% 5%;
   border:1px groove #231942;
 }
-.botonElEvento {
-  color: #fafaff;
-  background-color: #231942;
-  text-shadow: 1px 1px 1px#000;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: 1s all;
-  margin: 0% 20%;
-  padding: 0% 2%;
-  border-radius: 50%;
-  border:1px groove #231942;
-}
-.botonElEvento:hover {
-  background-color:#9f86c0;
-  color: #231942;
-  text-shadow: 1px 1px 1px#fafaff;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: 1s all;
-  margin: 0% 20%;
-  padding: 0% 2%;
-  border-radius: 50%;
-  border:1px groove #231942;
-}
 /*Caja Usuario*/
-.fondoUsEv{
+.fondoUsCalen{
   background-image: url(https://images.pexels.com/photos/1410226/pexels-photo-1410226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
   background-size: cover;
   background-position: center;
   padding: 0% 0% 11.9% 0%;
 }
-.cajaUsEv{
-  margin:0px auto;
-  padding: 2% 0% 10.3% 0%;
-
-}
-.tUsEv{
-  text-align: center;
+.cajaUsCalen{}
+.letraCalUs{
   color:#e0e1dd;
   text-shadow: 1px 1px 1px #000;
 }
-.cartaEventoUs{
-  background-color: #1b263ba0;
-  color: #e0e1dd;
+.tusCal{
+  text-align: center;
+  color: #fafaff;
   text-shadow: 1px 1px 1px #000;
-  transition: 1s all;
+}
+.cartaCalUs{
+  text-align: center;
+  background-color: #1b263ba0;
   width: 30%;
-  margin: 1% auto;
+  margin: 2% 35%;
+}
+.accederCalUs{
+text-decoration: none;
+color:#e0e1dd;
+background-color:#1b263b;
+text-shadow: 1px 1px 1px #000;
+padding:0% 3%;
+transition: 1s all;
+}
+.accederCalUs:hover{
+text-decoration: none;
+background-color:#e0e1dd;
+color:#1b263d;
+font-weight: bold;
+text-shadow: 1px 1px 1px #fff;
+padding:0% 3%;
+transition: 1s all;
+}
+.cajaCirculoCalUs{
+  margin: 0% 48%;
+}
 
-}
-.cartaEvUs{
-  width: 100%;
-}
-.accederEventoUS{
-  background-color:#04052e;
- color: #e4d9ff;
-  text-shadow: 1px 1px 1px#000;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition:1s all;
-  padding: 0% 5%;
-  border-radius:30%;
-  border:1px groove #231942;
-}
-.accederEventoUS:hover{
- color:#04052e;
- background-color: #e4d9ff;
-  text-shadow: 1px 1px 1px#e0e1dd;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition:1s all;
-  padding: 0% 5%;
-  border-radius:30%;
-  border:1px groove #231942;
-}
-.botonElEventoUs {
+.circuloCalUs {
+  background-color: #1b263b;
+  border-radius: 50%;
   color: #e0e1dd;
-  background-color:#04052e;
-  text-shadow: 1px 1px 1px#000;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: 1s all;
-  margin: 0% 20%;
-  padding: 0% 2%;
-  border-radius: 50%;
-  border:1px groove #231942;
+  border: 3px groove #fafaff;
+  transition:1s all;
+  padding: 0% 20%;
+  text-decoration:none;
 }
-.botonElEventoUs:hover {
-  background-color: #e0e1dd;
-  color:#04052e;
-  text-shadow: 1px 1px 1px#e0e1dd;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition: 1s all;
-  margin: 0% 20%;
-  padding: 0% 2%;
+.circuloCalUs:hover {
+  color: #1b263b;
   border-radius: 50%;
-  border:1px groove #231942;
+  background-color: #e0e1dd;
+  border: 3px groove #fafaff;
+  transition:1s all;
+  padding: 0% 20%;
+  text-decoration:none;
 }

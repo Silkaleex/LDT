@@ -89,7 +89,7 @@ const NewCal = () => {
           </form>
         </div>
       ) : (
-        <div className="cajaUsAlm">
+        <div className="cajaUsCa">
           <form onSubmit={calendarSubmit}>
             <div className="containerAlmUs">
               <label className="labelNotUs" htmlFor="title">
