@@ -100,7 +100,7 @@ alarmaRouter.get("/alarms", auth, async (req, res) => {
     });
   }
 });
-alarmaRouter.put("/alarms/:id", auth, async (req, res) => {
+alarmaRouter.put("/alarms/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const { title, alarm } = req.body;

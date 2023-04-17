@@ -260,6 +260,28 @@ UserRouter.get("/toAlarms", auth, async (req, res) => {
   }
 });
 
+UserRouter.get("/toCalen", auth, async (req, res) => {
+  try {
+    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar'});
+    if (!eventos) {
+      return res.status(400).send({
+        success: false,
+        message: "Evento no encontrado",
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      message: "Evento encontrados correctamente",
+      eventos,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
 UserRouter.delete("/user", auth, async (req, res) => {
   try {
     await user.findByIdAndDelete(req.user.id);

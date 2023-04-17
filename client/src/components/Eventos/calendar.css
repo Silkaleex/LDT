@@ -17,14 +17,15 @@
     margin: -24% 0% 0% 0%;
 
   }
+  .cajaBtnCal{
+    margin: 0% 15%;
+  }
   .botonEvAdm {
     color: #fafaff;
     background-color: #231942;
     text-decoration: none;
-    transition: 1s all;
     padding: 0% 3%;
     border-radius: 1%;
-    margin: 0% 33% 0% 0%;
     border-bottom: 2px solid #fafaff;
     border-right: 2px solid #fafaff;
     border-left: 2px solid #231942;
@@ -35,10 +36,8 @@
     background-color: #231942;
     color: #fafaff;
     text-decoration: none;
-    transition: 1s all;
     padding: 0% 3%;
     border-radius: 1%;
-    margin: 0% 33% 0% 0%;
     border-bottom: 2px solid #231942;
     border-right: 2px solid #231942;
     border-left: 2px solid #fafaff;

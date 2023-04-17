@@ -1,10 +1,10 @@
 /* eslint-disable eqeqeq */
 import React from "react";
 import axios from "axios";
-import "./todosLosEventos.css";
+import "./todosLosCalendar.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-
+import { CgNotes } from "react-icons/cg";
 const TodosLosEventos = () => {
   const [event, setEvent] = useState([]);
   const token = localStorage.getItem("token");
@@ -17,7 +17,7 @@ const TodosLosEventos = () => {
       },
     });
     console.log(response);
-    setEvent(response.data.calendars);
+     setEvent(response.data.eventos.calendar);
   };
 
   useEffect(() => {
@@ -47,6 +47,11 @@ const TodosLosEventos = () => {
                       </Link>
                     </div>
                   </div>
+                  <div className="cajaCirculoAlmAdm">
+              <Link to="/newCal" className="circuloAlmAdm">
+                <CgNotes />
+              </Link>
+            </div>
                 </div>
               );
             })}
@@ -65,13 +70,18 @@ const TodosLosEventos = () => {
                       <h3>{evento.calendar}</h3>
                       <div>
                         <Link
-                          to={`/evento/${evento._id}`}
+                          to={`/calendar/${evento._id}`}
                           className="card-link accederEventoUS"
                         >
                           Acceder a Eventos
                         </Link>
                       </div>
                     </div>
+                    <div className="cajaCirculoAlmAdm">
+              <Link to="/newCal" className="circuloAlmAdm">
+                <CgNotes />
+              </Link>
+            </div>
                   </div>
                 </div>
               );

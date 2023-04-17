@@ -2,49 +2,50 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import "./modificacion.css";
-const Modifcacion = () => {
+
+const ModifcacionAlm = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
   console.log(token);
-  const { notaId } = useParams();
+  const { alarmaId } = useParams();
   const Navigate = useNavigate();
-  const [nota, setNota] = useState({
+  
+  const [Alm, setAlm] = useState({
     title: "",
-    fecha: "",
-    tareas: "",
+    alarm:""
   });
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    setNota({ ...nota, [name]: value });
-    console.log(nota);
+    setAlm({ ...Alm, [name]: value });
+    console.log(Alm);
   };
-  const getNotas = async () => {
+  const getAl = async () => {
     const response = await axios.get(
-      `http://localhost:5000/api/notas/${notaId}`,
+      `http://localhost:5000/api/alarms/${alarmaId}`,
       {
         headers: {
           Authorization: token,
         },
       }
     );
-    console.log(response.data.notas);
-    setNota(response.data.notas);
+    console.log(response);
+    setAlm(response.data.alarms);
   };
   useEffect(() => {
-    getNotas();
+    getAl();
   }, []);
 
   const modificacionSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/notas/${notaId}`,
-        { ...nota }
+        `http://localhost:5000/api/alarms/${alarmaId}`,
+        { ...Alm }
       );
       console.log(response);
       setTimeout(() => {
-        Navigate(`/notas/${notaId}`);
+        Navigate(`/alarma/${alarmaId}`);
       }, 2000);
     } catch (error) {
       console.log(error.response);
@@ -53,10 +54,10 @@ const Modifcacion = () => {
   return (
     <>
       {role == 1 ? (
-        <div className="cajaAdmNot">
+        <div className="cajaAdmAlm">
           <form onSubmit={modificacionSubmit}>
-            <div className="containerNotasAdm">
-              <label className="labelNotAdm" htmlFor="titulo">
+            <div className="containerAlmAdm">
+              <label className="labelAlmAdm" htmlFor="titulo">
                 Titulo:
               </label>
               <input
@@ -65,38 +66,24 @@ const Modifcacion = () => {
                 type="text"
                 name="title"
                 id="titulo"
-                value={nota.title}
+                value={Alm.title}
                 onChange={onChangeInput}
               ></input>
-              <label className="labelNotAdm" htmlFor="tareas">
-                Tareas:
+              <label className="labelNotAdm" htmlFor="alarm">
+                Alarma:
               </label>
               <textarea
                 className="tareasAdm inputAdm"
                 placeholder="Descripcion de tu Nota"
                 type="textarea"
-                name="tareas"
-                id="tareas"
-                cols="100"
-                rows="10"
-                value={nota.tareas}
+                name="alarm"
+                id="alarm"
+                value={Alm.alarm}
                 onChange={onChangeInput}
               ></textarea>
-              <label className="labelNotAdm" htmlFor="fecha">
-                Fecha:
-              </label>
-              <input
-                className="inputAdm"
-                placeholder="Fecha"
-                type="text"
-                name="fecha"
-                id="fecha"
-                value={nota.fecha}
-                onChange={onChangeInput}
-              ></input>
               <div className="containerBotonesAdm">
-                <button className="botonModNotAdm">Modificar Libro</button>
-                <Link to="/tNotas" className="botonVolNotAdm">
+                <button className="botonModAlmAdm">Modificar Libro</button>
+                <Link to="/tAlarma" className="botonVolAlmAdm">
                   Volver
                 </Link>
               </div>
@@ -104,10 +91,10 @@ const Modifcacion = () => {
           </form>
         </div>
       ) : (
-        <div className="cajaUsNot">
+        <div className="cajaUsAlm">
           <form onSubmit={modificacionSubmit}>
-            <div className="containerNotasUs">
-              <label className="labelNotUs" htmlFor="titulo">
+            <div className="containerAlmUs">
+              <label className="labelAlmUs" htmlFor="titulo">
                 Titulo:
               </label>
               <input
@@ -116,38 +103,24 @@ const Modifcacion = () => {
                 type="text"
                 name="title"
                 id="titulo"
-                value={nota.title}
+                value={Alm.title}
                 onChange={onChangeInput}
               ></input>
-              <label className="labelNotUs" htmlFor="tareas">
-                Tareas:
+              <label className="labelAlmUs" htmlFor="alarm">
+                Alarma:
               </label>
               <textarea
                 className="tareasUs inputUs"
                 placeholder="Descripcion de la Nota"
                 type="textarea"
-                name="tareas"
-                id="tareas"
-                cols="100"
-                rows="10"
-                value={nota.tareas}
+                name="alarm"
+                id="alarm"
+                value={Alm.alarm}
                 onChange={onChangeInput}
               ></textarea>
-              <label className="labelNotUs" htmlFor="fecha">
-                Fecha:
-              </label>
-              <input
-                className="inputUs"
-                placeholder="Fecha"
-                type="text"
-                name="fecha"
-                id="fecha"
-                value={nota.fecha}
-                onChange={onChangeInput}
-              ></input>
               <div className="containerBotonesUs">
-                <button className="botonModNotUs">Modificar Nota</button>
-                <Link to="/tNotas" className="botonVolNotUs">
+                <button className="botonModAlmUs">Modificar Nota</button>
+                <Link to="/tAlarma" className="botonVolAlmUs">
                   Volver
                 </Link>
               </div>
@@ -159,4 +132,4 @@ const Modifcacion = () => {
   );
 };
 
-export default Modifcacion;
+export default ModifcacionAlm;

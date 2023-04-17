@@ -70,7 +70,7 @@ const User = () => {
           </div>
           <div className="cajaEnUsuario">
           <h3 className="colorLetras letraEnlace">Tus Eventos</h3>
-          <a className="enlaceUsuario" href="/tEvento">Acceder a Eventos</a>
+          <a className="enlaceUsuario" href="/tCalendar">Acceder a Eventos</a>
           </div>
           <div className="cajaEnUsuario">
           <h3 className="colorLetras letraEnlace">Planificador</h3>

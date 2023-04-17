@@ -3,29 +3,29 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import './newAlarm.css'
 
-const NewAlm = () => {
-  const [alarma, setAlarma] = useState({
-    title: "",
-    alarm: "",
+const NewCal = () => {
+  const [calend, setCalend] = useState({
+    title:"",
+    calendar:"",
   });
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    if (alarma !== null) {
-      setAlarma({ ...alarma, [name]: value });
+    if (calend !== null) {
+      setCalend({ ...calend, [name]: value });
     }
-    console.log(alarma);
+    console.log(calend);
   };
 
-  const almSubmit = async (event) => {
+  const calendarSubmit = async (event) => {
     event.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/alarms",
+        "http://localhost:5000/api/calendars",
         {
-          ...alarma,
+          ...calend,
         },
         {
           headers: {
@@ -35,10 +35,10 @@ const NewAlm = () => {
       );
 
       console.log(response);
-       setAlarma(response.data.alarmas);
+      setCalend(response.data.eventos);
 
        setTimeout(() => {
-         window.location.href = "/tAlarma";
+         window.location.href = "/tCalendar";
        }, 3000);
     } catch (error) {
       console.log(error.response);
@@ -49,7 +49,7 @@ const NewAlm = () => {
     <div>
       {role == 1 ? (
         <div className="cajaAdmAlm">
-          <form onSubmit={almSubmit}>
+          <form onSubmit={calendarSubmit}>
             <div className="containerAlmAdm">
               <label className="labelAlmAdm" htmlFor="title">
                 Titulo:
@@ -61,27 +61,27 @@ const NewAlm = () => {
                 name="title"
                 placeholder="Titulo"
                 onChange={onChangeInput}
-                value={alarma ? alarma.title : ""}
+                value={calend ? calend.title : ""}
               />
 
-              <label className="labelAlmAdm" htmlFor="alarm">
-                Alarma:
+              <label className="labelAlmAdm" htmlFor="calendar">
+                Evento:
               </label>
               <input
                 className="inputAlmAdm"
                 type="text"
-                id="alarm"
-                name="alarm"
+                id="calendar"
+                name="calendar"
                 placeholder="00:00"
                 onChange={onChangeInput}
                 
-                value={alarma ? alarma.alarm : ""}
+                value={calend ? calend.calendar : ""}
               />
               <div className="containerBotonesAdm">
                 <button className="botonAddAlmAdm" type="submit">
-                  Crear Alarma
+                  Crear Evento
                 </button>
-                <Link to="/tAlarma" className="botonVolAlmAdm">
+                <Link to="/tCalendar" className="botonVolAlmAdm">
                   Volver
                 </Link>
               </div>
@@ -90,7 +90,7 @@ const NewAlm = () => {
         </div>
       ) : (
         <div className="cajaUsAlm">
-          <form onSubmit={almSubmit}>
+          <form onSubmit={calendarSubmit}>
             <div className="containerAlmUs">
               <label className="labelNotUs" htmlFor="title">
                 Titulo:
@@ -102,25 +102,25 @@ const NewAlm = () => {
                 name="title"
                 placeholder="titulo"
                 onChange={onChangeInput}
-                value={alarma ? alarma.title : ""}
+                value={calend ? calend.title : ""}
               />
-              <label className="labelNotUs" htmlFor="alarm">
-                Alarma:
+              <label className="labelNotUs" htmlFor="calendar">
+                Evento:
               </label>
               <input
                 className="inputUs"
                 type="text"
-                id="alarm"
-                name="alarm"
+                id="calendar"
+                name="calendar"
                 placeholder="18:00"
                 onChange={onChangeInput}
-                value={alarma ? alarma.alarm : ""}
+                value={calend ? calend.calendar : ""}
               />
               <div className="containerBotonesUs">
                 <button className="botonAddNotUs" type="submit">
-                  Crear Alarma
+                  Crear Evento
                 </button>
-                <Link to="/tAlarma" className="botonVolNotUs">
+                <Link to="/tCalendar" className="botonVolNotUs">
                   Volver
                 </Link>
               </div>
@@ -132,4 +132,4 @@ const NewAlm = () => {
   );
 };
 
-export default NewAlm;
+export default NewCal;

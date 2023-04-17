@@ -21,7 +21,7 @@ function Alarmas() {
           },
         }
       );
-      console.log(response.data.alarms);
+      console.log(response);
       setAlarm(response.data.alarms);
     };
     useEffect(() => {
@@ -63,6 +63,7 @@ function Alarmas() {
                 <Link to="/tAlarma" className="botonAlmAdm">
                   Volver
                 </Link>
+                <Link to={`/modifyAlm/${alarmaId}`} className="modificarNoAdm">Modificar Nota</Link>
                 <AiFillDelete className="botonDelAlmAdm" onClick={deleteAlarma}/>
                 </div>
               </div>
@@ -79,6 +80,7 @@ function Alarmas() {
                 <Link to="/tAlarma" className="botonUsAl">
                   Volver
                 </Link>
+                <Link to={`/modifyAlm/${alarmaId}`} className="modificarNoAdm">Modificar Nota</Link>
                 <AiFillDelete className="botonAlEv" onClick={deleteAlarma}/>
                 </div>
               </div>

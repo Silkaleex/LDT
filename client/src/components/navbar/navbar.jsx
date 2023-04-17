@@ -30,7 +30,7 @@ const NavBar = () => {
                     </Link>
                   </li>
                   <li className="listas">
-                    <Link className="listaUser" to="/tEvento">
+                    <Link className="listaUser" to="/tCalendar">
                       Eventos
                     </Link>
                   </li>
@@ -83,7 +83,7 @@ const NavBar = () => {
                     </Link>
                   </li>
                   <li className="listasAdm">
-                    <Link className="listaAdmin" to="/tEvento">
+                    <Link className="listaAdmin" to="/tCalendar">
                       Eventos
                     </Link>
                   </li>

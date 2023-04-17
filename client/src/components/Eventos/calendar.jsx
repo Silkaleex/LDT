@@ -3,7 +3,8 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import "./evento.css";
+import { TbTrash } from "react-icons/tb";
+import "./calendar.css";
 
 function Eventos() {
   const { eventoId } = useParams(); //Se a creado en la seccion en pages en evento/:eventoID
@@ -46,7 +47,7 @@ function Eventos() {
         console.log(response);
         setTimeout(() => {
           // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
-          navigate("/tEvento");
+          navigate("/tCalendar");
         });
       } catch (error) {
         console.log(error.response);
@@ -61,12 +62,15 @@ function Eventos() {
             <h1>Descripcion del evento:</h1>
             <h2>{event.title}</h2>
             <h2>{event.calendar}</h2>
-            <Link to="/tEvento" className="botonEvAdm">
+            <div className="cajaBtnCal">
+            <Link to="/tCalendar" className="botonEvAdm">
               Volver
             </Link>
+            <Link to={`/modifyCal/${eventoId}`} className="modificarNoAdm">Modificar Eventos</Link>
             <button className="botonDelEvAdm" onClick={deleteEvent}>
-              Eliminar Evento
+              <TbTrash/>
             </button>
+          </div>
           </div>
         </div>
       </div>

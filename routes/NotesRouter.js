@@ -98,7 +98,7 @@ NotesRouter.put("/notas/:id", async (req, res) => {
     const { title, tareas, fecha } = req.body;
 
     await Notes.findByIdAndUpdate(id, { title, tareas, fecha });
-    const notas =  await Notes.findById(id)
+
 
     if (!title || !tareas || !fecha) {
       return res.status(400).send({
