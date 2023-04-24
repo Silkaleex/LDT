@@ -64,6 +64,9 @@ function DatosUsuario() {
                   <Link to={`/modificacionUsuario`} className="modificarAdmin">
                     Modificar Usuario
                   </Link>
+                  <Link to={`/ElmUsuario`} className="botonElUs">
+                  Eliminar a un Usuario
+                </Link>
                 </div>
               </div>
             </div>

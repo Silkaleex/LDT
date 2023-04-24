@@ -1,0 +1,33 @@
+.containerFondoEliminacion{
+    background-image: url("https://images.pexels.com/photos/4722583/pexels-photo-4722583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 1% 0% 1% 0%;
+}
+.cajaEliminacion{
+    background-color: #f1faee;
+    color:#e63946;
+    width: 40%;
+    padding: 1% 1%;
+    margin: 1% 30%;
+    text-align: left;
+}
+.btnElmUsuario {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    transition: 1s all;
+  }
+  .btnElmUsuario:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    border-left: 2px solid #e4d9ff;
+    border-right: 2px solid #d90429;
+    border-bottom: 2px solid #d90429;
+    transition: 1s all;
+  }
