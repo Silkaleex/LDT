@@ -5,8 +5,9 @@ import './newAlarm.css'
 
 const NewAlm = () => {
   const [alarma, setAlarma] = useState({
-    title: "",
+    title:"",
     alarm: "",
+    fecha:""
   });
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
@@ -48,31 +49,43 @@ const NewAlm = () => {
   return (
     <div>
       {role == 1 ? (
-        <div className="cajaAdmAlm">
+        <div className="cajaAdmAlarma">
           <form onSubmit={almSubmit}>
             <div className="containerAlmAdm">
               <label className="labelAlmAdm" htmlFor="title">
-                Titulo:
+                Titulo de la Alarma:
               </label>
               <input
                 className="inputAlmAdm"
                 type="text"
                 id="title"
                 name="title"
-                placeholder="Titulo"
+                placeholder="Titulo de la Alarma"
                 onChange={onChangeInput}
                 value={alarma ? alarma.title : ""}
               />
 
+              <label className="labelAlmAdm" htmlFor="fecha">
+                Fecha de la Alarma:
+              </label>
+              <input
+                className="inputAlmAdm"
+                type="date"
+                id="fecha"
+                name="fecha"
+                onChange={onChangeInput}
+                value={alarma ? alarma.fecha : ""}
+              />
+
               <label className="labelAlmAdm" htmlFor="alarm">
-                Alarma:
+                Hora de la Alarma:
               </label>
               <input
                 className="inputAlmAdm"
                 type="text"
                 id="alarm"
                 name="alarm"
-                placeholder="00:00"
+                placeholder="Hora del aviso"
                 onChange={onChangeInput}
                 
                 value={alarma ? alarma.alarm : ""}
@@ -89,38 +102,49 @@ const NewAlm = () => {
           </form>
         </div>
       ) : (
-        <div className="cajaUsAlm">
+        <div className="cajaUsAl">
           <form onSubmit={almSubmit}>
             <div className="containerAlmUs">
-              <label className="labelNotUs" htmlFor="title">
-                Titulo:
+            <label className="labelAlmUs" htmlFor="title">
+                Titulo de la Alarma:
               </label>
               <input
-                className="inputUs"
+                className="inputAlmUs"
                 type="text"
                 id="title"
                 name="title"
-                placeholder="titulo"
+                placeholder="Titulo de la Alarma"
                 onChange={onChangeInput}
                 value={alarma ? alarma.title : ""}
               />
-              <label className="labelNotUs" htmlFor="alarm">
-                Alarma:
+            <label className="labelAlmUs" htmlFor="fecha">
+                Fecha de la Alarma:
               </label>
               <input
-                className="inputUs"
+                className="inputAlmUs"
+                type="date"
+                id="fecha"
+                name="fecha"
+                onChange={onChangeInput}
+                value={alarma ? alarma.fecha : ""}
+              />
+              <label className="labelAlmUs" htmlFor="alarm">
+                Hora de la Alarma:
+              </label>
+              <input
+                className="inputAlmUs"
                 type="text"
                 id="alarm"
                 name="alarm"
-                placeholder="18:00"
+                placeholder="Hora del Aviso"
                 onChange={onChangeInput}
                 value={alarma ? alarma.alarm : ""}
               />
               <div className="containerBotonesUs">
-                <button className="botonAddNotUs" type="submit">
+                <button className="botonAddAlmUs" type="submit">
                   Crear Alarma
                 </button>
-                <Link to="/tAlarma" className="botonVolNotUs">
+                <Link to="/tAlarma" className="botonVolAlmUs">
                   Volver
                 </Link>
               </div>

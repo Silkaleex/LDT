@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import './datosUsuario.css'
-
+import "./datosUsuario.css";
+import { Link } from "react-router-dom";
+import { BsPersonDashFill } from "react-icons/bs";
 function DatosUsuario() {
+ 
   const [User, setUser] = useState({});
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
+
   useEffect(() => {
     const getUser = async () => {
       const response = await axios.get("http://localhost:5000/api/user", {
@@ -18,42 +21,77 @@ function DatosUsuario() {
     };
     getUser();
   }, []);
+  const deleteAccount = async (e) => {
+    e.preventDefault();
+    let opcion = window.confirm("¿Estas Seguro de Eliminar tu Cuenta?");
+    if (opcion == true) {
+      try {
+        const response = await axios.delete("http://localhost:5000/api/user", {
+          headers: {
+            Authorization: token,
+          },
+        });
+        localStorage.removeItem("role");
+        localStorage.removeItem("token");
+        localStorage.removeItem("name");
+        console.log(response);
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
+      } catch (error) {
+        console.log(error.response);
+      }
+    }
+  };
+ 
   return (
     <>
       {role == 1 ? (
         <div className="containerpeAdm">
-        <div className="cajaPeAdm">
-          <div className="card">
-            <div className="card-body">
-            <h3>Hola {User.name} Aqui tienes tus datos de perfil de usuario:</h3>
-              <h5 className="card-title"> {User.name}</h5>
-              <h5 className="card-subtitle mb-2 text-body-secondary">
-               {User.surname}
-              </h5>
-              <h5 className="card-text">
-             {User.email}
-              </h5>
+          <div className="cajaPeAdm">
+            <div className="card cartaAdmin">
+              <div className="card-body">
+                <h3 className="tituloAdmin">
+                  Hola {User.name} Aqui tienes tus datos como Administrador:
+                </h3>
+                <h5>Nombre:  {User.name}</h5>
+                <h5>Apellidos:  {User.surname}</h5>
+                <h5>Email:  {User.email}</h5>
+                <div className="cajabotonesAdmin">
+                  <button className="botonDelAdm" onClick={deleteAccount}>
+                <BsPersonDashFill/>
+                  </button>
+                  <Link to={`/modificacionUsuario`} className="modificarAdmin">
+                    Modificar Usuario
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        </div>
       ) : (
         <div className="containerPeUs">
-        <div className="cajaPeUs">
-        <div className="card">
-          <div className="card-body">
-            <h3>Hola {User.name} Aqui tienes tus datos de perfil de usuario:</h3>
-            <h5 className="card-title">*{User.name}</h5>
-            <h5 className="card-subtitle mb-2 text-body-secondary">
-            *{User.surname}
-            </h5>
-            <h5 className="card-text">
-            *{User.email}
-            </h5>
+          <div className="cajaPeUs">
+            <div className="card cartaUs">
+              <div className="card-body">
+                <h3>
+                  Hola {User.name} Aqui tienes tus datos de Usuario:
+                </h3>
+                <h5>Nombre: {User.name}</h5>
+                <h5>Apellidos: {User.surname}</h5>
+                <h5>Email: {User.email}</h5>
+              </div>
+              <div className="cajaBotonesUsuario">
+                <button className="botonElUs" onClick={deleteAccount}>
+               <BsPersonDashFill/>
+                </button>
+                <Link to={`/modificacionUsuario`} className="modificarUsuario">
+                  Modificar Usuario
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      </div>
       )}
     </>
   );

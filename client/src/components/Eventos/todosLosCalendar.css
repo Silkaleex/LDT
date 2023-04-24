@@ -1,9 +1,9 @@
 /*Caja Admin*/
 .fondoAdmCal{
-  background-image: url("https://images.pexels.com/photos/9439257/pexels-photo-9439257.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-image: url("https://images.pexels.com/photos/2897462/pexels-photo-2897462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
   background-size: cover;
   background-position: center;
-  padding: 0% 0% 11.9% 0%;
+  padding: 0% 0% 19.9% 0%;
 }
 .cajaAdminisCal{
   margin:0px auto;
@@ -28,7 +28,7 @@
   margin: 2% 49%;
 }
 .circuloCalAdm{
-  background-color: #3b17a7;
+  background-color: #231942;
   border-radius: 50%;
   color: #fafaff;
   border: 3px groove #fafaff;
@@ -43,10 +43,6 @@
   transition:1s all;
   padding: 0% 20%;
 }
-.cartaCalAdm{
-  width: 100%;
-}
-
 .accederCal{
   color:#fafaff;
   background-color: #231942;
@@ -68,20 +64,26 @@
   border:1px groove #231942;
 }
 /*Caja Usuario*/
-.fondoUsCalen{
+.fondoUsCalendar{
   background-image: url(https://images.pexels.com/photos/1410226/pexels-photo-1410226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
   background-size: cover;
   background-position: center;
-  padding: 0% 0% 11.9% 0%;
+  padding: 2% 0% 33.5% 0%;
 }
-.cajaUsCalen{}
+
+.cajaUsuCalen{
+  margin:0px auto;
+  padding: 2% 0% 10.3% 0%;
+
+}
+
 .letraCalUs{
   color:#e0e1dd;
   text-shadow: 1px 1px 1px #000;
 }
 .tusCal{
   text-align: center;
-  color: #fafaff;
+  color: #a3cef1;
   text-shadow: 1px 1px 1px #000;
 }
 .cartaCalUs{

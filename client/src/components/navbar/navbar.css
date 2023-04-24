@@ -24,7 +24,7 @@
 .listaUser {
   color: #a3cef1;
   display: flex;
-  margin: 0% 10%;
+  margin: 0% 8%;
   text-decoration: none;
   list-style: none;
   transition: 1s all;
@@ -32,7 +32,7 @@
 }
 .listaUser:hover {
   color: #e0e1dd;
-  margin: 0% 10%;
+  margin: 0% 8%;
   transition: 1s all;
   text-shadow: 1px 1px 1px #000;
 }
@@ -56,7 +56,7 @@
 }
 .containerAdm {
 display:flex;
-padding: 2% 0% 2% 1%;
+padding: 2% 0% 1% 1%;
 }
 .listaAd {
   display: flex;

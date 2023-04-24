@@ -27,6 +27,7 @@ const User = () => {
           Authorization: token,
         },
       });
+      console.log(response)
       setUser(response.data.User);
     };
     getUser();
@@ -51,7 +52,7 @@ const User = () => {
        </div>
        <div className="cajaEnAdmin">
        <h3 className="colorLetrasAdm letraEnlaceAdm">Planificador</h3>
-       <a className="enlaceAdm" href="/planificador">Acceder a Planificador</a>
+       <a className="enlaceAdm" href="/tPlanificador">Acceder a Planificador</a>
        </div>
        <div className="cajaEnAdmin">
        <h3 className="colorLetrasAdm letraEnlaceAdm">Tus Alarmas</h3>
@@ -74,7 +75,7 @@ const User = () => {
           </div>
           <div className="cajaEnUsuario">
           <h3 className="colorLetras letraEnlace">Planificador</h3>
-          <a className="enlaceUsuario" href="/planificador">Acceder a Planificador</a>
+          <a className="enlaceUsuario" href="/tPlanificador">Acceder a Planificador</a>
           </div>
           <div className="cajaEnUsuario">
           <h3 className="colorLetras letraEnlace">Alarma</h3>

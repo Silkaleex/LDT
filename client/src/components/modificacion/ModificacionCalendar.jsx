@@ -10,8 +10,9 @@ const ModifcacionEvt = () => {
   const { eventoId } = useParams();
   const Navigate = useNavigate();
   const [evt, setEvt] = useState({
-    title:"",
+
     calendar:"",
+    fecha:""
   });
 
   const onChangeInput = (e) => {
@@ -53,21 +54,10 @@ const ModifcacionEvt = () => {
   return (
     <>
       {role == 1 ? (
-        <div className="cajaAdmCal">
+        <div className="cajaAdmCa">
           <form onSubmit={modificacionSubmit}>
             <div className="containerCalAdm">
-              <label className="labelCalAdm" htmlFor="titulo">
-                Titulo:
-              </label>
-              <input
-                className="inputAdm"
-                placeholder="Titulo"
-                type="text"
-                name="title"
-                id="titulo"
-                value={evt.title}
-                onChange={onChangeInput}
-              ></input>
+             
               <label className="labelCalAdm" htmlFor="calendar">
                 Evento:
               </label>
@@ -80,6 +70,19 @@ const ModifcacionEvt = () => {
                 value={evt.calendar}
                 onChange={onChangeInput}
               ></textarea>
+              <label className="labelCalAdm" htmlFor="fecha">
+                Fecha del Evento:
+              </label>
+              <input
+                className="tareasAdm inputAdm"
+                placeholder="Descripcion de tu Evento"
+                type="data"
+                name="fecha"
+                id="fecha"
+                value={evt.fecha}
+                onChange={onChangeInput}
+              />
+              
               <div className="containerBotonesAdm">
                 <button className="botonModCalAdm">Modificar Evento</button>
                 <Link to="/tCalendar" className="botonVolCalAdm">
@@ -93,32 +96,30 @@ const ModifcacionEvt = () => {
         <div className="cajaUsCal">
           <form onSubmit={modificacionSubmit}>
             <div className="containerCalUs">
-              <label className="labelCalUs" htmlFor="titulo">
-                Titulo:
-              </label>
-              <input
-                className="inputUs"
-                placeholder="Titulo"
-                type="text"
-                name="title"
-                id="titulo"
-                value={evt.title}
-                onChange={onChangeInput}
-              ></input>
-              <label className="labelCalUs" htmlFor="calendar">
+               <label className="labelCalUs" htmlFor="calendar">
                 Evento:
               </label>
               <textarea
                 className="tareasUs inputUs"
-                placeholder="Descripcion del Evento"
+                placeholder="Descripcion de tu Evento"
                 type="textarea"
                 name="calendar"
                 id="calendar"
-                cols="100"
-                rows="10"
                 value={evt.calendar}
                 onChange={onChangeInput}
               ></textarea>
+              <label className="labelCalUs" htmlFor="fecha">
+                Fecha Evento:
+              </label>
+              <input
+                className="tareasUs inputUs"
+                placeholder="Descripcion del Evento"
+                type="date"
+                name="fecha"
+                id="fecha"
+                value={evt.fecha}
+                onChange={onChangeInput}
+              />
               <div className="containerBotonesUs">
                 <button className="botonModCalUs">Modificar Evento</button>
                 <Link to="/tCalendar" className="botonVolCalUs">

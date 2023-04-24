@@ -36,9 +36,9 @@ const TodosLosEventos = () => {
                 <div key={evento._id}>
                   <div className="card cartaEventoCal">
                     <div className="card-body cartaCalAdm">
-                      <h2>{evento.title}</h2>
-                      <h3>{evento.calendar}</h3>
-
+                      <h2 className="fs-1">{evento.title}</h2>
+                      <h3 className="fs-4">{evento.calendar}</h3>
+                      <h3 className="fs-4">{evento.fecha}</h3>
                       <Link
                         to={`/calendar/${evento._id}`}
                         className="card-link accederCal"
@@ -58,7 +58,7 @@ const TodosLosEventos = () => {
           </div>
         </div>
       ) : (
-        <div className="fondoUsCalen">
+        <div className="fondoUsCalendar">
           <div className="cajaUsCalen">
             <h1 className="tusCal">Tus Eventos</h1>
             {event.map((evento) => {
@@ -66,9 +66,9 @@ const TodosLosEventos = () => {
                 <div key={evento._id}>
                   <div className="card cartaCalUs">
                     <div className="card-body letraCalUs">
-                      <h2>{evento.title}</h2>
-                      <h3>{evento.calendar}</h3>
-
+                      <h2 className="fs-1">{evento.title}</h2>
+                      <h3 className="fs-4">{evento.calendar}</h3>
+                      <h3 className="fs-4">{evento.fecha}</h3>
                       <Link
                         to={`/calendar/${evento._id}`}
                         className="card-link accederCalUs"
@@ -81,11 +81,11 @@ const TodosLosEventos = () => {
               );
             })}
           </div>
-                    <div className="cajaCirculoCalUs">
-                      <Link to="/newCal" className="circuloCalUs">
-                        <CgNotes />
-                      </Link>
-                    </div>
+          <div className="cajaCirculoCalUs">
+            <Link to="/newCal" className="circuloCalUs">
+              <CgNotes />
+            </Link>
+          </div>
         </div>
       )}
     </>

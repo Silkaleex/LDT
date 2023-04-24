@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./Notas.css";
+import { TbTrash } from "react-icons/tb";
 
 function Notas() {
   const { notaId } = useParams();
@@ -26,7 +27,7 @@ function Notas() {
   };
   useEffect(() => {
     getNotas();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   // console.log(nota);
@@ -69,7 +70,7 @@ function Notas() {
                 Volver
               </Link>
               <Link to={`/modify/${notaId}`} className="modificarNoAdm">Modificar Nota</Link>
-              <button className="botonDelAdm" onClick={deleteNota}>Eliminar Nota</button>
+              <button className="botonDelAdmNot" onClick={deleteNota}><TbTrash/></button>
               </div>
             </div>
           </div>
@@ -87,7 +88,7 @@ function Notas() {
                 Volver
               </Link>
               <Link to={`/modify/${notaId}`} className="modificarNoUs">Modificar Nota</Link>
-              <button className="botonNotaUs" onClick={deleteNota}>Eliminar Nota</button>
+              <button className="botonNotaUs" onClick={deleteNota}><TbTrash/></button>
               </div>
             </div>
           </div>

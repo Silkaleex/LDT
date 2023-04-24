@@ -75,7 +75,7 @@
   transition:1s all;  
   margin: 0% 3%;
 }
-.botonDelAdm {
+.botonDelAdmNot {
   background-color: #d90429;
   color: #e4d9ff;
   border-bottom: 2px solid #e4d9ff;
@@ -83,9 +83,8 @@
   border-left: 2px solid #d90429;
   border-top: 2px solid #d90429;
   transition: 1s all;
-  font-size: 13px;
 }
-.botonDelAdm:hover {
+.botonDelAdmNot:hover {
   background-color: #d90429;
   color: #e4d9ff;
   border-top: 2px solid #e4d9ff;
@@ -93,7 +92,6 @@
   border-right: 2px solid #d90429;
   border-bottom: 2px solid #d90429;
   transition: 1s all;
-  font-size: 13px;
 }
 /*Como usuario*/
 .fondoNotaUs {
@@ -129,9 +127,13 @@
   padding: 0% 2%;
 }
 .botonUs:hover {
-  background-color: #e0e1dd;
-  color: #04052e;
-  text-shadow: 1px 1px 1px #e4d9ff;
+  color: #e0e1dd;
+  background-color: #1b263b;
+  border-bottom: 2px solid #1b263b;
+  border-right: 2px solid #1b263b;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
   text-decoration: none;
   transition: 1s all;
   border-radius: 1%;

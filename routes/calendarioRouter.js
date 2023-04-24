@@ -6,10 +6,10 @@ const auth = require("../middeleware/auth");
 
 calendarRouter.post("/calendars", auth, async (req, res) => {
   try {
-    const { title, calendar } = req.body;
+    const { title, calendar, fecha } = req.body;
     let userId = await User.findById(req.user.id);
 
-    if (!title || !calendar) {
+    if (!title || !calendar || !fecha) {
       return res.status(400).send({
         success: false,
         message: "No completastes todos los pasos",
@@ -21,15 +21,10 @@ calendarRouter.post("/calendars", auth, async (req, res) => {
         message: "No completastes todos los pasos",
       });
     }
-    if (title.length > 30) {
-      return res.status(400).send({
-        success: false,
-        message: "No completastes todos los pasos",
-      });
-    }
-    
+
     let newCalendar = new calendario({
       title,
+      fecha,
       calendar,
       user: userId,
     });
@@ -58,7 +53,7 @@ calendarRouter.get("/calendars/:id", auth, async (req, res) => {
     const { id } = req.params;
     let calendars = await calendario.findById(id).populate({
       path: "user",
-      select: "name ",
+      select: "name",
     });
     if (!calendars) {
       return res.status(400).send({
@@ -81,14 +76,15 @@ calendarRouter.get("/calendars/:id", auth, async (req, res) => {
 calendarRouter.put("/calendars/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, calendar } = req.body;
+    const { title, calendar, fecha } = req.body;
 
     await calendario.findByIdAndUpdate(id, {
       title,
       calendar,
+      fecha,
     });
 
-    if (!title || !calendar) {
+    if (!title || !fecha) {
       return res.status(400).send({
         succcess: false,
         message: "No completastes todos los campos",

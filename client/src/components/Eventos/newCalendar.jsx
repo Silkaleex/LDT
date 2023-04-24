@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import './newAlarm.css'
+import "./newCalendar.css"
 
 const NewCal = () => {
   const [calend, setCalend] = useState({
     title:"",
     calendar:"",
+    fecha:"",
   });
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
@@ -48,31 +49,45 @@ const NewCal = () => {
   return (
     <div>
       {role == 1 ? (
-        <div className="cajaAdmAlm">
+        <div className="cajaAdmCal">
           <form onSubmit={calendarSubmit}>
-            <div className="containerAlmAdm">
-              <label className="labelAlmAdm" htmlFor="title">
+            <div className="containerCalAdm">
+              <label className="labelCalAdm" htmlFor="title">
                 Titulo:
               </label>
               <input
-                className="inputAlmAdm"
+                className="inputCalAdm"
                 type="text"
                 id="title"
                 name="title"
-                placeholder="Titulo"
+                placeholder="Titulo del Evento"
                 onChange={onChangeInput}
                 value={calend ? calend.title : ""}
               />
-
-              <label className="labelAlmAdm" htmlFor="calendar">
-                Evento:
+               <label className="labelCalAdm" htmlFor="fecha">
+               Fecha del evento:
               </label>
               <input
-                className="inputAlmAdm"
-                type="text"
+                className="inputCalAdm"
+                type="date"
+                id="fecha"
+                name="fecha"
+                placeholder="Fecha del evento"
+                onChange={onChangeInput}
+                value={calend ? calend.fecha : ""}
+              />
+
+              <label className="labelCalAdm" htmlFor="calendar">
+                Descripcion del Evento:
+              </label>
+              <textarea
+                className="inputCalAdm txt-hidden"
+                type="textarea"
                 id="calendar"
                 name="calendar"
-                placeholder="00:00"
+                cols="100"
+                rows="10"
+                placeholder="Descripcion del evento"
                 onChange={onChangeInput}
                 
                 value={calend ? calend.calendar : ""}
@@ -81,7 +96,7 @@ const NewCal = () => {
                 <button className="botonAddAlmAdm" type="submit">
                   Crear Evento
                 </button>
-                <Link to="/tCalendar" className="botonVolAlmAdm">
+                <Link to="/tCalendar" className="botonVolCalAdm">
                   Volver
                 </Link>
               </div>
@@ -89,38 +104,52 @@ const NewCal = () => {
           </form>
         </div>
       ) : (
-        <div className="cajaUsCa">
+        <div className="cajaUsCale">
           <form onSubmit={calendarSubmit}>
-            <div className="containerAlmUs">
-              <label className="labelNotUs" htmlFor="title">
+            <div className="containerCalUs">
+              <label className="labelCalUs" htmlFor="title">
                 Titulo:
               </label>
               <input
-                className="inputUs"
+                className="inputCalUs"
                 type="text"
                 id="title"
                 name="title"
-                placeholder="titulo"
+                placeholder="Descripcion del Evento"
                 onChange={onChangeInput}
                 value={calend ? calend.title : ""}
               />
-              <label className="labelNotUs" htmlFor="calendar">
-                Evento:
+                  <label className="labelCalUs" htmlFor="fecha">
+                  Fecha del evento:
               </label>
               <input
-                className="inputUs"
-                type="text"
+                className="inputCalUs"
+                type="date"
+                id="fecha"
+                name="fecha"
+                placeholder="Fecha del evento"
+                onChange={onChangeInput}
+                value={calend ? calend.fecha : ""}
+              />
+              <label className="labelCalUs" htmlFor="calendar">
+                Descripcion del Evento:
+              </label>
+              <textarea
+                className="inputCalUs txt-hidden"
+                type="textarea"
                 id="calendar"
                 name="calendar"
-                placeholder="18:00"
+                cols="100"
+                rows="10"
+                placeholder=" Descripcion del Evento"
                 onChange={onChangeInput}
                 value={calend ? calend.calendar : ""}
               />
               <div className="containerBotonesUs">
-                <button className="botonAddNotUs" type="submit">
+                <button className="botonAddCalUs" type="submit">
                   Crear Evento
                 </button>
-                <Link to="/tCalendar" className="botonVolNotUs">
+                <Link to="/tCalendar" className="botonVolCalenUs">
                   Volver
                 </Link>
               </div>

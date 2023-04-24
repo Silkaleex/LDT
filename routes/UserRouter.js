@@ -195,6 +195,28 @@ UserRouter.put("/users_desban/:id", auth, authAdmin, async (req, res) => {
  *nueva implementacion de ruta privada con token
  añadimos el middelwarte de autentificacion
  */
+UserRouter.get("/users",auth,authAdmin, async(req,res)=>{
+  let Users = await user.find({})//.populate();
+  try{
+  if (!Users) {
+    return res.status(400).send({
+      success: false,
+      message: "Usuario no encontrado",
+    });
+  }
+  return res.status(200).send({
+    success: true,
+    message: "usuario encontrado correctamente",
+    Users,
+  });
+
+}catch(error) {
+  return res.status(500).send({
+    success: false,
+    message: error.message,
+  })};
+})
+
 UserRouter.get("/user", auth, async (req, res) => {
   try {
     let User = await user.findById(req.user.id)//.populate();
@@ -240,7 +262,7 @@ UserRouter.get("/toNotes", auth, async (req, res) => {
 
 UserRouter.get("/toAlarms", auth, async (req, res) => {
   try {
-    let alarmas = await user.findById(req.user.id).populate({path:'alarma', select:'title alarm'});
+    let alarmas = await user.findById(req.user.id).populate({path:'alarma', select:'title alarm fecha'});
     if (!alarmas) {
       return res.status(400).send({
         success: false,
@@ -262,7 +284,7 @@ UserRouter.get("/toAlarms", auth, async (req, res) => {
 
 UserRouter.get("/toCalen", auth, async (req, res) => {
   try {
-    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar'});
+    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar fecha'});
     if (!eventos) {
       return res.status(400).send({
         success: false,
@@ -271,7 +293,7 @@ UserRouter.get("/toCalen", auth, async (req, res) => {
     }
     return res.status(200).send({
       success: true,
-      message: "Evento encontrados correctamente",
+      message: "Eventos encontrados correctamente",
       eventos,
     });
   } catch (error) {
@@ -282,15 +304,54 @@ UserRouter.get("/toCalen", auth, async (req, res) => {
   }
 });
 
+UserRouter.get("/toPlan", auth, async (req, res) => {
+  try {
+    let Planificador = await user.findById(req.user.id).populate({path:'planning', select:'title description'});
+    if (!Planificador) {
+      return res.status(400).send({
+        success: false,
+        message: "Planificador no encontrado",
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      message: "Planificadores encontrados correctamente",
+      Planificador,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+UserRouter.put("/user",auth, async (req, res) => {
+  try {
+    const {name,email } = req.body;
+
+
+    await user.findByIdAndUpdate({_id:req.user.id},{name,email},
+      {new:true});
+
+  const user2 = await user.findById(req.user.id)
+    return res.status(200).send({
+      success: true,
+      message: "Usuario modificado",
+      user2
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+
 UserRouter.delete("/user", auth, async (req, res) => {
   try {
     await user.findByIdAndDelete(req.user.id);
-    if (!user) {
-      return res.status(400).send({
-        success: false,
-        message: "No se a encontrado al usuario",
-      });
-    }
     return res.status(200).send({
       success: true,
       message: "Usuario eliminado",

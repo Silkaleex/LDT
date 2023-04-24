@@ -2,12 +2,13 @@ console.log("Hello World!");
 const express = require("express");
 const app = express();
 const cors = require("cors")
+const bodyParser = require("body-parser")
 
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-app.use(express.json({ extended: true }));
-app.use(express.urlencoded({ extended: true }));
+app.use(bodyParser.json({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: true }));
 //utilizamos corse para que este acedido desde cualquier lugar
 app.use(cors())
 

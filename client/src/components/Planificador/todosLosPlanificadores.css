@@ -1,0 +1,140 @@
+/*Administrador*/
+.fondoAdmPlaning{
+    background-image: url(https://images.pexels.com/photos/353644/pexels-photo-353644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 1% 0% 36% 0%;
+}
+.cajaAdmPlanning{
+        margin: 0px auto;
+        text-align: center;
+}
+.tituloAdmPlanning{
+    color:#fafaff;
+    text-shadow: 1px 1px 1px#000;
+}
+.contenidoAdmPlanning{
+    width: 40%;
+    margin: 0% auto;
+    background-color: #5e548eb2;
+    text-align: left;
+}
+.DescripcionAdmPlanning{
+    text-decoration: none;
+    color:#fafaff;
+    text-shadow: 1px 1px 1px#000;
+    padding: 5%;
+}
+.accesoAdmPlanning{
+    text-decoration: none;
+    color:#fafaff;
+    text-shadow: 1px 1px 1px#000;
+    background-color: #231942;
+    transition:1s all;
+    padding: 0% 4%;
+    
+}
+.accesoAdmPlanning:hover{
+    text-decoration: none;
+    background-color:#fafaff;
+    color: #231942;
+    text-shadow: 1px 1px 1px#000;
+    transition:1s all;
+    padding: 0% 4%;
+    
+}
+.cajaEnlaceAdmPLanning{
+    margin: 2% 48%;
+}
+.enlaceAdmPlanning{ 
+    background-color: #231942;
+    padding: 3% 70%;
+    color: #fafaff;
+    border-top: 3px groove #000;
+    border-left: 3px groove #000;
+    border-bottom: 5px groove #fafaff;
+    border-right: 5px groove #fafaff;
+    transition:1s all;
+}
+
+.enlaceAdmPlanning:hover{ 
+    color: #fafaff;
+    padding: 3% 70%;
+    background-color: #231942;
+    border-top: 3px groove #fafaff;
+    border-left: 3px groove #fafaff;
+    border-bottom: 5px groove #000;
+    border-right: 5px groove #000;
+    transition:1s all;
+}
+/*Usuario*/
+.fondoUsPlaning{
+    background-image: url("https://images.pexels.com/photos/4132326/pexels-photo-4132326.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2://images.pexels.com/photos/353644/pexels-photo-353644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 1% 0% 32% 0%;
+}
+.cajaUsPlanning{
+        margin: 0px auto;
+        text-align: center;
+}
+.tituloUsPlanning{
+    color:#e0e1dd;
+    text-shadow: 1px 1px 1px#000;
+}
+.contenidoUsPlanning{
+    width: 40%;
+    margin: 0% auto;
+    background-color: #1e2749b4;
+    text-align: left;
+}
+.DescripcionUsPlanning{
+    text-decoration: none;
+    color:#e0e1dd;
+    text-shadow: 1px 1px 1px#000;
+    padding: 5%;
+}
+.accesoUsPlanning{
+    text-decoration: none;
+    color:#e0e1dd;
+    text-shadow: 1px 1px 1px#000;
+    background-color: #1e2749;
+    transition:1s all;
+    padding: 0% 4%;
+    
+}
+.accesoUsPlanning:hover{
+    text-decoration: none;
+    background-color:#e0e1dd;
+    color: #1b263b;
+    text-shadow: 1px 1px 1px#fafaff;
+    transition:1s all;
+    padding: 0% 4%;
+    
+}
+.cajaEnlaceUsPLanning{
+    margin: 2% 48%;
+}
+.enlaceUsPlanning{ 
+    background-color: #1b263b;
+    padding: 3% 70%;
+    color: #e0e1dd;
+    border-top: 3px groove #000;
+    border-left: 3px groove #000;
+    border-bottom: 5px groove #e0e1dd;
+    border-right: 5px groove #e0e1dd;
+    transition:1s all;
+}
+
+.enlaceUsPlanning:hover{ 
+    background-color: #e0e1dd;
+    padding: 3% 70%;
+    color: #1b263b;
+    border-top: 5px groove #e0e1dd;
+    border-left: 5px groove #e0e1dd;
+    border-bottom: 3px groove #000;
+    border-right: 3px groove #000;
+    transition:1s all;
+}

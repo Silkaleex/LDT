@@ -8,7 +8,7 @@ import "./calendar.css";
 
 function Eventos() {
   const { eventoId } = useParams(); //Se a creado en la seccion en pages en evento/:eventoID
-  const [event, setEvento] = useState({});
+  const [event, setEvento] = useState([]);
   const token = localStorage.getItem("token");
   // const role = localStorage.getItem("role");
   const navigate = useNavigate();
@@ -60,8 +60,9 @@ function Eventos() {
         <div className="contenedorEvAdm">
           <div className="descripcionEvAdm">
             <h1>Descripcion del evento:</h1>
-            <h2>{event.title}</h2>
-            <h2>{event.calendar}</h2>
+            <h2 className="fs-5">Evento: {event.title}</h2>
+            <h2 className="fs-5">Descripción: {event.calendar}</h2>
+            <h2 className="fs-5">Fecha: {event.fecha}</h2>
             <div className="cajaBtnCal">
             <Link to="/tCalendar" className="botonEvAdm">
               Volver

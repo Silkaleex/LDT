@@ -16,12 +16,12 @@ const NavBar = () => {
         <nav>
           <div className="cajaGenUs">
             <div className="cajaUser">
-              <h4 className="tUsuario">Bienvenido {name}</h4>
+              <h4 className="tUsuario">Bienvenido/a {name}</h4>
             
                 <ul className="listaUser">
                   <li className="listas">
                     <Link className="listaUser" to="/usuario">
-                      Usuario
+                      Home
                     </Link>
                   </li>
                   <li className="listas">
@@ -35,7 +35,7 @@ const NavBar = () => {
                     </Link>
                   </li>
                   <li className="listas">
-                    <Link className="listaUser" to="/planificador">
+                    <Link className="listaUser" to="/tPlanificador">
                       Planificador
                     </Link>
                   </li>
@@ -69,12 +69,12 @@ const NavBar = () => {
         <nav>
           <div className="cajaAdm ">
             <div className="containerAdm">
-              <h4 className="tAdmin">Bienvenido {name}</h4>
+              <h4 className="tAdmin">Bienvenido/a {name}</h4>
           
                 <ul className="listaAd">
                   <li className="listasAdm">
                     <Link className="listaAdmin" to="/usuario">
-                      Usuario
+                      Home
                     </Link>
                   </li>
                   <li className="listasAdm">
@@ -88,7 +88,7 @@ const NavBar = () => {
                     </Link>
                   </li>
                   <li className="listasAdm">
-                    <Link className="listaAdmin" to="/planificador">
+                    <Link className="listaAdmin" to="/tPlanificador">
                       Planificador
                     </Link>
                   </li>
@@ -119,14 +119,17 @@ const NavBar = () => {
       <>
         <nav>
           <div className="cajaHome">
-            <h1 className="tituloInicial">Bienvenido a LDT!</h1>
+            <h1 className="tituloInicial">Bienvenidos a LDT!</h1>
           </div>
         </nav>
       </>
     );
   };
   // eslint-disable-next-line eqeqeq
-  let navbar = role == 0 ? NavUser() : role == 1 ? NavAdmin() : NavHome();
+  let navbar = role == 0 ? NavUser() : role == 1 ? NavAdmin() :   NavHome();
+
+
+
   return (
     <div>
       {/*Condición, que en función del rol si está logueado o no me demuestra una nav(una función) u otra */}

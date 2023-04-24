@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema(
     planning: [
       {
         type: mongoose.Types.ObjectId,
-        ref: "planificador",
+        ref: "Planificador",
       },
     ],
     banned: [

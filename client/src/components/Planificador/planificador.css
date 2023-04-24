@@ -1,45 +1,111 @@
-.fondoPlanAdm{
-    background-image: url("https://images.pexels.com/photos/760710/pexels-photo-760710.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
+/*Planificador como administrador*/
+.fondoPlnAdm {
+  background-image: url("https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 3% 0% 5.8% 0%;
 }
-.contenedorPlanAdm{
-    text-shadow: 1px 1px 1px #000;
-    padding: 2.1% 2%;
+.contenedorPlnAdm {
+  text-shadow: 1px 1px 1px #000;
+  padding: 2.1% 2%;
 }
-.tituloPlanAdm{
-    text-shadow: 1px 1px 1px #000;
-    color:#fafaff;
-    text-align: center;
-    margin: 0% 0%;
+.descripcionPlnAdm {
+  background-color: #5e548eb2;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  padding: 1.45% 2%;
+  width: 50%;
+  margin: 0px auto;
 }
-.contenidoPlanAdm{
-    background-color: #5e548eb2;
-    text-shadow: 1px 1px 1px #000;
-    padding: 1.45% 2%;
-    width: 50%;
-    margin: 0px auto;
+.botonDelAdmPln {
+  background-color: #d90429;
+  color: #e4d9ff;
+  border-bottom: 2px solid #e4d9ff;
+  border-right: 2px solid #e4d9ff;
+  border-left: 2px solid #d90429;
+  border-top: 2px solid #d90429;
+  transition: 1s all;
 }
-.enlacesPLanAdm{
-    text-decoration: none;
-    font-size: 20px;
-    color: #fafaff;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
-}
-.enlacesPlan:hover{
-    text-decoration: none;
-    font-size: 20px;
-    color: #231942;
-    text-shadow: 1px 1px 1px #fff;
-    transition:1s all;
 
+.botonDelAdmPln:hover {
+  background-color: #d90429;
+  color: #e4d9ff;
+  border-top: 2px solid #e4d9ff;
+  border-left: 2px solid #e4d9ff;
+  border-right: 2px solid #d90429;
+  border-bottom: 2px solid #d90429;
+  transition: 1s all;
 }
-.eliminarPlanAdm{
-    color: #fafaff;
-    margin: 0% 0% 4% 0%;
-    box-shadow:1px 1px 1px 1px #000;
-    transition:1s all;
 
+/*Planificador como Usuario*/
+.fondoPlnUs {
+  background-image: url(https://images.pexels.com/photos/4476376/pexels-photo-4476376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 3% 0% 17.9% 0%;
+}
+.contenedorPlnUs {
+  text-shadow: 1px 1px 1px #000;
+  padding: 2.1% 2%;
+}
+.descripcionPlnUs {
+  background-color: #5e548eb2;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  padding: 1.45% 2%;
+  width: 50%;
+  margin: 0px auto;
+}
+.cajaBotonesUs {
+    margin: 0% 21%;
+}
+.modificarPlnUs {
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: 0% 1%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
+  margin: 0% 5%;
+}
+.modificarPlnUs:hover {
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: 0% 1%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+  margin: 0% 5%;
+}
+
+.botonPlnUs {
+  background-color: #d90429;
+  color: #e4d9ff;
+  border-bottom: 2px solid #e4d9ff;
+  border-right: 2px solid #e4d9ff;
+  border-left: 2px solid #d90429;
+  border-top: 2px solid #d90429;
+  transition: 1s all;
+}
+
+.botonPlnUs:hover {
+  background-color: #d90429;
+  color: #e4d9ff;
+  border-top: 2px solid #e4d9ff;
+  border-left: 2px solid #e4d9ff;
+  border-right: 2px solid #d90429;
+  border-bottom: 2px solid #d90429;
+  transition: 1s all;
 }

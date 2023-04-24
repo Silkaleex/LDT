@@ -9,7 +9,6 @@ const Modifcacion = () => {
   const { notaId } = useParams();
   const Navigate = useNavigate();
   const [nota, setNota] = useState({
-    title: "",
     fecha: "",
     tareas: "",
   });
@@ -56,18 +55,6 @@ const Modifcacion = () => {
         <div className="cajaAdmNot">
           <form onSubmit={modificacionSubmit}>
             <div className="containerNotasAdm">
-              <label className="labelNotAdm" htmlFor="titulo">
-                Titulo:
-              </label>
-              <input
-                className="inputAdm"
-                placeholder="Titulo"
-                type="text"
-                name="title"
-                id="titulo"
-                value={nota.title}
-                onChange={onChangeInput}
-              ></input>
               <label className="labelNotAdm" htmlFor="tareas">
                 Tareas:
               </label>
@@ -87,15 +74,14 @@ const Modifcacion = () => {
               </label>
               <input
                 className="inputAdm"
-                placeholder="Fecha"
-                type="text"
+                type="date"
                 name="fecha"
                 id="fecha"
                 value={nota.fecha}
                 onChange={onChangeInput}
               ></input>
               <div className="containerBotonesAdm">
-                <button className="botonModNotAdm">Modificar Libro</button>
+                <button className="botonModNotAdm">Modificar Nota</button>
                 <Link to="/tNotas" className="botonVolNotAdm">
                   Volver
                 </Link>
@@ -107,18 +93,6 @@ const Modifcacion = () => {
         <div className="cajaUsNot">
           <form onSubmit={modificacionSubmit}>
             <div className="containerNotasUs">
-              <label className="labelNotUs" htmlFor="titulo">
-                Titulo:
-              </label>
-              <input
-                className="inputUs"
-                placeholder="Titulo"
-                type="text"
-                name="title"
-                id="titulo"
-                value={nota.title}
-                onChange={onChangeInput}
-              ></input>
               <label className="labelNotUs" htmlFor="tareas">
                 Tareas:
               </label>
@@ -138,8 +112,7 @@ const Modifcacion = () => {
               </label>
               <input
                 className="inputUs"
-                placeholder="Fecha"
-                type="text"
+                type="date"
                 name="fecha"
                 id="fecha"
                 value={nota.fecha}

@@ -6,10 +6,10 @@ const auth = require("../middeleware/auth");
 
 planificadorRouter.post("/planificador", auth, async (req, res) => {
   try {
-    const { title, description } = req.body;
+    const { title, description,fecha } = req.body;
     let userId = await User.findById(req.user.id);
 
-    if (!title || !description) {
+    if (!title || !description||!fecha) {
       return res.status(400).send({
         success: false,
         message: "No completastes todos los pasos",
@@ -37,6 +37,7 @@ planificadorRouter.post("/planificador", auth, async (req, res) => {
     let newPlanificador = new Planificador({
       title,
       description,
+      fecha,
       user: userId,
     });
     await User.findByIdAndUpdate(userId, {
@@ -86,10 +87,10 @@ planificadorRouter.get("/planificador/:id", auth, async (req, res) => {
 planificadorRouter.put("/planificador/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const {title, planificador } = req.body;
+    const {description,fecha } = req.body;
 
     await Planificador.findByIdAndUpdate(id);
-    if (!title || !planificador) {
+    if (!fecha || !description) {
       return res.status(400).send({
         succcess: false,
         message: "No completastes todos los campos",

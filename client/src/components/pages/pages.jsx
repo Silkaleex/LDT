@@ -10,18 +10,22 @@ import Notas from "../Notas/Notas";
 import TodasLasAlarmas from "../Eventos/TodasLasAlarmas";
 import Alarma from"../Eventos/Alarmas"
 import Planificador from "../Planificador/Planificador";
+import TodosLosPlanificadores from '../Planificador/todosLosPlanificadores'
 import Usuario from '../Usuario/user'
 import DatosUsuario from '../PerfilUsuario/DatosUsuario'
 import Logout from "../Login/Logout";
 import NewNot from "../Notas/NewNot";
 import NewAlm from "../Eventos/NewAlarm";
 import NewCal from '../Eventos/newCalendar';
+import NewPlan from "../Planificador/newPlan";
 import ModificacionNota from '../modificacion/ModifcacionNota'
 import ModificacionAlm from '../modificacion/ModificacionAlarma'
 import ModificacionCal from '../modificacion/ModificacionCalendar'
+import ModifcacionPlan from "../modificacion/ModificacionPlan";
+import ModificacionUsuario from "../modificacion/modificacionUsuario";
+import DelUs from "../Usuario/DelUs";
 const Pages = () => {
   return (
-  
       <Routes>
         {/* Home */}
         <Route path="/" element={<Home />} />
@@ -41,15 +45,20 @@ const Pages = () => {
         <Route path="/tAlarma" element={<TodasLasAlarmas />} />
         <Route path="/alarma/:alarmaId" element={<Alarma />} />
         <Route path="/newAlm" element={<NewAlm/>}/>
-        {/* PLanificador */}
-        <Route path="/planificador" element={<Planificador />} />
+        {/* Planificador */}
+        <Route path="/planificar/:planificadorId" element={<Planificador />} />
+        <Route path="/tPlanificador" element={<TodosLosPlanificadores/>}/>
+        <Route path="/newPLan" element={<NewPlan/>}/>
         {/*Perfil Usuario */}
         <Route path="/usuario" element={<Usuario />} />
         <Route path="/datosUsuario" element={<DatosUsuario/>}/>
+        <Route path="/ElmUsuario" element={<DelUs/>}/>
         {/*Modificacion */}
         <Route path="/modify/:notaId" element={<ModificacionNota/>} />
         <Route path="/modifyAlm/:alarmaId" element={<ModificacionAlm/>} />
         <Route path="/modifyCal/:eventoId" element={<ModificacionCal/>} />
+        <Route path="/modifyPlan/:planificadorId" element={<ModifcacionPlan/>}/>
+        <Route path="/modificacionUsuario" element={<ModificacionUsuario/>}/>
         {/* Logout */}
         <Route path="/logout" element={<Logout/>} />
       </Routes>

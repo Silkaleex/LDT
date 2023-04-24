@@ -1,10 +1,10 @@
 /*Como Admin*/
-.cajaAdmAlm{
-    background-image: url("https://images.pexels.com/photos/1262304/pexels-photo-1262304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+.cajaAdmAlarma{
+    background-image: url("https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    padding: 4% 0% 19.6% 0%;
+    padding: 2% 0% 22.6% 0%;
 }
 .containerAlmAdm{
     display: flex;
@@ -20,10 +20,6 @@
     font-size: 20px;
     text-shadow: 1px 1px 1px #000;
 }
-.tareasAdmAlm{
-    resize: none;
-}
-
 .inputAlmAdm{
     background-color:#5e548ea9;
     border-bottom: 2px solid #fafaff;
@@ -34,7 +30,6 @@
     text-shadow: 1px 1px 1px #000;
     transition:1s all;
 }
-
 .inputAlmAdm:focus{
     background-color:#5e548ea9;
     border: 2px groove #fafaff;
@@ -113,8 +108,8 @@
     transition: 1s all;
   }
   /*Como Usuario*/
-  .cajaUsAlm{
-    background-image: url(https://images.pexels.com/photos/171198/pexels-photo-171198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  .cajaUsAl {
+    background-image: url("https://images.pexels.com/photos/791058/pexels-photo-791058.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -135,9 +130,6 @@
     color:#e0e1dd;
     font-size: 20px;
 }
-.tareasAlmUs{
-    resize: none;
-}
 
 .inputAlmUs{
     background-color:#1b263ba2;
@@ -150,14 +142,14 @@
     transition:1s all;
 }
 
-.inputUs:focus{
+.inputAlmUs:focus{
     background-color:#1b263ba2;
     border: 2px groove #e0e1dd;
     color: #e0e1dd;
     text-shadow: 1px 1px 1px #000;
     transition:1s all;
 }
-.inputUs:hover{
+.inputAlmUs:hover{
     background-color:#1b263ba2;
     border-bottom: 2px solid  #1b263ba2;
     border-right: 2px solid  #1b263ba2;
@@ -200,7 +192,6 @@
     font-size: 15px;
     transition:1s all;
   }
-
 .botonVolAlmUs{
     color: #fafaff;
     background-color: #231942;
@@ -213,7 +204,6 @@
     border-top: 2px solid #231942;
     transition: 1s all;
 }
-
 .botonVolAlmUs:hover {
     background-color: #231942;
     color: #fafaff;

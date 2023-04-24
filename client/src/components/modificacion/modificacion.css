@@ -1,690 +1,1144 @@
+/*Otros estilos*/
+.txt-hidden{
+  resize: none;
+}
 /*Seccion Nota*/
 /*Como Admin*/
-.cajaAdmNot{
-    background-image: url("https://images.pexels.com/photos/1262304/pexels-photo-1262304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 2% 0% 19% 0%;
+.cajaAdmNot {
+  background-image: url(https://images.pexels.com/photos/1262304/pexels-photo-1262304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 2% 0% 3% 0%;
 }
-.containerNotasAdm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: -2% 0%;
+.containerNotasAdm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -1.4% 0%;
 }
-.labelNotAdm{
-    background-color:#5e548ea9;
-    margin:1% 0%;
-    letter-spacing: 2px;
-    color:#fafaff;
-    font-size: 20px;
-    text-shadow: 1px 1px 1px #000;
+.labelNotAdm {
+  background-color: #5e548ea9;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #fafaff;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
 }
-.tareasAdm{
-    resize: none;
-}
-
-.inputAdm{
-    background-color:#5e548ea9;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    color: #fafaff;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.inputAdm {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
 
-.inputAdm:focus{
-    background-color:#5e548ea9;
-    border: 2px groove #fafaff;
-    color: #fafaff;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.inputAdm:focus {
+  background-color: #5e548ea9;
+  border: 2px groove #fafaff;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.inputAdm:hover{
-    background-color:#5e548ea9;
-    border-bottom: 2px solid  #231942;
-    border-right: 2px solid  #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition:1s all;
+.inputAdm:hover {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
 }
-.containerBotonesAdm{
-    display: grid;
-    align-items: end;
-    align-content: stretch;
-    justify-content: center;
-    justify-items: center;
+.containerBotonesAdm {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
 }
-.botonModNotAdm{
-    margin: 12% 0%;
-    text-decoration: none;
-    color: #fcbf49;
-    background-color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-     padding: -1% 48%;
-    border-bottom: 2px solid #fcbf49;
-    border-right: 2px solid #fcbf49;
-    border-left: 2px solid #f77f00;
-    border-top: 2px solid #f77f00;
-    font-size: 15px;
-    transition:1s all;
+.botonModNotAdm {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
 }
 .botonModNotAdm:hover {
-    margin: 12% 0%;
-    text-decoration: none;
-    background-color: #fcbf49;
-    color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-       padding: -1% 48%;
-    border-bottom: 2px solid #f77f00;
-    border-right: 2px solid #f77f00;
-    border-left: 2px solid #fcbf49;
-    border-top: 2px solid #fcbf49;
-    font-size: 15px;
-    transition:1s all;
-  }
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
 
-.botonVolNotAdm{
-    color: #fafaff;
-    background-color: #231942;
-    text-decoration: none;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    transition: 1s all;
+.botonVolNotAdm {
+  color: #fafaff;
+  background-color: #231942;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  transition: 1s all;
 }
 
 .botonVolNotAdm:hover {
-    background-color: #231942;
-    color: #fafaff;
-    text-decoration: none;
-    transition: 1s all;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #231942;
-    border-right: 2px solid #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition: 1s all;
-  }
-  /*Como Usuario*/
-  .cajaUsNot{
-    background-image: url("https://images.pexels.com/photos/171198/pexels-photo-171198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 5% 0%;
+  background-color: #231942;
+  color: #fafaff;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
 }
-.containerNotasUs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: -2% 0%;
+/*Como Usuario*/
+.cajaUsNot {
+  background-image: url("https://images.pexels.com/photos/636237/pexels-photo-636237.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 3% 0% 3% 0%;
 }
-.labelNotUs{
-    background-color:#1b263b;
-    border:1px groove #fafaff;
-    padding:0% 2%;
-    margin:1% 0%;
-    letter-spacing: 2px;
-    color:#e0e1dd;
-    font-size: 20px;
+.containerNotasUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
 }
-.tareasUs{
-    resize: none;
+.labelNotUs {
+  background-color: #1b263b;
+  border: 1px groove #fafaff;
+  padding: 0% 2%;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #e0e1dd;
+  font-size: 20px;
 }
-
-.inputUs{
-    background-color:#1b263ba2;
-    color: #e0e1dd;
-    border-bottom: 2px solid #e0e1dd;
-    border-right: 2px solid #e0e1dd;
-    border-left: 2px solid #1b263ba2;
-    border-top: 2px solid #1b263ba2;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.tareasUs {
+  resize: none;
 }
 
-.inputUs:focus{
-    background-color:#1b263ba2;
-    border: 2px groove #e0e1dd;
-    color: #e0e1dd;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.inputUs {
+  background-color: #1b263ba2;
+  color: #e0e1dd;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263ba2;
+  border-top: 2px solid #1b263ba2;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.inputUs:hover{
-    background-color:#1b263ba2;
-    border-bottom: 2px solid  #1b263ba2;
-    border-right: 2px solid  #1b263ba2;
-    border-left: 2px solid #e0e1dd;
-    border-top: 2px solid #e0e1dd;
-    transition:1s all;
+
+.inputUs:focus {
+  background-color: #1b263ba2;
+  border: 2px groove #e0e1dd;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.containerBotonesUs{
-    display: grid;
-    align-items: end;
-    align-content: stretch;
-    justify-content: center;
-    justify-items: center;
+.inputUs:hover {
+  background-color: #1b263ba2;
+  border-bottom: 2px solid #1b263ba2;
+  border-right: 2px solid #1b263ba2;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
 }
-.botonModNotUs{
-    margin: 12% 0%;
-    text-decoration: none;
-    color: #fcbf49;
-    background-color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-     padding: -1% 48%;
-    border-bottom: 2px solid #fcbf49;
-    border-right: 2px solid #fcbf49;
-    border-left: 2px solid #f77f00;
-    border-top: 2px solid #f77f00;
-    font-size: 15px;
-    transition:1s all;
+.containerBotonesUs {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModNotUs {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
 }
 .botonModNotUs:hover {
-    margin: 12% 0%;
-    text-decoration: none;
-    background-color: #fcbf49;
-    color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-       padding: -1% 48%;
-    border-bottom: 2px solid #f77f00;
-    border-right: 2px solid #f77f00;
-    border-left: 2px solid #fcbf49;
-    border-top: 2px solid #fcbf49;
-    font-size: 15px;
-    transition:1s all;
-  }
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
 
-.botonVolNotUs{
-    color: #fafaff;
-    background-color: #231942;
-    text-decoration: none;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    transition: 1s all;
+.botonVolNotUs {
+  color: #e0e1dd;
+  background-color: #1b263b;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263b;
+  border-top: 2px solid #1b263b;
+  transition: 1s all;
 }
 
 .botonVolNotUs:hover {
-    background-color: #231942;
-    color: #fafaff;
-    text-decoration: none;
-    transition: 1s all;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #231942;
-    border-right: 2px solid #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition: 1s all;
-  }
-  /*Seccion Alarma*/
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #1b263b;
+  border-right: 2px solid #1b263b;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}
+/*Seccion Alarma*/
 /*Como Admin*/
-.cajaAdmAlm{
-    background-image: url("https://images.pexels.com/photos/1262304/pexels-photo-1262304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 2% 0% 19% 0%;
+.cajaAdmAlm {
+  background-image: url("https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 2% 0% 20.3% 0%;
 }
-.containerAlmAdm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: -2% 0%;
+.containerAlmAdm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
 }
-.labelAlmAdm{
-    background-color:#5e548ea9;
-    margin:1% 0%;
-    letter-spacing: 2px;
-    color:#fafaff;
-    font-size: 20px;
-    text-shadow: 1px 1px 1px #000;
+.labelAlmAdm {
+  background-color: #5e548ea9;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #fafaff;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
 }
-.tareasAdm{
-    resize: none;
-}
-
-.inputAdm{
-    background-color:#5e548ea9;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    color: #fafaff;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.tareasAdm {
+  resize: none;
 }
 
-.inputAdm:focus{
-    background-color:#5e548ea9;
-    border: 2px groove #fafaff;
-    color: #fafaff;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.inputAdm {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.inputAdm:hover{
-    background-color:#5e548ea9;
-    border-bottom: 2px solid  #231942;
-    border-right: 2px solid  #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition:1s all;
+
+.inputAdm:focus {
+  background-color: #5e548ea9;
+  border: 2px groove #fafaff;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.containerBotonesAdm{
-    display: grid;
-    align-items: end;
-    align-content: stretch;
-    justify-content: center;
-    justify-items: center;
+.inputAdm:hover {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
 }
-.botonModAlmAdm{
-    margin: 12% 0%;
-    text-decoration: none;
-    color: #fcbf49;
-    background-color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-     padding: -1% 48%;
-    border-bottom: 2px solid #fcbf49;
-    border-right: 2px solid #fcbf49;
-    border-left: 2px solid #f77f00;
-    border-top: 2px solid #f77f00;
-    font-size: 15px;
-    transition:1s all;
+.containerBotonesAdm {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModAlmAdm {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
 }
 .botonModAlmAdm:hover {
-    margin: 12% 0%;
-    text-decoration: none;
-    background-color: #fcbf49;
-    color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-       padding: -1% 48%;
-    border-bottom: 2px solid #f77f00;
-    border-right: 2px solid #f77f00;
-    border-left: 2px solid #fcbf49;
-    border-top: 2px solid #fcbf49;
-    font-size: 15px;
-    transition:1s all;
-  }
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
 
-.botonVolAlmAdm{
-    color: #fafaff;
-    background-color: #231942;
-    text-decoration: none;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    transition: 1s all;
+.botonVolAlmAdm {
+  color: #fafaff;
+  background-color: #231942;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  transition: 1s all;
 }
 
 .botonVolAlmAdm:hover {
-    background-color: #231942;
-    color: #fafaff;
-    text-decoration: none;
-    transition: 1s all;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #231942;
-    border-right: 2px solid #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition: 1s all;
-  }
-  /*Como Usuario*/
-  .cajaUsAlm{
-    background-image: url("https://images.pexels.com/photos/171198/pexels-photo-171198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 2% 0% 19% 0%;
+  background-color: #231942;
+  color: #fafaff;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
 }
-.containerAlmUs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: -2% 0%;
+/*Como Usuario*/
+.cajaUsAlm {
+  background-image: url("https://images.pexels.com/photos/1209999/pexels-photo-1209999.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 2% 0% 21.1% 0%;
 }
-.labelAlmUs{
-    background-color:#1b263b;
-    border:1px groove #fafaff;
-    padding:0% 2%;
-    margin:1% 0%;
-    letter-spacing: 2px;
-    color:#e0e1dd;
-    font-size: 20px;
+.containerAlmUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
 }
-.tareasUs{
-    resize: none;
+.labelAlmUs {
+  background-color: #1b263b;
+  border: 1px groove #fafaff;
+  padding: 0% 2%;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #e0e1dd;
+  font-size: 20px;
 }
-
-.inputUs{
-    background-color:#1b263ba2;
-    color: #e0e1dd;
-    border-bottom: 2px solid #e0e1dd;
-    border-right: 2px solid #e0e1dd;
-    border-left: 2px solid #1b263ba2;
-    border-top: 2px solid #1b263ba2;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.tareasUs {
+  resize: none;
 }
 
-.inputUs:focus{
-    background-color:#1b263ba2;
-    border: 2px groove #e0e1dd;
-    color: #e0e1dd;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.inputUs {
+  background-color: #1b263ba2;
+  color: #e0e1dd;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263ba2;
+  border-top: 2px solid #1b263ba2;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.inputUs:hover{
-    background-color:#1b263ba2;
-    border-bottom: 2px solid  #1b263ba2;
-    border-right: 2px solid  #1b263ba2;
-    border-left: 2px solid #e0e1dd;
-    border-top: 2px solid #e0e1dd;
-    transition:1s all;
+
+.inputUs:focus {
+  background-color: #1b263ba2;
+  border: 2px groove #e0e1dd;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.containerBotonesUs{
-    display: grid;
-    align-items: end;
-    align-content: stretch;
-    justify-content: center;
-    justify-items: center;
+.inputUs:hover {
+  background-color: #1b263ba2;
+  border-bottom: 2px solid #1b263ba2;
+  border-right: 2px solid #1b263ba2;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
 }
-.botonModAlmUs{
-    margin: 12% 0%;
-    text-decoration: none;
-    color: #fcbf49;
-    background-color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-     padding: -1% 48%;
-    border-bottom: 2px solid #fcbf49;
-    border-right: 2px solid #fcbf49;
-    border-left: 2px solid #f77f00;
-    border-top: 2px solid #f77f00;
-    font-size: 15px;
-    transition:1s all;
+.containerBotonesUs {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModAlmUs {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
 }
 .botonModAlmUs:hover {
-    margin: 12% 0%;
-    text-decoration: none;
-    background-color: #fcbf49;
-    color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-       padding: -1% 48%;
-    border-bottom: 2px solid #f77f00;
-    border-right: 2px solid #f77f00;
-    border-left: 2px solid #fcbf49;
-    border-top: 2px solid #fcbf49;
-    font-size: 15px;
-    transition:1s all;
-  }
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
 
-.botonVolAlmUs{
-    color: #fafaff;
-    background-color: #231942;
-    text-decoration: none;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    transition: 1s all;
+.botonVolAlmUs {
+  color: #e0e1dd;
+  background-color: #1b263b;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263b;
+  border-top: 2px solid #1b263b;
+  transition: 1s all;
 }
 
 .botonVolAlmUs:hover {
-    background-color: #231942;
-    color: #fafaff;
-    text-decoration: none;
-    transition: 1s all;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #231942;
-    border-right: 2px solid #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition: 1s all;
-  }
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #1b263b;
+  border-right: 2px solid #1b263b;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}
 /*Seccion Calendars*/
 /*Como Admin*/
-.cajaAdmCal{
-    background-image: url("https://images.pexels.com/photos/1262304/pexels-photo-1262304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 2% 0% 19% 0%;
+.cajaAdmCa {
+  background-image: url("https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 2% 0% 20.1% 0%;
 }
-.containerCalAdm{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: -2% 0%;
+.containerCalAdm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
 }
-.labelCalAdm{
-    background-color:#5e548ea9;
-    margin:1% 0%;
-    letter-spacing: 2px;
-    color:#fafaff;
-    font-size: 20px;
-    text-shadow: 1px 1px 1px #000;
+.labelCalAdm {
+  background-color: #5e548ea9;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #fafaff;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
 }
-.tareasAdm{
-    resize: none;
-}
-
-.inputAdm{
-    background-color:#5e548ea9;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    color: #fafaff;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.tareasAdm {
+  resize: none;
 }
 
-.inputAdm:focus{
-    background-color:#5e548ea9;
-    border: 2px groove #fafaff;
-    color: #fafaff;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.inputAdm {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.inputAdm:hover{
-    background-color:#5e548ea9;
-    border-bottom: 2px solid  #231942;
-    border-right: 2px solid  #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition:1s all;
+
+.inputAdm:focus {
+  background-color: #5e548ea9;
+  border: 2px groove #fafaff;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.containerBotonesAdm{
-    display: grid;
-    align-items: end;
-    align-content: stretch;
-    justify-content: center;
-    justify-items: center;
+.inputAdm:hover {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
 }
-.botonModCalAdm{
-    margin: 12% 0%;
-    text-decoration: none;
-    color: #fcbf49;
-    background-color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-     padding: -1% 48%;
-    border-bottom: 2px solid #fcbf49;
-    border-right: 2px solid #fcbf49;
-    border-left: 2px solid #f77f00;
-    border-top: 2px solid #f77f00;
-    font-size: 15px;
-    transition:1s all;
+.containerBotonesAdm {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModCalAdm {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
 }
 .botonModCalAdm:hover {
-    margin: 12% 0%;
-    text-decoration: none;
-    background-color: #fcbf49;
-    color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-       padding: -1% 48%;
-    border-bottom: 2px solid #f77f00;
-    border-right: 2px solid #f77f00;
-    border-left: 2px solid #fcbf49;
-    border-top: 2px solid #fcbf49;
-    font-size: 15px;
-    transition:1s all;
-  }
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
 
-.botonVolCalAdm{
-    color: #fafaff;
-    background-color: #231942;
-    text-decoration: none;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    transition: 1s all;
+.botonVolCalAdm {
+  color: #fafaff;
+  background-color: #231942;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  transition: 1s all;
 }
 
 .botonVolCalAdm:hover {
-    background-color: #231942;
-    color: #fafaff;
-    text-decoration: none;
-    transition: 1s all;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #231942;
-    border-right: 2px solid #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition: 1s all;
-  }
-  /*Como Usuario*/
-  .cajaUsCal{
-    background-image: url("https://images.pexels.com/photos/171198/pexels-photo-171198.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 2% 0% 19% 0%;
+  background-color: #231942;
+  color: #fafaff;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
 }
-.containerCalUs{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: -2% 0%;
+/*Como Usuario*/
+.cajaUsCal {
+  background-image: url(https://images.pexels.com/photos/1384614/pexels-photo-1384614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 6% 0% 15.6% 0%;
 }
-.labelCalUs{
-    background-color:#1b263b;
-    border:1px groove #fafaff;
-    padding:0% 2%;
-    margin:1% 0%;
-    letter-spacing: 2px;
-    color:#e0e1dd;
-    font-size: 20px;
+.containerCalUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
 }
-.tareasUs{
-    resize: none;
+.labelCalUs {
+  background-color: #1b263b;
+  border: 1px groove #fafaff;
+  padding: 0% 2%;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #e0e1dd;
+  font-size: 20px;
 }
-
-.inputUs{
-    background-color:#1b263ba2;
-    color: #e0e1dd;
-    border-bottom: 2px solid #e0e1dd;
-    border-right: 2px solid #e0e1dd;
-    border-left: 2px solid #1b263ba2;
-    border-top: 2px solid #1b263ba2;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.tareasUs {
+  resize: none;
 }
 
-.inputUs:focus{
-    background-color:#1b263ba2;
-    border: 2px groove #e0e1dd;
-    color: #e0e1dd;
-    text-shadow: 1px 1px 1px #000;
-    transition:1s all;
+.inputUs {
+  background-color: #1b263ba2;
+  color: #e0e1dd;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263ba2;
+  border-top: 2px solid #1b263ba2;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.inputUs:hover{
-    background-color:#1b263ba2;
-    border-bottom: 2px solid  #1b263ba2;
-    border-right: 2px solid  #1b263ba2;
-    border-left: 2px solid #e0e1dd;
-    border-top: 2px solid #e0e1dd;
-    transition:1s all;
+
+.inputUs:focus {
+  background-color: #1b263ba2;
+  border: 2px groove #e0e1dd;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
 }
-.containerBotonesUs{
-    display: grid;
-    align-items: end;
-    align-content: stretch;
-    justify-content: center;
-    justify-items: center;
+.inputUs:hover {
+  background-color: #1b263ba2;
+  border-bottom: 2px solid #1b263ba2;
+  border-right: 2px solid #1b263ba2;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
 }
-.botonModCalUs{
-    margin: 12% 0%;
-    text-decoration: none;
-    color: #fcbf49;
-    background-color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-     padding: -1% 48%;
-    border-bottom: 2px solid #fcbf49;
-    border-right: 2px solid #fcbf49;
-    border-left: 2px solid #f77f00;
-    border-top: 2px solid #f77f00;
-    font-size: 15px;
-    transition:1s all;
+.containerBotonesUs {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModCalUs {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
 }
 .botonModCalUs:hover {
-    margin: 12% 0%;
-    text-decoration: none;
-    background-color: #fcbf49;
-    color: #f77f00;
-    text-shadow: 1px 1px 1px #000;
-       padding: -1% 48%;
-    border-bottom: 2px solid #f77f00;
-    border-right: 2px solid #f77f00;
-    border-left: 2px solid #fcbf49;
-    border-top: 2px solid #fcbf49;
-    font-size: 15px;
-    transition:1s all;
-  }
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
 
-.botonVolCalUs{
-    color: #fafaff;
-    background-color: #231942;
-    text-decoration: none;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #fafaff;
-    border-right: 2px solid #fafaff;
-    border-left: 2px solid #231942;
-    border-top: 2px solid #231942;
-    transition: 1s all;
+.botonVolCalUs {
+  color: #e0e1dd;
+  background-color: #1b263b;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263b;
+  border-top: 2px solid #1b263b;
+  transition: 1s all;
 }
 
 .botonVolCalUs:hover {
-    background-color: #231942;
-    color: #fafaff;
-    text-decoration: none;
-    transition: 1s all;
-    padding: 0% 3%;
-    border-radius: 1%;
-    border-bottom: 2px solid #231942;
-    border-right: 2px solid #231942;
-    border-left: 2px solid #fafaff;
-    border-top: 2px solid #fafaff;
-    transition: 1s all;
-  }
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #1b263b;
+  border-right: 2px solid #1b263b;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}
+/*Seccion Planificador*/
+/*Como Admin*/
+.cajaAdmPl {
+  background-image: url("https://images.pexels.com/photos/760718/pexels-photo-760718.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 2% 0% 4.2% 0%;
+}
+.containerPlAdm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
+}
+.labelPlAdm {
+  background-color: #5e548ea9;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #fafaff;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
+}
+.inputPlAdm {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+
+.inputPlAdm:focus {
+  background-color: #5e548ea9;
+  border: 2px groove #fafaff;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+.inputPlAdm:hover {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
+}
+.containerBotonesAdm {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModCalAdm {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
+}
+.botonModCalAdm:hover {
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
+
+.botonVolPlAdm {
+  color: #fafaff;
+  background-color: #231942;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  transition: 1s all;
+}
+
+.botonVolPlAdm:hover {
+  background-color: #231942;
+  color: #fafaff;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
+}
+/*Como Usuario*/
+.cajaUsPl {
+  background-image: url("https://images.pexels.com/photos/636243/pexels-photo-636243.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 2% 0% 5.2% 0%;
+}
+.containerPlUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
+}
+.labelPlUs {
+  background-color: #1b263b;
+  border: 1px groove #fafaff;
+  padding: 0% 2%;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #e0e1dd;
+  font-size: 20px;
+}
+.inputPlUs {
+  background-color: #1b263ba2;
+  color: #e0e1dd;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263ba2;
+  border-top: 2px solid #1b263ba2;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+
+.inputPlUs:focus {
+  background-color: #1b263ba2;
+  border: 2px groove #e0e1dd;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+.inputPlUs:hover {
+  background-color: #1b263ba2;
+  border-bottom: 2px solid #1b263ba2;
+  border-right: 2px solid #1b263ba2;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}
+.containerBotonesUsPl {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModPlUs {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
+}
+.botonModPlUs:hover {
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
+
+.botonVolPlUs {
+  color: #e0e1dd;
+  background-color: #1b263b;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263b;
+  border-top: 2px solid #1b263b;
+  transition: 1s all;
+}
+
+.botonVolPlUs:hover {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #1b263b;
+  border-right: 2px solid #1b263b;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}
+/*Seccion Usuario*/
+/*Como Admin*/
+.cajaAdmMody {
+  background-image: url("https://images.pexels.com/photos/4585185/pexels-photo-4585185.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 3% 0% 21.2% 0%;
+}
+.containerModyAdm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
+}
+.labelModyAdm {
+  background-color: #5e548ea9;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #fafaff;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
+}
+.WModAdm{
+  width: 25%;
+  padding:0.2% 1%
+}
+.inputModyAdm {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+
+.inputModyAdm:focus {
+  background-color: #5e548ea9;
+  border: 2px groove #fafaff;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+.inputModyAdm:hover {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
+}
+.containerBtnModyAdm {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModModyAdm {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
+}
+.botonModModyAdm:hover {
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
+
+.botonVolModyAdm {
+  color: #fafaff;
+  background-color: #5e548e;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #5e548e;
+  border-top: 2px solid #5e548e;
+  transition: 1s all;
+  text-shadow: 1px 1px 1px #000;
+}
+
+.botonVolModyAdm:hover {
+  background-color: #5e548e;
+  color: #fafaff;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #5e548e;
+  border-right: 2px solid #5e548e;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
+  text-shadow: 1px 1px 1px #000;
+}
+/*Como Usuario*/
+.cajaUsuario {
+  background-image: url("https://images.pexels.com/photos/14933181/pexels-photo-14933181.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 3% 0% 21.3% 0%;
+}
+.containerNotasUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
+}
+.labelNotUs {
+  background-color: #1b263b;
+  border: 1px groove #fafaff;
+  padding: 0% 2%;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #e0e1dd;
+  font-size: 20px;
+}
+.tareasUs {
+  resize: none;
+}
+
+.inputUs {
+  background-color: #1b263ba2;
+  color: #e0e1dd;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263ba2;
+  border-top: 2px solid #1b263ba2;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+
+.inputUs:focus {
+  background-color: #1b263ba2;
+  border: 2px groove #e0e1dd;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+.inputUs:hover {
+  background-color: #1b263ba2;
+  border-bottom: 2px solid #1b263ba2;
+  border-right: 2px solid #1b263ba2;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}
+.containerBotonesUs {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonModNotUs {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #fcbf49;
+  background-color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #fcbf49;
+  border-right: 2px solid #fcbf49;
+  border-left: 2px solid #f77f00;
+  border-top: 2px solid #f77f00;
+  font-size: 15px;
+  transition: 1s all;
+}
+.botonModNotUs:hover {
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #fcbf49;
+  color: #f77f00;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #f77f00;
+  border-right: 2px solid #f77f00;
+  border-left: 2px solid #fcbf49;
+  border-top: 2px solid #fcbf49;
+  font-size: 15px;
+  transition: 1s all;
+}
+
+.botonVolNotUs {
+  color: #e0e1dd;
+  background-color: #1b263b;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263b;
+  border-top: 2px solid #1b263b;
+  transition: 1s all;
+}
+
+.botonVolNotUs:hover {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #1b263b;
+  border-right: 2px solid #1b263b;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}

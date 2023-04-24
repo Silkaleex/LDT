@@ -11,7 +11,7 @@ const ModifcacionAlm = () => {
   const Navigate = useNavigate();
   
   const [Alm, setAlm] = useState({
-    title: "",
+    fecha: "",
     alarm:""
   });
 
@@ -57,20 +57,19 @@ const ModifcacionAlm = () => {
         <div className="cajaAdmAlm">
           <form onSubmit={modificacionSubmit}>
             <div className="containerAlmAdm">
-              <label className="labelAlmAdm" htmlFor="titulo">
-                Titulo:
+              <label className="labelAlmAdm" htmlFor="Fecha">
+                Fecha:
               </label>
               <input
                 className="inputAdm"
-                placeholder="Titulo"
-                type="text"
-                name="title"
-                id="titulo"
-                value={Alm.title}
+                type="date"
+                name="fecha"
+                id="Fecha"
+                value={Alm.fecha}
                 onChange={onChangeInput}
               ></input>
               <label className="labelNotAdm" htmlFor="alarm">
-                Alarma:
+                Hora de la Alarma:
               </label>
               <textarea
                 className="tareasAdm inputAdm"
@@ -94,20 +93,19 @@ const ModifcacionAlm = () => {
         <div className="cajaUsAlm">
           <form onSubmit={modificacionSubmit}>
             <div className="containerAlmUs">
-              <label className="labelAlmUs" htmlFor="titulo">
-                Titulo:
+              <label className="labelAlmUs" htmlFor="Fecha">
+                Fecha:
               </label>
               <input
                 className="inputUs"
-                placeholder="Titulo"
-                type="text"
-                name="title"
-                id="titulo"
-                value={Alm.title}
+                type="date"
+                name="fecha"
+                id="Fecha"
+                value={Alm.fecha}
                 onChange={onChangeInput}
               ></input>
               <label className="labelAlmUs" htmlFor="alarm">
-                Alarma:
+                Hora de la Alarma:
               </label>
               <textarea
                 className="tareasUs inputUs"
@@ -119,7 +117,7 @@ const ModifcacionAlm = () => {
                 onChange={onChangeInput}
               ></textarea>
               <div className="containerBotonesUs">
-                <button className="botonModAlmUs">Modificar Nota</button>
+                <button className="botonModAlmUs">Modificar Alarma</button>
                 <Link to="/tAlarma" className="botonVolAlmUs">
                   Volver
                 </Link>

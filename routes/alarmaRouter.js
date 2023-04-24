@@ -5,13 +5,12 @@ const User = require("../models/User");
 const UserRouter = require("./UserRouter");
 const auth = require("../middeleware/auth");
 
-
 alarmaRouter.post("/alarms", auth, async (req, res) => {
   try {
-    const { title, alarm  } = req.body;
+    const { title, alarm, fecha } = req.body;
     let userId = await User.findById(req.user.id);
 
-    if (!title || !alarm) {
+    if (!title || !alarm || !fecha) {
       return res.status(400).send({
         success: false,
         message: "No completastes todos los pasos",
@@ -32,12 +31,13 @@ alarmaRouter.post("/alarms", auth, async (req, res) => {
     let newAlarma = new alarma({
       title,
       alarm,
+      fecha,
       user: userId,
     });
 
     await User.findByIdAndUpdate(userId, {
       $push: {
-        alarma : newAlarma._id,
+        alarma: newAlarma._id,
       },
     });
 
@@ -56,7 +56,7 @@ alarmaRouter.post("/alarms", auth, async (req, res) => {
 });
 alarmaRouter.get("/alarms", auth, async (req, res) => {
   try {
-    let alarm = await alarma.find({}).populate()
+    let alarm = await alarma.find({}).populate();
     if (!alarm) {
       return res.status(400).send({
         success: false,
@@ -66,7 +66,7 @@ alarmaRouter.get("/alarms", auth, async (req, res) => {
     return res.status(200).send({
       success: true,
       message: "Tus eventos fueron Encontrados correctamente",
-      alarm
+      alarm,
     });
   } catch (error) {
     return res.status(500).send({
@@ -75,7 +75,7 @@ alarmaRouter.get("/alarms", auth, async (req, res) => {
     });
   }
 });
- alarmaRouter.get("/alarms/:id", auth, async (req, res) => {
+alarmaRouter.get("/alarms/:id", auth, async (req, res) => {
   try {
     const { id } = req.params;
     let alarms = await alarma.findById(id).populate({
@@ -103,13 +103,13 @@ alarmaRouter.get("/alarms", auth, async (req, res) => {
 alarmaRouter.put("/alarms/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, alarm } = req.body;
+    const { alarm, fecha } = req.body;
 
     await alarma.findByIdAndUpdate(id, {
-      title,
-      alarm
+      alarm,
+      fecha,
     });
-    if (!title || !alarm) {
+    if (!alarm || !fecha) {
       return res.status(400).send({
         succcess: false,
         message: "No completastes todos los campos",
@@ -127,7 +127,7 @@ alarmaRouter.put("/alarms/:id", async (req, res) => {
   }
 });
 UserRouter.delete("/alarms/:id", auth, async (req, res) => {
-    try {
+  try {
     const { id } = req.params;
     await alarma.findByIdAndDelete(id);
     if (!id) {

@@ -46,8 +46,8 @@ const TodasLasNotas = () => {
               })}
             </div>
           </div>
-          <div className="cajaCirculoNotUs">
-            <Link to="/newNot" className="circuloNotaUs">
+          <div className="cajaCirculoNotAdm">
+            <Link to="/newNot" className="circuloNotaAdm">
               <BsPencilSquare />
             </Link>
           </div>

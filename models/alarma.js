@@ -8,6 +8,10 @@ const alarmaSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  fecha: {
+    type: String,
+    required: true,
+  },
   user: {
     type: mongoose.Types.ObjectId,
     ref: "User",
