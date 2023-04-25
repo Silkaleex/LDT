@@ -21,8 +21,8 @@ function DatosUsuario() {
     };
     getUser();
   }, []);
+
   const deleteAccount = async (e) => {
-    e.preventDefault();
     let opcion = window.confirm("¿Estas Seguro de Eliminar tu Cuenta?");
     if (opcion == true) {
       try {
@@ -64,8 +64,8 @@ function DatosUsuario() {
                   <Link to={`/modificacionUsuario`} className="modificarAdmin">
                     Modificar Usuario
                   </Link>
-                  <Link to={`/ElmUsuario`} className="botonElUs">
-                  Eliminar a un Usuario
+                  <Link to={`/ElmUsuario`} className="btnVerUsers">
+                  Ver Usuarios
                 </Link>
                 </div>
               </div>

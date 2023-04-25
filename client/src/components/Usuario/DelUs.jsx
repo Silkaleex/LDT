@@ -20,30 +20,43 @@ const DelUs = () => {
     getUsers();
   }, []);
 
-  const deleteUser = async(idUser)=>{
-      localStorage.setItem("idUsuario",idUser)
-      let opcion = window.confirm("¿Estas Seguro de Eliminar a este Usuario?")
-      if(opcion == true){
-          const response = await axios.delete(`http://localhost:5000/api/user/${idUser}`,{
-              headers:{
-                Authorization:token
-              }
-            })
-            console.log(response)
-      }
-  }
+  const deleteUser = async (idUser) => {
+    localStorage.setItem("idUsuario", idUser);
+    let opcion = window.confirm("¿Estas Seguro de Eliminar a este Usuario?");
+    if (opcion == true) {
+      const response = await axios.delete(
+        `http://localhost:5000/api/user/${idUser}`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      console.log(response);
+      setTimeout(() => {
+        window.location.href = "/datosUsuario";
+      }, 3000);
+      console.log(response);
+    }
+  };
 
   return (
     <div className="containerFondoEliminacion">
       {usuarios.map((user) => {
         return (
-              <div className="cajaEliminacion" key={user._id}>
-                <h3>{user.name}</h3>
-                <h3>{user.surname}</h3>
-                <h3>{user.email}</h3>
-                <button className="btnElmUsuario" onClick={()=>{deleteUser(user._id)}}><TbTrash/></button>
-              </div>
-          
+          <div className="cajaEliminacion" key={user._id}>
+            <h3>{user.name}</h3>
+            <h3>{user.surname}</h3>
+            <h3>{user.email}</h3>
+            <button
+              className="btnElmUsuario"
+              onClick={() => {
+                deleteUser(user._id);
+              }}
+            >
+              <TbTrash />
+            </button>
+          </div>
         );
       })}
     </div>

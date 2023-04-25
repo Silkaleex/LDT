@@ -1,6 +1,7 @@
 import React from "react";
 import "./home.css";
 import { Link } from "react-router-dom";
+
 function home() {
   return (
     <div className="imagen">
@@ -16,8 +17,10 @@ function home() {
         </Link>
         <Link className="enlacesHomeB" to="/login">
           Accede a tu Cuenta
-        </Link>
+        </Link>  
+          <Link className="termLicn" to="/licencia">Terminos y condiciones</Link>     
       </div>
+
     </div>
     </div>
   );

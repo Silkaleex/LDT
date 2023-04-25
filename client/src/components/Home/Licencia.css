@@ -1,0 +1,48 @@
+.fondoLicencia{
+    background-image: url("https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 2% 0% 0% 0%;
+}
+.LicenciaLDT{
+    text-align: left;
+    margin:0px auto;
+    width: 70%;
+    color:#edf2f4;
+    background-color: #59839299;
+    padding: 2% 3%;
+    text-shadow: 1px 1px 1px #000;
+}
+.cajaBoton{
+    margin:0% 44%;
+}
+.btnLcn{
+    color:#240046;
+    background-color: #a3cef1;
+    text-shadow: 1px 1px #fafaff;
+    border-top: 2px groove #003554;
+    border-left: 2px groove #003554;
+    border-bottom: 2px groove  #00a6fb;
+    border-right: 2px groove  #00a6fb;
+    transition:1s all;
+    text-decoration: none;
+    padding:0% 10%
+}
+.btnLcn:hover{
+    background-color:#3772ff;
+   color: #a3cef1;
+    text-shadow: 1px 1px #000;
+    border-top: 2px groove #00a6fb;
+    border-left: 2px groove #00a6fb;
+    border-bottom: 2px groove   #003554;
+    border-right: 2px groove  #003554;
+    transition:1s all; 
+    text-decoration: none;
+    padding:0% 10%
+}
+.footerLcn{
+    background-color: #3772ff;
+    text-shadow: 1px 1px 1px #ffff;
+    margin: 4% 0% 0% 0%;
+    padding: 1% 0% 1% 1%;
+}

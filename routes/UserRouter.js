@@ -157,7 +157,7 @@ UserRouter.post("/users_ban/:id", auth, authAdmin, async (req, res) => {
       success: true,
       message: `El usuario ${User.name} ha sido baneado`,
     });
-  } catch (err) {
+  } catch (error) {
     return res.status(500).send({
       sucess: false,
       message: error.message,

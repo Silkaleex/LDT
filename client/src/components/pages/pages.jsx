@@ -1,6 +1,7 @@
 import React from "react";
 import {  Routes, Route } from "react-router-dom";
 import Home from"../Home/home"
+import Licencia from "../Home/Licencia";
 import Login from "../Login/Login";
 import Register from "../Register/register";
 import TodosLosCalendar from "../Eventos/TodosLosCalendar";
@@ -29,6 +30,7 @@ const Pages = () => {
       <Routes>
         {/* Home */}
         <Route path="/" element={<Home />} />
+        <Route path="/licencia" element={<Licencia/>}/>
         {/* Login */}
         <Route path="/login" element={<Login />} />
         {/* Register */}

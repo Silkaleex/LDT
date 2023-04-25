@@ -75,6 +75,30 @@
   transition: 1s all;
   width: 30%;
 }
+.btnVerUsers{
+  color: #f2e9e4;
+  background-color: #22223b;
+  margin: 0% 2%;
+  text-decoration: none;
+  border-bottom: 2px solid #22223b;
+  border-right: 2px solid #22223b;
+  border-left: 2px solid #9a8c98;
+  border-top: 2px solid #9a8c98;
+  transition:1s all;
+  padding:0% 1%
+}
+.btnVerUsers:hover{
+  color: #f2e9e4;
+  background-color: #22223b;
+  margin: 0% 2%;
+  text-decoration: none;
+  border-bottom: 2px solid  #9a8c98;
+  border-right: 2px solid  #9a8c98;
+  border-left: 2px solid #22223b;
+  border-top: 2px solid #22223b;
+  transition:1s all;
+  padding:0% 1%
+}
 
 /*Usuario*/
 .containerPeUs {
