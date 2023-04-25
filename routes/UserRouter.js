@@ -373,7 +373,7 @@ UserRouter.delete("/user/:id", auth, authAdmin, async (req, res) => {
         message: "Usuario no registrado",
       });
     }
-    return res.status(400).send({
+    return res.status(200).send({
       success: true,
       message: "Usuario eliminado correctamente",
     });
