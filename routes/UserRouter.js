@@ -8,6 +8,7 @@ const auth = require("../middeleware/auth");
 const authAdmin = require("../middeleware/authAdmin");
 //importamos dependencia par anecriptar la contraseña
 const bcrypt = require("bcrypt");
+const User = require("../models/User");
 //Declarar las vueltas que quiero que de mi contraseña
 //Recomendado es 10 por que es una contraseña muy segura con 10 vueltas
 const salt = bcrypt.genSaltSync(10);
@@ -85,10 +86,10 @@ UserRouter.post("/login", async (req, res) => {
     const User = await user.findOne({ email });
 
     //condicion de baneo
-    if (user.banned === true) {
+    if (User.banned === true) {
       return res.status(400).send({
         success: false,
-        message: `${user.name}, tu cuenta ha sido bloqueda`,
+        message: `${User.name}, tu cuenta ha sido bloqueda`,
       });
     }
 
@@ -151,11 +152,12 @@ UserRouter.post("/users_ban/:id", auth, authAdmin, async (req, res) => {
     if (User.banned === true) {
       return res.status(400).send("El usuario está baneado");
     }
-    user.banned = true;
+    User.banned = true;
     await User.save();
     return res.status(200).send({
       success: true,
       message: `El usuario ${User.name} ha sido baneado`,
+      User,
     });
   } catch (error) {
     return res.status(500).send({
@@ -167,21 +169,40 @@ UserRouter.post("/users_ban/:id", auth, authAdmin, async (req, res) => {
 
 UserRouter.put("/users_desban/:id", auth, authAdmin, async (req, res) => {
   // Obtener el ID del usuario de la URL
-  const { userId } = req.params;
+  const { id } = req.params;
 
   try {
     // Actualizar la propiedad "banned" del usuario a false
-    const updatedUser = await user.findByIdAndUpdate(
-      userId,
-      { banned: false },
-      { new: true }
-    );
-    if (!updatedUser) {
-      return res.status(200).send({
-        success: true,
-        message: `El usuario ha sido desbaneado exitosamente`,
+    //   await user.findByIdAndUpdate(
+    //   id,
+    //   { banned: false },
+    //   { new: true }
+    // );
+    // const updatedUser = user.findById(id)
+    // console.log(updatedUser)
+    //   return res.status(200).send({
+    //     success: true,
+    //     message: `El usuario ha sido desbaneado exitosamente`,
+    //     updatedUser
+    //   });
+    const User = await user.findById(id);
+
+    if (!User) {
+      return res.status(404).send({
+        success: false,
+        message: "Usuario no encontrado",
       });
     }
+    if (User.banned === false) {
+      return res.status(400).send("El usuario está baneado");
+    }
+    User.banned = false;
+    await User.save();
+    return res.status(200).send({
+      success: true,
+      message: `El usuario ${User.name} ha sido desbaneado`,
+      User,
+    });
   } catch (error) {
     return res.status(500).send({
       success: false,
@@ -220,6 +241,28 @@ UserRouter.get("/users",auth,authAdmin, async(req,res)=>{
 UserRouter.get("/user", auth, async (req, res) => {
   try {
     let User = await user.findById(req.user.id)//.populate();
+    if (!User) {
+      return res.status(400).send({
+        success: false,
+        message: "Usuario no encontrado",
+      });
+    }
+    return res.status(200).send({
+      success: true,
+      message: "usuario encontrado correctamente",
+      User,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+UserRouter.get("/user/:id", auth,authAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    let User = await user.findById(id);
     if (!User) {
       return res.status(400).send({
         success: false,

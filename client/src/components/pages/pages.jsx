@@ -24,7 +24,8 @@ import ModificacionAlm from '../modificacion/ModificacionAlarma'
 import ModificacionCal from '../modificacion/ModificacionCalendar'
 import ModifcacionPlan from "../modificacion/ModificacionPlan";
 import ModificacionUsuario from "../modificacion/modificacionUsuario";
-import DelUs from "../Usuario/DelUs";
+import Usuarios from "../PerfilUsuario/Usuarios";
+import PUsuarios from "../PerfilUsuario/Pusuarios"
 const Pages = () => {
   return (
       <Routes>
@@ -54,7 +55,9 @@ const Pages = () => {
         {/*Perfil Usuario */}
         <Route path="/usuario" element={<Usuario />} />
         <Route path="/datosUsuario" element={<DatosUsuario/>}/>
-        <Route path="/ElmUsuario" element={<DelUs/>}/>
+        {/*Datos Usuarios Eliminación o Baneo */}
+        <Route path="/Usuarios" element={<Usuarios/>}/>
+        <Route path="/Usuarios/:userId" element={<PUsuarios/>}/>
         {/*Modificacion */}
         <Route path="/modify/:notaId" element={<ModificacionNota/>} />
         <Route path="/modifyAlm/:alarmaId" element={<ModificacionAlm/>} />

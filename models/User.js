@@ -42,12 +42,10 @@ const userSchema = new mongoose.Schema(
         ref: "Planificador",
       },
     ],
-    banned: [
-      {
-        type: Boolean,
-        default: false,
-      },
-    ],
+    banned: {
+      type: Boolean,
+      default: false,
+    },
     role: {
       type: Number,
       default: 0,

@@ -64,7 +64,7 @@ function DatosUsuario() {
                   <Link to={`/modificacionUsuario`} className="modificarAdmin">
                     Modificar Usuario
                   </Link>
-                  <Link to={`/ElmUsuario`} className="btnVerUsers">
+                  <Link to={`/Usuarios`} className="btnVerUsers">
                   Ver Usuarios
                 </Link>
                 </div>
