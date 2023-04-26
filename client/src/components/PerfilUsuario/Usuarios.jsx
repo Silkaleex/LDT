@@ -24,13 +24,16 @@ const DelUs = () => {
 
   return (
     <div className="containerFondoEliminacion">
+      <h1 className="TltProfile">Usuarios registrados:</h1>
       {usuarios.map((user) => {
         return (
           <div className="cajaEliminacion" key={user._id}>
             <h3>{user.name}</h3>
             <h3>{user.surname}</h3>
             <h3>{user.email}</h3>
-            <Link to={`/Usuarios/${user._id}`}>Ver Usuario</Link>
+            <div className="cajaBtnProfileUser">
+            <Link className="EnlaceBtnUsuario" to={`/Usuarios/${user._id}`}>Ver Usuario</Link>
+          </div>
           </div>
         );
       })}

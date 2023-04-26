@@ -1,33 +1,57 @@
+.TltProfile{
+  text-align: center;
+  color:#fafaff;
+  text-shadow: 1px 1px 1px #000;
+}
 .containerFondoEliminacion{
     background-image: url("https://images.pexels.com/photos/4722583/pexels-photo-4722583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-position: center;
     background-attachment: fixed;
     background-size: cover;
-    padding: 1% 0% 1% 0%;
+    padding: 3% 0% 17.9% 0%;
 }
 .cajaEliminacion{
-    background-color: #f1faee;
-    color:#e63946;
-    width: 40%;
-    padding: 1% 1%;
-    margin: 1% 30%;
-    text-align: left;
+  background-color: #f1faee;
+  color: #e63946;
+  text-shadow: 1px 1px 1px #000;
+  width: 40%;
+  padding: 4% 2%;
+  margin: 1% 30%;
+  text-align: left;
 }
-.btnElmUsuario {
-    background-color: #d90429;
-    color: #e4d9ff;
-    border-bottom: 2px solid #e4d9ff;
-    border-right: 2px solid #e4d9ff;
-    border-left: 2px solid #d90429;
-    border-top: 2px solid #d90429;
-    transition: 1s all;
+
+.botonesOpciones{
+  displaY:flex
+}
+.cajaBtnProfileUser {
+  margin: 10% 0% 0% 0%;
+}
+
+  .EnlaceBtnUsuario{
+    background-color: #9b2226;
+    color:#ee9b00;
+    text-shadow: 1px 1px 1px #000;
+    text-decoration: none;
+    padding:1% 2%;
+    border-top:2px solid  #e9d8a6;
+    border-left:2px solid  #e9d8a6;
+    border-bottom:2px solid #ae2012;
+    border-right: 2px solid #ae2012;
+    transition:1s all;
   }
-  .btnElmUsuario:hover {
-    background-color: #d90429;
-    color: #e4d9ff;
-    border-top: 2px solid #e4d9ff;
-    border-left: 2px solid #e4d9ff;
-    border-right: 2px solid #d90429;
-    border-bottom: 2px solid #d90429;
-    transition: 1s all;
+  .EnlaceBtnUsuario:hover{
+    color: #9b2226;
+    background-color:#e9d8a6;
+    text-shadow: 1px 1px 1px #000;
+    text-decoration: none;
+    padding:1% 2%;
+    border-top:2px solid   #ae2012;
+    border-left:2px solid   #ae2012;
+    border-bottom:2px solid #e9d8a6;
+    border-right: 2px solid #e9d8a6;
+    transition:1s all;
+  }
+  .btnBaneoUs{
+    width: 25%;
+    margin: 0% 0% 1% 1%;
   }

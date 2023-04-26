@@ -1,10 +1,10 @@
 /*Como Admin*/
 .cajaAdmAlarma{
-    background-image: url("https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-image: url(https://images.pexels.com/photos/1095601/pexels-photo-1095601.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    padding: 2% 0% 22.6% 0%;
+    padding: 7% 0% 10.8% 0%;
 }
 .containerAlmAdm{
     display: flex;

@@ -97,8 +97,10 @@ const login = () => {
           >
             {errorM}
           </div>
+          <div className="cajaBtnLogin">
             <Link to="/register"><Button className="botonSubmit1">¿No tienes cuenta?, Hazte Usuario</Button></Link>
             <Link to="/"><Button className="botonSubmit1">Volver a Home</Button></Link>
+            </div>
         </div>
       </div>
     </>

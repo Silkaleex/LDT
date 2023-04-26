@@ -1,4 +1,84 @@
+.fondoProfileUser{
+    background-image: url(https://images.pexels.com/photos/14130837/pexels-photo-14130837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 3% 0% 21.9% 0%;
+}
 .carta{
     width: 50%;
     margin: 5% auto;
+    padding: 1% 1%;
+    background-color: #ff000069;
+    color: #fafaff;
+    text-shadow: 1px 1px 1px #000;
+}
+.btnBaneoUs {
+    width: 40%;
+    margin: 0% 0% 1% 1%;
+    background-color:#fafaff;
+    color: #720026;
+    transition:1s all;
+    letter-spacing:1px;
+}
+.btnBaneoUs:hover {
+    width: 40%;
+    margin: 0% 0% 1% 1%;
+    color:#fafaff;
+    background-color: #720026;
+    transition:1s all;
+    letter-spacing:1px;
+}
+.btnDesBaneoUs {
+    width: 40%;
+    margin: 0% 0% 1% 1%;
+    background-color: #c1121f;
+    color:#fafaff;
+    transition:1s all;
+    letter-spacing:1px;
+}
+.btnDesBaneoUs:hover {
+    width: 40%;
+    margin: 0% 0% 1% 1%;
+    color: #c1121f;
+    background-color:#fafaff;
+    transition:1s all;
+    letter-spacing:1px;
+}
+
+.btnElmUsuario {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    text-shadow: 1px 1px 1px #000;
+    transition: 1s all;
+    width: 8%;
+    margin: 0% 0% 1% 1%;
+}
+  .btnElmUsuario:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    border-left: 2px solid #e4d9ff;
+    border-right: 2px solid #d90429;
+    border-bottom: 2px solid #d90429;
+    text-shadow: 1px 1px 1px #000;
+    transition: 1s all;
+    width: 8%;
+    margin: 0% 0% 1% 1%;
+}
+::-webkit-scrollbar-track{
+    background: black;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background: black;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-track{
+    background: white;
+    border-radius: 5px;
 }

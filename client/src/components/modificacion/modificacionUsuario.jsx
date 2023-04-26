@@ -10,6 +10,7 @@ const ModifcacionUsuario = () => {
   const [user, setUser] = useState({
    email:"",
     name:"",
+    surname:""
   });
 
   useEffect(() => {
@@ -115,6 +116,18 @@ const ModifcacionUsuario = () => {
                 name="name"
                 id="name"
                 value={user.name}
+                onChange={onChangeInput}
+              ></input>
+                <label className="labelNotUs" htmlFor="surname">
+                Apellidos:
+              </label>
+              <input
+                className="inputUs"
+                placeholder="surname"
+                type="text"
+                name="surname"
+                id="surname"
+                value={user.surname}
                 onChange={onChangeInput}
               ></input>
               <div className="containerBotonesUs">

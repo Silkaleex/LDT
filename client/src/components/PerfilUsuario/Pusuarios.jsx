@@ -99,13 +99,14 @@ const PUsuarios = () => {
   };
 
   return (
-    <div>
+    <div className="fondoProfileUser">
       {role == 1 ? (
         <Card className="carta">
           <CardTitle tag="h1">Perfil de Usuario</CardTitle>
           <CardText tag="h4">Nombre: {Profile.name}</CardText>
           <CardText tag="h4">Apellidos: {Profile.surname}</CardText>
           <CardText tag="h4">Email: {Profile.email}</CardText>
+          <div className="botonesOpciones">
           <Button
             className="btnElmUsuario"
             onClick={() => {
@@ -115,14 +116,15 @@ const PUsuarios = () => {
             <TbTrash />
           </Button>
           {Profile.banned == false ? (
-            <Button className="button3" onClick={bannUser}>
+            <Button className=" btnBaneoUs" onClick={bannUser}>
               Banear Usuario
             </Button>
           ) : (
-            <Button className="button1" onClick={unbannUser}>
+            <Button className=" btnDesBaneoUs" onClick={unbannUser}>
               Desbanear Usuario
             </Button>
           )}
+          </div>
         </Card>
       ) : (
         <></>

@@ -114,12 +114,14 @@ const register = () => {
           >
             {errorM}
           </div>
+          <div className="BtnRegister">
           <Link to="/login">
             <Button className="botonLogin">Accede a tu cuenta</Button>
           </Link>
           <Link to="/">
             <Button className="botonLogin">Volver a Home</Button>
           </Link>
+          </div>
         </div>
       </div>
     </>

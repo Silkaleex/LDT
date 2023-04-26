@@ -78,7 +78,7 @@ function DatosUsuario() {
             <div className="card cartaUs">
               <div className="card-body">
                 <h3>
-                  Hola {User.name} Aqui tienes tus datos de Usuario:
+                  Hola {User.name} Este es tu perfil en LDT:
                 </h3>
                 <h5>Nombre: {User.name}</h5>
                 <h5>Apellidos: {User.surname}</h5>

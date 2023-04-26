@@ -114,7 +114,8 @@
 }
 .cartaUs {
   background-color: #1b263bd6;
-  color: #e4d9ff;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
   padding: 13% 5%;
 }
 .cajaBotonesUsuario {

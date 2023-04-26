@@ -39,7 +39,7 @@ const Licencia = () => {
             </h5>
             <h5>
               Con su enfoque en la usabilidad, la eficiencia y la
-              personalización, LD se ha convertido en una herramienta
+              personalización, LDT se ha convertido en una herramienta
               indispensable para aquellos que buscan maximizar su productividad
               y alcanzar sus metas con éxito.
             </h5>
@@ -110,7 +110,7 @@ const Licencia = () => {
                 con las leyes del España donde se encuentra el titular de la
                 licencia, sin tener en cuenta conflictos de leyes. Cualquier
                 disputa que surja en relación con este acuerdo se someterá a la
-                jurisdicción exclusiva de los tribunales competentes del España
+                jurisdicción exclusiva de los tribunales competentes en España de lo
                 mencionado.
               </h5>
               <h5>

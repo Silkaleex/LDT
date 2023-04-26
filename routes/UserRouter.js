@@ -371,10 +371,10 @@ UserRouter.get("/toPlan", auth, async (req, res) => {
 
 UserRouter.put("/user",auth, async (req, res) => {
   try {
-    const {name,email } = req.body;
+    const {name,email,surname } = req.body;
 
 
-    await user.findByIdAndUpdate({_id:req.user.id},{name,email},
+    await user.findByIdAndUpdate({_id:req.user.id},{name,email,surname},
       {new:true});
 
   const user2 = await user.findById(req.user.id)
