@@ -93,14 +93,14 @@ const login = () => {
               {errorM}
             </div>
             <div className="cajaBtnLogin">
-              <Button className="botonSubmit1">Enviar</Button>
+              <Button color="warning" className="botonSubmit1">Enviar</Button>
               <Link to="/register">
-                <Button className="botonSubmit">
+                <Button color="warning" className="botonSubmit">
                   ¿No tienes cuenta?, Hazte Usuario
                 </Button>
               </Link>
               <Link to="/">
-                <Button className="botonSubmit">Volver a Home</Button>
+                <Button color="warning" className="botonSubmit">Volver a Home</Button>
               </Link>
             </div>
           </Form>

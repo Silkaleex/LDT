@@ -1,7 +1,8 @@
 .fondoLicencia{
-    background-image: url("https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
+    background: linear-gradient(45deg, rgba(95,168,211,1) 0%, rgba(98,182,203,1) 25%, rgba(27,73,101,1) 50%, rgba(202,233,255,1) 75%, rgba(95,168,211,1) 100%);
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
     padding: 2% 0% 0% 0%;
 }
 .LicenciaLDT{
@@ -17,26 +18,14 @@
     margin:0% 44%;
 }
 .btnLcn{
-    color:#240046;
-    background-color: #a3cef1;
-    text-shadow: 1px 1px #fafaff;
+    color:#012a4a;
+    background-color: #61a5c2;
+    text-shadow: 1px 1px #fff;
     border-top: 2px groove #003554;
     border-left: 2px groove #003554;
     border-bottom: 2px groove  #00a6fb;
     border-right: 2px groove  #00a6fb;
     transition:1s all;
-    text-decoration: none;
-    padding:0% 10%
-}
-.btnLcn:hover{
-    background-color:#3772ff;
-   color: #a3cef1;
-    text-shadow: 1px 1px #000;
-    border-top: 2px groove #00a6fb;
-    border-left: 2px groove #00a6fb;
-    border-bottom: 2px groove   #003554;
-    border-right: 2px groove  #003554;
-    transition:1s all; 
     text-decoration: none;
     padding:0% 10%
 }
@@ -48,9 +37,10 @@
 }
 @media screen and (max-width:380px){
     .fondoLicencia{
-        background-image: url("https://images.pexels.com/photos/624015/pexels-photo-624015.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-        background-size: cover;
-        background-attachment: fixed;
+        background: linear-gradient(45deg, rgba(95,168,211,1) 0%, rgba(98,182,203,1) 25%, rgba(27,73,101,1) 50%, rgba(202,233,255,1) 75%, rgba(95,168,211,1) 100%);
+        background-size:cover;
+        background-repeat:no-repeat;
+        background-attachment:fixed;
         padding: 2% 0% 0% 0%;
     }
     .LicenciaLDT{
@@ -66,25 +56,14 @@
         margin:0% 35%;
     }
     .btnLcn{
-        color:#240046;
-        background-color: #a3cef1;
-        text-shadow: 1px 1px #fafaff;
+        color:#012a4a;
+        background-color: #61a5c2;
+        text-shadow: 1px 1px #fff;
         border-top: 2px groove #003554;
         border-left: 2px groove #003554;
         border-bottom: 2px groove  #00a6fb;
         border-right: 2px groove  #00a6fb;
         transition:1s all;
-        text-decoration: none;
-    }
-    .btnLcn:hover{
-        background-color:#3772ff;
-       color: #a3cef1;
-        text-shadow: 1px 1px #000;
-        border-top: 2px groove #00a6fb;
-        border-left: 2px groove #00a6fb;
-        border-bottom: 2px groove   #003554;
-        border-right: 2px groove  #003554;
-        transition:1s all; 
         text-decoration: none;
     }
     .footerLcn{

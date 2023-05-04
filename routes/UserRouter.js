@@ -132,7 +132,7 @@ UserRouter.post("/login", async (req, res) => {
   } catch (error) {
     return res.status(500).send({
       sucess: false,
-      message: error.message,
+      message: "Lo sentimos, algo no funcionó correctamente",
     });
   }
 });

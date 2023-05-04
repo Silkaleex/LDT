@@ -19,9 +19,9 @@ body::-webkit-scrollbar-thumb {
 }
 
 .imagen {
-  background-image: url("https://images.pexels.com/photos/53874/pexels-photo-53874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-image: url(https://images.pexels.com/photos/53874/pexels-photo-53874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
   background-size: cover;
-  padding: 1px;
+  padding: 1.2% 0%;
 }
 
 .contenedorHome {
@@ -54,51 +54,24 @@ body::-webkit-scrollbar-thumb {
 
 .enlacesHomeA {
   display: flex;
-  margin: 5% auto;
+  margin: 0% auto;
   padding: 1% 4%;
-  width: 107%;
+  width: 97%;
   text-decoration: none;
   color: #ffff;
   background: rgb(255, 46, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 46, 0, 1) 0%,
-    rgba(255, 0, 0, 1) 49%
-  );
-}
-.enlacesHomeA:hover {
-  display: flex;
-  margin: 5% auto;
-  padding: 1% 4%;
-  width: 107%;
-  text-decoration: none;
-  color: #ffff;
-  background: rgb(120,0,0);
-  background: linear-gradient(267deg, rgba(120,0,0,1) 0%, rgba(193,18,31,1) 50%, rgba(120,0,0,1) 100%);text-shadow: 0 1px 1px #000;
+  background: linear-gradient( 90deg, rgba(255, 46, 0, 1) 0%, rgba(255, 0, 0, 1) 49% );
+  font-size: 14px;
 }
 .enlacesHomeB {
   display: flex;
   margin: 5% auto;
-  padding: 1% 4%;
-  width: 80%;
+  padding: 1% 12%;
+  width: 97%;
   text-decoration: none;
   color: #ffff;
   background: rgb(255, 46, 0);
-  background: linear-gradient(
-    90deg,
-    rgba(255, 46, 0, 1) 0%,
-    rgba(255, 0, 0, 1) 49%
-  );
-}
-.enlacesHomeB:hover {
-  display: flex;
-  margin: 5% auto;
-  padding: 1% 4%;
-  width: 80%;
-  text-decoration: none;
-  color: #ffff;
-  background: rgb(120,0,0);
-  background: linear-gradient(267deg, rgba(120,0,0,1) 0%, rgba(193,18,31,1) 50%, rgba(120,0,0,1) 100%);text-shadow: 0 1px 1px #000;
+  background: linear-gradient( 90deg, rgba(255, 46, 0, 1) 0%, rgba(255, 0, 0, 1) 49% );
 }
 .termLicn {
   text-decoration: none;
@@ -112,32 +85,11 @@ body::-webkit-scrollbar-thumb {
   );
   transition:1s all;
 }
-.termLicn:hover {
-  text-decoration: none;
-  color: #f1faee;
-  padding: 1% 5%;
-  background: rgb(120,0,0);
-  background: linear-gradient(267deg, rgba(120,0,0,1) 0%, rgba(193,18,31,1) 50%, rgba(120,0,0,1) 100%);
-}
-.imgCarrousel {
-  width: 23%;
-  margin: 0% auto;
-}
-.carousel-control-next-icon,
-.carousel-control-prev-icon {
-  display: inline-block;
-  width: 2rem;
-  height: 2rem;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: 100% 100%;
-  background-color: #000;
-}
 @media screen and (max-width:380px){
   .imagen {
     background-image: url("https://images.pexels.com/photos/53874/pexels-photo-53874.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size: cover;
-    padding: 34.9% 0%;
+    padding: 35.3% 0%;
   }
   
   .contenedorHome {
@@ -171,7 +123,7 @@ body::-webkit-scrollbar-thumb {
     display: flex;
     margin: 5% auto;
     padding: 1% 4%;
-    width: 107%;
+    width: 94%;
     text-decoration: none;
     color: #ffff;
     background: rgb(255, 46, 0);
@@ -180,41 +132,17 @@ body::-webkit-scrollbar-thumb {
       rgba(255, 46, 0, 1) 0%,
       rgba(255, 0, 0, 1) 49%
     );
-  }
-  .enlacesHomeA:hover {
-    display: flex;
-    margin: 5% auto;
-    padding: 1% 4%;
-    width: 107%;
-    text-decoration: none;
-    color: #ffff;
-    background: rgb(120,0,0);
-    background: linear-gradient(267deg, rgba(120,0,0,1) 0%, rgba(193,18,31,1) 50%, rgba(120,0,0,1) 100%);text-shadow: 0 1px 1px #000;
   }
   .enlacesHomeB {
     display: flex;
     margin: 5% auto;
-    padding: 1% 4%;
-    width: 80%;
+    padding: 1% 12%;
+    width: 94%;
     text-decoration: none;
     color: #ffff;
     background: rgb(255, 46, 0);
-    background: linear-gradient(
-      90deg,
-      rgba(255, 46, 0, 1) 0%,
-      rgba(255, 0, 0, 1) 49%
-    );
-  }
-  .enlacesHomeB:hover {
-    display: flex;
-    margin: 5% auto;
-    padding: 1% 4%;
-    width: 80%;
-    text-decoration: none;
-    color: #ffff;
-    background: rgb(120,0,0);
-    background: linear-gradient(267deg, rgba(120,0,0,1) 0%, rgba(193,18,31,1) 50%, rgba(120,0,0,1) 100%);text-shadow: 0 1px 1px #000;
-  }
+    background: linear-gradient( 90deg, rgba(255, 46, 0, 1) 0%, rgba(255, 0, 0, 1) 49% );
+}
   .termLicn {
     text-decoration: none;
     color: #f1faee;
@@ -227,26 +155,4 @@ body::-webkit-scrollbar-thumb {
     );
     transition:1s all;
   }
-  .termLicn:hover {
-    text-decoration: none;
-    color: #f1faee;
-    padding: 1% 5%;
-    background: rgb(120,0,0);
-    background: linear-gradient(267deg, rgba(120,0,0,1) 0%, rgba(193,18,31,1) 50%, rgba(120,0,0,1) 100%);
-  }
-  .imgCarrousel {
-    width: 23%;
-    margin: 0% auto;
-  }
-  .carousel-control-next-icon,
-  .carousel-control-prev-icon {
-    display: inline-block;
-    width: 2rem;
-    height: 2rem;
-    background-repeat: no-repeat;
-    background-position: 50%;
-    background-size: 100% 100%;
-    background-color: #000;
-  }
-  
 }

@@ -40,7 +40,7 @@
 }
 .botonEnvio{
     background-color: #78290f;
-    color: #fafaff;
+    color: #ffecd1;
     font-size: 15px;
     letter-spacing:2px;
     text-shadow: 0 1px 1px #000;
@@ -54,13 +54,13 @@
     letter-spacing:2px;
     text-shadow: 0 1px 1px #000;
     border-radius:5px;
-    border:1px solid #fafaff;
+    border:1px solid #ffecd1;
     transition:1s all;
 }
 
 .botonLogin {
     background-color: #78290f;
-    color: #fafaff;
+    color: #ffecd1;
     border-radius: 5px;
     text-shadow: 0 1px 1px #000;
     margin: 2% 0%;
@@ -72,7 +72,7 @@
     border-radius: 5px;
     text-shadow: 0 1px 1px #000;
     margin: 2% 0%;
-    border:1px solid #fafaff;
+    border:1px solid #ffecd1;
     transition:1s all;
 }
 
@@ -120,7 +120,7 @@
     }
     .botonEnvio{
         background-color: #78290f;
-        color: #fafaff;
+        color: ##ffecd1afaff;
         font-size: 15px;
         letter-spacing:2px;
         text-shadow: 0 1px 1px #000;
@@ -134,13 +134,13 @@
         letter-spacing:2px;
         text-shadow: 0 1px 1px #000;
         border-radius:5px;
-        border:1px solid #fafaff;
+        border:1px solid #ffecd1;
         transition:1s all;
     }
     
     .botonLogin {
         background-color: #78290f;
-        color: #fafaff;
+        color: #ffecd1;
         border-radius: 5px;
         text-shadow: 0 1px 1px #000;
         margin: 2% 0%;
@@ -152,7 +152,7 @@
         border-radius: 5px;
         text-shadow: 0 1px 1px #000;
         margin: 2% 0%;
-        border:1px solid #fafaff;
+        border:1px solid #ffecd1;
         transition:1s all;
     }
     
