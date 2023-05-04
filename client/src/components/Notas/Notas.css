@@ -1,22 +1,16 @@
 /*Como Administrador*/
 .fondoNotaAdm {
-  background-image: url("https://images.pexels.com/photos/11516396/pexels-photo-11516396.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  padding: 10.7%;
-}
-.contenedorNotaAdm {
-  width: 30%;
-  margin: 0% auto;
+  background: linear-gradient( 45deg, rgba(43, 45, 66, 1) 0%, rgba(237, 242, 244, 1) 50%, rgba(141, 153, 174, 1) 100% );
+  padding: 4% 0% 7% 0%;
 }
 .descripcionNotaAdm {
-  background-color: #5e548ed9;
+  background-color: #d98484a8;
   text-shadow: 1px 1px 1px #000;
-  color: #fafaff;
+  color: #d90429;
   padding: 5%;
-  margin: -6.8% 0% 0% 0%;
-  width: 108%;
+  width: 40%;
+  margin: 0px auto;
+
 }
 .cajaBotonesAdm {
   display: flex;
@@ -93,23 +87,109 @@
   border-bottom: 2px solid #d90429;
   transition: 1s all;
 }
+@media screen and (max-width:380px){
+  .fondoNotaAdm {
+    background: linear-gradient( 45deg, rgba(43, 45, 66, 1) 0%, rgba(237, 242, 244, 1) 50%, rgba(141, 153, 174, 1) 100% );
+    padding: 27% 0% 41.9% 0%;
+  }
+  .descripcionNotaAdm {
+    background-color: #d98484a8;
+    text-shadow: 1px 1px 1px #000;
+    color: #d90429;
+    padding: 16% 7%;
+    margin: 0% auto;
+    width: 80%;
+  }
+  .cajaBotonesAdm {
+    display: flex;
+    align-items: center;
+  }
+  .botonAdm {
+    color: #fafaff;
+    background-color: #231942;
+    text-decoration: none;
+    padding: 0% 3%;
+    border-radius: 1%;
+    border-bottom: 2px solid #fafaff;
+    border-right: 2px solid #fafaff;
+    border-left: 2px solid #231942;
+    border-top: 2px solid #231942;
+    transition: 1s all;
+  }
+  .botonAdm:hover {
+    background-color: #231942;
+    color: #fafaff;
+    text-decoration: none;
+    transition: 1s all;
+    padding: 0% 3%;
+    border-radius: 1%;
+    border-bottom: 2px solid #231942;
+    border-right: 2px solid #231942;
+    border-left: 2px solid #fafaff;
+    border-top: 2px solid #fafaff;
+    transition: 1s all;
+  }
+  .modificarNoAdm {
+    text-decoration: none;
+    color: #fcbf49;
+    background-color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 1%;
+    border-bottom: 2px solid #fcbf49;
+    border-right: 2px solid #fcbf49;
+    border-left: 2px solid #f77f00;
+    border-top: 2px solid #f77f00;
+    font-size: 15px;
+    transition:1s all;
+    margin: 0% 3%;
+  }
+  .modificarNoAdm:hover {
+    text-decoration: none;
+    background-color: #fcbf49;
+    color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 1%;
+    border-bottom: 2px solid #f77f00;
+    border-right: 2px solid #f77f00;
+    border-left: 2px solid #fcbf49;
+    border-top: 2px solid #fcbf49;
+    font-size: 15px;
+    transition:1s all;  
+    margin: 0% 3%;
+  }
+  .botonDelAdmNot {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    transition: 1s all;
+  }
+  .botonDelAdmNot:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    border-left: 2px solid #e4d9ff;
+    border-right: 2px solid #d90429;
+    border-bottom: 2px solid #d90429;
+    transition: 1s all;
+  }
+}
 /*Como usuario*/
 .fondoNotaUs {
-  background-image: url(https://images.pexels.com/photos/7718755/pexels-photo-7718755.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  padding: 42.4% 0% 0% 0%;
+  background: rgb(226,149,120);
+  background: linear-gradient(45deg, rgba(226,149,120,1) 0%, rgba(237,246,249,1) 50%, rgba(0,109,119,1) 100%);
+  padding: 4% 0% 9.6% 0%;
+  border-radius: 0%;
 }
 .contenedorNotaUs {
-  margin: -38% auto;
-  width: 50%;
-}
-.descripcionNotaUs {
-  background-color: #1b263ba0;
+  background-color: #1b263b9e;
   text-shadow: 1px 1px 1px #000;
-  color: #e0e1dd;
-  padding: 5%;
+  color: #fec89a;
+  margin:0px auto;
+  width: 50%;
+  padding: 6% 3%;
 }
 .cajaBotonesUs {
   margin: 0% 22%;
@@ -184,4 +264,97 @@
   border-right: 2px solid #d90429;
   border-bottom: 2px solid #d90429;
   transition: 1s all;
+}
+
+@media screen and (max-width: 380px) {
+  .fondoNotaUs {
+    background: rgb(226,149,120);
+    background: linear-gradient(45deg, rgba(226,149,120,1) 0%, rgba(237,246,249,1) 50%, rgba(0,109,119,1) 100%);
+    padding: 30.65% 0% 76.3% 0%;
+    border-radius: 0%;
+}
+  .contenedorNotaUs {
+    margin:0% auto;
+    width: 80%;
+  }
+  .descripcionNotaUs {
+    background-color: #1b263b9e;
+    text-shadow: 1px 1px 1px #000;
+    color: #fec89a;
+    padding: 6% 3%;
+  }
+  .cajaBotonesUs {
+    margin: 0% 10%;
+  }
+  .botonUs {
+    color: #e0e1dd;
+    background-color: #1b263b;
+    border-bottom: 2px solid #e0e1dd;
+    border-right: 2px solid #e0e1dd;
+    border-left: 2px solid #1b263b;
+    border-top: 2px solid #1b263b;
+    text-decoration: none;
+    transition: 1s all;
+    border-radius: 1%;
+    padding: 0% 2%;
+  }
+  .botonUs:hover {
+    color: #e0e1dd;
+    background-color: #1b263b;
+    border-bottom: 2px solid #1b263b;
+    border-right: 2px solid #1b263b;
+    border-left: 2px solid #e0e1dd;
+    border-top: 2px solid #e0e1dd;
+    text-shadow: 1px 1px 1px #000;
+    text-decoration: none;
+    transition: 1s all;
+    border-radius: 1%;
+    padding: 0% 2%;
+  }
+  .modificarNoUs {
+    text-decoration: none;
+    color: #fcbf49;
+    background-color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 1%;
+    border-bottom: 2px solid #fcbf49;
+    border-right: 2px solid #fcbf49;
+    border-left: 2px solid #f77f00;
+    border-top: 2px solid #f77f00;
+    font-size: 15px;
+    transition:1s all;
+    margin: 0% 5%;
+  }
+  .modificarNoUs:hover {
+    text-decoration: none;
+    background-color: #fcbf49;
+    color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 1%;
+    border-bottom: 2px solid #f77f00;
+    border-right: 2px solid #f77f00;
+    border-left: 2px solid #fcbf49;
+    border-top: 2px solid #fcbf49;
+    font-size: 15px;
+    transition:1s all;
+    margin: 0% 5%;
+  }
+  .botonNotaUs {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    transition: 1s all;
+  }
+  .botonNotaUs:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    border-left: 2px solid #e4d9ff;
+    border-right: 2px solid #d90429;
+    border-bottom: 2px solid #d90429;
+    transition: 1s all;
+  }
 }

@@ -62,7 +62,7 @@ const ModifcacionEvt = () => {
                 Evento:
               </label>
               <textarea
-                className="tareasAdm inputAdm"
+                className="tareasAdm txtCaAdm"
                 placeholder="Descripcion de tu Evento"
                 type="textarea"
                 name="calendar"
@@ -85,7 +85,7 @@ const ModifcacionEvt = () => {
               
               <div className="containerBotonesAdm">
                 <button className="botonModCalAdm">Modificar Evento</button>
-                <Link to="/tCalendar" className="botonVolCalAdm">
+                <Link to="/usuario" className="botonVolCalAdm">
                   Volver
                 </Link>
               </div>
@@ -122,7 +122,7 @@ const ModifcacionEvt = () => {
               />
               <div className="containerBotonesUs">
                 <button className="botonModCalUs">Modificar Evento</button>
-                <Link to="/tCalendar" className="botonVolCalUs">
+                <Link to="/usuario" className="botonVolCalUs">
                   Volver
                 </Link>
               </div>

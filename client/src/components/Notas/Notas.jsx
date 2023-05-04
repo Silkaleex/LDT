@@ -27,7 +27,6 @@ function Notas() {
   };
   useEffect(() => {
     getNotas();
-    
   }, []);
 
   // console.log(nota);
@@ -48,7 +47,7 @@ function Notas() {
         console.log(response);
         setTimeout(() => {
           // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
-          navigate("/tNotas");
+          navigate("/usuario");
         });
       } catch (error) {
         console.log(error.response);
@@ -59,40 +58,44 @@ function Notas() {
     <>
       {role == 1 ? (
         <div className="fondoNotaAdm">
-          <div className="contenedorNotaAdm">
             <div className="descripcionNotaAdm">
               <h1>Descripcion de la nota:</h1>
               <h2>{nota.title}</h2>
               <h5>{nota.fecha}</h5>
               <h5>{nota.tareas}</h5>
               <div className="cajaBotonesAdm">
-              <Link to="/tNotas" className="botonAdm">
-                Volver
-              </Link>
-              <Link to={`/modify/${notaId}`} className="modificarNoAdm">Modificar Nota</Link>
-              <button className="botonDelAdmNot" onClick={deleteNota}><TbTrash/></button>
-              </div>
-            </div>
+                <Link to="/usuario" className="botonAdm">
+                  Volver
+                </Link>
+                <Link to={`/modify/${notaId}`} className="modificarNoAdm">
+                  Modificar Nota
+                </Link>
+                <button className="botonDelAdmNot" onClick={deleteNota}>
+                  <TbTrash />
+                </button>
+              </div>           
           </div>
         </div>
       ) : (
-        <div className="fondoNotaUs">
-          <div className="contenedorNotaUs">
-            <div className="descripcionNotaUs">
+            <div className="card fondoNotaUs">
+              <div className="card-body contenedorNotaUs">
               <h1>Descripcion de la nota:</h1>
               <h2>{nota.title}</h2>
               <h5>{nota.fecha}</h5>
               <h5>{nota.tareas}</h5>
               <div className="cajaBotonesUs">
-              <Link to="/tNotas" className="botonUs">
-                Volver
-              </Link>
-              <Link to={`/modify/${notaId}`} className="modificarNoUs">Modificar Nota</Link>
-              <button className="botonNotaUs" onClick={deleteNota}><TbTrash/></button>
+              <Link to="/usuario" className="botonUs">
+                  Volver
+                </Link>
+                <Link to={`/modify/${notaId}`} className="modificarNoUs">
+                  Modificar Nota
+                </Link>
+                <button className="botonNotaUs" onClick={deleteNota}>
+                  <TbTrash />
+                </button>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
+              </div>
       )}
     </>
   );

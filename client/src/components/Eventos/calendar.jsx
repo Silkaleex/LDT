@@ -9,6 +9,7 @@ import "./calendar.css";
 function Eventos() {
   const { eventoId } = useParams(); //Se a creado en la seccion en pages en evento/:eventoID
   const [event, setEvento] = useState([]);
+  const role = localStorage.getItem("role");
   const token = localStorage.getItem("token");
   // const role = localStorage.getItem("role");
   const navigate = useNavigate();
@@ -47,7 +48,7 @@ function Eventos() {
         console.log(response);
         setTimeout(() => {
           // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
-          navigate("/tCalendar");
+          navigate("/usuario");
         });
       } catch (error) {
         console.log(error.response);
@@ -56,25 +57,51 @@ function Eventos() {
   };
   return (
     <>
-      <div className="fondoEvAdm">
-        <div className="contenedorEvAdm">
-          <div className="descripcionEvAdm">
-            <h1>Descripcion del evento:</h1>
-            <h2 className="fs-5">Evento: {event.title}</h2>
-            <h2 className="fs-5">Descripción: {event.calendar}</h2>
-            <h2 className="fs-5">Fecha: {event.fecha}</h2>
-            <div className="cajaBtnCal">
-            <Link to="/tCalendar" className="botonEvAdm">
-              Volver
-            </Link>
-            <Link to={`/modifyCal/${eventoId}`} className="modificarNoAdm">Modificar Eventos</Link>
-            <button className="botonDelEvAdm" onClick={deleteEvent}>
-              <TbTrash/>
-            </button>
-          </div>
+      {role == 1 ? (
+        <div className="fondoEvAdm card">
+          <div className="contenedorEvAdm card-body">
+            <div className=" card-title descripcionEvAdm">
+              <h1>Descripcion del evento:</h1>
+              <h5 className="card-text">Evento: {event.title}</h5>
+              <h5 className="card-text">Descripción: {event.calendar}</h5>
+              <h5 className="card-text">Fecha: {event.fecha}</h5>
+              <div className="cajaBtnCalAdm">
+                <Link to="/usuario" className="botonEvAdm card-link">
+                  Volver
+                </Link>
+                <Link to={`/modifyCal/${eventoId}`} className="modificarCaAdm card-link">
+                  Modificar Eventos
+                </Link>
+                <button className="botonDelEvAdm card-link" onClick={deleteEvent}>
+                  <TbTrash />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      ) : (
+        <div className="fondoEvUs card">
+          <div className="card-body">
+            <div className="card-title cartaUser ">
+              <h1 className="card-subtitle colorLetraUs">Descripcion del evento:</h1>
+              <h2 className=" card-text colorLetraUs">Evento: {event.title}</h2>
+              <h2 className=" card-text colorLetraUs">Descripción: {event.calendar}</h2>
+              <h2 className=" card-text colorLetraUs">Fecha: {event.fecha}</h2>
+              <div className="cajaBtnCal">
+                <Link to="/usuario" className="botonVolCalenUs card-link">
+                  Volver
+                </Link>
+                <Link to={`/modifyCal/${eventoId}`} className="botonModCalenUs card-link">
+                  Modificar Eventos
+                </Link>
+                <button className="botonDelAdmCal card-link" onClick={deleteEvent}>
+                  <TbTrash />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

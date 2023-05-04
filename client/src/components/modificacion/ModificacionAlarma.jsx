@@ -82,7 +82,7 @@ const ModifcacionAlm = () => {
               ></textarea>
               <div className="containerBotonesAdm">
                 <button className="botonModAlmAdm">Modificar Libro</button>
-                <Link to="/tAlarma" className="botonVolAlmAdm">
+                <Link to="/usuario" className="botonVolAlmAdm">
                   Volver
                 </Link>
               </div>
@@ -118,7 +118,7 @@ const ModifcacionAlm = () => {
               ></textarea>
               <div className="containerBotonesUs">
                 <button className="botonModAlmUs">Modificar Alarma</button>
-                <Link to="/tAlarma" className="botonVolAlmUs">
+                <Link to="/usuario" className="botonVolAlmUs">
                   Volver
                 </Link>
               </div>

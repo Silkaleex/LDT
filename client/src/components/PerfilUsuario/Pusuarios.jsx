@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import './Pusuarios.css'
+import "./Pusuarios.css";
 import { TbTrash } from "react-icons/tb";
+import { Link } from "react-router-dom";
 import { Button, CardTitle, CardText, Card } from "reactstrap";
 const PUsuarios = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
   // const banned = localStorage.getItem("banned");
-  const[baned,setBaned] = useState(false)
+  const [baned, setBaned] = useState(false);
   const [Profile, setProfile] = useState({});
   const { userId } = useParams();
   const PerfilUser = async () => {
@@ -103,27 +104,30 @@ const PUsuarios = () => {
       {role == 1 ? (
         <Card className="carta">
           <CardTitle tag="h1">Perfil de Usuario</CardTitle>
-          <CardText tag="h4">Nombre: {Profile.name}</CardText>
-          <CardText tag="h4">Apellidos: {Profile.surname}</CardText>
-          <CardText tag="h4">Email: {Profile.email}</CardText>
+          <CardText tag="h5">Nombre: {Profile.name}</CardText>
+          <CardText tag="h5">Apellidos: {Profile.surname}</CardText>
+          <CardText tag="h5">Email: {Profile.email}</CardText>
           <div className="botonesOpciones">
-          <Button
-            className="btnElmUsuario"
-            onClick={() => {
-              deleteUser(Profile._id);
-            }}
-          >
-            <TbTrash />
-          </Button>
-          {Profile.banned == false ? (
-            <Button className=" btnBaneoUs" onClick={bannUser}>
-              Banear Usuario
+            <Button
+              className="btnElmUsuario" color="danger"
+              onClick={() => {
+                deleteUser(Profile._id);
+              }}
+            >
+              <TbTrash />
             </Button>
-          ) : (
-            <Button className=" btnDesBaneoUs" onClick={unbannUser}>
-              Desbanear Usuario
-            </Button>
-          )}
+            {Profile.banned == false ? (
+              <Button color="warning" className=" btnBaneoUs" onClick={bannUser}>
+                Banear Usuario
+              </Button>
+            ) : (
+              <Button color="warning" className=" btnDesBaneoUs" onClick={unbannUser}>
+                Desbanear Usuario
+              </Button>
+            )}
+            <Link to="/datosUsuario" className="botonVolverAdm">
+              Volver
+            </Link>
           </div>
         </Card>
       ) : (

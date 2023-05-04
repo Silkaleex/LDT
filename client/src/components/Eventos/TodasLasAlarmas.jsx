@@ -25,7 +25,7 @@ function TodasLasAlarmas() {
     getAlarms();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(alarma)
+  console.log(alarma);
   return (
     <>
       {role == 1 ? (
@@ -75,7 +75,7 @@ function TodasLasAlarmas() {
                         <h2 className="fs-5">Fecha: {Alarma.fecha}</h2>
                         <Link
                           to={`/Alarma/${Alarma._id}`}
-                          className="enlacesAlUs fs-4"
+                          className="enlacesAlUs"
                         >
                           Acceder a Alarma
                         </Link>
@@ -84,12 +84,10 @@ function TodasLasAlarmas() {
                   );
                 })}
               </div>
-            </div>
-            <div className="cajaCirculoAlmUs">
-              <Link to="/newAlm" className="circuloAlmUs">
-                <BsPencilSquare />
-              </Link>
-            </div>
+            </div>{" "}
+            <Link to="/newAlm" className="circuloAlmUs">
+              <BsPencilSquare />
+            </Link>
           </div>
         </div>
       )}

@@ -1,133 +1,222 @@
 /*Caja Admin*/
-.fondoAdmCal{
-  background-image: url("https://images.pexels.com/photos/2897462/pexels-photo-2897462.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-size: cover;
-  background-position: center;
-  padding: 0% 0% 19.9% 0%;
+.fondoAdmCal {
+  border-top: 5px dashed #edf2f4;
+  background: rgb(43, 45, 66);
+  background: linear-gradient(
+    45deg,
+    rgba(43, 45, 66, 1) 0%,
+    rgba(237, 242, 244, 1) 50%,
+    rgba(141, 153, 174, 1) 100%
+  );
+  padding: 5% 0% 5% 0%;
 }
-.cajaAdminisCal{
-  margin:0px auto;
+.cajaAdminisCal {
+  margin: 0px auto;
   padding: 2% 0% 10.3% 0%;
-
 }
-.tAdminCal{
+.tAdminCal {
   text-align: center;
-  color:#fafaff;
+  color: #d90429;
   text-shadow: 1px 1px 1px #000;
 }
-.cartaEventoCal{
-  background-color: #5e548eb2;
-  color: #fafaff;
+.cartaEventoCal {
+  background-color: #d98484a8;
+  color: #d90429;
   text-shadow: 1px 1px 1px #000;
   transition: 1s all;
   width: 30%;
   margin: 1% auto;
-
 }
-.cajaCirculoCalAdm{
+.cajaCirculoCalAdm {
   margin: 2% 49%;
 }
-.circuloCalAdm{
-  background-color: #231942;
+.circuloCalAdm {
+  background-color: #000;
   border-radius: 50%;
-  color: #fafaff;
-  border: 3px groove #fafaff;
-  transition:1s all;
+  color: #d90429;
+  transition: 1s all;
   padding: 0% 20%;
 }
-.circuloCalAdm:hover{
-  color: #231942;
-  border-radius: 50%;
-  background-color: #9f86c0;
-  border: 3px groove #5e548e;
-  transition:1s all;
-  padding: 0% 20%;
-}
-.accederCal{
-  color:#fafaff;
-  background-color: #231942;
+.accederCal {
+  color: #d90429;
+  background-color: #f5f3f4;
   text-shadow: 1px 1px 1px#000;
   text-decoration: none;
   letter-spacing: 1px;
-  transition:1s all;
+  transition: 1s all;
   padding: 0% 5%;
-  border:1px groove #231942;
 }
-.accederCal:hover{
-  background-color:#9f86c0;
-  color: #231942;
-  text-shadow: 1px 1px 1px#fafaff;
-  text-decoration: none;
-  letter-spacing: 1px;
-  transition:1s all;
-  padding: 0% 5%;
-  border:1px groove #231942;
+@media screen and (max-width:380px){
+  .fondoAdmCal {
+    border-top: 5px dashed #edf2f4;
+    background: rgb(43, 45, 66);
+    background: linear-gradient(
+      45deg,
+      rgba(43, 45, 66, 1) 0%,
+      rgba(237, 242, 244, 1) 50%,
+      rgba(141, 153, 174, 1) 100%
+    );
+    padding: 5% 0% 5% 0%;
+  }
+  .cajaAdminisCal {
+    margin: 0px auto;
+    padding: 2% 0% 10.3% 0%;
+  }
+  .tAdminCal {
+    text-align: center;
+    color: #d90429;
+    text-shadow: 1px 1px 1px #000;
+  }
+  .cartaEventoCal {
+    background-color: #d98484a8;
+    color: #d90429;
+    text-shadow: 1px 1px 1px #000;
+    transition: 1s all;
+    width: 70%;
+    margin: 1% auto;
+  }
+  .cajaCirculoCalAdm {
+    margin: 2% 49%;
+  }
+  .circuloCalAdm {
+    background-color: #000;
+    border-radius: 50%;
+    color: #d90429;
+    transition: 1s all;
+    padding: 0% 80%;
+    border:3px groove  #d90429;
+  }
+  .accederCal {
+    color: #d90429;
+    background-color: #f5f3f4;
+    text-shadow: 1px 1px 1px#000;
+    text-decoration: none;
+    letter-spacing: 1px;
+    transition: 1s all;
+    padding: 0% 5%;
+  }
 }
 /*Caja Usuario*/
-.fondoUsCalendar{
-  background-image: url(https://images.pexels.com/photos/1410226/pexels-photo-1410226.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-  background-size: cover;
-  background-position: center;
-  padding: 2% 0% 33.5% 0%;
+.fondoUsCalendar {
+  background: rgb(226, 149, 120);
+  background: linear-gradient(
+    45deg,
+    rgba(226, 149, 120, 1) 0%,
+    rgba(237, 246, 249, 1) 50%,
+    rgba(0, 109, 119, 1) 100%
+  );
+
+  padding: 7% 0% 7% 0%;
 }
 
-.cajaUsuCalen{
-  margin:0px auto;
+.cajaUsuCalen {
+  margin: 0px auto;
   padding: 2% 0% 10.3% 0%;
-
 }
 
-.letraCalUs{
-  color:#e0e1dd;
+.letraCalUs {
+  color: #fec89a;
   text-shadow: 1px 1px 1px #000;
+  width: 104%;
 }
-.tusCal{
+.tusCal {
   text-align: center;
-  color: #a3cef1;
+  color: #fec89a;
   text-shadow: 1px 1px 1px #000;
 }
-.cartaCalUs{
+.cartaCalUs {
   text-align: center;
   background-color: #1b263ba0;
-  width: 30%;
-  margin: 2% 35%;
+  width: 50%;
+  margin: 2% 25%;
 }
-.accederCalUs{
-text-decoration: none;
-color:#e0e1dd;
-background-color:#1b263b;
-text-shadow: 1px 1px 1px #000;
-padding:0% 3%;
-transition: 1s all;
+.accederCalUs {
+  text-decoration: none;
+  color: #fec89a;
+  background-color: #2f3e46;
+  text-shadow: 1px 1px 1px #000;
+  padding: 0% 3%;
+  transition: 1s all;
 }
-.accederCalUs:hover{
-text-decoration: none;
-background-color:#e0e1dd;
-color:#1b263d;
-font-weight: bold;
-text-shadow: 1px 1px 1px #fff;
-padding:0% 3%;
-transition: 1s all;
-}
-.cajaCirculoCalUs{
+.cajaBtnCalendar{
   margin: 0% 48%;
 }
-
 .circuloCalUs {
-  background-color: #1b263b;
-  border-radius: 50%;
-  color: #e0e1dd;
-  border: 3px groove #fafaff;
-  transition:1s all;
-  padding: 0% 20%;
-  text-decoration:none;
+  padding:0% 40%;
+  background-color: #e4d9ff;
+  color: #04052e;
+  border:1px solid #000;
+  text-decoration: none;
+  transition: 1s all;
 }
 .circuloCalUs:hover {
-  color: #1b263b;
-  border-radius: 50%;
-  background-color: #e0e1dd;
-  border: 3px groove #fafaff;
-  transition:1s all;
-  padding: 0% 20%;
-  text-decoration:none;
+  padding:0% 40%;
+  color: #e4d9ff;
+  border:1px solid #000;
+  background-color: #04052e;
+  text-decoration: none;
+  transition: 1s all;
+}
+@media screen and (max-width:380px){
+  .fondoUsCalendar {
+    background: rgb(226, 149, 120);
+    background: linear-gradient(
+      45deg,
+      rgba(226, 149, 120, 1) 0%,
+      rgba(237, 246, 249, 1) 50%,
+      rgba(0, 109, 119, 1) 100%
+    );
+  
+    padding: 7% 0% 7% 0%;
+  }
+  
+  .cajaUsuCalen {
+    margin: 0px auto;
+    padding: 2% 0% 10.3% 0%;
+  }
+  
+  .letraCalUs {
+    color: #fec89a;
+    text-shadow: 1px 1px 1px #000;
+    width: 104%;
+  }
+  .tusCal {
+    text-align: center;
+    color: #fec89a;
+    text-shadow: 1px 1px 1px #000;
+  }
+  .cartaCalUs {
+    text-align: center;
+    background-color: #1b263ba0;
+    width: 85%;
+    margin: 2% 8%;
+  }
+  .accederCalUs {
+    text-decoration: none;
+    color: #fec89a;
+    background-color: #2f3e46;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 3%;
+    transition: 1s all;
+  }
+  .cajaBtnCalendar{
+    margin: 0% 48%;
+  }
+  .circuloCalUs {
+    padding:0% 40%;
+    background-color: #e4d9ff;
+    color: #04052e;
+    border:1px solid #000;
+    text-decoration: none;
+    transition: 1s all;
+  }
+  .circuloCalUs:hover {
+    padding:0% 40%;
+    color: #e4d9ff;
+    border:1px solid #000;
+    background-color: #04052e;
+    text-decoration: none;
+    transition: 1s all;
+  }
+  
 }

@@ -1,11 +1,13 @@
 /* eslint-disable eqeqeq */
 import React from "react";
 import axios from "axios";
- import "./todosLosPlanificadores.css";
+import "./todosLosPlanificadores.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { TbColorPicker } from "react-icons/tb"
-import { CiPen }from "react-icons/ci";
+import { TbColorPicker } from "react-icons/tb";
+import { CiPen } from "react-icons/ci";
+import { Card, CardBody, CardTitle, CardText } from "reactstrap";
+
 const TodosLosPlanificadores = () => {
   const [plan, setPlan] = useState([]);
   const token = localStorage.getItem("token");
@@ -18,7 +20,7 @@ const TodosLosPlanificadores = () => {
       },
     });
     console.log(response);
-     setPlan(response.data.Planificador.planning);
+    setPlan(response.data.Planificador.planning);
   };
 
   useEffect(() => {
@@ -34,46 +36,57 @@ const TodosLosPlanificadores = () => {
             <div className="contenidoAdmPlanning">
               {plan.map((pln) => {
                 return (
-                  <div key={pln._id} className="DescripcionAdmPlanning"> 
-                      <h2>{pln.title}</h2>
-                      <h3>{pln.description}</h3>
-                      <Link to={`/planificar/${pln._id}`} className="accesoAdmPlanning" >ver el Planning</Link>
+                  <div key={pln._id} className="DescripcionAdmPlanning">
+                    <h2 className="letraPlnAdmin">{pln.title}</h2>
+                    <h3 className="letraPlnAdmin">{pln.description}</h3>
+                    <Link
+                      to={`/planificar/${pln._id}`}
+                      className="accesoAdmPlanning"
+                    >
+                      ver el Planning
+                    </Link>
                   </div>
                 );
               })}
             </div>
           </div>
           <div className="cajaEnlaceAdmPLanning">
-             <Link to="/newPLan" className="enlaceAdmPlanning">
+            <Link to="/newPLan" className="enlaceAdmPlanning">
               <TbColorPicker />
-            </Link> 
+            </Link>
           </div>
         </div>
       ) : (
-        <div className="fondoUsPlaning">
-          <div className="cajaUsPlanning">
-            <h1 className="tituloUsPlanning">Tus Planificadores</h1>
-            <div className="contenidoUsPlanning">
-              {plan.map((pln) => {
-                return (
-                  <div key={pln._id} className="DescripcionUsPlanning">
-                   
-                      <h2>{pln.title}</h2>
-                      <h3>{pln.description}</h3>
-                      <Link to={`/planificar/${pln._id}`} className="accesoUsPlanning">Ver el Planning</Link>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-          <div className="cajaEnlaceUsPLanning">
-             <Link to="/newPLan" className="enlaceUsPlanning" >
-              <CiPen />
-            </Link> 
-          </div>
-        </div>
+        <>
+          <Card className="fondoPlanUs">
+            <CardBody >
+              <CardTitle tag="h2" className="tituloPlnUs ">
+                Tus Planificadores
+              </CardTitle>
+                {plan.map((pln) => {
+                  return (
+                    <CardBody key={pln._id} className="descripcionPlanUs">
+                      <CardText className="txtPlnUs">Titulo: {pln.title}</CardText>
+                      <CardText className="txtPlnUs">Descripción: {pln.description}</CardText>
+                      <Link
+                        to={`/planificar/${pln._id}`}
+                        className="accesoUsPlanning"
+                      >
+                        Ver el Planning
+                      </Link>
+                     
+                    </CardBody>
+                  );
+                })}
+            </CardBody>
+            <Link to="/newPLan" className="addPlnUs">
+                        <CiPen />
+                      </Link>
+          </Card>
+  
+        </>
       )}
-      
+     
     </>
   );
 };

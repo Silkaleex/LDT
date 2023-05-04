@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./DelUs.css";
 import { Link } from "react-router-dom";
+import { Card, CardTitle, CardBody, CardText } from "reactstrap";
 const DelUs = () => {
   const token = localStorage.getItem("token");
   const [usuarios, setUsuarios] = useState([]);
@@ -20,24 +21,28 @@ const DelUs = () => {
     getUsers();
   }, []);
 
-
-
   return (
-    <div className="containerFondoEliminacion">
-      <h1 className="TltProfile">Usuarios registrados:</h1>
-      {usuarios.map((user) => {
-        return (
-          <div className="cajaEliminacion" key={user._id}>
-            <h3>{user.name}</h3>
-            <h3>{user.surname}</h3>
-            <h3>{user.email}</h3>
-            <div className="cajaBtnProfileUser">
-            <Link className="EnlaceBtnUsuario" to={`/Usuarios/${user._id}`}>Ver Usuario</Link>
-          </div>
-          </div>
-        );
-      })}
-    </div>
+    <Card>
+      <CardBody className="containerFondoEliminacion">
+        <CardTitle tag="h3" className="TltProfile">
+          Usuarios registrados:
+        </CardTitle>
+        {usuarios.map((user) => {
+          return (
+            <CardBody className="cajaEliminacion" key={user._id}>
+              <CardText>{user.name}</CardText>
+              <CardText>{user.surname}</CardText>
+              <CardText>{user.email}</CardText>
+              <div className="cajaBtnProfileUser">
+                <Link className="EnlaceBtnUsuario" to={`/Usuarios/${user._id}`}>
+                  Ver Usuario
+                </Link>
+              </div>
+            </CardBody>
+          );
+        })}
+      </CardBody>
+    </Card>
   );
 };
 

@@ -100,9 +100,7 @@ const register = () => {
                 onChange={onChangeInput}
               />
             </FormGroup>{" "}
-            <Button className="botonEnvio">Submit</Button>
-          </Form>
-          <div
+            <div
             className="alertaAzul"
             style={{ display: successM ? "block" : "none" }}
           >
@@ -114,7 +112,8 @@ const register = () => {
           >
             {errorM}
           </div>
-          <div className="BtnRegister">
+            <div className="BtnRegister">
+            <Button className="botonEnvio">Submit</Button>
           <Link to="/login">
             <Button className="botonLogin">Accede a tu cuenta</Button>
           </Link>
@@ -122,6 +121,9 @@ const register = () => {
             <Button className="botonLogin">Volver a Home</Button>
           </Link>
           </div>
+          </Form>
+       
+         
         </div>
       </div>
     </>

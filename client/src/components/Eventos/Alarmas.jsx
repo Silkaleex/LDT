@@ -44,7 +44,7 @@ function Alarmas() {
         console.log(response);
         setTimeout(() => {
           // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
-          navigate("/tAlarma");
+          navigate("/usuario");
         });
       } catch (error) {
         console.log(error.response);
@@ -61,7 +61,7 @@ function Alarmas() {
                 <h5>Aviso a las: {Alarm.alarm}</h5>
                 <h5>Aviso a las: {Alarm.fecha}</h5>
                 <div className='cajaBotAlmAdm'>
-                <Link to="/tAlarma" className="botonAlmAdm">
+                <Link to="/usuario" className="botonAlmAdm">
                   Volver
                 </Link>
                 <Link to={`/modifyAlm/${alarmaId}`} className="modificarAlmAdm">Modificar Alarma</Link>
@@ -79,7 +79,7 @@ function Alarmas() {
                 <h5>Aviso a las: {Alarm.alarm}</h5>
                 <h5>Fecha Programada: {Alarm.fecha}</h5>
                 <div className='cajaBotUs'>
-                <Link to="/tAlarma" className="botonUsAl">
+                <Link to="/usuario" className="botonUsAl">
                   Volver
                 </Link>
                 <Link to={`/modifyAlm/${alarmaId}`} className="modificarAlarmaUs">Modificar Alarma</Link>

@@ -3,8 +3,15 @@ import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
-import './planificador.css'
+import "./planificador.css";
 import { TbTrash } from "react-icons/tb";
+import {
+  Card,
+  CardBody,
+  CardTitle,
+  CardText,
+} from "reactstrap";
+
 function Planificador() {
   const { planificadorId } = useParams();
   const [planning, setPlanning] = useState({});
@@ -26,7 +33,6 @@ function Planificador() {
   };
   useEffect(() => {
     getPlanning();
-    
   }, []);
 
   // console.log(planning);
@@ -47,7 +53,7 @@ function Planificador() {
         console.log(response);
         setTimeout(() => {
           // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
-          navigate("/tPlanificador");
+          navigate("/usuario");
         });
       } catch (error) {
         console.log(error.response);
@@ -61,43 +67,40 @@ function Planificador() {
           <div className="contenedorPlnAdm">
             <div className="descripcionPlnAdm">
               <h1>Descripcion del Planning:</h1>
-              <h2>{planning.title}</h2>
-              <h3>{planning.description}</h3>
+              <h2>Titulo: {planning.title}</h2>
+              <h3>Descripción: {planning.description}</h3>
               <div className="cajaBotonesAdm">
-                <Link to="/tPlanificador" className="botonAdm">
+                <Link to="/usuario" className="botonAdm">
                   Volver
                 </Link>
-                 <Link to={`/modifyPlan/${planificadorId}`} className="modificarNoAdm">
+                <Link
+                  to={`/modifyPlan/${planificadorId}`}
+                  className="modificarNoAdm"
+                >
                   Modificar Planificador
-                </Link> 
+                </Link>
                 <button className="botonDelAdmPln" onClick={deleteNota}>
-                <TbTrash/>
+                  <TbTrash />
                 </button>
               </div>
             </div>
           </div>
         </div>
       ) : (
-        <div className="fondoPlnUs">
-          <div className="contenedorPlnUs">
-            <div className="descripcionPlnUs">
-              <h1>Descripcion del Planning:</h1>
-              <h2>{planning.title}</h2>
-              <h3>{planning.description}</h3>
-              <div className="cajaBotonesUs">
-                <Link to="/tPlanificador" className="botonUs">
-                  Volver
-                </Link>
-                 <Link to={`/modifyPlan/${planificadorId}`} className="modificarPlnUs">
+        <>
+          <Card className="fondoPlnUs">
+            <CardBody className="descripcionPlnUs">
+              <CardTitle tag="h2" className="tituloPlnUsu">Descripcion del Planning:</CardTitle>
+                <CardText className="textoPlnUsu">Titulo: {planning.title}</CardText>
+                <CardText className="textoPlnUsu">Descripción: {planning.description}</CardText>
+                <Link to="/usuario"  className="botonUs">Volver</Link>
+                <Link to={`/modifyPlan/${planificadorId}`}  className="modificarPlnUs">
                   Modificar Planificador
-                </Link> 
-                <button className="botonPlnUs" onClick={deleteNota}>
-                 <TbTrash/>
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+                </Link>
+                <Link onClick={deleteNota} className="botonPlnUs"><TbTrash /></Link>
+            </CardBody>
+          </Card>
+        </>
       )}
     </>
   );

@@ -1,18 +1,19 @@
 /*Planificador como administrador*/
 .fondoPlnAdm {
-  background-image: url("https://images.pexels.com/photos/15286/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  padding: 3% 0% 16.8% 0%;
+  background: linear-gradient(
+    45deg,
+    rgba(43, 45, 66, 1) 0%,
+    rgba(237, 242, 244, 1) 50%,
+    rgba(141, 153, 174, 1) 100%
+  );
 }
 .contenedorPlnAdm {
   text-shadow: 1px 1px 1px #000;
-  padding: 2.1% 2%;
+  padding: 5% 2%;
 }
 .descripcionPlnAdm {
-  background-color: #5e548eb2;
-  color: #fafaff;
+  background-color: #d98484a8;
+  color: #d90429;
   text-shadow: 1px 1px 1px #000;
   padding: 1.45% 2%;
   width: 50%;
@@ -38,28 +39,74 @@
   transition: 1s all;
 }
 
+@media screen and (max-width: 380px) {
+  .fondoPlnAdm {
+    background: linear-gradient(
+      45deg,
+      rgba(43, 45, 66, 1) 0%,
+      rgba(237, 242, 244, 1) 50%,
+      rgba(141, 153, 174, 1) 100%
+    );
+    padding: 26% 0% 28% 0%;
+  }
+  .contenedorPlnAdm {
+    text-shadow: 1px 1px 1px #000;
+    padding: 4.5% 2%;
+  }
+  .descripcionPlnAdm {
+    background-color: #d98484a8;
+    color: #d90429;
+    text-shadow: 1px 1px 1px #000;
+    padding: 1.45% 2%;
+    width: 90%;
+    margin: 0px auto;
+  }
+  .botonDelAdmPln {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    transition: 1s all;
+  }
+
+  .botonDelAdmPln:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    border-left: 2px solid #e4d9ff;
+    border-right: 2px solid #d90429;
+    border-bottom: 2px solid #d90429;
+    transition: 1s all;
+  }
+}
 /*Planificador como Usuario*/
 .fondoPlnUs {
-  background-image: url(https://images.pexels.com/photos/4476376/pexels-photo-4476376.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  padding: 3% 0% 17.9% 0%;
-}
-.contenedorPlnUs {
-  text-shadow: 1px 1px 1px #000;
-  padding: 2.1% 2%;
+  background: linear-gradient(
+    45deg,
+    rgba(226, 149, 120, 1) 0%,
+    rgba(237, 246, 249, 1) 50%,
+    rgba(0, 109, 119, 1) 100%
+  );
+  padding: 8.9% 0% 8.8% 0%;
+  border-radius: 0%;
 }
 .descripcionPlnUs {
-  background-color: #5e548eb2;
+  background-color: #1b263bc2;
   color: #fafaff;
   text-shadow: 1px 1px 1px #000;
   padding: 1.45% 2%;
   width: 50%;
   margin: 0px auto;
 }
-.cajaBotonesUs {
-    margin: 0% 21%;
+.tituloPlnUsu {
+  font-size: 35px;
+  color: #e0e1dd;
+}
+.textoPlnUsu {
+  font-size: 25px;
+  color: #e0e1dd;
 }
 .modificarPlnUs {
   text-decoration: none;
@@ -98,6 +145,7 @@
   border-left: 2px solid #d90429;
   border-top: 2px solid #d90429;
   transition: 1s all;
+  padding: 0% 1%;
 }
 
 .botonPlnUs:hover {
@@ -108,4 +156,83 @@
   border-right: 2px solid #d90429;
   border-bottom: 2px solid #d90429;
   transition: 1s all;
+  padding: 0% 1%;
+}
+@media screen and (max-width: 380px) {
+  .fondoPlnUs {
+    background: linear-gradient(
+      45deg,
+      rgba(226, 149, 120, 1) 0%,
+      rgba(237, 246, 249, 1) 50%,
+      rgba(0, 109, 119, 1) 100%
+    );
+    padding: 20% 0% 35.5% 0%;
+    border-radius: 0%;
+  }
+  .descripcionPlnUs {
+    background-color: #1b263bc2;
+    color: #fafaff;
+    text-shadow: 1px 1px 1px #000;
+    padding: 5% 5%;
+    width: 90%;
+    margin: 0px auto;
+  }
+  .tituloPlnUsu {
+    font-size: 35px;
+    color: #e0e1dd;
+  }
+  .textoPlnUsu {
+    font-size: 25px;
+    color: #e0e1dd;
+  }
+  .modificarPlnUs {
+    text-decoration: none;
+    color: #fcbf49;
+    background-color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 1%;
+    border-bottom: 2px solid #fcbf49;
+    border-right: 2px solid #fcbf49;
+    border-left: 2px solid #f77f00;
+    border-top: 2px solid #f77f00;
+    font-size: 15px;
+    transition: 1s all;
+    margin: 0% 5%;
+  }
+  .modificarPlnUs:hover {
+    text-decoration: none;
+    background-color: #fcbf49;
+    color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 1%;
+    border-bottom: 2px solid #f77f00;
+    border-right: 2px solid #f77f00;
+    border-left: 2px solid #fcbf49;
+    border-top: 2px solid #fcbf49;
+    font-size: 15px;
+    transition: 1s all;
+    margin: 0% 5%;
+  }
+
+  .botonPlnUs {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    transition: 1s all;
+    padding: 0% 1%;
+  }
+
+  .botonPlnUs:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    border-left: 2px solid #e4d9ff;
+    border-right: 2px solid #d90429;
+    border-bottom: 2px solid #d90429;
+    transition: 1s all;
+    padding: 0% 1%;
+  }
 }

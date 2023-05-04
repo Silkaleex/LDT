@@ -59,13 +59,11 @@ const Modifcacion = () => {
                 Tareas:
               </label>
               <textarea
-                className="tareasAdm inputAdm"
+                className="tareasAdm textareaNotesAdm"
                 placeholder="Descripcion de tu Nota"
                 type="textarea"
                 name="tareas"
                 id="tareas"
-                cols="100"
-                rows="10"
                 value={nota.tareas}
                 onChange={onChangeInput}
               ></textarea>
@@ -82,7 +80,7 @@ const Modifcacion = () => {
               ></input>
               <div className="containerBotonesAdm">
                 <button className="botonModNotAdm">Modificar Nota</button>
-                <Link to="/tNotas" className="botonVolNotAdm">
+                <Link to="/usuario" className="botonVolNotAdm">
                   Volver
                 </Link>
               </div>
@@ -97,13 +95,11 @@ const Modifcacion = () => {
                 Tareas:
               </label>
               <textarea
-                className="tareasUs inputUs"
+                className="tareasUs"
                 placeholder="Descripcion de la Nota"
                 type="textarea"
                 name="tareas"
                 id="tareas"
-                cols="100"
-                rows="10"
                 value={nota.tareas}
                 onChange={onChangeInput}
               ></textarea>
@@ -120,7 +116,7 @@ const Modifcacion = () => {
               ></input>
               <div className="containerBotonesUs">
                 <button className="botonModNotUs">Modificar Nota</button>
-                <Link to="/tNotas" className="botonVolNotUs">
+                <Link to="/usuario" className="botonVolNotUs">
                   Volver
                 </Link>
               </div>

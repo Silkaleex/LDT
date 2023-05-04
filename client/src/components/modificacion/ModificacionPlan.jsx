@@ -70,19 +70,17 @@ const ModifcacionPlan = () => {
                 Description:
               </label>
               <textarea
-                className="inputPlAdm txt-hidden"
+                className="txtPlnAdm txt-hidden"
                 placeholder="descripcion"
                 type="textarea"
                 name="descripcion"
                 id="descripcion"
-                cols="100"
-                rows="10"
                 value={pln.description}
                 onChange={onChangeInput}
               />
               <div className="containerBotonesAdm">
-                <button className="botonModNotAdm">Modificar Libro</button>
-                <Link to="/tPlanificador" className="botonVolPlAdm">
+                <Link to="/usuario" className="botonModNotAdm">Modificar Libro</Link>
+                <Link to="/usuario" className="botonVolPlAdm">
                   Volver
                 </Link>
               </div>
@@ -104,23 +102,21 @@ const ModifcacionPlan = () => {
                 value={pln.fecha}
                 onChange={onChangeInput}
               />
-              <label className="labelPlUs" htmlFor="descripcion">
+              <label className="labelPlUs" htmlFor="description">
                 Descripción:
               </label>
               <textarea
-                className="inputPlUs txt-hidden"
+                className="textareaPlnUs txt-hidden"
                 placeholder="descripcion"
                 type="textarea"
-                name="descripcion"
-                id="descripcion"
-                cols="100"
-                rows="10"
+                name="description"
+                id="description"
                 value={pln.description}
                 onChange={onChangeInput}
               ></textarea>
               <div className="containerBotonesUsPl">
-                <button className="botonModPlUs">Modificar Nota</button>
-                <Link to="/tPlanificador" className="botonVolPlUs">
+                <Link to="/usuario" className="botonModPlUs">Modificar Nota</Link>
+                <Link to="/usuario" className="botonVolPlUs">
                   Volver
                 </Link>
               </div>

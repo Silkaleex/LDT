@@ -72,8 +72,6 @@ const NewPlan = () => {
                 id="description"
                 name="description"
                 placeholder="Este mes mis metas seran..."
-                cols="100"
-                rows="10"
                 onChange={onChangeInput}
                 value={planif ? planif.description : ""}
               />
@@ -81,7 +79,7 @@ const NewPlan = () => {
                 Fecha del planificador:
               </label>
               <input
-                className="inputPAdm2"
+                className="inputPAdm3"
                 type="date"
                 id="fecha"
                 name="fecha"
@@ -92,7 +90,7 @@ const NewPlan = () => {
                 <button className="botonAddPAdm" type="submit">
                   Crear Planificador
                 </button>
-                <Link to="/tPlanificador" className="botonVolPAdm">
+                <Link to="/usuario" className="botonVolPAdm">
                   Volver
                 </Link>
               </div>
@@ -119,12 +117,10 @@ const NewPlan = () => {
                 Sobre el Planning:
               </label>
               <textarea
-                className="txt-hidden inputPUs"
+                className="txt-hidden txtPLanUs"
                 type="textarea"
                 id="description"
                 name="description"
-                cols="100"
-                rows="10"
                 placeholder="Este mes mis metas seran..."
                 onChange={onChangeInput}
                 value={planif ? planif.description : ""}
@@ -144,7 +140,7 @@ const NewPlan = () => {
                 <button className="botonAddPUs" type="submit">
                   Crear Planificador
                 </button>
-                <Link to="/tPlanificador" className="botonVolPUs">
+                <Link to="/usuario" className="botonVolPUs">
                   Volver
                 </Link>
               </div>

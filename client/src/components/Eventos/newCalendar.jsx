@@ -85,18 +85,16 @@ const NewCal = () => {
                 type="textarea"
                 id="calendar"
                 name="calendar"
-                cols="100"
-                rows="10"
                 placeholder="Descripcion del evento"
                 onChange={onChangeInput}
                 
                 value={calend ? calend.calendar : ""}
               />
               <div className="containerBotonesAdm">
-                <button className="botonAddAlmAdm" type="submit">
+                <button  className="botonAddAlmAdm" type="submit">
                   Crear Evento
                 </button>
-                <Link to="/tCalendar" className="botonVolCalAdm">
+                <Link to="/usuario" className="botonVolCalAdm">
                   Volver
                 </Link>
               </div>
@@ -135,7 +133,7 @@ const NewCal = () => {
                 Descripcion del Evento:
               </label>
               <textarea
-                className="inputCalUs txt-hidden"
+                className="textareaCalendarUs txt-hidden"
                 type="textarea"
                 id="calendar"
                 name="calendar"
@@ -146,10 +144,10 @@ const NewCal = () => {
                 value={calend ? calend.calendar : ""}
               />
               <div className="containerBotonesUs">
-                <button className="botonAddCalUs" type="submit">
+                <button to="/usuario" className="botonAddCalUs" type="submit">
                   Crear Evento
                 </button>
-                <Link to="/tCalendar" className="botonVolCalenUs">
+                <Link to="/usuario" className="botonVolCalenUs">
                   Volver
                 </Link>
               </div>

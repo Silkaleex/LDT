@@ -94,7 +94,7 @@ const NewAlm = () => {
                 <button className="botonAddAlmAdm" type="submit">
                   Crear Alarma
                 </button>
-                <Link to="/tAlarma" className="botonVolAlmAdm">
+                <Link to="/usuario" className="botonVolAlmAdm">
                   Volver
                 </Link>
               </div>
@@ -144,7 +144,7 @@ const NewAlm = () => {
                 <button className="botonAddAlmUs" type="submit">
                   Crear Alarma
                 </button>
-                <Link to="/tAlarma" className="botonVolAlmUs">
+                <Link to="/usuario" className="botonVolAlmUs">
                   Volver
                 </Link>
               </div>

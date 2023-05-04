@@ -1,127 +1,221 @@
 /*Como Admin*/
-.fondoNotasAdm{
-    background-image: url("https://images.pexels.com/photos/5766466/pexels-photo-5766466.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 1% 0% 27% 0%;
+.fondoNotasAdm {
+  border-top: 5px dashed #edf2f4;
+  border-bottom: 5px dashed #edf2f4;
+  background: rgb(43, 45, 66);
+  background: linear-gradient(
+    45deg,
+    rgba(43, 45, 66, 1) 0%,
+    rgba(237, 242, 244, 1) 50%,
+    rgba(141, 153, 174, 1) 100%
+  );
+  padding: 5% 0% 5% 0%;
 }
-.contenedorNotasAdm{
-    margin:-3px auto;
-    width: 50%;
+.contenedorNotasAdm {
+  margin: -3px auto;
+  width: 50%;
 }
-.tituloNotaAdm{
+.tituloNotaAdm {
+  text-shadow: 1px 1px 1px #000;
+  color: #d90429;
+  text-align: center;
+  margin: 3% 0%;
+}
+.contenidoNotaAdm {
+  background-color: #d98484a8;
+  color: #d90429;
+  text-shadow: 1px 1px 1px #000;
+  padding: 2% 2%;
+}
+.bordeCajaEnlcAdm {
+  margin: 1% 0%;
+}
+.enlacesNotaAdm {
+  text-decoration: none;
+  font-size: 20px;
+  color: #d90429;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+  background-color: #f5f3f4;
+  padding: 0% 4%;
+}
+.cajaCirculoNotAdm {
+  margin: 2% 49%;
+}
+.circuloNotaAdm {
+  background-color: #000;
+  border-radius: 50%;
+  color: #d90429;
+  border: 3px groove #d90429;
+  transition: 1s all;
+  padding: 0% 30%;
+}
+@media screen and (max-width:380px){
+  .fondoNotasAdm {
+    border-top: 5px dashed #edf2f4;
+    border-bottom: 5px dashed #edf2f4;
+    background: rgb(43, 45, 66);
+    background: linear-gradient(
+      45deg,
+      rgba(43, 45, 66, 1) 0%,
+      rgba(237, 242, 244, 1) 50%,
+      rgba(141, 153, 174, 1) 100%
+    );
+    padding: 5% 0% 5% 0%;
+  }
+  .contenedorNotasAdm {
+    margin: 0px auto;
+    width: 90%;
+  }
+  .tituloNotaAdm {
     text-shadow: 1px 1px 1px #000;
-    color:#fafaff;
+    color: #d90429;
     text-align: center;
     margin: 3% 0%;
-
-}
-.contenidoNotaAdm{
-    background-color: #5e548eb2;
+  }
+  .contenidoNotaAdm {
+    background-color: #d98484a8;
+    color: #d90429;
     text-shadow: 1px 1px 1px #000;
     padding: 2% 2%;
-}
-.bordeCajaEnlcAdm{
-    border-bottom:3px solid #231942;
-    margin:1% 0%
-}
-.enlacesNotaAdm{
+  }
+  .bordeCajaEnlcAdm {
+    margin: 7% 7%;
+  }
+  .enlacesNotaAdm {
     text-decoration: none;
     font-size: 20px;
-    color: #fafaff;
+    color: #d90429;
     text-shadow: 1px 1px 1px #000;
-    transition:1s all;
-
-}
-.enlacesNotaAdm:hover{
-    text-decoration: none;
-    font-size: 20px;
-    color: #231942;
-    text-shadow: 1px 1px 1px #fff;
-    transition:1s all;
-
-}
-.cajaCirculoNotAdm{
+    transition: 1s all;
+    background-color: #f5f3f4;
+    padding: 0% 4%;
+  }
+  .cajaCirculoNotAdm {
     margin: 2% 49%;
-}
-.circuloNotaAdm{
-    background-color: #231942;
+  }
+  .circuloNotaAdm {
+    background-color: #000;
     border-radius: 50%;
-    color: #fafaff;
-    border: 3px groove #fafaff;
-    transition:1s all;
-    padding: 0% 30%;
-}
-.circuloNotaAdm:hover{
-    color: #231942;
-    border-radius: 50%;
-    background-color: #9f86c0;
-    border: 3px groove #5e548e;
-    transition:1s all;
-    padding: 0% 30%;
+    color: #d90429;
+    border: 3px groove #d90429;
+    transition: 1s all;
+    padding: 0% 90%;
+  }
 }
 /*Como Usuario*/
-.fondoNotasUs{
-    background-image: url(https://images.pexels.com/photos/771322/pexels-photo-771322.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 1% 0% 26.4% 0%;
+.fondoNotasUs {
+  background: rgb(226, 149, 120);
+  background: linear-gradient(
+    45deg,
+    rgba(226, 149, 120, 1) 0%,
+    rgba(237, 246, 249, 1) 50%,
+    rgba(0, 109, 119, 1) 100%
+  );
+  padding: 3% 0% 3% 0%;
 }
 .contenedorNotasUs {
-    margin: 0% auto;
-    width: 50%;
+  margin: 0% auto;
+  width: 50%;
 }
-.tituloNotaUs{
+.tituloNotaUs {
+  text-shadow: 1px 1px 1px #000;
+  color: #fec89a;
+  text-align: center;
+  margin: 3% 0%;
+}
+.contenidoNotaUs {
+  background-color: #1b263bc0;
+  text-shadow: 1px 1px 1px #000;
+  padding: 4% 2%;
+  text-align: center;
+  margin: 0% 0% 3% 0%;
+  color: #fec89a;
+}
+
+.enlacesNotaUs {
+  text-decoration: none;
+  color: #fec89a;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+  background-color: #2f3e46;
+  padding: 0% 3%;
+}
+.circuloNotaUs {
+  color: #04052e;
+  background-color: #e4d9ff;
+  transition: 1s all;
+  padding: 0% 1%;
+  margin: 0% 48%;
+  border: 1px solid #000;
+}
+
+.circuloNotaUs:hover {
+  background-color: #04052e;
+  color: #e4d9ff;
+  transition: 1s all;
+  padding: 0% 1%;
+  margin: 0% 48%;
+  border: 1px solid #000;
+}
+
+@media screen and (max-width:380px){
+  /*Como Usuario*/
+  .fondoNotasUs {
+    background: rgb(226, 149, 120);
+    background: linear-gradient(
+      45deg,
+      rgba(226, 149, 120, 1) 0%,
+      rgba(237, 246, 249, 1) 50%,
+      rgba(0, 109, 119, 1) 100%
+    );
+    padding: 3% 0% 3% 0%;
+  }
+  .contenedorNotasUs {
+    padding: 4% 0%;
+    text-align: center;
+    margin: 0% 0% 7% 5%;
+    width: 90%;
+}
+  .tituloNotaUs {
     text-shadow: 1px 1px 1px #000;
-    color:#e0e1dd;
+    color: #fec89a;
     text-align: center;
     margin: 3% 0%;
-
-}
-.contenidoNotaUs{
-    background-color: #1b263ba0;
+  }
+  .contenidoNotaUs {
+    background-color: #1b263bc0;
     text-shadow: 1px 1px 1px #000;
-    padding: 2% 2%;
-}
-.bordeCajaEnlcUs{
-    border-bottom:3px solid #e0e1dd;
-    margin:2% 0%;
-}
-.enlacesNotaUs{
+    padding: 4% 2%;
+    text-align: center;
+    margin: 0% 0% 3% 0%;
+  }
+  .textoNotaUs {
+    color: #fec89a;
+  }
+  .enlacesNotaUs {
     text-decoration: none;
-    font-size: 0px;
-    color: #e0e1dd;
+    color: #fec89a;
     text-shadow: 1px 1px 1px #000;
-    transition:1s all;
-
-}
-.enlacesNotaUs:hover{
-    text-decoration: none;
-    font-size: 0px;
-    color: #fafaff;
-    text-shadow: 1px 1px 1px #e4d9ff; 
-    transition:1s all;
-
-}
-
-.cajaCirculoNotUs{
-    margin: 2% 49%;
-}
-.circuloNotaUs{
-    background-color: #04052e;
-    border-radius: 50%;
-    color: #e4d9ff;
-    border: 3px groove #e4d9ff;
-    transition:1s all;
-    padding: 0% 30%;
-}
-.circuloNotaUs:hover{
+    transition: 1s all;
+    background-color: #2f3e46;
+    padding: 0% 3%;
+  }
+  .circuloNotaUs {
     color: #04052e;
-    border-radius: 50%;
     background-color: #e4d9ff;
-    border: 3px groove #04052e;
-    transition:1s all;
-    padding: 0% 30%;
+    transition: 1s all;
+    padding: 0% 1%;
+    margin: 0% 48%;
+    border: 1px solid #000;
+  }
+
+  .circuloNotaUs:hover {
+    background-color: #04052e;
+    color: #e4d9ff;
+    transition: 1s all;
+    padding: 0% 1%;
+    margin: 0% 48%;
+    border: 1px solid #000;
+  }
 }

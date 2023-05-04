@@ -1,52 +1,158 @@
-.fondoProfileUser{
-    background-image: url(https://images.pexels.com/photos/14130837/pexels-photo-14130837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+.fondoProfileUser {
+  background-image: url(https://images.pexels.com/photos/14130837/pexels-photo-14130837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  padding: 6.4% 0%;
+}
+.carta {
+  width: 50%;
+  margin: 5% auto;
+  padding: 1% 1%;
+  background-color: #ff000069;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+}
+.botonesOpciones {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.btnBaneoUs {
+  width: 26%;
+  margin: 0% 0% 1% 1%;
+  background-color: #f9dbbd;
+  color: #450920;
+  transition: 1s all;
+  letter-spacing: 1px;
+  border-top: 1px groove #450920;
+  border-left: 1px groove #450920;
+  border-right: 1px groove #f9dbbd;
+  border-bottom: 1px groove #f9dbbd;
+}
+.btnBaneoUs:hover {
+  width: 26%;
+  margin: 0% 0% 1% 1%;
+  background-color: #f9dbbd;
+  color: #450920;
+  transition: 1s all;
+  letter-spacing: 1px;
+  border-top: 1px groove #f9dbbd;
+  border-left: 1px groove #f9dbbd;
+  border-right: 3px groove #450920;
+  border-bottom: 3px groove #450920;
+}
+.btnDesBaneoUs {
+  width: 40%;
+  margin: 0% 0% 1% 1%;
+  background-color: #c1121f;
+  color: #fafaff;
+  transition: 1s all;
+  letter-spacing: 1px;
+}
+.btnDesBaneoUs:hover {
+  width: 40%;
+  margin: 0% 0% 1% 1%;
+  color: #c1121f;
+  background-color: #fafaff;
+  transition: 1s all;
+  letter-spacing: 1px;
+}
+
+.btnElmUsuario {
+  background-color: #d90429;
+  color: #e4d9ff;
+  border-bottom: 2px solid #d90429;
+  border-right: 2px solid #d90429;
+  border-left: 2px solid #e4d9ff;
+  border-top: 2px solid #e4d9ff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+  width: 8%;
+  margin: 0% 0% 1% 1%;
+}
+.btnElmUsuario:hover {
+  background-color: #d90429;
+  color: #e4d9ff;
+  border-top: 2px solid #d90429;
+  border-left: 2px solid #d90429;
+  border-right: 2px solid #e4d9ff;
+  border-bottom: 2px solid #e4d9ff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+  width: 8%;
+  margin: 0% 0% 1% 1%;
+}
+
+.botonVolverAdm {
+  color: #fafaff;
+  background-color: #231942;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-top: 1px groove #fafaff;
+  border-left: 1px groove #fafaff;
+  border-bottom: 3px groove #231942;
+  border-right: 3px groove #231942;
+  transition: 1s all;
+  border-radius: 5%;
+}
+.botonVolverAdm:hover {
+  background-color: #231942;
+  color: #fafaff;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-top: 1px groove #231942;
+  border-left: 1px groove #231942;
+  border-bottom: 3px groove #fafaff;
+  border-right: 3px groove #fafaff;
+  transition: 1s all;
+  border-radius: 5%;
+}
+@media screen and (max-width: 380px) {
+  .fondoProfileUser {
+    background-image: url("https://images.pexels.com/photos/14130837/pexels-photo-14130837.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    padding: 3% 0% 21.9% 0%;
-}
-.carta{
-    width: 50%;
+    padding: 44.5% 0%;
+  }
+  .carta {
+    width: 90%;
     margin: 5% auto;
     padding: 1% 1%;
     background-color: #ff000069;
     color: #fafaff;
     text-shadow: 1px 1px 1px #000;
-}
-.btnBaneoUs {
-    width: 40%;
+  }
+  .botonesOpciones {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .btnBaneoUs {
+    width: 50%;
     margin: 0% 0% 1% 1%;
-    background-color:#fafaff;
+    background-color: #fafaff;
     color: #720026;
-    transition:1s all;
-    letter-spacing:1px;
-}
-.btnBaneoUs:hover {
-    width: 40%;
+    transition: 1s all;
+    letter-spacing: 1px;
+  }
+  .btnBaneoUs:hover {
+    width: 50%;
     margin: 0% 0% 1% 1%;
-    color:#fafaff;
-    background-color: #720026;
-    transition:1s all;
-    letter-spacing:1px;
-}
-.btnDesBaneoUs {
+  }
+  .btnDesBaneoUs {
     width: 40%;
     margin: 0% 0% 1% 1%;
     background-color: #c1121f;
-    color:#fafaff;
-    transition:1s all;
-    letter-spacing:1px;
-}
-.btnDesBaneoUs:hover {
-    width: 40%;
-    margin: 0% 0% 1% 1%;
-    color: #c1121f;
-    background-color:#fafaff;
-    transition:1s all;
-    letter-spacing:1px;
-}
+    color: #fafaff;
+    transition: 1s all;
+    letter-spacing: 1px;
+  }
 
-.btnElmUsuario {
+  .btnElmUsuario {
     background-color: #d90429;
     color: #e4d9ff;
     border-bottom: 2px solid #e4d9ff;
@@ -55,30 +161,37 @@
     border-top: 2px solid #d90429;
     text-shadow: 1px 1px 1px #000;
     transition: 1s all;
-    width: 8%;
+    width: 15%;
     margin: 0% 0% 1% 1%;
-}
+  }
   .btnElmUsuario:hover {
-    background-color: #d90429;
-    color: #e4d9ff;
-    border-top: 2px solid #e4d9ff;
-    border-left: 2px solid #e4d9ff;
-    border-right: 2px solid #d90429;
-    border-bottom: 2px solid #d90429;
-    text-shadow: 1px 1px 1px #000;
-    transition: 1s all;
-    width: 8%;
+    width: 15%;
     margin: 0% 0% 1% 1%;
-}
-::-webkit-scrollbar-track{
-    background: black;
-    border-radius: 5px;
-}
-::-webkit-scrollbar-thumb{
-    background: black;
-    border-radius: 5px;
-}
-::-webkit-scrollbar-track{
-    background: white;
-    border-radius: 5px;
+  }
+  .botonVolverAdm {
+    color: #fafaff;
+    background-color: #231942;
+    text-decoration: none;
+    padding: 0% 3%;
+    border-radius: 1%;
+    border-bottom: 2px solid #fafaff;
+    border-right: 2px solid #fafaff;
+    border-left: 2px solid #231942;
+    border-top: 2px solid #231942;
+    transition: 1s all;
+    border-radius: 20%;
+  }
+  .botonVolverAdm:hover {
+    background-color: #231942;
+    color: #fafaff;
+    text-decoration: none;
+    padding: 0% 3%;
+    border-radius: 1%;
+    border-bottom: 2px solid #231942;
+    border-right: 2px solid #231942;
+    border-left: 2px solid #fafaff;
+    border-top: 2px solid #fafaff;
+    transition: 1s all;
+    border-radius: 20%;
+  }
 }

@@ -1,16 +1,17 @@
-.TltProfile{
+.TltProfile {
   text-align: center;
-  color:#fafaff;
+  color: #ee9b00;
   text-shadow: 1px 1px 1px #000;
+  font-size: 40px;
 }
-.containerFondoEliminacion{
-    background-image: url("https://images.pexels.com/photos/4722583/pexels-photo-4722583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    padding: 3% 0% 17.9% 0%;
+.containerFondoEliminacion {
+  background-image: url("https://images.pexels.com/photos/4722583/pexels-photo-4722583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 3% 0% 3.9% 0%;
 }
-.cajaEliminacion{
+.cajaEliminacion {
   background-color: #f1faee;
   color: #e63946;
   text-shadow: 1px 1px 1px #000;
@@ -18,40 +19,82 @@
   padding: 4% 2%;
   margin: 1% 30%;
   text-align: left;
+  line-height: 90%;
+  font-size: 25px;
+  letter-spacing: 1px;
 }
 
-.botonesOpciones{
-  displaY:flex
+.botonesOpciones {
+  display: flex;
 }
 .cajaBtnProfileUser {
   margin: 10% 0% 0% 0%;
 }
 
-  .EnlaceBtnUsuario{
+.EnlaceBtnUsuario {
+  background-color: #9b2226;
+  color: #ee9b00;
+  text-shadow: 1px 1px 1px #000;
+  text-decoration: none;
+  padding: 1% 2%;
+  border-top: 2px solid #e9d8a6;
+  border-left: 2px solid #e9d8a6;
+  border-bottom: 2px solid #ae2012;
+  border-right: 2px solid #ae2012;
+  transition: 1s all;
+  font-size: 20px;
+}
+.btnBaneoUs {
+  width: 25%;
+  margin: 0% 0% 1% 1%;
+}
+@media screen and (max-width: 380px) {
+  .TltProfile {
+    text-align: center;
+    color: #ee9b00;
+    text-shadow: 1px 1px 1px #000;
+  }
+  .containerFondoEliminacion {
+    background-image: url("https://images.pexels.com/photos/4722583/pexels-photo-4722583.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    padding: 17% 0%;
+  }
+  .cajaEliminacion {
+    background-color: #f1faee;
+    color: #e63946;
+    text-shadow: 1px 1px 1px #000;
+    width: 75%;
+    padding: 7% 3%;
+    margin: 2% 13%;
+    text-align: left;
+    line-height: 50%;
+    font-size: 14px;
+  }
+
+  .botonesOpciones {
+    display: flex;
+  }
+  .cajaBtnProfileUser {
+    margin: 10% 0% 0% 0%;
+  }
+
+  .EnlaceBtnUsuario {
     background-color: #9b2226;
-    color:#ee9b00;
+    color: #ee9b00;
     text-shadow: 1px 1px 1px #000;
     text-decoration: none;
-    padding:1% 2%;
-    border-top:2px solid  #e9d8a6;
-    border-left:2px solid  #e9d8a6;
-    border-bottom:2px solid #ae2012;
+    padding: 1% 2%;
+    border-top: 2px solid #e9d8a6;
+    border-left: 2px solid #e9d8a6;
+    border-bottom: 2px solid #ae2012;
     border-right: 2px solid #ae2012;
-    transition:1s all;
+    transition: 1s all;
+    font-size:10px;
   }
-  .EnlaceBtnUsuario:hover{
-    color: #9b2226;
-    background-color:#e9d8a6;
-    text-shadow: 1px 1px 1px #000;
-    text-decoration: none;
-    padding:1% 2%;
-    border-top:2px solid   #ae2012;
-    border-left:2px solid   #ae2012;
-    border-bottom:2px solid #e9d8a6;
-    border-right: 2px solid #e9d8a6;
-    transition:1s all;
-  }
-  .btnBaneoUs{
+  .btnBaneoUs {
     width: 25%;
     margin: 0% 0% 1% 1%;
   }
+}

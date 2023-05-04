@@ -37,7 +37,7 @@ const NewNot = () => {
       setNote(response.data.Notas);
 
       setTimeout(() => {
-        window.location.href = "/tNotas";
+        window.location.href = "/usuario";
       }, 3000);
     } catch (error) {
       console.log(error.response);
@@ -47,14 +47,14 @@ const NewNot = () => {
   return (
     <div>
       {role == 1 ? (
-        <div className="cajaAdmNot">
+        <div className="cajaAdmNota">
           <form onSubmit={noteSubmit}>
-            <div className="containerNotasAdm">
-              <label className="labelNotAdm" htmlFor="titulo">
+            <div className="containerNotasAdmin">
+              <label className="labelNotAdmin" htmlFor="titulo">
                 Titulo:
               </label>
               <input
-                className="inputAdm"
+                className="inputAdmin"
                 type="text"
                 id="title"
                 name="title"
@@ -66,12 +66,10 @@ const NewNot = () => {
                 Descripcion de la nota:
               </label>
               <textarea
-                className="txt-hidden inputAdm"
+                className="txt-hidden txtNotesAdm"
                 type="text"
                 id="tarea"
                 name="tareas"
-                cols="100"
-                rows="10"
                 placeholder="Descripcion de la nota"
                 onChange={onChangeInput}
                 value={note ? note.tareas : ""}
@@ -80,7 +78,7 @@ const NewNot = () => {
                 Fecha de la Nota:
               </label>
               <input
-                className="inputAdm"
+                className="inputAdmin"
                 type="date"
                 id="fecha"
                 name="fecha"
@@ -92,7 +90,7 @@ const NewNot = () => {
                 <button className="botonAddNotAdm" type="submit">
                   Crear Nota
                 </button>
-                <Link to="/tNotas" className="botonVolNotAdm">
+                <Link to="/usuario" className="botonVolNotAdm">
                   Volver
                 </Link>
               </div>
@@ -119,12 +117,10 @@ const NewNot = () => {
                 Descripcion de la nota:
               </label>
               <textarea
-                className=" inputUs txt-hidden"
+                className=" txt-hidden textareaNotUs"
                 type="text"
                 id="tarea"
                 name="tareas"
-                cols="100"
-                rows="10"
                 placeholder="Descripcion de la nota"
                 onChange={onChangeInput}
                 value={note ? note.tareas : ""}
@@ -133,7 +129,7 @@ const NewNot = () => {
                 Fecha de la Nota:
               </label>
               <input
-                className="inputUs"
+                className="inputUs "
                 type="date"
                 id="fecha"
                 name="fecha"
@@ -145,7 +141,7 @@ const NewNot = () => {
                 <button className="botonAddNotUs" type="submit">
                   Crear Nota
                 </button>
-                <Link to="/tNotas" className="botonVolNotUs">
+                <Link to="/usuario" className="botonVolNotUs">
                   Volver
                 </Link>
               </div>

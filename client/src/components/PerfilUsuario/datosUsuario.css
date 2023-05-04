@@ -11,13 +11,13 @@
   margin: 2% auto;
 }
 .cartaAdmin {
-    background-color: #5d548eb9;
-    color: #fafaff;
-    padding: 8% 6%;
-    text-shadow: 1px 1px 1px #000;
+  background-color: #5d548eb9;
+  color: #fafaff;
+  padding: 8% 6%;
+  text-shadow: 1px 1px 1px #000;
 }
-.tituloAdmin{
-    padding: 5% 0%;
+.tituloAdmin {
+  padding: 5% 0%;
 }
 .cajabotonesAdmin {
   margin: 10% 0% 0% 0%;
@@ -75,7 +75,7 @@
   transition: 1s all;
   width: 30%;
 }
-.btnVerUsers{
+.btnVerUsers {
   color: #f2e9e4;
   background-color: #22223b;
   margin: 0% 2%;
@@ -84,29 +84,131 @@
   border-right: 2px solid #22223b;
   border-left: 2px solid #9a8c98;
   border-top: 2px solid #9a8c98;
-  transition:1s all;
-  padding:0% 1%
+  transition: 1s all;
+  padding: 0% 1%;
 }
-.btnVerUsers:hover{
+.btnVerUsers:hover {
   color: #f2e9e4;
   background-color: #22223b;
   margin: 0% 2%;
   text-decoration: none;
-  border-bottom: 2px solid  #9a8c98;
-  border-right: 2px solid  #9a8c98;
+  border-bottom: 2px solid #9a8c98;
+  border-right: 2px solid #9a8c98;
   border-left: 2px solid #22223b;
   border-top: 2px solid #22223b;
-  transition:1s all;
-  padding:0% 1%
+  transition: 1s all;
+  padding: 0% 1%;
 }
+@media screen and (max-width: 380px) {
+  .containerpeAdm {
+    background-image: url("https://images.pexels.com/photos/3711238/pexels-photo-3711238.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 30% 0% 41.8% 0%;
+  }
+  .cajaPeAdm {
+    width: 40%;
+    margin: 2% auto;
+  }
+  .cartaAdmin {
+    background-color: #5d548eb9;
+    color: #fafaff;
+    padding: 0% 0%;
+    text-shadow: 1px 1px 1px #000;
+    width: 239%;
+    margin: 0% -71%;
+  }
 
+  .tituloAdmin {
+    padding: 5% 0%;
+  }
+  .cajabotonesAdmin {
+    margin: 10% 0% 0% 0%;
+  }
+  .botonDelAdm {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    transition: 1s all;
+    font-size: 13px;
+    width: 28%;
+    margin: 0% 0%;
+  }
+  .botonDelAdm:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #d90429;
+    border-right: 2px solid #d90429;
+    border-left: 2px solid #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    transition: 1s all;
+    font-size: 13px;
+    width: 28%;
+    margin: 0% 0%;
+  }
+
+  .modificarAdmin {
+    text-decoration: none;
+    color: #fcbf49;
+    background-color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    border-bottom: 2px solid #f77f00;
+    border-right: 2px solid #f77f00;
+    border-left: 2px solid #fcbf49;
+    border-top: 2px solid #fcbf49;
+    font-size: 15px;
+    transition: 1s all;
+    margin: 0% 1%;
+  }
+  .modificarAdmin:hover {
+    text-decoration: none;
+    background-color: #fcbf49;
+    color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    border-bottom: 2px solid #fcbf49;
+    border-right: 2px solid #fcbf49;
+    border-left: 2px solid #f77f00;
+    border-top: 2px solid #f77f00;
+    font-size: 15px;
+    transition: 1s all;
+    margin: 0% 1%;
+  }
+  .btnVerUsers {
+    color: #f2e9e4;
+    background-color: #22223b;
+    margin: 0% 0%;
+    text-decoration: none;
+    border-bottom: 2px solid #22223b;
+    border-right: 2px solid #22223b;
+    border-left: 2px solid #9a8c98;
+    border-top: 2px solid #9a8c98;
+    transition: 1s all;
+    padding: 0% 1%;
+  }
+  .btnVerUsers:hover {
+    color: #f2e9e4;
+    background-color: #22223b;
+    margin: 0% 0%;
+    text-decoration: none;
+    border-bottom: 2px solid #9a8c98;
+    border-right: 2px solid #9a8c98;
+    border-left: 2px solid #22223b;
+    border-top: 2px solid #22223b;
+    transition: 1s all;
+    padding: 0% 1%;
+  }
+}
 /*Usuario*/
 .containerPeUs {
   background-image: url(https://images.pexels.com/photos/933967/pexels-photo-933967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
-  padding: 1% 0% 7.8% 0%;
+  padding: 1% 0% 7.5% 0%;
 }
 .cajaPeUs {
   width: 40%;
@@ -173,4 +275,79 @@
   font-size: 15px;
   transition: 1s all;
   width: 30%;
+}
+@media screen and (max-width: 380px) {
+  .containerPeUs {
+    background-image: url(https://images.pexels.com/photos/933967/pexels-photo-933967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    padding: 29% 0% 54.8% 0%;
+  }
+  .cajaPeUs {
+    width: 90%;
+    margin: 0% 5%;
+  }
+  .cartaUs {
+    background-color: #1b263bd6;
+    color: #e0e1dd;
+    text-shadow: 1px 1px 1px #000;
+    padding: 13% 5%;
+  }
+  .cajaBotonesUsuario {
+    margin: 0% 0%;
+  }
+  .botonElUs {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #e4d9ff;
+    border-right: 2px solid #e4d9ff;
+    border-left: 2px solid #d90429;
+    border-top: 2px solid #d90429;
+    transition: 1s all;
+    font-size: 13px;
+    width: 22%;
+    margin: 0% 2%;
+  }
+  .botonElUs:hover {
+    background-color: #d90429;
+    color: #e4d9ff;
+    border-bottom: 2px solid #d90429;
+    border-right: 2px solid #d90429;
+    border-left: 2px solid #e4d9ff;
+    border-top: 2px solid #e4d9ff;
+    transition: 1s all;
+    font-size: 13px;
+    width: 22%;
+    margin: 0% 2%;
+  }
+
+  .modificarUsuario {
+    text-decoration: none;
+    color: #fcbf49;
+    background-color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 1%;
+    border-bottom: 2px solid #f77f00;
+    border-right: 2px solid #f77f00;
+    border-left: 2px solid #fcbf49;
+    border-top: 2px solid #fcbf49;
+    font-size: 15px;
+    transition: 1s all;
+    width: 30%;
+  }
+  .modificarUsuario:hover {
+    text-decoration: none;
+    background-color: #fcbf49;
+    color: #f77f00;
+    text-shadow: 1px 1px 1px #000;
+    padding: 0% 1%;
+    border-bottom: 2px solid #fcbf49;
+    border-right: 2px solid #fcbf49;
+    border-left: 2px solid #f77f00;
+    border-top: 2px solid #f77f00;
+    font-size: 15px;
+    transition: 1s all;
+    width: 30%;
+  }
 }

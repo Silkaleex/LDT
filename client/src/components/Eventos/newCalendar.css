@@ -1,92 +1,203 @@
 /*Otros estilos*/
-.txt-hidden{
-    resize: none;
+.txt-hidden {
+  resize: none;
 }
 /*Como Admin*/
-.cajaAdmCal{
-    background-image: url(https://images.pexels.com/photos/1262304/pexels-photo-1262304.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 2% 0% 3.7% 0%;
+.cajaAdmCal {
+  background: rgb(43, 45, 66);
+  background: linear-gradient(
+    45deg,
+    rgba(43, 45, 66, 1) 0%,
+    rgba(237, 242, 244, 1) 50%,
+    rgba(141, 153, 174, 1) 100%
+  );
+  padding: 7% 0% 8.7% 0%;
 }
-.containerCalAdm{
+.containerCalAdm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
+}
+.labelCalAdm {
+  background-color: #5e548ea9;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #fafaff;
+  font-size: 20px;
+  text-shadow: 1px 1px 1px #000;
+}
+.inputCalAdm {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+
+.inputCalAdm:focus {
+  background-color: #5e548ea9;
+  border: 2px groove #fafaff;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+.inputCalAdm:hover {
+  background-color: #5e548ea9;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
+}
+.containerBotonesAdm {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonAddAlmAdm {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #a7c957;
+  background-color: #6a994e;
+  text-shadow: 1px 1px 1px #3d405b;
+  padding: -1% 48%;
+  border-bottom: 2px solid #a7c957;
+  border-right: 2px solid #a7c957;
+  border-left: 2px solid #6a994e;
+  border-top: 2px solid #6a994e;
+  font-size: 15px;
+  transition: 1s all;
+}
+.botonAddAlmAdm:hover {
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #a7c957;
+  color: #6a994e;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #6a994e;
+  border-right: 2px solid #6a994e;
+  border-left: 2px solid #a7c957;
+  border-top: 2px solid #a7c957;
+  font-size: 15px;
+  transition: 1s all;
+}
+
+.botonVolCalAdm {
+  color: #fafaff;
+  background-color: #231942;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #fafaff;
+  border-right: 2px solid #fafaff;
+  border-left: 2px solid #231942;
+  border-top: 2px solid #231942;
+  transition: 1s all;
+}
+
+.botonVolCalAdm:hover {
+  background-color: #231942;
+  color: #fafaff;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #231942;
+  border-right: 2px solid #231942;
+  border-left: 2px solid #fafaff;
+  border-top: 2px solid #fafaff;
+  transition: 1s all;
+}
+@media screen and (max-width:380px){
+  .cajaAdmCal {
+    background: linear-gradient( 45deg, rgba(43, 45, 66, 1) 0%, rgba(237, 242, 244, 1) 50%, rgba(141, 153, 174, 1) 100% );
+    padding: 24% 0% 30.5% 0%;
+
+  }
+  .containerCalAdm {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: -2% 0%;
-}
-.labelCalAdm{
-    background-color:#5e548ea9;
-    margin:1% 0%;
+  }
+  .labelCalAdm {
+    background-color: #5e548ea9;
+    margin: 1% 0%;
     letter-spacing: 2px;
-    color:#fafaff;
+    color: #fafaff;
     font-size: 20px;
     text-shadow: 1px 1px 1px #000;
-}
-.inputCalAdm{
-    background-color:#5e548ea9;
+  }
+  .inputCalAdm {
+    background-color: #5e548ea9;
     border-bottom: 2px solid #fafaff;
     border-right: 2px solid #fafaff;
     border-left: 2px solid #231942;
     border-top: 2px solid #231942;
     color: #fafaff;
     text-shadow: 1px 1px 1px #000;
-    transition:1s all;
-}
-
-.inputCalAdm:focus{
-    background-color:#5e548ea9;
+    transition: 1s all;
+  }
+  
+  .inputCalAdm:focus {
+    background-color: #5e548ea9;
     border: 2px groove #fafaff;
     color: #fafaff;
     text-shadow: 1px 1px 1px #000;
-    transition:1s all;
-}
-.inputCalAdm:hover{
-    background-color:#5e548ea9;
-    border-bottom: 2px solid  #231942;
-    border-right: 2px solid  #231942;
+    transition: 1s all;
+  }
+  .inputCalAdm:hover {
+    background-color: #5e548ea9;
+    border-bottom: 2px solid #231942;
+    border-right: 2px solid #231942;
     border-left: 2px solid #fafaff;
     border-top: 2px solid #fafaff;
-    transition:1s all;
-}
-.containerBotonesAdm{
+    transition: 1s all;
+  }
+  .containerBotonesAdm {
     display: grid;
     align-items: end;
     align-content: stretch;
     justify-content: center;
     justify-items: center;
-}
-.botonAddAlmAdm{
+  }
+  .botonAddAlmAdm {
     margin: 12% 0%;
     text-decoration: none;
     color: #a7c957;
     background-color: #6a994e;
     text-shadow: 1px 1px 1px #3d405b;
-     padding: -1% 48%;
+    padding: -1% 48%;
     border-bottom: 2px solid #a7c957;
     border-right: 2px solid #a7c957;
     border-left: 2px solid #6a994e;
     border-top: 2px solid #6a994e;
     font-size: 15px;
-    transition:1s all;
-}
-.botonAddAlmAdm:hover {
+    transition: 1s all;
+  }
+  .botonAddAlmAdm:hover {
     margin: 12% 0%;
     text-decoration: none;
     background-color: #a7c957;
     color: #6a994e;
     text-shadow: 1px 1px 1px #000;
-       padding: -1% 48%;
+    padding: -1% 48%;
     border-bottom: 2px solid #6a994e;
     border-right: 2px solid #6a994e;
     border-left: 2px solid #a7c957;
     border-top: 2px solid #a7c957;
     font-size: 15px;
-    transition:1s all;
+    transition: 1s all;
   }
-
-.botonVolCalAdm{
+  
+  .botonVolCalAdm {
     color: #fafaff;
     background-color: #231942;
     text-decoration: none;
@@ -97,9 +208,9 @@
     border-left: 2px solid #231942;
     border-top: 2px solid #231942;
     transition: 1s all;
-}
-
-.botonVolCalAdm:hover {
+  }
+  
+  .botonVolCalAdm:hover {
     background-color: #231942;
     color: #fafaff;
     text-decoration: none;
@@ -112,92 +223,213 @@
     border-top: 2px solid #fafaff;
     transition: 1s all;
   }
-  /*Como Usuario*/
-  .cajaUsCale{
-    background-image: url(https://images.pexels.com/photos/1384614/pexels-photo-1384614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2);
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    padding: 2% 0% 5% 0%;
 }
-.containerCalUs{
+/*Como Usuario*/
+.cajaUsCale {
+  background: rgb(226, 149, 120);
+  background: linear-gradient(
+    45deg,
+    rgba(226, 149, 120, 1) 0%,
+    rgba(237, 246, 249, 1) 50%,
+    rgba(0, 109, 119, 1) 100%
+  );
+
+  padding: 2% 0% 5% 0%;
+}
+.containerCalUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: -2% 0%;
+}
+.labelCalUs {
+  background-color: #1b263b;
+  border: 1px groove #fafaff;
+  padding: 0% 2%;
+  margin: 1% 0%;
+  letter-spacing: 2px;
+  color: #e0e1dd;
+  font-size: 20px;
+}
+.inputCalUs {
+  background-color: #1b263ba2;
+  color: #e0e1dd;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263ba2;
+  border-top: 2px solid #1b263ba2;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+
+.inputCalUs:focus {
+  background-color: #1b263ba2;
+  border: 2px groove #e0e1dd;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+  transition: 1s all;
+}
+.inputCalUs:hover {
+  background-color: #1b263ba2;
+  border-bottom: 2px solid #1b263ba2;
+  border-right: 2px solid #1b263ba2;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}
+.containerBotonesUs {
+  display: grid;
+  align-items: end;
+  align-content: stretch;
+  justify-content: center;
+  justify-items: center;
+}
+.botonAddCalUs {
+  margin: 12% 0%;
+  text-decoration: none;
+  color: #a7c957;
+  background-color: #6a994e;
+  text-shadow: 1px 1px 1px #3d405b;
+  padding: -1% 48%;
+  border-bottom: 2px solid #a7c957;
+  border-right: 2px solid #a7c957;
+  border-left: 2px solid #6a994e;
+  border-top: 2px solid #6a994e;
+  font-size: 15px;
+  transition: 1s all;
+}
+.botonAddCalUs:hover {
+  margin: 12% 0%;
+  text-decoration: none;
+  background-color: #a7c957;
+  color: #6a994e;
+  text-shadow: 1px 1px 1px #000;
+  padding: -1% 48%;
+  border-bottom: 2px solid #6a994e;
+  border-right: 2px solid #6a994e;
+  border-left: 2px solid #a7c957;
+  border-top: 2px solid #a7c957;
+  font-size: 15px;
+  transition: 1s all;
+}
+
+.botonVolCalenUs {
+  color: #e0e1dd;
+  background-color: #1b263b;
+  text-decoration: none;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #e0e1dd;
+  border-right: 2px solid #e0e1dd;
+  border-left: 2px solid #1b263b;
+  border-top: 2px solid #1b263b;
+  transition: 1s all;
+}
+
+.botonVolCalenUs:hover {
+  background-color: #1b263b;
+  color: #e0e1dd;
+  text-decoration: none;
+  transition: 1s all;
+  padding: 0% 3%;
+  border-radius: 1%;
+  border-bottom: 2px solid #1b263b;
+  border-right: 2px solid #1b263b;
+  border-left: 2px solid #e0e1dd;
+  border-top: 2px solid #e0e1dd;
+  transition: 1s all;
+}
+
+@media screen and (max-width:380px){
+  .cajaUsCale {
+    background: linear-gradient( 45deg, rgba(226, 149, 120, 1) 0%, rgba(237, 246, 249, 1) 50%, rgba(0, 109, 119, 1) 100% );
+    padding: 5% 0% 10% 0%;
+  }
+  .containerCalUs {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: -2% 0%;
-}
-.labelCalUs{
-    background-color:#1b263b;
-    border:1px groove #fafaff;
-    padding:0% 2%;
-    margin:1% 0%;
+  }
+  .labelCalUs {
+    background-color: #1b263b;
+    border: 1px groove #fafaff;
+    padding: 0% 2%;
+    margin: 1% 0%;
     letter-spacing: 2px;
-    color:#e0e1dd;
+    color: #e0e1dd;
     font-size: 20px;
-}
-.inputCalUs{
-    background-color:#1b263ba2;
+  }
+  .textareaCalendarUs{
+        background-color: #1b263ba2;
+    color: #e0e1dd;
+    text-shadow: 1px 1px 1px #000;
+    font-size: 20px;
+    width: 80%;
+    padding: 0% 0% 8.9% 0%;
+  }
+  .inputCalUs {
+    background-color: #1b263ba2;
     color: #e0e1dd;
     border-bottom: 2px solid #e0e1dd;
     border-right: 2px solid #e0e1dd;
     border-left: 2px solid #1b263ba2;
     border-top: 2px solid #1b263ba2;
     text-shadow: 1px 1px 1px #000;
-    transition:1s all;
-}
+    transition: 1s all;
+  }
 
-.inputCalUs:focus{
-    background-color:#1b263ba2;
+  .inputCalUs:focus {
+    background-color: #1b263ba2;
     border: 2px groove #e0e1dd;
     color: #e0e1dd;
     text-shadow: 1px 1px 1px #000;
-    transition:1s all;
-}
-.inputCalUs:hover{
-    background-color:#1b263ba2;
-    border-bottom: 2px solid  #1b263ba2;
-    border-right: 2px solid  #1b263ba2;
+    transition: 1s all;
+  }
+  .inputCalUs:hover {
+    background-color: #1b263ba2;
+    border-bottom: 2px solid #1b263ba2;
+    border-right: 2px solid #1b263ba2;
     border-left: 2px solid #e0e1dd;
     border-top: 2px solid #e0e1dd;
-    transition:1s all;
-}
-.containerBotonesUs{
+    transition: 1s all;
+  }
+  .containerBotonesUs {
     display: grid;
     align-items: end;
     align-content: stretch;
     justify-content: center;
     justify-items: center;
-}
-.botonAddCalUs{
+  }
+  .botonAddCalUs {
     margin: 12% 0%;
     text-decoration: none;
     color: #a7c957;
     background-color: #6a994e;
     text-shadow: 1px 1px 1px #3d405b;
-     padding: -1% 48%;
+    padding: -1% 48%;
     border-bottom: 2px solid #a7c957;
     border-right: 2px solid #a7c957;
     border-left: 2px solid #6a994e;
     border-top: 2px solid #6a994e;
     font-size: 15px;
-    transition:1s all;
-}
-.botonAddCalUs:hover {
+    transition: 1s all;
+  }
+  .botonAddCalUs:hover {
     margin: 12% 0%;
     text-decoration: none;
     background-color: #a7c957;
     color: #6a994e;
     text-shadow: 1px 1px 1px #000;
-       padding: -1% 48%;
+    padding: -1% 48%;
     border-bottom: 2px solid #6a994e;
     border-right: 2px solid #6a994e;
     border-left: 2px solid #a7c957;
     border-top: 2px solid #a7c957;
     font-size: 15px;
-    transition:1s all;
+    transition: 1s all;
   }
 
-.botonVolCalenUs{
+  .botonVolCalenUs {
     color: #e0e1dd;
     background-color: #1b263b;
     text-decoration: none;
@@ -208,9 +440,9 @@
     border-left: 2px solid #1b263b;
     border-top: 2px solid #1b263b;
     transition: 1s all;
-}
+  }
 
-.botonVolCalenUs:hover {
+  .botonVolCalenUs:hover {
     background-color: #1b263b;
     color: #e0e1dd;
     text-decoration: none;
@@ -223,3 +455,4 @@
     border-top: 2px solid #e0e1dd;
     transition: 1s all;
   }
+}
