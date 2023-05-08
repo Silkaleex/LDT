@@ -76,7 +76,7 @@ Por otro lado declararemos la variable con mongoose para acceder a nuestra base 
 ### Una vez puesto esto añadiremos nuestras puertos en el backend es el puerto 5000 y en el frontend 3000, con una bucle then y catch en el que empezará a verificar si funciona o contiene errores nuestro servidor.
 ##### ![image](https://user-images.githubusercontent.com/82760991/236813867-3caad8d7-8c51-4271-a47b-8dfd24e2991c.png)
 
- #Proteger nuestra contraseña en mongoDB
+# Proteger nuestra contraseña en mongoDB
 ## Creamos nuestro archivo .env
 #### ![image](https://user-images.githubusercontent.com/82760991/236873661-e1504e22-708c-4ec3-b1ec-c99fb75f3c61.png)
 ## Creamos una variable (no hace falta poner let, const o var en este caso) pegamos la url que copiamos en nuestro mongo db (seccion ñ)
