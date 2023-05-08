@@ -86,7 +86,7 @@ En user.js exporto objetos a mi base de datos con mongoose, aqui lo que hago es 
 ### Hay más codigo debajo pero aquí os muestro lo importante 
 ###### ![image](https://user-images.githubusercontent.com/82760991/236814461-6357370d-610e-4c10-8980-022074cb35a2.png)
 ### Ponemos las marcas de tiempo verdaderas(timestamp)
-Exportamos el modulo a mongooseen nuestra archivos de rutas donde vamos a crear también otros 5 archivos que seran calendarioRouter,planificadorRouter,alarmaRouter NotesRouter y userRouter también con la extensión de js.
+Exportamos el modulo a mongoose en nuestra archivos de rutas donde vamos a crear también otros 5 archivos que seran calendarioRouter,planificadorRouter,alarmaRouter NotesRouter y userRouter también con la extensión de js.
 En los archivos Router pondremos estos comandos para conectar con express y los datos que creamos en nuestros modelos y conectarlos a estos
 ##### ![image](https://user-images.githubusercontent.com/82760991/236815124-78775ea3-9aa8-4b1d-8f60-61b036a4f494.png)
 
