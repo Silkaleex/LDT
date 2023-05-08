@@ -136,9 +136,25 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 
 ## POSTMAN
   ### Hay que estar muy atento a estos puntos, de lo contrario no funciona nuestra ruta por muy bien que este escrita.
-  ###Importante siempre el verbo al que vasmo a usar, es decir si nuestra ruta es un Get tendremos que poner esta ruta, no funcionara si ponemos otra.
+  ### Importante siempre el verbo al que vasmo a usar, es decir si nuestra ruta es un Get tendremos que poner esta ruta, no funcionara si ponemos otra.
   ### enlace con la ruta por ejemplo http://localhost:5000/api/registro si no la escribimos al pulsar el boton send nos dara un error de que no encuentra esa ruta especifica
-  ###Lo que pusimos en nuestra ruta es decir si por ejemplo en register pusimos nombre email y password en body en la parte de x-www-form-urlencoded deberan poner esos datos y como se puso en la ruta de lo contrario nos dara otro error.
+  ### Lo que pusimos en nuestra ruta es decir si por ejemplo en register pusimos nombre email y password en body en la parte de x-www-form-urlencoded deberan poner esos datos y como se puso en la ruta de lo contrario nos dara otro error.
   #### ![image](https://user-images.githubusercontent.com/82760991/236861745-936cdd57-1413-46e4-87bb-7f06e84dba49.png)
 
+## Encriptación de contraseña y creando Token
+### Ahora Para crear un token primero debemos instalar en nuestro terminal npm i jsonwebtoken, creamos una carpeta del middeleware y importamos el archivo
+### Importamos la dependencia para encriptar la contraseña, lo que tenemos que dar al usuario es seguridad y fiabilidad a la hora de registrarse y tener sus datos guardados, se le encripta su contraseña para que no sea verificada por hackers
+  #### ![image](https://user-images.githubusercontent.com/82760991/236863612-c7a096a5-fe6d-4d91-811a-e8f42af976ea.png)
+ ### Bcrypt es una dependencia que nos ayuda a hashear(hash) / encriptar nuestra contraseña en la base de datos que no sea real, que tape los datos reales.
+#### ![image](https://user-images.githubusercontent.com/82760991/236864083-cc8269c7-5121-4740-8f2e-09be5b6fcf44.png)
+### declaramos las vueltas que quiero que de mi contraseña, se recomienda que sean 10 ya que es mucho mas seguro
+##### ![image](https://user-images.githubusercontent.com/82760991/236864559-b81784c5-9fa4-48ca-8882-79f87b3ab33f.png)
+### Por ultimo lo que hacemos es que nuestro usuario cuando acceda a su cuenta, su cuenta expire en ciertos dias en este caso le puse 7 dias
+#### ![image](https://user-images.githubusercontent.com/82760991/236864731-1ddeeb82-b933-45ec-9891-497aeccf60b2.png)
+## Creando un Administrador & Usuario
+  ### Lo primero de todo lo que hay que hacer es en user.js es poner role type NUMBER y que los usuarios que se registren por defecto serán 0 y los administradores serán 1
+  #### ![image](https://user-images.githubusercontent.com/82760991/236867021-b6f190e2-b780-4ce4-9440-481d55939ed0.png)
+### Ahora para hacerlos administradores una vez registrados tenemos que acceder a mongoDb buscar el lapiz escribir en role y ponerle 1 después actualizarlo, se guardara y se quedará registrado como administrador
+  #### ![image](https://user-images.githubusercontent.com/82760991/236867124-2eed189b-fd11-4345-8915-9547e36d9ac5.png)
 
+  
