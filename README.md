@@ -61,7 +61,7 @@ seleccionamos la región mas cercana  y el nombre a nuestro grupo yo puse para m
 ### L-Acabando ya esta parte verificamos que nuestra Ip access list es la que pusimos antes en Add Ip Address y pulsamos el boton Finish and Close
 ##### ![image](https://user-images.githubusercontent.com/82760991/236811849-b8373b55-10a9-4e6f-af54-7373113ef0dd.png)
 ### M-Volvemos DataBase y a data Service, aqui nos quedamos en mongo ahora vamos a nuestro visual estudio code
-###### ![image](https://user-images.githubusercontent.com/82760991/236811895-21864365-d9c2-48da-9a4b-880f5865816b.png)
+##### ![image](https://user-images.githubusercontent.com/82760991/236811895-21864365-d9c2-48da-9a4b-880f5865816b.png)
 ### N-En nuestra terminal pondremos esta terminal para instalar mongoDb en nuestro visual estudio npm i dotenv mongoose. Volvemos a mongoDb otra vez y ahora donde nos quedamos pulsamos el botton connect.
 ### Ñ-Ahora nos vamos a connect your aplicación que nos generará una url y la copiamos.
 ##### ![image](https://user-images.githubusercontent.com/82760991/236812028-71966139-5d38-4b61-8def-bdd21b1f2954.png)
@@ -76,17 +76,69 @@ Por otro lado declararemos la variable con mongoose para acceder a nuestra base 
 ### Una vez puesto esto añadiremos nuestras puertos en el backend es el puerto 5000 y en el frontend 3000, con una bucle then y catch en el que empezará a verificar si funciona o contiene errores nuestro servidor.
 ##### ![image](https://user-images.githubusercontent.com/82760991/236813867-3caad8d7-8c51-4271-a47b-8dfd24e2991c.png)
 
-##Modelos y Rutas
-####Ahora crearé dos carpetas Models(modelos) y routes(rutas)
-En mi proyecto creare 5 nuevos archivos que son calendario,notes,user,planificador,alarma con la extensión .js
-En user.js exporto objetos a mi base de datos con mongoose, aqui lo que hago es crear los datos de un usuario es decir su nombre, apellidos... de tipo String y que sea obligatorio(required)
+## Modelos y Rutas
+#### Ahora crearé dos carpetas Models(modelos) y routes(rutas)
+### 1-Modelos
+En mi proyecto creare 5 nuevos archivos que son calendario, notes, user, planificador, alarma con la extensión .js
+En user.js exporto objetos a mi base de datos con mongoose, aqui lo que hago es crear los datos de un usuario es decir su nombre, apellidos... de tipo String y que sea obligatorio(required).
+### Luego en los otros modelos haremos lo mismo pero con sus datos correspondientes(fecha,hora,nota...) a cada Nota, Evento, Planificador, Alarma.
 ##### ![image](https://user-images.githubusercontent.com/82760991/236814322-b773ce6b-81e8-4696-b1a5-9c79242e3564.png)
-### En la linea 21 y 27 hago una relación de modelos que voy a usar en otros archivos.
+### En la linea 21 y 27 hago una relación de modelos que voy a usar en otros archivos que van a ser Notas, Alarmas, Planificador, y Eventos.
 ###### ![image](https://user-images.githubusercontent.com/82760991/236814440-8562dfbb-b345-4233-b47b-8cdcda1ae6a1.png)
-### Hay más codigo debajo pero aquí os muestro lo importante 
 ###### ![image](https://user-images.githubusercontent.com/82760991/236814461-6357370d-610e-4c10-8980-022074cb35a2.png)
-### Ponemos las marcas de tiempo verdaderas(timestamp)
+### Ponemos las marcas de tiempo verdaderas(timestamp), me dira cuando un usuario se a creadi una cuenta,actualiza datos....
 Exportamos el modulo a mongoose en nuestra archivos de rutas donde vamos a crear también otros 5 archivos que seran calendarioRouter,planificadorRouter,alarmaRouter NotesRouter y userRouter también con la extensión de js.
+### 2-Rutas
 En los archivos Router pondremos estos comandos para conectar con express y los datos que creamos en nuestros modelos y conectarlos a estos
 ##### ![image](https://user-images.githubusercontent.com/82760991/236815124-78775ea3-9aa8-4b1d-8f60-61b036a4f494.png)
+#### UserRouter nombre del archivo
+#### user nombre del modelo y su ruta donde se encuentra nuestro archivo
+  
+## Ruta Post de Register
+### Linea 24 Name, Email, Password son datos creados en el modelo user,vistos anteriormente
+### Linea 26 Comprobación de que no se repitan usuarios con un musmo nombre o apellidos a traves de findOne(Encuentrame)
+### Después en la linea 30 pusimos un mensaje de que un usuario ya estaba registrado, asi avisamos al usuario de que ya se registro.
+##Luego puse otra condicion que si no cumplia todas las casillas de registro (Linea 36) y que si no tenia un mínimo de 3 caracteres (Linea 42), le saldría un error de que no completo todos los requisitos
+##Y por finalizar esta ruta luego si hicimos todo correctamente nos enviará un mensaje de usuario encontrado, o nos saldrá un error en caso de que haya algun fallo en la aplicación.
+#### ![image](https://user-images.githubusercontent.com/82760991/236846471-061feb17-788e-4ace-8802-1d2c80487f91.png)
+#### ![image](https://user-images.githubusercontent.com/82760991/236848537-8d229429-43a7-43d2-9d43-f9b2ecda04c3.png)
+#### ![image](https://user-images.githubusercontent.com/82760991/236848595-693555fa-7c81-43f0-acc0-e779bc945ea9.png)
+
+  ## Peticion Post
+### Pasamos por el body los datos que quiero o que necesita el usuario para logearse en mi caso puse el email y el password
+###busco al usuario en nuestra base de datos con el email y password que me llega del body si no es correcto me saldra un mensaje de que algo no funciono correctamente, si lo encuentra me dira Login Correcto(captura no Hecha)
+cuantas menos explicaciones demos mejor por que así les damos mas dificultad a los hackers para poder acceder o verificar cual es el fallo y que puedan acceder con facilidad y vulnerar nuestros datos.
+y en caso de que los datos que pongamos no sean correctos pues nos dara un error
+#### ![image](https://user-images.githubusercontent.com/82760991/236852071-de98946b-0301-4dd5-a115-9b77f4eb3bc4.png)
+#### ![image](https://user-images.githubusercontent.com/82760991/236852121-2dd82f5b-82fa-4d20-89a0-825a6dcfb380.png)
+
+  ## Petición GET
+### Después de crear una ruta de Login, lo que hago es una petición GET en la que verificamos todos los datos de ese usuario que notas a escrito, como por ejemplo una lista de la compra, un evento que se va a desarrollar en un dia, un aviso de la alarma que nos avise por correo el dia y la hora exactas, etc.
+#### ![image](https://user-images.githubusercontent.com/82760991/236854558-180950ed-ade9-445d-a992-15591f6e1a27.png)
+
+  ## Peticion Delete
+### También tendremos una petición DELETE en caso de que el usuario ya no necesite la aplicación se elimine su cuenta
+### Cuando nos logeamos nos da un token para poder eliminar nuestros datos de usuario.
+#### ![image](https://user-images.githubusercontent.com/82760991/236856926-2895c39a-fd7d-45bd-99c6-43a73f6d53bc.png)
+
+  ## Petición Put
+### Añadimos una petición de PUT en este caso lo pondré en mi NoteRouter ya que queremos modificar una nota que ya no nos sirve o queramos añadir algo en concreto.
+### Línea 90, cogemos la id en req params, es decir la nota que queremos modificar.
+### Linea 91, Los datos del modelo que queremos modificar
+### Linea 93, encuantrame la nota y actualizame su id
+### Si no cumplistes los requisitos necesarios te enviará un mensaje de no completastes todos los campos, en caso contrario nos enviará un mensaje de notas modificadas con exito.
+## Nos puede dar un error en caso de que algo falle en la aplicación.  
+#### ![image](https://user-images.githubusercontent.com/82760991/236857876-de77baae-33c0-4172-a2a9-f4ab4ab8a3cf.png)  
+
+## Exportacion de nuestras rutas en nuestro server.js  
+### Por ultimo para que POSTMAN, MONGODB y NODEMON nos lean los datos creados deberemos exportarlos al archivo que creamos al principio es decir nuestro server.js
+#### ![image](https://user-images.githubusercontent.com/82760991/236861122-e8bebd72-4eb4-4471-b179-9f782f1318a9.png)
+
+## POSTMAN
+  ### Hay que estar muy atento a estos puntos, de lo contrario no funciona nuestra ruta por muy bien que este escrita.
+  ###Importante siempre el verbo al que vasmo a usar, es decir si nuestra ruta es un Get tendremos que poner esta ruta, no funcionara si ponemos otra.
+  ### enlace con la ruta por ejemplo http://localhost:5000/api/registro si no la escribimos al pulsar el boton send nos dara un error de que no encuentra esa ruta especifica
+  ###Lo que pusimos en nuestra ruta es decir si por ejemplo en register pusimos nombre email y password en body en la parte de x-www-form-urlencoded deberan poner esos datos y como se puso en la ruta de lo contrario nos dara otro error.
+  #### ![image](https://user-images.githubusercontent.com/82760991/236861745-936cdd57-1413-46e4-87bb-7f06e84dba49.png)
+
 
