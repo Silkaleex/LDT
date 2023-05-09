@@ -77,18 +77,18 @@ Por otro lado declararemos la variable con mongoose para acceder a nuestra base 
 ##### ![image](https://user-images.githubusercontent.com/82760991/236813867-3caad8d7-8c51-4271-a47b-8dfd24e2991c.png)
 
 # Proteger nuestra contraseña en mongoDB
-## Creamos nuestro archivo .env
+### Creamos nuestro archivo .env
 #### ![image](https://user-images.githubusercontent.com/82760991/236873661-e1504e22-708c-4ec3-b1ec-c99fb75f3c61.png)
-## Creamos una variable (no hace falta poner let, const o var en este caso) pegamos la url que copiamos en nuestro mongo db (seccion ñ)
-## En la url donde pone password borramos este texto y ponemos nuestra contraseña que pusimos en mongoDB
-##en server.js ponermos lo siguiente
+### Creamos una variable (no hace falta poner let, const o var en este caso) pegamos la url que copiamos en nuestro mongo db (seccion ñ)
+### En la url donde pone password borramos este texto y ponemos nuestra contraseña que pusimos en mongoDB
+  #### ![Captura 49](https://user-images.githubusercontent.com/82760991/236875044-d65996e0-d355-47d3-9993-4d76ad7f72e7.png)
+### en server.js ponermos lo siguiente
   #### ![image](https://user-images.githubusercontent.com/82760991/236875620-8d2ae38f-7c51-4cc2-8dde-df3747697132.png)
-  ## Ponemos nodemon en nuestro terminal de VSCode
-  ## En otro terminal instalaremos -> npm i dotenv mongoose 
-  ## *dotenv va a ser una dependencia que lo que va a hacer es darme a esconder mis claves
-  #### ![image](https://user-images.githubusercontent.com/82760991/236876084-c0e664a1-e338-4471-92c9-b519d405ef70.png)
-###declaramos la variable con mongoose (linea 7) y otra variable que nos traiga el archivo privado .env y poder utilizarlo previamente
-#### ![Captura 49](https://user-images.githubusercontent.com/82760991/236875044-d65996e0-d355-47d3-9993-4d76ad7f72e7.png)
+  ### Ponemos nodemon en nuestro terminal de VSCode
+  ### En otro terminal instalaremos -> npm i dotenv mongoose 
+  ### *dotenv va a ser una dependencia que lo que va a hacer es darme a esconder mis claves
+#### ![image](https://user-images.githubusercontent.com/82760991/237025909-e2d103a2-06ab-47b0-8188-b1fc6863e2ad.png)
+  ### Aqui declaramos la variable para poder utilizarla
 
   ## Modelos y Rutas
 #### Ahora crearé dos carpetas Models(modelos) y routes(rutas)
@@ -100,8 +100,8 @@ En user.js exporto objetos a mi base de datos con mongoose, aqui lo que hago es 
 ### En la linea 21 y 27 hago una relación de modelos que voy a usar en otros archivos que van a ser Notas, Alarmas, Planificador, y Eventos.
 ###### ![image](https://user-images.githubusercontent.com/82760991/236814440-8562dfbb-b345-4233-b47b-8cdcda1ae6a1.png)
 ###### ![image](https://user-images.githubusercontent.com/82760991/236814461-6357370d-610e-4c10-8980-022074cb35a2.png)
-### Ponemos las marcas de tiempo verdaderas(timestamp), me dira cuando un usuario se a creadi una cuenta,actualiza datos....
-Exportamos el modulo a mongoose en nuestra archivos de rutas donde vamos a crear también otros 5 archivos que seran calendarioRouter,planificadorRouter,alarmaRouter NotesRouter y userRouter también con la extensión de js.
+### Ponemos las marcas de tiempo verdaderas(timestamp), me dira cuando un usuario se a creado una cuenta, actualiza datos....
+Exportamos el modulo a mongoose en nuestra archivos de rutas donde vamos a crear también otros 5 archivos que seran calendarioRouter, planificadorRouter, alarmaRouter, NotesRouter y userRouter también con la extensión de js.
 ### 2-Rutas
 En los archivos Router pondremos estos comandos para conectar con express y los datos que creamos en nuestros modelos y conectarlos a estos
 ##### ![image](https://user-images.githubusercontent.com/82760991/236815124-78775ea3-9aa8-4b1d-8f60-61b036a4f494.png)
@@ -110,15 +110,15 @@ En los archivos Router pondremos estos comandos para conectar con express y los 
   
 ## Ruta Post de Register
 ### Linea 24 Name, Email, Password son datos creados en el modelo user,vistos anteriormente
-### Linea 26 Comprobación de que no se repitan usuarios con un musmo nombre o apellidos a traves de findOne(Encuentrame)
-### Después en la linea 30 pusimos un mensaje de que un usuario ya estaba registrado, asi avisamos al usuario de que ya se registro.
-## Luego puse otra condicion que si no cumplia todas las casillas de registro (Linea 36) y que si no tenia un mínimo de 3 caracteres (Linea 42), le saldría un error de que no completo todos los requisitos
+### Linea 26 Comprobación de que no se repitan usuarios con el mismo nombre o apellidos a través de findOne(Encuentrame)
+### Después en la linea 30 pusimos un mensaje para avisar al usuario de que ya esta registrada su cuenta en LDT.
+## Luego puse otra condición que si no cumplia todas las casillas de registro (Linea 36) y que si no tenia un mínimo de 3 caracteres (Linea 42), le saldría un error de que no completo todos los requisitos.
 ## Y por finalizar esta ruta luego si hicimos todo correctamente nos enviará un mensaje de usuario encontrado, o nos saldrá un error en caso de que haya algun fallo en la aplicación.
 #### ![image](https://user-images.githubusercontent.com/82760991/236846471-061feb17-788e-4ace-8802-1d2c80487f91.png)
 #### ![image](https://user-images.githubusercontent.com/82760991/236848537-8d229429-43a7-43d2-9d43-f9b2ecda04c3.png)
 #### ![image](https://user-images.githubusercontent.com/82760991/236848595-693555fa-7c81-43f0-acc0-e779bc945ea9.png)
 
-  ## Peticion Post
+  ## Peticion Post de Login
 ### Pasamos por el body los datos que quiero o que necesita el usuario para logearse en mi caso puse el email y el password
 ### busco al usuario en nuestra base de datos con el email y password que me llega del body si no es correcto me saldra un mensaje de que algo no funciono correctamente, si lo encuentra me dira Login Correcto(captura no Hecha)
 cuantas menos explicaciones demos mejor por que así les damos mas dificultad a los hackers para poder acceder o verificar cual es el fallo y que puedan acceder con facilidad y vulnerar nuestros datos.
@@ -126,13 +126,16 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://user-images.githubusercontent.com/82760991/236852071-de98946b-0301-4dd5-a115-9b77f4eb3bc4.png)
 #### ![image](https://user-images.githubusercontent.com/82760991/236852121-2dd82f5b-82fa-4d20-89a0-825a6dcfb380.png)
 
-  ## Petición GET
-### Después de crear una ruta de Login, lo que hago es una petición GET en la que verificamos todos los datos de ese usuario que notas a escrito, como por ejemplo una lista de la compra, un evento que se va a desarrollar en un dia, un aviso de la alarma que nos avise por correo el dia y la hora exactas, etc.
-#### ![image](https://user-images.githubusercontent.com/82760991/236854558-180950ed-ade9-445d-a992-15591f6e1a27.png)
+  ## Petición GET como ver a un usuario ya registrado
+  ### Cogemos el id del usuario en request, en params (Línea 251)
+  ### Encuentrame la id del usuario(Línea 252) y a partir de aqui me saldra un mensaje de usuario encontrado o no(Líneas 256,261)
+  ### Si no me sale ninguno de estos dos mensajes me saldra un mensaje de error (Línea 267)
+  #### ![image](https://user-images.githubusercontent.com/82760991/237030919-5a104b11-5767-4466-b8d2-95716da67872.png)
 
-  ## Peticion Delete
-### También tendremos una petición DELETE en caso de que el usuario ya no necesite la aplicación se elimine su cuenta
-### Cuando nos logeamos nos da un token para poder eliminar nuestros datos de usuario.
+  ## Peticion Delete Eliminacion de cuenta de un usuario
+### Encuentrame el id del usuario registrado y logeado, dame su token de auth(authorization) y eliminame mi cuenta de usuario (Linea 393)
+### si los datos del usuario estan correctos nos enviara un mensaje de que nuestra cuenta fue eliminada correctamente (LInea 396)
+### si no nos enviará un error(Linea 401)
 #### ![image](https://user-images.githubusercontent.com/82760991/236856926-2895c39a-fd7d-45bd-99c6-43a73f6d53bc.png)
 
   ## Petición Put
@@ -145,7 +148,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://user-images.githubusercontent.com/82760991/236857876-de77baae-33c0-4172-a2a9-f4ab4ab8a3cf.png)  
 
 ## Exportacion de nuestras rutas en nuestro server.js  
-### Por ultimo para que POSTMAN, MONGODB y NODEMON nos lean los datos creados deberemos exportarlos al archivo que creamos al principio es decir nuestro server.js
+### Para que POSTMAN, MONGODB y NODEMON nos lean los datos creados deberemos exportarlos al archivo que creamos al principio es decir nuestro server.js
 #### ![image](https://user-images.githubusercontent.com/82760991/236861122-e8bebd72-4eb4-4471-b179-9f782f1318a9.png)
 
 ## POSTMAN
@@ -176,24 +179,23 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   ### next:() -> el bloque o codigo que lleva escrito antes pasa el control y luego sige su tarea
   ### Linea 5 recogemos del header el token que nos envia el usuario.
   ### Es importante que el token, lo verifiquemos  y decodifiquemos para que nos devuelva informacion del usuario logeado
-  ### Linea 13:Coge la contraseña que pongamos en .env para acceder dentro de nmuestra contraseña que pongamos en nuestra database ya creada
-  ### Linea 20 y 21: Si todfo va bien pasa el control al siguiente bloque de codigo
+  ### Linea 13: Coge la contraseña que pongamos en .env para acceder dentro de nuestra contraseña que pongamos en nuestra database ya creada
+  ### Linea 20 y 21: Si todo va bien pasa el control al siguiente bloque de codigo
   #### ![Captura 48](https://user-images.githubusercontent.com/82760991/236870177-ca4b0ade-564a-41c1-b035-09bba0ffde37.png)
 ## 2- AuthAdmin -Admin
-  ### sta función se ejecuta después de ejecutarse la funcion de Auth.js, despues de comprobar que el usuario esta logeado
-  ### Linea 3 y 4:Busca al usuario logueado por su id que me viene devuelto en el req.user que me viene devuelto del token
+  ### Esta función se ejecuta después de ejecutarse la funcion de Auth.js, despues de comprobar que el usuario esta logeado
+  ### Linea 3 y 4: Busca al usuario logueado por su id que me viene devuelto en el req.user que me viene devuelto del token
   ### si no me encuentra el usuario me dara un error como que no existe dicho usuario,
-  ### y si intentas acceder como usuario a un campo de administrador no te dejara acceder
+  ### Si intentas acceder como usuario a un campo de administrador no te dejara acceder
   ### ![image](https://user-images.githubusercontent.com/82760991/236871450-a743b124-6589-4929-ab4c-5956a2bf22aa.png)
-## 1-añadimos la propiedad "role" al modelo de usuario
-## 2-Creamos el middelware
+## 1- añadimos la propiedad "role" al modelo de usuario
+## 2- Creamos el middelware
 ## 3- Importamos la función creada en la ruta en cada Router que necesitamos
-## 4- Importamos el AuthAdmin, en cada ruta requerida (ruta que va a ser privada para el admin, despues de importar el primer middelware que me comprueba si el user esta logeado
+## 4- Importamos el AuthAdmin, en cada ruta requerida (ruta que va a ser privada para el admin, después de importar el primer middelware que me comprueba si el user esta logeado
   
   ## Creando un Administrador & Usuario
   ### Lo primero de todo lo que hay que hacer es en user.js es poner role type NUMBER y que los usuarios que se registren por defecto serán 0 y los administradores serán 1
   #### ![image](https://user-images.githubusercontent.com/82760991/236867021-b6f190e2-b780-4ce4-9440-481d55939ed0.png)
-### Ahora para hacerlos administradores una vez registrados tenemos que acceder a mongoDb buscar el lapiz escribir en role y ponerle 1 después actualizarlo, se guardara y se quedará registrado como administrador
-  #### ![image](https://user-images.githubusercontent.com/82760991/236867124-2eed189b-fd11-4345-8915-9547e36d9ac5.png)
+### Ahora para hacerlos administradores una vez registrados tenemos que acceder a mongoDb buscar el lapiz escribir en role y ponerle 1 después actualizarlo, se guardará y se quedará registrado como administrador
+#### ![Captura49](https://user-images.githubusercontent.com/82760991/237041907-e86c544c-e063-4f2a-aca2-bb686e7a5792.jpg)
 
-  
