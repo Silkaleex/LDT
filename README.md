@@ -5,6 +5,8 @@
 ### Además podremos añadir una alarma para que nos envie un correo para que nos avise sobre la hora y fecha exacta de algo puntual que nos quiera avisar.
 ### Un Planificador donde podremos destacar algo importante o que necesitemos mejorar, destacar en un mes dia o un tiempo establecido. 
 
+# BackEnd & DataBase
+
 ## Instalación de Nuestro Backend con Express
 #### Empezamos descargando he instalando NodeJs en nuestro ordenador.
 #### una vez instalado, instalamos en nuestro terminal de VSCode Npm y verificando que node esta instalado correctamente.
@@ -198,4 +200,85 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://user-images.githubusercontent.com/82760991/236867021-b6f190e2-b780-4ce4-9440-481d55939ed0.png)
 ### Ahora para hacerlos administradores una vez registrados tenemos que acceder a mongoDb buscar el lapiz escribir en role y ponerle 1 después actualizarlo, se guardará y se quedará registrado como administrador
 #### ![Captura49](https://user-images.githubusercontent.com/82760991/237041907-e86c544c-e063-4f2a-aca2-bb686e7a5792.jpg)
+
+ # FrontEnd con React
+  ## Instalación
+  ### Vamos a nuestra terminal y pondremos el comando npx create-react-app "nombre del archivo" en mi caso fue client
+  ### npx es una herramienta de ejecucción de paquetes que viene con npm
+  ### create se encarga de una logica de backend o de base de datos tan solo crea un flujo de construccion de Front-End de manera que lo puedes usar con  cualquier BackEnd.
+  
+  ## comando para inicar React
+  ### npm start: arranca el componente
+  ### npm run build: inicio de procucción
+  ### npm run test: Inicio de prueba
+  ### npm run reject: Elimina la herramienta y hace una copia de dependencias de compilación archivos de configuracion y scripts en el directorio de la aplicacion.(si se pone este comando, ya no podras volver a atras)
+  
+  ## JSX
+  ### Es un lenguaje especial que mezcla HTML5 con JS, Además es como una especie de lenguaje de plantilla que me permite imprimir variables y hacerlo todo de manera mas dinámica y queda bastante limpia.
+  ## Estructurando y Diseñando LDT
+  ### Empecé creando componentes en varias carpetas
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/da34f3b4-33e3-4201-a321-d00e46ac94fe)
+  
+  ## App
+  ### Es nuestro archivo pricnipal en el que añadiremos  nuestros componentes en mi caso fueron Navbar y Pages
+  ### navbar,Pages (Nombre del componente)
+  ### from "" componente donde se encuentra el archivo
+  ### Componentes deonde esta estructurado mis archivos, Navbar:mi barra de navegacion, Pages:donde estarán enlazados todos mis componentes. (Linea 7 y 8)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/92e21403-c5de-44b8-97f0-8686a39ddb78)
+  
+  ## Home
+  ### Import enlace del archivo de Css(linea 2)
+  ### Link es una etiqueta que sustituye <a/> en HTML5(Linea 3, 14, 17) si pusieramos dicha etiqueta no funcionaria correctamente el enlace, react-router-dom     ### habilita el enrutamiento del lado del cliente(Linea 3).
+  ### className es una nueva manera de poner estilos de clase en nuestro Css
+  ### Home tanto la función como la exportación se tiene que llamar igual,
+  ### de lo contrario no podran enlazarse a otros componentes y nos dará un error (Linea 4 y 26).
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2ba69c3d-4c20-461a-a6bd-bda5c6769d85)
+  
+  ## Navbar
+  ### SetItem ==> es para definir
+  ### getItem ==> coge un valor de una variable
+  ### RemoveItem ==> borra una clave o algo en concreto, por ejemplo el logout o eliminamos la cuenta de nuestro usario
+  ### role es el archivo que hay en la aplicacion en consola, lo creamos en el modelo user de nuestro Backend, 
+  ### localStorage es la aplicaión de nuestra consola (Linea 6).
+  ### Creo una condicion en mi vaiable navbar, que cuando acceda al logout en mi cuenta si mi role es 0 entrare como navuser(Usuario)
+  ### y si mi role es 1 entraré como navAdmin(Admin)(linea 82).
+  ### la variable navbar declaro en la linea 86 con las condiciones que le pusimos en la lineas anteriores.
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/71f6f91b-7fb5-46c3-b4a2-c1cb1cae60af)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/eaf71a23-5b69-4b84-9b36-612da4fe873b)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/138acb4d-4ad6-4bdb-a477-554ef12cd5e7)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/361e5e61-a4e8-407b-8ca7-525493b7e4ce)
+  
+  ## Pages
+  ### En este componente importaremos todos los archivos que vayamos a crear y usaremos el react-router-dom para hacer enrutamientos entre ellas 
+  ### path es la dirección de la ruta que nos dirigiremos con Link y element es nuestro componente
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/65f691cf-a3bf-445c-9af7-245312ad28cf)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/f741bf98-b74d-4bf6-a4aa-8f1e6223b44b)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c77b0efd-bbdb-4dce-952d-5f42a9cf779d)
+
+  ## Login
+  ### UseState es un Hook que es una función especial que permite "conectarse" a caracteristicas de React.
+  ### Permite agregar una variable de estado a nuestro componente
+  ### Axios es una biblioteca de cliente Http que le permite realizar solicitudes a un endpoint determinado
+  ### Cogemos los datos del BackEnd de nuestra petición Post de Login (Linea 7 a la 10)
+  ### Creamos datos para cuando nos logeamos nos envie un mensaje (Linea 11 a la 17)
+  ### Aparte de rellenar los datos de mi login, que me verifique los datos en el submit(Linea 18 a la 38)
+  ### Llamamos a la petición BackEnd con Axios(Linea 21 a la 23)
+  ### Es importante poner aqui la consola en response por que asi obtendremos todos los datos de la ruta o errores para verificar donde esta el fallo(linea 24)
+  ### Aqui guardamos toda la informacion del usuario en la memoria del navegador (Linea 26, 27 y 28)
+  ### Refrescame el Navegador (Linea 29)
+  ### Si no es correcto  los datos que envio enviame un mensaje de error (Linea 33)
+  ### Si esta correcto los datos me envias a usuario (Linea 30) y sino me llevas a login (Linea 35)
+  ### Cuando accedemos a Login no tendremos ningun mensaje (None), cuando pongamos nuestros datos de email y password si pusimos bien todos los datos
+  ### nos enviara un mensaje de "Login Correcto", en caso contrario de que no esten correctos los datos se activará un mensaje que dirá "Algo no funcionó correctamente" (Linea 67 y 78)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/3a4fadc4-78ee-404f-8ba1-eb78ba623bc4)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c93aabe3-57da-4b08-bc9f-61e2609b7a7d)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/33216632-a590-4bd4-9c64-ea8dfaca3a7e)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1863a0a6-a162-4acd-b799-c9a3cdf316ec)
+
+
+  
+
+
+  
+
 
