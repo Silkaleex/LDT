@@ -325,7 +325,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2d0d8c84-5bf0-43f8-8159-428c9002cd27)
 
 ## ModificicacionPlan
-###En este componente modificacaremos un planificador que queremos cambiar los datos, por que nos equivocamos o por que los datos no sean correctos, etc
+### En este componente modificacaremos un planificador que queremos cambiar los datos, por que nos equivocamos o por que los datos no sean correctos, etc
 ### Cogemos la nota en la ruta de Front a través de useParams y una vez modifiquemos los datos, estos se modificaran y nos enviara de nuevc al planificador corregido (Linea 36 a la 50).
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a111360d-e5be-470f-add3-8ef0be19233f)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/ce5c43c5-5dd7-45f4-b32d-02f857a9ce19)
@@ -333,6 +333,36 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c0a89563-8213-44ea-9c13-9016c660ee19)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1e7d4513-751e-417b-8c7b-6185d27edbe3)
 
+## Datos Usuario
+### En este componente tendremos nuestros datos del usuario, también podrémos modificar o eliminar nuestros datos como usuario
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a36c6fb8-2656-4f21-a5f8-a97ff58029f6)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1695c9b5-9fc2-4b6d-ba29-c28f2f36b6bd)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/95f2e61e-196b-4f01-b221-7d4441063893)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/42013e01-380d-4cbc-9dae-40f65b5e5a3e)
+
+ ## Usuarios
+  ## En este componente tendremos todos los datos del usuario como administrador
+  ### Se hizo un mapeo para mostrar todos los usuarios(Linea 30)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/567cd469-f85a-436d-a79f-54d4ae6f6f9a)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/bc1b2443-0adf-4626-9838-387ff52bd637)
+
+## Pusuario
+### En este componente veremos los datos del usuario y podremos eliminarlo o bannearlo al usuario como administrador.
+### El botón hace la misma función que elimnar usuario en DatosUsuario solo que el admin elimina un usuario en caso de que no cumpla las normas de licencia (Linea 32 a la 50) 
+###  cuando pulso el botón de baneo, bloqueao al usuario y no podra inciar sesión, pasados unos segundos nos llevará a nuestro perfil de Admin (Linea 52 a la 75)
+### Cuando accedo al componente de PUsuario el botón tendra el mensaje de Banear usuario, cuando lo pulso se activará y el usuario no podrá acceder a su cuenta, esperamos unos segundos y me enviará de nuevo a Datos Usuario.
+### Cuando vuelva otra vez a ese perfil el mensaje del botón habrá cambiado por desbanear usuario, si le pulsamos se desactivará y el usuario podrá volver a acceder a su cuenta (Linea 119 a la 127)
+  
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/488736ba-2001-45c6-a6fc-85ba07a547eb)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/17853d8c-6a22-4707-9f6f-5112e2e2b214)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/bbfb145d-04d6-4c00-9b93-f326bb287020)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/74ff5ca9-f54b-4d4e-b469-25b6ba467478)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/321fbdff-e02a-4875-ab96-a1ba5833948b)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/08886309-527c-48d9-820f-f50d80a0a222)
+  
+##Logout
+### Este componente nos cerrara sesion de nuestra cuenta  cuando pulsemos el icono del navbar de cerrar sesion esperamos unos segundos y volveremos a home, nuestros datos estaran guardados
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c9f051ab-de99-43de-8787-fc84ea9fc033)
 
   
 
