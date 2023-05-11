@@ -294,6 +294,37 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
    #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/16c03b44-1ec7-404c-ba4e-1b6d27c0b0a5)
    #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1224f886-094d-4934-88b2-39dfc784b08f)
 
+## Ahora iremos con TodosLosPlanificadores, Planificador, newPlanificadory modificacionPlan, los demás al final son lo mismo salvo que los datos del Backend tanto el modelo y la ruta son diferentes, pero la estructura es la misma
+  
+  ## TodosLosPlanificadores
+  ### cogemos el valor de UseState y hacemos un mapeo(map) para que nos salga todas las planificaciones que hemos creado y que vayamos a crear (Linea 35 a la 41)
+  ### Aqui mostraremos los datos de nuestro modelo del BackEnd(Linea 38 y 39)
+  ### Me coge un planificador por el id, una vez creada ya puedo acceder a ella pulsando este botón(Linea 41).
+   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/7b84ad66-7b50-4c3b-a84b-de979a6fd812)
+   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a0394be9-f44a-4afa-9b47-5c07207f1e61)
+   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/48f0c206-371b-4da4-837d-73a163b47b38)
+   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/83af4f20-af19-489a-91f3-6edf7e289ec0)
+  
+## Planificador
+### Accede al objeto del historial del enrutador de React y navega a los otros enrutadores utilizando los metodos de inserción o remplazo, ayuda ir a una URl específica, tanto hacia adelante como atrás(Linea 18)
+### Cojo PlanificadorId en useParams, cuando accedo a TodosLosPLanificadores creo un botón para poder acceder a ese PLanificador. Ese Planificador contiene una id que es la ruta que cogemos en pages en Front, y accedemos a ese planificador concreto  por el mapeo(map). (Linea 22)
+ ### preventDefault Evita el comportamiento por defecto del navegador para algunos eventos que no lo tienen (Linea 37)
+ ### Aqui creamos el Botón de Eliminar, cuando pulsemos el botón nos saldrá un aviso de si quermos borrar o no el planificador, y al cabo de unos segundo si confirmamos la eliminacion del planificador, nos llevará al menú de usuario y ese planificador ya no existira en TodosLosPlanificadores(Linea 36 a la 57)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/50fc0582-029b-4e4e-a4aa-85c77d6869bf)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/d1d5e0a3-4abf-4470-9fc4-5b40b4e6a249)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/20f06357-b014-4986-9677-c09b25924ebe)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/90bd1e34-3842-4972-a68a-fe7517705f87)
+## New Plan
+  ### Este componente me creará un nuevo Planificador en el que cogemos el modelo y la ruta sera post de planificador  y a traves del token se eliminara la nota que queremos crear y una vez creada nos enviara de nuevo a TodosLosPlanificadores
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c02ce132-e427-472f-88de-4ffb0451d668)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/91e99f54-58ac-4138-8311-f81f5445a8b1)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/654134ab-ede3-4385-b690-d75cfaf5deca)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/f80090c1-4543-46fb-a27a-e844f915d283)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/5d0fef5a-96c8-4acc-a75a-4de0271a4db5)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2d0d8c84-5bf0-43f8-8159-428c9002cd27)
+
+
+
   
 
   
