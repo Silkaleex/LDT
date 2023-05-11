@@ -274,7 +274,27 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c93aabe3-57da-4b08-bc9f-61e2609b7a7d)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/33216632-a590-4bd4-9c64-ea8dfaca3a7e)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1863a0a6-a162-4acd-b799-c9a3cdf316ec)
+  
+## Register
+ ### Aqui creamos la seccion de rergister donde cogemos todos los datos de un nuevo usuario, cogemos los datos en useState y sacamos la ruta a través de axios en la ruta post de register que creamos anteriormente
+ ### Pondremos tambien mensajes de alerta, si se registro correctamente o no y que me refresque la página.
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a18061a8-c3f5-40ef-bd4f-85ab6c1ccb8f)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/35ccd8b6-ea7e-4214-a3f9-8cdd5cc8bee6)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/b055242b-d08d-4137-89ef-d6e73fd2f527)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/b14f6103-8773-45ed-b5ad-7b1933705746)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/7f3cc67c-83b6-4005-9615-68a0b355c4d8)
+  
+ ## User
+  ### Una vez nos registremos y accedamos por Login, entraremos a nuestro menú principal
+  ### UseEffect es un hook de react que nos permite sincronizar un componente con un sitema externo
+  ### ambos metodos funcionan por igual, cogen los datos del BackEnd y lo muestran en FrontEnd (Linea 11 a la 24 y 25 a la 36)
+  ### Cogemos la ruta con axios por la autorización(authorization) del token, cogemos los datos en la consola para verificar que funciona correctamente y que elementos vamos a coger, los mostramos con el useState.
+  ### Aqui ponermos las diferencias cuando accedes a admin o user, si tu rol es 1 accederas como Admin, si tu rol es 0 accederas como usuario (Linea 41 y 50)
+   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/3ee20df8-2c0f-4810-ad70-5a38b5986c7b)
+   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/16c03b44-1ec7-404c-ba4e-1b6d27c0b0a5)
+   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1224f886-094d-4934-88b2-39dfc784b08f)
 
+  
 
   
 
