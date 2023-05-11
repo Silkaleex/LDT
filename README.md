@@ -314,7 +314,8 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/d1d5e0a3-4abf-4470-9fc4-5b40b4e6a249)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/20f06357-b014-4986-9677-c09b25924ebe)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/90bd1e34-3842-4972-a68a-fe7517705f87)
-## New Plan
+
+ ## New Plan
   ### Este componente me creará un nuevo Planificador en el que cogemos el modelo y la ruta sera post de planificador  y a traves del token se eliminara la nota que queremos crear y una vez creada nos enviara de nuevo a TodosLosPlanificadores
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c02ce132-e427-472f-88de-4ffb0451d668)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/91e99f54-58ac-4138-8311-f81f5445a8b1)
@@ -323,9 +324,15 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/5d0fef5a-96c8-4acc-a75a-4de0271a4db5)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2d0d8c84-5bf0-43f8-8159-428c9002cd27)
 
+## ModificicacionPlan
+###En este componente modificacaremos un planificador que queremos cambiar los datos, por que nos equivocamos o por que los datos no sean correctos, etc
+### Cogemos la nota en la ruta de Front a través de useParams y una vez modifiquemos los datos, estos se modificaran y nos enviara de nuevc al planificador corregido (Linea 36 a la 50).
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a111360d-e5be-470f-add3-8ef0be19233f)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/ce5c43c5-5dd7-45f4-b32d-02f857a9ce19)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/57125405-0734-4cd5-8976-145dd9b7d1de)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c0a89563-8213-44ea-9c13-9016c660ee19)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1e7d4513-751e-417b-8c7b-6185d27edbe3)
 
-
-  
 
   
 
