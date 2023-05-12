@@ -53,13 +53,11 @@ const ModifcacionEvt = () => {
         <div className="cajaAdmCa">
           <form onSubmit={modificacionSubmit}>
             <div className="containerCalAdm">
-             
               <label className="labelCalAdm" htmlFor="calendar">
                 Evento:
               </label>
               <textarea
                 className="tareasAdm txtCaAdm"
-                placeholder="Descripcion de tu Evento"
                 type="textarea"
                 name="calendar"
                 id="calendar"
@@ -71,14 +69,12 @@ const ModifcacionEvt = () => {
               </label>
               <input
                 className="tareasAdm inputAdm"
-                placeholder="Descripcion de tu Evento"
-                type="data"
+                type="date"
                 name="fecha"
                 id="fecha"
                 value={evt.fecha}
                 onChange={onChangeInput}
               />
-              
               <div className="containerBotonesAdm">
                 <button className="botonModCalAdm">Modificar Evento</button>
                 <Link to="/usuario" className="botonVolCalAdm">

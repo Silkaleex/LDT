@@ -26,6 +26,7 @@ const ModifcacionPlan = () => {
         },
       }
     );
+    console.log(response)
     setpln(response.data.plan);
   };
   useEffect(() => {
@@ -63,20 +64,19 @@ const ModifcacionPlan = () => {
                 value={pln.fecha}
                 onChange={onChangeInput}
               />
-              <label className="labelPlAdm" htmlFor="descripcion">
+              <label className="labelPlAdm" htmlFor="description">
                 Description:
               </label>
               <textarea
-                className="txtPlnAdm txt-hidden"
-                placeholder="descripcion"
+                className="txtPlnAdm "
                 type="textarea"
-                name="descripcion"
-                id="descripcion"
+                name="description"
+                id="description"
                 value={pln.description}
                 onChange={onChangeInput}
-              />
+              ></textarea>
               <div className="containerBotonesAdm">
-                <Link to="/usuario" className="botonModNotAdm">Modificar Libro</Link>
+                <button to="/usuario" className="botonModNotAdm">Modificar Libro</button>
                 <Link to="/usuario" className="botonVolPlAdm">
                   Volver
                 </Link>
@@ -104,7 +104,6 @@ const ModifcacionPlan = () => {
               </label>
               <textarea
                 className="textareaPlnUs txt-hidden"
-                placeholder="descripcion"
                 type="textarea"
                 name="description"
                 id="description"
