@@ -360,7 +360,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/321fbdff-e02a-4875-ab96-a1ba5833948b)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/08886309-527c-48d9-820f-f50d80a0a222)
   
-##Logout
+## Logout
 ### Este componente nos cerrara sesion de nuestra cuenta  cuando pulsemos el icono del navbar de cerrar sesion esperamos unos segundos y volveremos a home, nuestros datos estaran guardados
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c9f051ab-de99-43de-8787-fc84ea9fc033)
 
