@@ -353,7 +353,7 @@ UserRouter.get("/toPlan", auth, async (req, res) => {
     if (!Planificador) {
       return res.status(400).send({
         success: false,
-        message: "Planificador no encontrado",
+        message: "Planificadores no encontrado",
       });
     }
     return res.status(200).send({

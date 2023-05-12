@@ -4,6 +4,9 @@ import { Link } from "react-router-dom";
 
 import { BsFillPersonXFill, BsBoxArrowInLeft } from "react-icons/bs";
 const NavBar = () => {
+  //setItem es para definir
+  //getItem es para coger un valor de esa variable
+  //removeItem es para borrar la clave cuando hacemos por ejemplo el logout
   const role = localStorage.getItem("role");
   const name = localStorage.getItem("name");
 
@@ -81,10 +84,12 @@ const NavBar = () => {
       </>
     );
   };
+  // eslint-disable-next-line eqeqeq
   let navbar = role == 0 ? NavUser() : role == 1 ? NavAdmin() : NavHome();
 
   return (
     <div>
+      {/*Condición, que en función del rol si está logueado o no me demuestra una nav(una función) u otra */}
       {navbar}
     </div>
   );

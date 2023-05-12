@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from "react";
 import axios from "axios";
 import "./todosLosPlanificadores.css";
@@ -6,21 +7,25 @@ import { Link } from "react-router-dom";
 import { TbColorPicker } from "react-icons/tb";
 import { CiPen } from "react-icons/ci";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
+
 const TodosLosPlanificadores = () => {
   const [plan, setPlan] = useState([]);
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
+
   const getPln = async () => {
     const response = await axios.get("http://localhost:5000/api/toPlan", {
       headers: {
         Authorization: token,
       },
     });
+    console.log(response);
     setPlan(response.data.Planificador.planning);
   };
 
   useEffect(() => {
     getPln();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>
@@ -32,8 +37,9 @@ const TodosLosPlanificadores = () => {
               {plan.map((pln) => {
                 return (
                   <div key={pln._id} className="DescripcionAdmPlanning">
-                    <h2 className="letraPlnAdmin">{pln.title}</h2>
-                    <h3 className="letraPlnAdmin">{pln.description}</h3>
+                    <h2 className="letraPlnAdmin">Titulo: {pln.title}</h2>
+                    <h3 className="letraPlnAdmin">Descripcion: {pln.description}</h3>
+                    <h3 className="letraPlnAdmin">Fecha: {pln.fecha}</h3>
                     <Link
                       to={`/planificar/${pln._id}`}
                       className="accesoAdmPlanning"
@@ -63,6 +69,7 @@ const TodosLosPlanificadores = () => {
                     <CardBody key={pln._id} className="descripcionPlanUs">
                       <CardText className="txtPlnUs">Titulo: {pln.title}</CardText>
                       <CardText className="txtPlnUs">Descripción: {pln.description}</CardText>
+                      <CardText className="txtPlnUs">Fecha: {pln.fecha}</CardText>
                       <Link
                         to={`/planificar/${pln._id}`}
                         className="accesoUsPlanning"

@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -21,11 +22,15 @@ function Notas() {
         },
       }
     );
+    console.log(response.data.notas);
     setNota(response.data.notas);
   };
   useEffect(() => {
     getNotas();
   }, []);
+
+  // console.log(nota);
+
   const deleteNota = async (e) => {
     e.preventDefault();
     let opcion = window.confirm("¿Estas seguro de borrar la nota?");
@@ -39,8 +44,10 @@ function Notas() {
             },
           }
         );
+        console.log(response);
         setTimeout(() => {
-           navigate("/usuario");
+          // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
+          navigate("/usuario");
         });
       } catch (error) {
         console.log(error.response);

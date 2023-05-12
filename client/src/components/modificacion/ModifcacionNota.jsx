@@ -5,7 +5,6 @@ import "./modificacion.css";
 const Modifcacion = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  console.log(token);
   const { notaId } = useParams();
   const Navigate = useNavigate();
   const [nota, setNota] = useState({
@@ -27,6 +26,7 @@ const Modifcacion = () => {
         },
       }
     );
+    console.log(response);
     setNota(response.data.notas);
   };
   useEffect(() => {
@@ -40,6 +40,7 @@ const Modifcacion = () => {
         `http://localhost:5000/api/notas/${notaId}`,
         { ...nota }
       );
+      console.log(response);
       setTimeout(() => {
         Navigate(`/notas/${notaId}`);
       }, 2000);

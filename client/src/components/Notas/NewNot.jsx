@@ -32,6 +32,8 @@ const NewNot = () => {
           },
         }
       );
+
+      console.log(response);
       setNote(response.data.Notas);
 
       setTimeout(() => {

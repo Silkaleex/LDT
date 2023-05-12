@@ -34,6 +34,8 @@ const NewCal = () => {
           },
         }
       );
+
+      console.log(response);
       setCalend(response.data.eventos);
 
        setTimeout(() => {

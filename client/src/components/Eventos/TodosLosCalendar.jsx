@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from "react";
 import axios from "axios";
 import "./todosLosCalendar.css";
@@ -15,11 +16,13 @@ const TodosLosEventos = () => {
         Authorization: token,
       },
     });
+    console.log(response);
     setEvent(response.data.eventos.calendar);
   };
 
   useEffect(() => {
     getEvent();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

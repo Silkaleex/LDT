@@ -10,7 +10,6 @@ const planificadorSchema = new mongoose.Schema({
   },
   fecha: {
     type: String,
-    required:true,
   },
   user: {
     type: mongoose.Types.ObjectId,

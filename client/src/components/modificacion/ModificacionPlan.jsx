@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
-
+import "./modificacion.css";
 const ModifcacionPlan = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
@@ -26,7 +26,7 @@ const ModifcacionPlan = () => {
         },
       }
     );
-    console.log(response)
+    console.log(response);
     setpln(response.data.plan);
   };
   useEffect(() => {
@@ -40,6 +40,7 @@ const ModifcacionPlan = () => {
         `http://localhost:5000/api/planificador/${planificadorId}`,
         { ...pln }
       );
+      console.log(response);
       setTimeout(() => {
         Navigate(`/planificar/${planificadorId}`);
       }, 2000);
@@ -54,7 +55,7 @@ const ModifcacionPlan = () => {
           <form onSubmit={modificacionSubmit}>
             <div className="containerPlAdm">
             <label className="labelPlAdm" htmlFor="fecha">
-                Fecha:
+                Fecha del Planificador:
               </label>
               <input
                 className="inputPlAdm txt-hidden"
@@ -68,15 +69,15 @@ const ModifcacionPlan = () => {
                 Description:
               </label>
               <textarea
-                className="txtPlnAdm "
+                className="txtPlnAdm txt-hidden"
                 type="textarea"
                 name="description"
                 id="description"
                 value={pln.description}
                 onChange={onChangeInput}
-              ></textarea>
+              />
               <div className="containerBotonesAdm">
-                <button to="/usuario" className="botonModNotAdm">Modificar Libro</button>
+                <button className="botonModPlnAdm">Modificar Libro</button>
                 <Link to="/usuario" className="botonVolPlAdm">
                   Volver
                 </Link>
@@ -111,7 +112,7 @@ const ModifcacionPlan = () => {
                 onChange={onChangeInput}
               ></textarea>
               <div className="containerBotonesUsPl">
-                <Link to="/usuario" className="botonModPlUs">Modificar Nota</Link>
+                <button className="botonModPlUs">Modificar Nota</button>
                 <Link to="/usuario" className="botonVolPlUs">
                   Volver
                 </Link>

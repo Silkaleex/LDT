@@ -27,6 +27,7 @@ const ModifcacionEvt = () => {
         },
       }
     );
+    console.log(response);
     setEvt(response.data.calendars);
   };
   useEffect(() => {
@@ -40,6 +41,7 @@ const ModifcacionEvt = () => {
         `http://localhost:5000/api/calendars/${eventoId}`,
         { ...evt }
       );
+      console.log(response);
       setTimeout(() => {
         Navigate(`/calendar/${eventoId}`);
       }, 2000);
@@ -75,6 +77,7 @@ const ModifcacionEvt = () => {
                 value={evt.fecha}
                 onChange={onChangeInput}
               />
+              
               <div className="containerBotonesAdm">
                 <button className="botonModCalAdm">Modificar Evento</button>
                 <Link to="/usuario" className="botonVolCalAdm">

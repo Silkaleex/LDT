@@ -1489,7 +1489,7 @@
   justify-content: center;
   justify-items: center;
 }
-.botonModCalAdm {
+.botonModPlnAdm {
   margin: 12% 0%;
   text-decoration: none;
   color: #fcbf49;
@@ -1503,7 +1503,7 @@
   font-size: 15px;
   transition: 1s all;
 }
-.botonModCalAdm:hover {
+.botonModPlnAdm:hover {
   margin: 12% 0%;
   text-decoration: none;
   background-color: #fcbf49;

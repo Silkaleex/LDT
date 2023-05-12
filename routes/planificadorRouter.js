@@ -6,16 +6,17 @@ const auth = require("../middeleware/auth");
 
 planificadorRouter.post("/planificador", auth, async (req, res) => {
   try {
-    const { title, description,fecha } = req.body;
+    const { title, description, fecha } = req.body;
     let userId = await User.findById(req.user.id);
 
-    if (!title || !description||!fecha) {
+    if (!title || !description || !fecha) {
       return res.status(400).send({
         success: false,
         message: "No completastes todos los pasos",
       });
     }
-    if (title.length < 3) {
+
+    if (description.length > 100) {
       return res.status(400).send({
         success: false,
         message: "No completastes todos los pasos",
@@ -29,7 +30,7 @@ planificadorRouter.post("/planificador", auth, async (req, res) => {
     });
     await User.findByIdAndUpdate(userId, {
       $push: {
-        planning: newPlanificador._id,
+        description: newPlanificador._id,
       },
     });
 
@@ -51,7 +52,7 @@ planificadorRouter.get("/planificador/:id", auth, async (req, res) => {
     const { id } = req.params;
     let plan = await Planificador.findById(id).populate({
       path: "user",
-      select: "name ",
+      select: "name",
     });
     if (!plan) {
       return res.status(400).send({
@@ -61,7 +62,7 @@ planificadorRouter.get("/planificador/:id", auth, async (req, res) => {
     }
     return res.status(200).send({
       success: true,
-      message: "Tus Planificador fue Encontrado correctamente",
+      message: "Tu Planificador fué Encontrado correctamente",
       plan,
     });
   } catch (error) {
@@ -74,9 +75,10 @@ planificadorRouter.get("/planificador/:id", auth, async (req, res) => {
 planificadorRouter.put("/planificador/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const {description,fecha } = req.body;
+    const { description, fecha } = req.body;
 
-    await Planificador.findByIdAndUpdate(id);
+    await Planificador.findByIdAndUpdate(id, { fecha, description });
+
     if (!fecha || !description) {
       return res.status(400).send({
         succcess: false,
@@ -85,7 +87,7 @@ planificadorRouter.put("/planificador/:id", async (req, res) => {
     }
     return res.status(200).send({
       success: true,
-      message: "evento modificado",
+      message: "Evento modificado",
     });
   } catch (error) {
     return res.status(500).send({

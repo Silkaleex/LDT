@@ -1,3 +1,4 @@
+/* eslint-disable eqeqeq */
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -6,10 +7,11 @@ import { TbTrash } from "react-icons/tb";
 import "./calendar.css";
 
 function Eventos() {
-  const { eventoId } = useParams(); 
+  const { eventoId } = useParams(); //Se a creado en la seccion en pages en evento/:eventoID
   const [event, setEvento] = useState([]);
   const role = localStorage.getItem("role");
   const token = localStorage.getItem("token");
+  // const role = localStorage.getItem("role");
   const navigate = useNavigate();
 
   const getEvento = async () => {
@@ -21,11 +23,14 @@ function Eventos() {
         },
       }
     );
+    console.log(response);
     setEvento(response.data.calendars);
   };
   useEffect(() => {
     getEvento();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // console.log(event);
 
   const deleteEvent = async (e) => {
     e.preventDefault();
@@ -40,7 +45,9 @@ function Eventos() {
             },
           }
         );
+        console.log(response);
         setTimeout(() => {
+          // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
           navigate("/usuario");
         });
       } catch (error) {

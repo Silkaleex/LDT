@@ -8,6 +8,20 @@ const User = () => {
   const [User, setUser] = useState({});
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
+  // const getUser = async()=>{
+  //     const response = await axios.get("http://localhost:5000/api/user",{
+  //         headers:{
+  //             Authorization:token
+  //         }
+  //     })
+  //     // console.log(response)
+  //     setUser(response.data.User)
+
+  // }
+  // useEffect(()=>{
+  //     getUser()
+  // },[])
+  //console.log(User)
   useEffect(() => {
     const getUser = async () => {
       const response = await axios.get("http://localhost:5000/api/user", {
@@ -15,6 +29,7 @@ const User = () => {
           Authorization: token,
         },
       });
+      console.log(response);
       setUser(response.data.User);
     };
     getUser();
