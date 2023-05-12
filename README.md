@@ -227,14 +227,18 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/92e21403-c5de-44b8-97f0-8686a39ddb78)
   
   ## Home
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/9f495d7f-6384-49c6-8ce5-3dba10d83e90)
   ### Import enlace del archivo de Css(linea 2)
-  ### Link es una etiqueta que sustituye <a/> en HTML5(Linea 3, 14, 17) si pusieramos dicha etiqueta no funcionaria correctamente el enlace, react-router-dom     ### habilita el enrutamiento del lado del cliente(Linea 3).
+  ### Link es una etiqueta que sustituye <a/> en HTML5(Linea 3, 14, 17) si pusieramos dicha etiqueta no funcionaria correctamente el enlace, react-router-dom habilita el enrutamiento del lado del cliente(Linea 3).
   ### className es una nueva manera de poner estilos de clase en nuestro Css
-  ### Home tanto la función como la exportación se tiene que llamar igual,
-  ### de lo contrario no podran enlazarse a otros componentes y nos dará un error (Linea 4 y 26).
+  ### Home tanto la función como la exportación se tiene que llamar igual, de lo contrario no podran enlazarse a otros componentes y nos dará un error (Linea 4 y 26).
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2ba69c3d-4c20-461a-a6bd-bda5c6769d85)
   
   ## Navbar
+  ### Navbar Admin
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/65a4b24d-9e60-4e01-9d92-127e07088ab5)
+  ### Navbar User
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/68f6658a-d436-4d5a-bb69-380bc88284af)
   ### SetItem ==> es para definir
   ### getItem ==> coge un valor de una variable
   ### RemoveItem ==> borra una clave o algo en concreto, por ejemplo el logout o eliminamos la cuenta de nuestro usario
@@ -256,6 +260,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c77b0efd-bbdb-4dce-952d-5f42a9cf779d)
 
   ## Login
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/3fcd2077-f55e-456b-a526-3515869901a2)
   ### UseState es un Hook que es una función especial que permite "conectarse" a caracteristicas de React.
   ### Permite agregar una variable de estado a nuestro componente
   ### Axios es una biblioteca de cliente Http que le permite realizar solicitudes a un endpoint determinado
@@ -276,15 +281,18 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1863a0a6-a162-4acd-b799-c9a3cdf316ec)
   
 ## Register
- ### Aqui creamos la seccion de rergister donde cogemos todos los datos de un nuevo usuario, cogemos los datos en useState y sacamos la ruta a través de axios en la ruta post de register que creamos anteriormente
- ### Pondremos tambien mensajes de alerta, si se registro correctamente o no y que me refresque la página.
-  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a18061a8-c3f5-40ef-bd4f-85ab6c1ccb8f)
-  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/35ccd8b6-ea7e-4214-a3f9-8cdd5cc8bee6)
-  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/b055242b-d08d-4137-89ef-d6e73fd2f527)
-  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/b14f6103-8773-45ed-b5ad-7b1933705746)
-  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/7f3cc67c-83b6-4005-9615-68a0b355c4d8)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/e88b7fd0-36b7-47bc-ac71-3e60d5520e42)
+### Aqui creamos la seccion de rergister donde cogemos todos los datos de un nuevo usuario, cogemos los datos en useState y sacamos la ruta a través de axios en la ruta post de register que creamos anteriormente
+### Pondremos tambien mensajes de alerta, si se registro correctamente o no y que me refresque la página.
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a18061a8-c3f5-40ef-bd4f-85ab6c1ccb8f)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/35ccd8b6-ea7e-4214-a3f9-8cdd5cc8bee6)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/b055242b-d08d-4137-89ef-d6e73fd2f527)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/b14f6103-8773-45ed-b5ad-7b1933705746)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/7f3cc67c-83b6-4005-9615-68a0b355c4d8)
   
  ## User
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/44d59573-ca13-4dd9-b11d-98d94b51428c)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/7eaecb72-db36-4c6a-ae66-0e8e25647d69)
   ### Una vez nos registremos y accedamos por Login, entraremos a nuestro menú principal
   ### UseEffect es un hook de react que nos permite sincronizar un componente con un sitema externo
   ### ambos metodos funcionan por igual, cogen los datos del BackEnd y lo muestran en FrontEnd (Linea 11 a la 24 y 25 a la 36)
@@ -297,6 +305,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 ## Ahora iremos con TodosLosPlanificadores, Planificador, newPlanificadory modificacionPlan, los demás al final son lo mismo salvo que los datos del Backend tanto el modelo y la ruta son diferentes, pero la estructura es la misma
   
   ## TodosLosPlanificadores
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/3e40fc49-0fdb-46ae-9cca-dfd0b2273edc)
   ### cogemos el valor de UseState y hacemos un mapeo(map) para que nos salga todas las planificaciones que hemos creado y que vayamos a crear (Linea 35 a la 41)
   ### Aqui mostraremos los datos de nuestro modelo del BackEnd(Linea 38 y 39)
   ### Me coge un planificador por el id, una vez creada ya puedo acceder a ella pulsando este botón(Linea 41).
@@ -306,6 +315,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
    #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/83af4f20-af19-489a-91f3-6edf7e289ec0)
   
 ## Planificador
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/40e03643-159a-4e4b-8b91-3cadb825fb12)
 ### Accede al objeto del historial del enrutador de React y navega a los otros enrutadores utilizando los metodos de inserción o remplazo, ayuda ir a una URl específica, tanto hacia adelante como atrás(Linea 18)
 ### Cojo PlanificadorId en useParams, cuando accedo a TodosLosPLanificadores creo un botón para poder acceder a ese PLanificador. Ese Planificador contiene una id que es la ruta que cogemos en pages en Front, y accedemos a ese planificador concreto  por el mapeo(map). (Linea 22)
  ### preventDefault Evita el comportamiento por defecto del navegador para algunos eventos que no lo tienen (Linea 37)
@@ -315,8 +325,9 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/20f06357-b014-4986-9677-c09b25924ebe)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/90bd1e34-3842-4972-a68a-fe7517705f87)
 
- ## New Plan
-  ### Este componente me creará un nuevo Planificador en el que cogemos el modelo y la ruta sera post de planificador  y a traves del token se eliminara la nota que queremos crear y una vez creada nos enviara de nuevo a TodosLosPlanificadores
+## New Plan
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/d04fabf4-39c7-44ae-8588-15ce5d63cf7c)
+### Este componente me creará un nuevo Planificador en el que cogemos el modelo y la ruta sera post de planificador  y a traves del token se eliminara la nota que queremos crear y una vez creada nos enviara de nuevo a TodosLosPlanificadores
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c02ce132-e427-472f-88de-4ffb0451d668)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/91e99f54-58ac-4138-8311-f81f5445a8b1)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/654134ab-ede3-4385-b690-d75cfaf5deca)
@@ -324,7 +335,8 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/5d0fef5a-96c8-4acc-a75a-4de0271a4db5)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2d0d8c84-5bf0-43f8-8159-428c9002cd27)
 
-## ModificicacionPlan
+## ModificacionPlan
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a9e3baad-7603-4e80-85cf-3df0c949fd3e)
 ### En este componente modificacaremos un planificador que queremos cambiar los datos, por que nos equivocamos o por que los datos no sean correctos, etc
 ### Cogemos la nota en la ruta de Front a través de useParams y una vez modifiquemos los datos, estos se modificaran y nos enviara de nuevc al planificador corregido (Linea 36 a la 50).
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a111360d-e5be-470f-add3-8ef0be19233f)
@@ -334,6 +346,10 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1e7d4513-751e-417b-8c7b-6185d27edbe3)
 
 ## Datos Usuario
+### Como admin
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2faa7f1a-2a2c-44b0-8805-1102eba7867d)
+### Como User
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2dc7a0a2-b5fb-4319-b140-336116e3ba92)
 ### En este componente tendremos nuestros datos del usuario, también podrémos modificar o eliminar nuestros datos como usuario
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a36c6fb8-2656-4f21-a5f8-a97ff58029f6)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/1695c9b5-9fc2-4b6d-ba29-c28f2f36b6bd)
@@ -341,18 +357,19 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/42013e01-380d-4cbc-9dae-40f65b5e5a3e)
 
  ## Usuarios
+  ### ![image](https://github.com/Silkaleex/LDT/assets/82760991/0baaa169-86d4-4c78-9ef7-53d034a3a943)
   ## En este componente tendremos todos los datos del usuario como administrador
   ### Se hizo un mapeo para mostrar todos los usuarios(Linea 30)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/567cd469-f85a-436d-a79f-54d4ae6f6f9a)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/bc1b2443-0adf-4626-9838-387ff52bd637)
 
 ## Pusuario
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/00331aa3-0aaa-4916-8f7f-5a521acfcf2f)
 ### En este componente veremos los datos del usuario y podremos eliminarlo o bannearlo al usuario como administrador.
 ### El botón hace la misma función que elimnar usuario en DatosUsuario solo que el admin elimina un usuario en caso de que no cumpla las normas de licencia (Linea 32 a la 50) 
-###  cuando pulso el botón de baneo, bloqueao al usuario y no podra inciar sesión, pasados unos segundos nos llevará a nuestro perfil de Admin (Linea 52 a la 75)
-### Cuando accedo al componente de PUsuario el botón tendra el mensaje de Banear usuario, cuando lo pulso se activará y el usuario no podrá acceder a su cuenta, esperamos unos segundos y me enviará de nuevo a Datos Usuario.
+### cuando pulso el botón de baneo, bloqueao al usuario y no podrá inciar sesión, pasados unos segundos nos llevará a nuestro perfil de Admin (Linea 52 a la 75)
+### Cuando accedo al componente de PUsuario el botón tendrá el mensaje de Banear usuario, cuando lo pulso se activará y el usuario no podrá acceder a su cuenta, esperamos unos segundos y me enviará de nuevo a Datos Usuario.
 ### Cuando vuelva otra vez a ese perfil el mensaje del botón habrá cambiado por desbanear usuario, si le pulsamos se desactivará y el usuario podrá volver a acceder a su cuenta (Linea 119 a la 127)
-  
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/488736ba-2001-45c6-a6fc-85ba07a547eb)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/17853d8c-6a22-4707-9f6f-5112e2e2b214)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/bbfb145d-04d6-4c00-9b93-f326bb287020)
@@ -361,6 +378,8 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/08886309-527c-48d9-820f-f50d80a0a222)
   
 ## Logout
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/3589cc7e-458d-48dc-8245-087753044d54)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2ac415c7-63ef-4e50-b672-adb43e61f78b)
 ### Este componente nos cerrara sesion de nuestra cuenta  cuando pulsemos el icono del navbar de cerrar sesion esperamos unos segundos y volveremos a home, nuestros datos estaran guardados
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c9f051ab-de99-43de-8787-fc84ea9fc033)
 
