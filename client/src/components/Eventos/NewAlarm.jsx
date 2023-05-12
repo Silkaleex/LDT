@@ -34,8 +34,6 @@ const NewAlm = () => {
           },
         }
       );
-
-      console.log(response);
        setAlarma(response.data.alarmas);
 
        setTimeout(() => {

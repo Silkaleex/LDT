@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import React from "react";
 import axios from "axios";
 import "./todosLosPlanificadores.css";
@@ -7,25 +6,21 @@ import { Link } from "react-router-dom";
 import { TbColorPicker } from "react-icons/tb";
 import { CiPen } from "react-icons/ci";
 import { Card, CardBody, CardTitle, CardText } from "reactstrap";
-
 const TodosLosPlanificadores = () => {
   const [plan, setPlan] = useState([]);
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-
   const getPln = async () => {
     const response = await axios.get("http://localhost:5000/api/toPlan", {
       headers: {
         Authorization: token,
       },
     });
-    console.log(response);
     setPlan(response.data.Planificador.planning);
   };
 
   useEffect(() => {
     getPln();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

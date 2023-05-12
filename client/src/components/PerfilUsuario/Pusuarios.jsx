@@ -8,7 +8,6 @@ import { Button, CardTitle, CardText, Card } from "reactstrap";
 const PUsuarios = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  // const banned = localStorage.getItem("banned");
   const [baned, setBaned] = useState(false);
   const [Profile, setProfile] = useState({});
   const { userId } = useParams();
@@ -21,7 +20,6 @@ const PUsuarios = () => {
         },
       }
     );
-    console.log(response);
     setProfile(response.data.User);
     setBaned(response.data.User.banned);
   };
@@ -41,7 +39,6 @@ const PUsuarios = () => {
           },
         }
       );
-      console.log(response);
       setTimeout(() => {
         window.location.href = "/datosUsuario";
       }, 3000);
@@ -61,8 +58,6 @@ const PUsuarios = () => {
           },
         }
       );
-
-      console.log(response);
       setProfile(response.data.User);
       setBaned(response.data.User.banned);
 
@@ -86,8 +81,6 @@ const PUsuarios = () => {
           },
         }
       );
-
-      console.log(response.data);
       setProfile(response.data.User);
       setBaned(response.data.User.banned);
 

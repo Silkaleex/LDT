@@ -27,7 +27,6 @@ const register = () => {
       const response = await axios.post("http://localhost:5000/api/register", {
         ...user,
       });
-      console.log(response.data);
       setSuccessM(response.data.message);
       localStorage.setItem("token", response.data.accessToken);
       localStorage.setItem("name", response.user.name);

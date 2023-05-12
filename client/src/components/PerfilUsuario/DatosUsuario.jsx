@@ -16,7 +16,6 @@ function DatosUsuario() {
           Authorization: token,
         },
       });
-      console.log(response);
       setUser(response.data.User);
     };
     getUser();
@@ -34,7 +33,6 @@ function DatosUsuario() {
         localStorage.removeItem("role");
         localStorage.removeItem("token");
         localStorage.removeItem("name");
-        console.log(response);
         setTimeout(() => {
           window.location.href = "/";
         }, 3000);

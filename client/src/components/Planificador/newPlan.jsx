@@ -6,6 +6,7 @@ const NewPlan = () => {
   const [planif, setPlanif] = useState({
     title: "",
     description: "",
+    fecha:""
   });
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
@@ -32,8 +33,6 @@ const NewPlan = () => {
           },
         }
       );
-
-      console.log(response);
       setPlanif(response);
 
        setTimeout(() => {

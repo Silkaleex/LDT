@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import React from "react";
 import axios from "axios";
 import "./todasLasNotas.css";
@@ -18,13 +17,11 @@ const TodasLasNotas = () => {
         Authorization: token,
       },
     });
-    console.log(response);
     setNotes(response.data.Notas.notes);
   };
 
   useEffect(() => {
     getNotes();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <>

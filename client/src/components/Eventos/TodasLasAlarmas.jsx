@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import React from "react";
 import axios from "axios";
 import "./todasLasAlarmas.css";
@@ -17,15 +16,12 @@ function TodasLasAlarmas() {
         Authorization: token,
       },
     });
-    console.log(response);
     setAlarms(response.data.alarmas.alarma);
   };
 
   useEffect(() => {
     getAlarms();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(alarma);
   return (
     <>
       {role == 1 ? (

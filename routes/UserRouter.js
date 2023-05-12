@@ -349,7 +349,7 @@ UserRouter.get("/toCalen", auth, async (req, res) => {
 
 UserRouter.get("/toPlan", auth, async (req, res) => {
   try {
-    let Planificador = await user.findById(req.user.id).populate({path:'planning', select:'title description'});
+    let Planificador = await user.findById(req.user.id).populate({path:'planning', select:'title description fecha'});
     if (!Planificador) {
       return res.status(400).send({
         success: false,

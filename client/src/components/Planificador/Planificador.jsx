@@ -1,17 +1,10 @@
-/* eslint-disable eqeqeq */
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import "./planificador.css";
 import { TbTrash } from "react-icons/tb";
-import {
-  Card,
-  CardBody,
-  CardTitle,
-  CardText,
-} from "reactstrap";
-
+import { Card, CardBody, CardTitle, CardText } from "reactstrap";
 function Planificador() {
   const { planificadorId } = useParams();
   const [planning, setPlanning] = useState({});
@@ -28,18 +21,14 @@ function Planificador() {
         },
       }
     );
-    console.log(response.data.plan);
     setPlanning(response.data.plan);
   };
   useEffect(() => {
     getPlanning();
   }, []);
-
-  // console.log(planning);
-
   const deleteNota = async (e) => {
     e.preventDefault();
-    let opcion = window.confirm("¿Estas seguro de borrar la nota?");
+    let opcion = window.confirm("¿Estas seguro de borrar el Planificador?");
     if (opcion == true) {
       try {
         const response = await axios.delete(
@@ -50,9 +39,7 @@ function Planificador() {
             },
           }
         );
-        console.log(response);
         setTimeout(() => {
-          // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
           navigate("/usuario");
         });
       } catch (error) {
@@ -90,14 +77,27 @@ function Planificador() {
         <>
           <Card className="fondoPlnUs">
             <CardBody className="descripcionPlnUs">
-              <CardTitle tag="h2" className="tituloPlnUsu">Descripcion del Planning:</CardTitle>
-                <CardText className="textoPlnUsu">Titulo: {planning.title}</CardText>
-                <CardText className="textoPlnUsu">Descripción: {planning.description}</CardText>
-                <Link to="/usuario"  className="botonUs">Volver</Link>
-                <Link to={`/modifyPlan/${planificadorId}`}  className="modificarPlnUs">
-                  Modificar Planificador
-                </Link>
-                <Link onClick={deleteNota} className="botonPlnUs"><TbTrash /></Link>
+              <CardTitle tag="h2" className="tituloPlnUsu">
+                Descripcion del Planning:
+              </CardTitle>
+              <CardText className="textoPlnUsu">
+                Titulo: {planning.title}
+              </CardText>
+              <CardText className="textoPlnUsu">
+                Descripción: {planning.description}
+              </CardText>
+              <Link to="/usuario" className="botonUs">
+                Volver
+              </Link>
+              <Link
+                to={`/modifyPlan/${planificadorId}`}
+                className="modificarPlnUs"
+              >
+                Modificar Planificador
+              </Link>
+              <Link onClick={deleteNota} className="botonPlnUs">
+                <TbTrash />
+              </Link>
             </CardBody>
           </Card>
         </>

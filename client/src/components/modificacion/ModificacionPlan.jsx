@@ -5,7 +5,6 @@ import { useNavigate, useParams, Link } from "react-router-dom";
 const ModifcacionPlan = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  console.log(token);
   const { planificadorId } = useParams();
   const Navigate = useNavigate();
   const [pln, setpln] = useState({
@@ -27,7 +26,6 @@ const ModifcacionPlan = () => {
         },
       }
     );
-    console.log(response.data.plan);
     setpln(response.data.plan);
   };
   useEffect(() => {
@@ -41,7 +39,6 @@ const ModifcacionPlan = () => {
         `http://localhost:5000/api/planificador/${planificadorId}`,
         { ...pln }
       );
-      console.log(response);
       setTimeout(() => {
         Navigate(`/planificar/${planificadorId}`);
       }, 2000);

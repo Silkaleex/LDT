@@ -13,7 +13,6 @@ const DelUs = () => {
         Authorization: token,
       },
     });
-    console.log(response);
     setUsuarios(response.data.Users);
   };
 

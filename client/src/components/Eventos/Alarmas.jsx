@@ -1,4 +1,3 @@
-/* eslint-disable eqeqeq */
 import React from 'react'
 import { useState, useEffect } from "react";
 import axios from "axios";
@@ -21,12 +20,10 @@ function Alarmas() {
           },
         }
       );
-      console.log(response);
       setAlarm(response.data.alarms);
     };
     useEffect(() => {
       getAlarm();
-      // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
  const deleteAlarma = async (e) => {
     e.preventDefault();
@@ -41,9 +38,7 @@ function Alarmas() {
             },
           }
         );
-        console.log(response);
         setTimeout(() => {
-          // window.location.href = "/usuario" nos refresca la pagina, es recomendable usarlo para actualizar un estado
           navigate("/usuario");
         });
       } catch (error) {

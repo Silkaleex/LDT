@@ -5,7 +5,6 @@ import "./modificacion.css";
 const ModifcacionUsuario = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  console.log(token);
   const Navigate = useNavigate();
   const [user, setUser] = useState({
    email:"",
@@ -20,7 +19,6 @@ const ModifcacionUsuario = () => {
           Authorization: token,
         },
       });
-      console.log(response);
       setUser(response.data.User);
     };
     getUser();
@@ -43,7 +41,6 @@ const ModifcacionUsuario = () => {
           }
         }
       );
-      console.log(response);
       setTimeout(() => {
         window.location.href = `/datosUsuario`;
       }, 2000);

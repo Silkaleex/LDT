@@ -6,7 +6,6 @@ import "./modificacion.css";
 const ModifcacionAlm = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  console.log(token);
   const { alarmaId } = useParams();
   const Navigate = useNavigate();
   
@@ -29,7 +28,6 @@ const ModifcacionAlm = () => {
         },
       }
     );
-    console.log(response);
     setAlm(response.data.alarms);
   };
   useEffect(() => {
@@ -43,7 +41,6 @@ const ModifcacionAlm = () => {
         `http://localhost:5000/api/alarms/${alarmaId}`,
         { ...Alm }
       );
-      console.log(response);
       setTimeout(() => {
         Navigate(`/alarma/${alarmaId}`);
       }, 2000);

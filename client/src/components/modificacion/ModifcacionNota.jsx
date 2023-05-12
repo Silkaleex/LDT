@@ -27,7 +27,6 @@ const Modifcacion = () => {
         },
       }
     );
-    console.log(response.data.notas);
     setNota(response.data.notas);
   };
   useEffect(() => {
@@ -41,7 +40,6 @@ const Modifcacion = () => {
         `http://localhost:5000/api/notas/${notaId}`,
         { ...nota }
       );
-      console.log(response);
       setTimeout(() => {
         Navigate(`/notas/${notaId}`);
       }, 2000);

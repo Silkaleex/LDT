@@ -6,11 +6,9 @@ import "./modificacion.css";
 const ModifcacionEvt = () => {
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
-  console.log(token);
   const { eventoId } = useParams();
   const Navigate = useNavigate();
   const [evt, setEvt] = useState({
-
     calendar:"",
     fecha:""
   });
@@ -29,7 +27,6 @@ const ModifcacionEvt = () => {
         },
       }
     );
-    console.log(response);
     setEvt(response.data.calendars);
   };
   useEffect(() => {
@@ -43,7 +40,6 @@ const ModifcacionEvt = () => {
         `http://localhost:5000/api/calendars/${eventoId}`,
         { ...evt }
       );
-      console.log(response);
       setTimeout(() => {
         Navigate(`/calendar/${eventoId}`);
       }, 2000);

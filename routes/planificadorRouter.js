@@ -21,19 +21,6 @@ planificadorRouter.post("/planificador", auth, async (req, res) => {
         message: "No completastes todos los pasos",
       });
     }
-    if (title.length > 30) {
-      return res.status(400).send({
-        success: false,
-        message: "No completastes todos los pasos",
-      });
-    }
-
-    if (description.length > 100) {
-      return res.status(400).send({
-        success: false,
-        message: "No completastes todos los pasos",
-      });
-    }
     let newPlanificador = new Planificador({
       title,
       description,
