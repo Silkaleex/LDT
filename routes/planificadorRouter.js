@@ -8,7 +8,7 @@ planificadorRouter.post("/planificador", auth, async (req, res) => {
   try {
     const { title, description, fecha } = req.body;
     let userId = await User.findById(req.user.id);
-
+    // console.log(userId);
     if (!title || !description || !fecha) {
       return res.status(400).send({
         success: false,
@@ -30,7 +30,7 @@ planificadorRouter.post("/planificador", auth, async (req, res) => {
     });
     await User.findByIdAndUpdate(userId, {
       $push: {
-        description: newPlanificador._id,
+        planning: newPlanificador._id,
       },
     });
 
