@@ -1,5 +1,4 @@
 # Aplicación LDT
-
 ### Esta aplicación sirve para desarrollar ideas que necesitemos en nuestro dia a dia,
 ### En la que podremos añadir eventos,Notas o ciertos momentos importante en los que recordar,
 ### Además podremos añadir una alarma para que nos envie un correo para que nos avise sobre la hora y fecha exacta de algo puntual que nos quiera avisar.
@@ -8,8 +7,8 @@
 ## RoadMap
 #### ![roadmap](https://github.com/Silkaleex/LDT/assets/82760991/babcbd5c-03bb-418e-a9c6-799c23edd2c0)
 
+# Como Hice mi proyecto LDT
 # BackEnd & DataBase
-
 ## Instalación de Nuestro Backend con Express
 #### Empezamos descargando he instalando NodeJs en nuestro ordenador.
 #### una vez instalado, instalamos en nuestro terminal de VSCode Npm y verificando que node esta instalado correctamente.
@@ -385,8 +384,11 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 ### Este componente nos cerrará sesión de nuestra cuenta cuando pulsemos el icono del navbar de cerrar sesion esperamos unos segundos y volveremos a home, nuestros datos estarán guardados
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c9f051ab-de99-43de-8787-fc84ea9fc033)
 
-  
-
+## To Do
+### Darle una solucion al usuario en caso de Banneo, que se ponga en contacto con nosotros
+### Mejorar la seccion de terminos y condiciones
+### Organización de eventos con otros usuarios
+### La sección de Alarma nos envie un mensaje al correo de Alerta
 
   
 
