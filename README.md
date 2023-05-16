@@ -327,7 +327,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 ## New Plan
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/d04fabf4-39c7-44ae-8588-15ce5d63cf7c)
 ### Este componente me creará un nuevo Planificador en el que cogemos el modelo y la ruta sera post de planificador, a través del token se eliminará la nota que queremos crear y una vez creada nos enviará de nuevo a TodosLosPlanificadores
-#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c02ce132-e427-472f-88de-4ffb0451d668)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/92b8674b-dabd-4e5d-b7e6-f4ca3441d22b)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/91e99f54-58ac-4138-8311-f81f5445a8b1)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/654134ab-ede3-4385-b690-d75cfaf5deca)
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/f80090c1-4543-46fb-a27a-e844f915d283)
