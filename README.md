@@ -389,7 +389,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 ### Mejorar la seccion de terminos y condiciones
 ### Organización de eventos con otros usuarios
 ### La sección de Alarma nos envie un mensaje al correo de Alerta
-
+### Poner un reloj en la hora en vez de escribirlo manualmente
   
 
 
