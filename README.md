@@ -206,13 +206,12 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   ## Instalación
   ### Vamos a nuestra terminal y pondremos el comando npx create-react-app "nombre del archivo" en mi caso fue client
   ### npx es una herramienta de ejecucción de paquetes que viene con npm
-  ### create se encarga de una logica de backend o de base de datos tan solo crea un flujo de construccion de Front-End de manera que lo puedes usar con  cualquier BackEnd.
+  ### Create se encarga de una logica de backend o de base de datos tan solo crea un flujo de construcción de Front-End de manera que lo puedes usar con  cualquier BackEnd.
   
   ## comando para inicar React
   ### npm start: arranca el componente
   ### npm run build: inicio de procucción
   ### npm run test: Inicio de prueba
-  ### npm run reject: Elimina la herramienta y hace una copia de dependencias de compilación archivos de configuracion y scripts en el directorio de la aplicacion.(si se pone este comando, ya no podras volver a atras)
   
   ## JSX
   ### Es un lenguaje especial que mezcla HTML5 con JS, Además es como una especie de lenguaje de plantilla que me permite imprimir variables y hacerlo todo de manera mas dinámica y queda bastante limpia.
@@ -222,17 +221,17 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   
   ## App
   ### Es nuestro archivo pricnipal en el que añadiremos  nuestros componentes en mi caso fueron Navbar y Pages
-  ### navbar,Pages (Nombre del componente)
+  ### Navbar, Pages (Nombre del componente)
   ### from "" componente donde se encuentra el archivo
-  ### Componentes deonde esta estructurado mis archivos, Navbar:mi barra de navegacion, Pages:donde estarán enlazados todos mis componentes. (Linea 7 y 8)
+  ### Componentes donde esta estructurado mis archivos, Navbar: mi barra de navegación, Pages:donde estarán enlazados todos mis componentes. (Linea 7 y 8)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/92e21403-c5de-44b8-97f0-8686a39ddb78)
   
   ## Home
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/9f495d7f-6384-49c6-8ce5-3dba10d83e90)
-  ### Import enlace del archivo de Css(linea 2)
-  ### Link es una etiqueta que sustituye <a/> en HTML5(Linea 3, 14, 17) si pusieramos dicha etiqueta no funcionaria correctamente el enlace, react-router-dom habilita el enrutamiento del lado del cliente(Linea 3).
-  ### className es una nueva manera de poner estilos de clase en nuestro Css
-  ### Home tanto la función como la exportación se tiene que llamar igual, de lo contrario no podran enlazarse a otros componentes y nos dará un error (Linea 4 y 26).
+  ### Import enlace del archivo de Css (Línea 2)
+  ### Link es una etiqueta que sustituye <a/> en HTML5 (Línea 3, 14, 17) si pusieramos dicha etiqueta no funcionaría correctamente el enlace, react-router-dom habilita el enrutamiento del lado del cliente (Linea 3).
+  ### ClassName es una nueva manera de poner estilos de clase en nuestro Css en React.
+  ### Home tanto la función como la exportación se tiene que llamar igual, de lo contrario no podrán enlazarse a otros componentes y nos dará un error (Linea 4 y 26).
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2ba69c3d-4c20-461a-a6bd-bda5c6769d85)
   
   ## Navbar
@@ -240,14 +239,14 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/65a4b24d-9e60-4e01-9d92-127e07088ab5)
   ### Navbar User
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/68f6658a-d436-4d5a-bb69-380bc88284af)
-  ### SetItem ==> es para definir
-  ### getItem ==> coge un valor de una variable
-  ### RemoveItem ==> borra una clave o algo en concreto, por ejemplo el logout o eliminamos la cuenta de nuestro usario
-  ### role es el archivo que hay en la aplicacion en consola, lo creamos en el modelo user de nuestro Backend, 
+  ### SetItem ==> Es para definir
+  ### getItem ==> Coge un valor de una variable
+  ### RemoveItem ==> Borra una clave o algo en concreto, por ejemplo el logout o eliminamos la cuenta de nuestro usario
+  ### role es el archivo que hay en la aplicación en consola, lo creamos en el modelo user de nuestro Backend, 
   ### localStorage es la aplicaión de nuestra consola (Linea 6).
-  ### Creo una condicion en mi vaiable navbar, que cuando acceda al logout en mi cuenta si mi role es 0 entrare como navuser(Usuario)
-  ### y si mi role es 1 entraré como navAdmin(Admin)(linea 82).
-  ### la variable navbar declaro en la linea 86 con las condiciones que le pusimos en la lineas anteriores.
+  ### Creo una condicion en mi variable navbar, que cuando acceda al logout en mi cuenta si mi role es 0 entrare como navuser (Usuario)
+  ### y si mi role es 1 entraré como navAdmin (Admin)(linea 82).
+  ### La variable Navbar la declaro en la Línea 86 con las condiciones que le pusimos en la Líneas anteriores.
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/71f6f91b-7fb5-46c3-b4a2-c1cb1cae60af)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/eaf71a23-5b69-4b84-9b36-612da4fe873b)
   #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/138acb4d-4ad6-4bdb-a477-554ef12cd5e7)
