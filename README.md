@@ -5,6 +5,9 @@
 ### Además podremos añadir una alarma para que nos envie un correo para que nos avise sobre la hora y fecha exacta de algo puntual que nos quiera avisar.
 ### Un Planificador donde podremos destacar algo importante o que necesitemos mejorar, destacar en un mes dia o un tiempo establecido. 
 
+##RoadMap
+#### ![roadmap](https://github.com/Silkaleex/LDT/assets/82760991/babcbd5c-03bb-418e-a9c6-799c23edd2c0)
+
 # BackEnd & DataBase
 
 ## Instalación de Nuestro Backend con Express
