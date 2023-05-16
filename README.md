@@ -83,7 +83,7 @@ Por otro lado declararemos la variable con mongoose para acceder a nuestra base 
 ### Creamos una variable (no hace falta poner let, const o var en este caso) pegamos la url que copiamos en nuestro mongo db (seccion ñ)
 ### En la url donde pone password borramos este texto y ponemos nuestra contraseña que pusimos en mongoDB
   #### ![Captura 49](https://user-images.githubusercontent.com/82760991/236875044-d65996e0-d355-47d3-9993-4d76ad7f72e7.png)
-### en server.js ponermos lo siguiente
+### En server.js ponermos lo siguiente
   #### ![image](https://user-images.githubusercontent.com/82760991/236875620-8d2ae38f-7c51-4cc2-8dde-df3747697132.png)
   ### Ponemos nodemon en nuestro terminal de VSCode
   ### En otro terminal instalaremos -> npm i dotenv mongoose 
@@ -94,35 +94,35 @@ Por otro lado declararemos la variable con mongoose para acceder a nuestra base 
   ## Modelos y Rutas
 #### Ahora crearé dos carpetas Models(modelos) y routes(rutas)
 ### 1-Modelos
-En mi proyecto creare 5 nuevos archivos que son calendario, notes, user, planificador, alarma con la extensión .js
+En mi proyecto crearé 5 nuevos archivos que son calendario, notes, user, planificador, alarma con la extensión .js
 En user.js exporto objetos a mi base de datos con mongoose, aqui lo que hago es crear los datos de un usuario es decir su nombre, apellidos... de tipo String y que sea obligatorio(required).
 ### Luego en los otros modelos haremos lo mismo pero con sus datos correspondientes(fecha,hora,nota...) a cada Nota, Evento, Planificador, Alarma.
 ##### ![image](https://user-images.githubusercontent.com/82760991/236814322-b773ce6b-81e8-4696-b1a5-9c79242e3564.png)
-### En la linea 21 y 27 hago una relación de modelos que voy a usar en otros archivos que van a ser Notas, Alarmas, Planificador, y Eventos.
+### En la línea 21 y 27 hago una relación de modelos que voy a usar en otros archivos que van a ser Notas, Alarmas, Planificador, y Eventos.
 ###### ![image](https://user-images.githubusercontent.com/82760991/236814440-8562dfbb-b345-4233-b47b-8cdcda1ae6a1.png)
 ###### ![image](https://user-images.githubusercontent.com/82760991/236814461-6357370d-610e-4c10-8980-022074cb35a2.png)
 ### Ponemos las marcas de tiempo verdaderas(timestamp), me dira cuando un usuario se a creado una cuenta, actualiza datos....
-Exportamos el modulo a mongoose en nuestra archivos de rutas donde vamos a crear también otros 5 archivos que seran calendarioRouter, planificadorRouter, alarmaRouter, NotesRouter y userRouter también con la extensión de js.
+Exportamos el modulo a mongoose en nuestro archivos de rutas donde vamos a crear también otros 5 archivos que seran calendarioRouter, planificadorRouter, alarmaRouter, NotesRouter y userRouter también con la extensión de js.
 ### 2-Rutas
 En los archivos Router pondremos estos comandos para conectar con express y los datos que creamos en nuestros modelos y conectarlos a estos
 ##### ![image](https://user-images.githubusercontent.com/82760991/236815124-78775ea3-9aa8-4b1d-8f60-61b036a4f494.png)
 #### UserRouter nombre del archivo
-#### user nombre del modelo y su ruta donde se encuentra nuestro archivo
+#### User nombre del modelo y su ruta donde se encuentra nuestro archivo
   
 ## Ruta Post de Register
-### Linea 24 Name, Email, Password son datos creados en el modelo user,vistos anteriormente
-### Linea 26 Comprobación de que no se repitan usuarios con el mismo nombre o apellidos a través de findOne(Encuentrame)
-### Después en la linea 30 pusimos un mensaje para avisar al usuario de que ya esta registrada su cuenta en LDT.
-## Luego puse otra condición que si no cumplia todas las casillas de registro (Linea 36) y que si no tenia un mínimo de 3 caracteres (Linea 42), le saldría un error de que no completo todos los requisitos.
+### Línea 24 Name, Email, Password son datos creados en el modelo user, vistos anteriormente
+### Línea 26 Comprobación de que no se repitan usuarios con el mismo nombre o apellidos a través de findOne(Encuentrame)
+### Después en la Línea 30 pusimos un mensaje para avisar al usuario de que ya esta registrada su cuenta en LDT.
+## Luego puse otra condición que si no cumplia todas las casillas de registro (Línea 36) y que si no tenía un mínimo de 3 caracteres (Linea 42), le saldría un error de que no completo todos los requisitos.
 ## Y por finalizar esta ruta luego si hicimos todo correctamente nos enviará un mensaje de usuario encontrado, o nos saldrá un error en caso de que haya algun fallo en la aplicación.
 #### ![image](https://user-images.githubusercontent.com/82760991/236846471-061feb17-788e-4ace-8802-1d2c80487f91.png)
 #### ![image](https://user-images.githubusercontent.com/82760991/236848537-8d229429-43a7-43d2-9d43-f9b2ecda04c3.png)
 #### ![image](https://user-images.githubusercontent.com/82760991/236848595-693555fa-7c81-43f0-acc0-e779bc945ea9.png)
 
-  ## Peticion Post de Login
+  ## Petición Post de Login
 ### Pasamos por el body los datos que quiero o que necesita el usuario para logearse en mi caso puse el email y el password
-### busco al usuario en nuestra base de datos con el email y password que me llega del body si no es correcto me saldra un mensaje de que algo no funciono correctamente, si lo encuentra me dira Login Correcto(captura no Hecha)
-cuantas menos explicaciones demos mejor por que así les damos mas dificultad a los hackers para poder acceder o verificar cual es el fallo y que puedan acceder con facilidad y vulnerar nuestros datos.
+### Busco al usuario en nuestra base de datos con el email y password que me llega del body si no es correcto me saldrá un mensaje de que algo no funcionó correctamente, si lo encuentra me dirá Login Correcto.
+Cuantas menos explicaciones demos mejor por que así les damos mas dificultad a los hackers para poder acceder o verificar cual es el fallo y que puedan acceder con facilidad y vulnerar nuestros datos.
 y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://user-images.githubusercontent.com/82760991/236852071-de98946b-0301-4dd5-a115-9b77f4eb3bc4.png)
 #### ![image](https://user-images.githubusercontent.com/82760991/236852121-2dd82f5b-82fa-4d20-89a0-825a6dcfb380.png)
