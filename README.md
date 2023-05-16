@@ -129,72 +129,74 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 
   ## Petición GET como ver a un usuario ya registrado
   ### Cogemos el id del usuario en request, en params (Línea 251)
-  ### Encuentrame la id del usuario(Línea 252) y a partir de aqui me saldra un mensaje de usuario encontrado o no(Líneas 256,261)
-  ### Si no me sale ninguno de estos dos mensajes me saldra un mensaje de error (Línea 267)
+  ### Encuentrame la id del usuario (Línea 252) y a partir de aqui me saldrá un mensaje de usuario encontrado o no (Líneas 256,261)
+  ### Si no me sale ninguno de estos dos mensajes me saldrá un mensaje de error (Línea 267)
   #### ![image](https://user-images.githubusercontent.com/82760991/237030919-5a104b11-5767-4466-b8d2-95716da67872.png)
 
-  ## Peticion Delete Eliminacion de cuenta de un usuario
-### Encuentrame el id del usuario registrado y logeado, dame su token de auth(authorization) y eliminame mi cuenta de usuario (Linea 393)
-### si los datos del usuario estan correctos nos enviara un mensaje de que nuestra cuenta fue eliminada correctamente (LInea 396)
+  ## Petición Delete Eliminacion de cuenta de un usuario
+### Encuentrame el id del usuario registrado y logeado, dame su token de auth (authorization) y eliminame mi cuenta de usuario (Linea 393)
+### si los datos del usuario estan correctos nos enviará un mensaje de que nuestra cuenta fue eliminada correctamente (LInea 396)
 ### si no nos enviará un error(Linea 401)
 #### ![image](https://user-images.githubusercontent.com/82760991/236856926-2895c39a-fd7d-45bd-99c6-43a73f6d53bc.png)
 
   ## Petición Put
 ### Añadimos una petición de PUT en este caso lo pondré en mi NoteRouter ya que queremos modificar una nota que ya no nos sirve o queramos añadir algo en concreto.
 ### Línea 90, cogemos la id en req params, es decir la nota que queremos modificar.
-### Linea 91, Los datos del modelo que queremos modificar
-### Linea 93, encuantrame la nota y actualizame su id
+### Línea 91, Los datos del modelo que queremos modificar
+### Línea 93, encuantrame la nota y actualizame su id
 ### Si no cumplistes los requisitos necesarios te enviará un mensaje de no completastes todos los campos, en caso contrario nos enviará un mensaje de notas modificadas con exito.
 ## Nos puede dar un error en caso de que algo falle en la aplicación.  
 #### ![image](https://user-images.githubusercontent.com/82760991/236857876-de77baae-33c0-4172-a2a9-f4ab4ab8a3cf.png)  
 
-## Exportacion de nuestras rutas en nuestro server.js  
+## Exportación de nuestras rutas en nuestro server.js  
 ### Para que POSTMAN, MONGODB y NODEMON nos lean los datos creados deberemos exportarlos al archivo que creamos al principio es decir nuestro server.js
 #### ![image](https://user-images.githubusercontent.com/82760991/236861122-e8bebd72-4eb4-4471-b179-9f782f1318a9.png)
 
 ## POSTMAN
-  ### Hay que estar muy atento a estos puntos, de lo contrario no funciona nuestra ruta por muy bien que este escrita.
-  ### Importante siempre el verbo al que vasmo a usar, es decir si nuestra ruta es un Get tendremos que poner esta ruta, no funcionara si ponemos otra.
-  ### enlace con la ruta por ejemplo http://localhost:5000/api/registro si no la escribimos al pulsar el boton send nos dara un error de que no encuentra esa ruta especifica
-  ### Lo que pusimos en nuestra ruta es decir si por ejemplo en register pusimos nombre email y password en body en la parte de x-www-form-urlencoded deberan poner esos datos y como se puso en la ruta de lo contrario nos dara otro error.
+  ### Hay que estar muy atento a estos puntos, de lo contrario no funcionará nuestra ruta por muy bien que este escrita.
+  ### Importante siempre el verbo al que vasmos a usar, es decir si nuestra ruta es un Get tendremos que poner esta ruta, no funcionará si ponemos otra.
+  ### Enlace con la ruta por ejemplo http://localhost:5000/api/registro si no la escribimos al pulsar el botón send nos dará un error de que no encuentra esa ruta específica
+  ### Lo que pusimos en nuestra ruta es decir si por ejemplo en register pusimos nombre, email y password en body en la parte de x-www-form-urlencoded deberán poner esos datos y como se puso en la ruta de lo contrario nos dara otro error.
   #### ![image](https://user-images.githubusercontent.com/82760991/236861745-936cdd57-1413-46e4-87bb-7f06e84dba49.png)
 
 ## Encriptación de contraseña y creando Token
 ### Ahora Para crear un token primero debemos instalar en nuestro terminal npm i jsonwebtoken, creamos una carpeta del middeleware y importamos el archivo
 ### Importamos la dependencia para encriptar la contraseña, lo que tenemos que dar al usuario es seguridad y fiabilidad a la hora de registrarse y tener sus datos guardados, se le encripta su contraseña para que no sea verificada por hackers
   #### ![image](https://user-images.githubusercontent.com/82760991/236863612-c7a096a5-fe6d-4d91-811a-e8f42af976ea.png)
- ### Bcrypt es una dependencia que nos ayuda a hashear(hash) / encriptar nuestra contraseña en la base de datos que no sea real, que tape los datos reales.
+ ### Bcrypt es una dependencia que nos ayuda a hashear (hash) / encriptar nuestra contraseña en la base de datos que no sea real, que tape los datos reales.
 #### ![image](https://user-images.githubusercontent.com/82760991/236864083-cc8269c7-5121-4740-8f2e-09be5b6fcf44.png)
-### declaramos las vueltas que quiero que de mi contraseña, se recomienda que sean 10 ya que es mucho mas seguro
+### Declaramos las vueltas que quiero que de mi contraseña, se recomienda que sean 10 ya que es mucho mas seguro
 ##### ![image](https://user-images.githubusercontent.com/82760991/236864559-b81784c5-9fa4-48ca-8882-79f87b3ab33f.png)
 ### Por ultimo lo que hacemos es que nuestro usuario cuando acceda a su cuenta, su cuenta expire en ciertos dias en este caso le puse 7 dias
 #### ![image](https://user-images.githubusercontent.com/82760991/236864731-1ddeeb82-b933-45ec-9891-497aeccf60b2.png)
 
 # Middelware Auth y AuthAdmin
-  ## Ahora crearemos otra carperta llamada middelware donde nos dara informacion del usuario 
+  ## Ahora crearemos otra carperta llamada middelware donde nos dará información del usuario 
+  
   ## 1- Auth -Usuario
   ### importamos la dependencia de jsonwebtoken
  #### ![image](https://user-images.githubusercontent.com/82760991/236869299-d46e3d7e-5dad-43a7-9dcf-d36f9bb9a9f0.png)
   ### req -> request
   ### res -> response
-  ### next:() -> el bloque o codigo que lleva escrito antes pasa el control y luego sige su tarea
-  ### Linea 5 recogemos del header el token que nos envia el usuario.
-  ### Es importante que el token, lo verifiquemos  y decodifiquemos para que nos devuelva informacion del usuario logeado
-  ### Linea 13: Coge la contraseña que pongamos en .env para acceder dentro de nuestra contraseña que pongamos en nuestra database ya creada
-  ### Linea 20 y 21: Si todo va bien pasa el control al siguiente bloque de codigo
+  ### next:() -> Bloque o codigo que lleva escrito antes pasa el control y luego sige su tarea
+  ### Línea 5 recogemos del header el token que nos envia el usuario.
+  ### Es importante que el token, lo verifiquemos  y decodifiquemos para que nos devuelva información del usuario logeado
+  ### Línea 13: Coge la contraseña que pongamos en .env para acceder dentro de nuestra contraseña que pongamos en nuestra Database ya creada
+  ### Línea 20 y 21: Si todo va bien pasa el control al siguiente bloque de codigo
   #### ![Captura 48](https://user-images.githubusercontent.com/82760991/236870177-ca4b0ade-564a-41c1-b035-09bba0ffde37.png)
+  
 ## 2- AuthAdmin -Admin
-  ### Esta función se ejecuta después de ejecutarse la funcion de Auth.js, despues de comprobar que el usuario esta logeado
-  ### Linea 3 y 4: Busca al usuario logueado por su id que me viene devuelto en el req.user que me viene devuelto del token
-  ### si no me encuentra el usuario me dara un error como que no existe dicho usuario,
-  ### Si intentas acceder como usuario a un campo de administrador no te dejara acceder
+  ### Esta función se ejecuta después de ejecutarse la función de Auth.js, después de comprobar que el usuario esta logeado
+  ### Línea 3 y 4: Busca al usuario logueado por su id que me viene devuelto en el req.user que me viene devuelto del token
+  ### si no me encuentra el usuario me dará un error como que no existe dicho usuario,
   ### ![image](https://user-images.githubusercontent.com/82760991/236871450-a743b124-6589-4929-ab4c-5956a2bf22aa.png)
+  
 ## 1- añadimos la propiedad "role" al modelo de usuario
 ## 2- Creamos el middelware
 ## 3- Importamos la función creada en la ruta en cada Router que necesitamos
 ## 4- Importamos el AuthAdmin, en cada ruta requerida (ruta que va a ser privada para el admin, después de importar el primer middelware que me comprueba si el user esta logeado
   
-  ## Creando un Administrador & Usuario
+ ## Creando un Administrador & Usuario
   ### Lo primero de todo lo que hay que hacer es en user.js es poner role type NUMBER y que los usuarios que se registren por defecto serán 0 y los administradores serán 1
   #### ![image](https://user-images.githubusercontent.com/82760991/236867021-b6f190e2-b780-4ce4-9440-481d55939ed0.png)
 ### Ahora para hacerlos administradores una vez registrados tenemos que acceder a mongoDb buscar el lapiz escribir en role y ponerle 1 después actualizarlo, se guardará y se quedará registrado como administrador
