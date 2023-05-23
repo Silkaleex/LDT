@@ -1,12 +1,14 @@
 # Aplicación LDT
-
 ### Esta aplicación sirve para desarrollar ideas que necesitemos en nuestro dia a dia,
 ### En la que podremos añadir eventos,Notas o ciertos momentos importante en los que recordar,
 ### Además podremos añadir una alarma para que nos envie un correo para que nos avise sobre la hora y fecha exacta de algo puntual que nos quiera avisar.
 ### Un Planificador donde podremos destacar algo importante o que necesitemos mejorar, destacar en un mes dia o un tiempo establecido. 
 
-# BackEnd & DataBase
+## RoadMap
+#### ![roadmap](https://github.com/Silkaleex/LDT/assets/82760991/babcbd5c-03bb-418e-a9c6-799c23edd2c0)
 
+# Como Hice mi proyecto LDT
+# BackEnd & DataBase
 ## Instalación de Nuestro Backend con Express
 #### Empezamos descargando he instalando NodeJs en nuestro ordenador.
 #### una vez instalado, instalamos en nuestro terminal de VSCode Npm y verificando que node esta instalado correctamente.
@@ -382,8 +384,56 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 ### Este componente nos cerrará sesión de nuestra cuenta cuando pulsemos el icono del navbar de cerrar sesion esperamos unos segundos y volveremos a home, nuestros datos estarán guardados
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c9f051ab-de99-43de-8787-fc84ea9fc033)
 
+## To Do
+### Darle una solucion al usuario en caso de Banneo, que se ponga en contacto con nosotros
+### Mejorar la seccion de terminos y condiciones
+### Organización de eventos con otros usuarios
+### La sección de Alarma nos envie un mensaje al correo de Alerta
+### Poner un reloj en la hora en vez de escribirlo manualmente
   
+# Extras de LDT
+## Licencia
+  ### Aquí vamos a crear un formulario en caso de tener dudas que nos escriba, con su nombre el email y un texto sobre duda que tenga el nuevo usuario de LDT.
+  ### Lo primero que hice es entrar en EmailJs y hacerme una cuenta de usuario
+  ### Lo segundo es crear un nuevo servicio ("Add New Service")
+  ### En esta captura ya tengo tengo una creada, pero para empezar debemos seleccionar la casilla azul mencionada
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/b4a57d2c-07a8-4cce-8502-a82feeac3a1e)
+  ### Aqui tenemos las diferentes opciones que nos da EmailJs, en mi caso voy a elegir Gmail.
+  ####![image](https://github.com/Silkaleex/LDT/assets/82760991/f9c51a05-cdad-40a7-89a4-d0f998f2c5dc)
+  ### Aqui generamos mi servicio con el nombre y su ID que usaremos mas adelante
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/34534b75-6813-4825-bb9e-b98c4a402633)
+  ### Lo mas importante es crearnos una cuenta, vincularnos con ella  y acceder a ella para que pueda funcionar
+  ### Una vez que nos de los accesos le damos a continuar, y seleccionamos a crear servicio ("Create Service")(Botón Azul abajo izquierda)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/73b28fbf-15a3-4670-b652-9620413bd3a0)
+### Una vez Hecho ya lo anterior ya podremos acceder a nuestro servicio creado
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/9c3e96d2-23d1-4e94-8d07-5625137accd9)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/89a10545-a259-485f-a010-057ed070d4f8)
+### Vamos a crear un template, que es un formato que vamos a tener en el email, recibiremos en nuestro Email, que es lo que va a contener...
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/2e36bab3-98c5-42ed-a183-0ef57fe3444d)
+  ### Aqui ponemos, lo que queramos, yo puse el nombre del usuario, correo electrónico, mensaje que nos escriba dicho usuario
+  ### Subject es como el asunto del mensaje user_name me hace referencia al From Name que hay a la derecha
+####![image](https://github.com/Silkaleex/LDT/assets/82760991/ac058226-102a-4df9-990c-fe64c659af37)
+### Aqui esta el cuerpo del texto, aqui pondremos lo que queramos y entre {{}} aqui ponemos lo que queramos apurar
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/42f2f8af-f335-4ed3-9e7b-2c1750e371fc)
+ ### ahora vamos a Test It
+####![image](https://github.com/Silkaleex/LDT/assets/82760991/762d622c-6d11-4d7f-89d4-1b37d3b0b950)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/20123cb0-b6d6-44fa-8382-5bd4a5114c4c)
+ ### Aquí rellenamos los datos que recibiría del formulario a mi Email que queramos, en mi caso lo dejé en blanco y le damos al botón de comprobar ("Send Test Email") y nos saltará un 200 OK, que el mensaje se envió correctamente.
+ ### Si falla puede ser que no accedieras bien a los permisos dichos anteriormente cuando nos registramos con el email.
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/bbef77de-98ab-4bcc-9852-55c6900dbc79)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/990cf63c-a35e-48a6-ac27-fa9fb23e326e)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/ee802c5f-e8a7-403b-8172-776eaec11e98)
+### una vez comprabado que el correo se envia bien lo que tenemos que hacer es ir a la documentación (Docs)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/dcd69b63-9d03-48a2-b154-d5cf6ca995b1)
+### ahora accedemos a ejemplos(Examples) en mi caso es React
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/b95e63eb-6131-416b-92e2-ab3276e62b3a)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/db48d9b2-8a2b-4230-9af7-6a42eddbb655)
+### En la Documentación nos da un formulario que podemos usar
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/f33f104b-c8ba-42b4-ba15-4a6db3ac02a1)
+### Estos 3 datos son importantes es exactamente los datos que puse en mi texto de correo (Template), esos datos no se pueden modificar, si se modifica al enviarse al correo no se veran dichos datos que pusimos
 
+
+  
 
   
 
