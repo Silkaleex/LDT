@@ -1,9 +1,62 @@
-import React from "react";
+import React, { useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import "./Licencia.css";
 import { CardBody, CardSubtitle, CardTitle, Card, CardText } from "reactstrap";
-import { AiOutlineArrowLeft, AiOutlineCopyright } from "react-icons/ai";
-import { Link } from "react-router-dom";
+import {
+  AiOutlineArrowLeft,
+  AiOutlineCopyright,
+  AiOutlineArrowDown,
+} from "react-icons/ai";
+import {
+  BsFillPersonFill,
+  BsEnvelopeFill,
+  BsChatRightTextFill,
+} from "react-icons/bs";
+import emailjs from "@emailjs/browser";
 const Licencia = () => {
+  const [isSent, setIsSent] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    if (!name || !email || !message) {
+      setErrorMessage("No completaste todos los campos");
+      setTimeout(() => {
+        window.location.href = "/";
+      }, 3000);
+      return;
+    }
+
+    emailjs
+      .sendForm(
+        "service_4h8c9cv",
+        "template_6qancni",
+        e.target,
+        "ZzHJiehSC1Ky4LVqZ"
+      )
+      .then(() => {
+        setIsSent(
+          "Mensaje enviado con éxito. Te responderemos lo antes posible."
+        );
+        setTimeout(() => {
+          window.location.href = "/";
+        }, 3000);
+      })
+      .catch((error) => {
+        console.error("Error al enviar el correo electrónico:", error);
+      });
+
+    setName("");
+    setEmail("");
+    setMessage("");
+    setErrorMessage("");
+  };
   return (
     <div className="fondoLicencia">
       <Card className="LicenciaLDT">
@@ -116,7 +169,49 @@ const Licencia = () => {
               de licencia y es importante consultar a un profesional legal para
               obtener mas información.
             </CardText>
-            <div className="cajaBoton">
+            <div className="formularioLicn">
+              <CardTitle className="text-center tituloLcn" tag="h2">
+                ¿Necesitas Ayuda?, Escribenos!
+              </CardTitle>
+              <form ref={form} onSubmit={sendEmail} className="formularioLcn">
+                <label>
+                  Name <BsFillPersonFill />
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Nombre"
+                  className="colorInpLcn"
+                   onChange={(e) => setName(e.target.value)}
+                />
+                <label>
+                  Email <BsEnvelopeFill />
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email"
+                  className="colorInpLcn"
+                   onChange={(e) => setEmail(e.target.value)}
+                />
+                <label>
+                  Message <BsChatRightTextFill />
+                </label>
+                <textarea
+                  name="message"
+                  maxLength="300"
+                  className="txtMsgLcn colorInpLcn"
+                  placeholder="maximo 300 caracteres"
+                   onChange={(e) => setMessage(e.target.value)}
+                />
+                {isSent && <div className="mensajeCorrecto">{isSent}</div>}
+                {errorMessage && (
+                  <div className="mmensajeErroneo">{errorMessage}</div>
+                )}
+                <input type="submit" value="Send" className="botonMsjLcn" />
+              </form>
+            </div>
+            <div>
               <Link to="/" className="btnLcn">
                 <AiOutlineArrowLeft />
                 Volver

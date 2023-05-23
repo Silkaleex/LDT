@@ -25,7 +25,6 @@ function TodasLasAlarmas() {
     getAlarms();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(alarma);
   return (
     <>
       {role == 1 ? (

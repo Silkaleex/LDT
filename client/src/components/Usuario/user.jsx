@@ -35,7 +35,6 @@ const User = () => {
     getUser();
   }, []);
 
-  console.log(User);
   return (
     <>
       {role == 1 ? (
