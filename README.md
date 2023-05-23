@@ -431,8 +431,22 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 ### En la Documentación nos da un formulario que podemos usar
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/f33f104b-c8ba-42b4-ba15-4a6db3ac02a1)
 ### Estos 3 datos son importantes es exactamente los datos que puse en mi texto de correo (Template), esos datos no se pueden modificar, si se modifica al enviarse al correo no se veran dichos datos que pusimos
-
-
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/e77e2a81-4450-491f-9558-9643d091b729)
+### importamos emailJS en nueswtro componente de licencia en react
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/627c65d8-ee53-44d6-884a-06da5a35400b)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/a92ee45d-5f23-4c56-880f-ccf0d319ceaa)
+ ### Copiamos de la documentación de EmailJs y la importamos a nuestro manera
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/e4c4e00a-265e-4370-bbd8-c3ab9f8c02c6)
+### Asi es como quedaria en mi caso de diseño
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/0219aa49-7853-4f49-8bf8-ea6916285326)
+  #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/67e558f0-f6e4-49de-b7b1-228ad965a9af)
+### Ahora añadí unos mensajes de alerta en caso de que estubiera correcto nos diria "Mensaje enviado con éxito. Te responderemos lo antes posible. o en caso de fallo "no completastes todos los campos" para ello use el useState (Lineas 17 a la 21)
+### Luego creé un useRef es un Hook que nos permite referenciar un valor que no es necesario renderizar(Linea 1 y linea 23)
+ ### Luego dentro de nuestra constante cree otra para enviar un mensaje de Email en el que puse una condición de si no se pone ningun dato nos dara un error y nos refrescará a la pagina de inicio (Línea 25 a la pagina 34)
+ ### En la linea 36 a la 42 puse mis datos de la id de mi correo email y message para que cuando algun usuario tenga duda con las normas de licencia, el mensaje me llege correctamente a mi correo
+ ### la línea 43 a la 53 si son correctos dichos datos no enviara el mensaje de "Mensaje enviado con éxito. Te responderemos lo antes posible." y si no nos dira "Error al enviar el correo electrónico:" y refrescara la pagina volviendo a Inicio
+### Línea 54 a la 57 son los valores del useState luego estos valores los importamos en las líneas 184, 194, 204.
+### Para que nos funcionen los mensajes de que esta todo bien o no ponemos una condicion en la linea 206 hasta la 209 para que se active uno o otro mensaje
   
 
   
