@@ -447,8 +447,19 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
  ### la línea 43 a la 53 si son correctos dichos datos me enviará el mensaje de "Mensaje enviado con éxito. Te responderemos lo antes posible." y si hay algun error nos pondrá este mensaje "Error al enviar el correo electrónico" y refrescara la pagina volviendo a Inicio.
 ### Línea 54 a la 57 son los valores del useState luego estos valores los importamos en las líneas 184, 194, 204.
 ### Para que nos funcionen los mensajes de que esta todo bien o no, ponemos una condición en la linea 206 hasta la 209 para que se active uno o otro mensaje
-  
+### En la linea 34 35 y 37 cogí los valores de la siguiente manera en EmailJs
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/7667fbcc-1e4a-4eed-b72a-c691e3bf5369)
+### Es la Id de mi servicio lo copiamos y lo pegamos (Línea 34)
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/738b3b99-a1b2-4b9e-aea5-00da197f90b4)
+### Volvamos a Plantillas de correo Electronico("Email Termplates")
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/531fbbeb-1d81-47a3-b482-0f6e12aa31a8)
+### Cuando accedemos en esta sección vamos a coger el Template que contiene una Id, para ello seleccionamos el template y accederemos al mensaje de texto de nuevo.
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/158e8f95-9e87-4755-929f-4470774df77e)
+### Vamos a la seccion de ajustes("Settings") y aqui nos data la id del template
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/32187628-5ef3-415b-a74e-ed1112f659bd)
+### Aqui cogemos el template ID y lo copiamos en la línea 35 y por ultimo accedemos a acount
+#### ![image](https://github.com/Silkaleex/LDT/assets/82760991/bbe103aa-aa7d-41e7-9f54-82f30cc98c7c)
+### Cogemos la llave pública (Public Key) y la pegamos en nuestra línea 37
 
-  
 
 
