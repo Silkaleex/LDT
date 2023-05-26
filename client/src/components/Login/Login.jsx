@@ -99,6 +99,14 @@ const login = () => {
                   ¿No tienes cuenta?, Hazte Usuario
                 </Button>
               </Link>
+              <div className="cajaBaneo">
+                <h1 className="txt-title"> ¿necesitas ayuda?</h1>
+              <Link to="/dudas">
+                <Button   className="botonDudas">
+                  Accede aqui
+                </Button>
+              </Link>
+              </div>
               <Link to="/">
                 <Button color="warning" className="botonSubmit">Volver a Home</Button>
               </Link>

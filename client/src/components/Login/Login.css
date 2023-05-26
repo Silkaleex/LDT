@@ -59,8 +59,37 @@
   display: grid;
   justify-content: center;
   justify-items: center;
+  
 }
+.cajaBaneo {
+  display: flex;
+  margin: 5% 0%;
+  padding:0% 2%;
+  background-color:#fed9b7;
+  
+}
+.botonDudas {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  transition: 1s all;
 
+}
+.botonDudas:hover {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  text-decoration: underline #26547c;
+  transition: 1s all;
+}
+.txt-title {
+  color: #000;
+  text-decoration: none;
+  list-style: none;
+  font-size: 20px;
+  margin: 2% -1%;
+  padding: 0% 1%;
+}
 .botonSubmit {
   background-color: #78290f;
   color: #ffecd1;
@@ -209,7 +238,7 @@
     transition: 1s all;
     border-radius: 5px;
     margin: 1% 0%;
-     width: 35%;
+    width: 35%;
   }
   .botonSubmit1:hover {
     background-color: #78290f;
@@ -222,6 +251,6 @@
     transition: 1s all;
     border-radius: 5px;
     margin: 1% 0%;
-     width: 35%;
+    width: 35%;
   }
 }

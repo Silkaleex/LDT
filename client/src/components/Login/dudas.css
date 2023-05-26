@@ -1,0 +1,86 @@
+.cajaDudasLdt {
+  padding: 0.7% 0%;
+  background-image: url("https://images.pexels.com/photos/5653734/pexels-photo-5653734.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+.conainerDudasLdt {
+  width: 50%;
+  margin: 3% auto;
+  border: 1px solid black;
+  background-color: #74a4d899;
+  color: #fafaff;
+  text-shadow: 1px 1px 1px #000;
+  padding: 1% 3%;
+}
+.cajaDudasLDT {
+  display: grid;
+  margin: 1% 0%;
+}
+.tituloDudasLdt {
+  font-size: 30px;
+}
+.labelDudasLdt {
+  display: grid;
+  margin: 1% 0%;
+  font-size: 20px;
+}
+.inputDudasLDT {
+  display: grid;
+  margin: 1% 0%;
+  background-color: #eaeaea;
+}
+
+.txtDudasLdt {
+  display: grid;
+  margin: 2% 0%;
+  font-size: 20px;
+}
+
+.textDudasLdt {
+  height: 160px;
+  resize: none;
+}
+.conjuntoBtnDudasLdt {
+  display: flex;
+}
+.inputEnvioDudasLdt {
+  width: 25%;
+  background-color: #3f648c;
+  color: #fca311;
+  text-shadow: 1px 1px 1px #000;
+  border: 1px groove #e0e1dd;
+}
+.inputEnvioDudasLdt:focus {
+  width: 25%;
+  background-color: #3f648c;
+  color: #fca311;
+  text-shadow: 1px 1px 1px #000;
+  border: 1px groove #e0e1dd;
+}
+.btnDudasLdt {
+  background-color: #3f648c;
+  color: #fca311;
+  padding: 2% 3%;
+  text-decoration: none;
+  text-shadow: 1px 1px 1px #000;
+  border: 1px groove #e0e1dd;
+  margin: 0% 2%;
+  border-radius: 25%;
+}
+
+.mensajeCorrectoLDT{
+  color: #D3FFE1;
+  background-color: #33AB2F;
+  text-shadow: 1px 1px 1px #000;
+  padding: 1% 10%;
+  margin: 2% 0%;
+}
+.mensajeErroneoLDT{
+  background-color: #c1121f;
+  color: #fdf0d5;
+  text-shadow: 1px 1px 1px #000;
+  padding: 1% 28%;
+  margin: 2% 0%;
+}

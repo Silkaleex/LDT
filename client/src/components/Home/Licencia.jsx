@@ -2,11 +2,7 @@ import React, { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Licencia.css";
 import { CardBody, CardSubtitle, CardTitle, Card, CardText } from "reactstrap";
-import {
-  AiOutlineArrowLeft,
-  AiOutlineCopyright,
-  AiOutlineArrowDown,
-} from "react-icons/ai";
+import { AiOutlineArrowLeft, AiOutlineCopyright } from "react-icons/ai";
 import {
   BsFillPersonFill,
   BsEnvelopeFill,
@@ -51,7 +47,6 @@ const Licencia = () => {
       .catch((error) => {
         console.error("Error al enviar el correo electrónico:", error);
       });
-
     setName("");
     setEmail("");
     setMessage("");
@@ -182,7 +177,7 @@ const Licencia = () => {
                   name="name"
                   placeholder="Nombre"
                   className="colorInpLcn"
-                   onChange={(e) => setName(e.target.value)}
+                  onChange={(e) => setName(e.target.value)}
                 />
                 <label>
                   Email <BsEnvelopeFill />
@@ -190,9 +185,9 @@ const Licencia = () => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Email"
                   className="colorInpLcn"
-                   onChange={(e) => setEmail(e.target.value)}
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <label>
                   Message <BsChatRightTextFill />
@@ -202,7 +197,7 @@ const Licencia = () => {
                   maxLength="300"
                   className="txtMsgLcn colorInpLcn"
                   placeholder="maximo 300 caracteres"
-                   onChange={(e) => setMessage(e.target.value)}
+                  onChange={(e) => setMessage(e.target.value)}
                 />
                 {isSent && <div className="mensajeCorrecto">{isSent}</div>}
                 {errorMessage && (
