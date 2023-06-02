@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./newCalendar.css"
+import { toast,ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const NewCal = () => {
   const [calend, setCalend] = useState({
@@ -18,10 +20,25 @@ const NewCal = () => {
       setCalend({ ...calend, [name]: value });
     }
     console.log(calend);
+    if (name === "fecha") {
+      const currentDate = new Date().toISOString().split("T")[0];
+      
+      if (value >= currentDate) {
+        setCalend({ ...calend, [name]: value });
+      } else {
+        toast.error("Por favor, selecciona una fecha actual o futura");
+      }
+    } else {
+      setCalend({ ...calend, [name]: value });
+    }
   };
 
   const calendarSubmit = async (event) => {
     event.preventDefault();
+    if (!calend.title || !calend.fecha || !calend.calendar) {
+      toast.error('Por favor, completa todos los campos');
+      return;
+    }
     try {
       const response = await axios.post(
         "http://localhost:5000/api/calendars",
@@ -46,8 +63,9 @@ const NewCal = () => {
     }
   };
 
-  return (
+  return ( 
     <div>
+         <ToastContainer />
       {role == 1 ? (
         <div className="cajaAdmCal">
           <form onSubmit={calendarSubmit}>

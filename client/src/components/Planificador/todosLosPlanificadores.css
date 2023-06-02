@@ -24,6 +24,7 @@
   margin: 0% auto;
   background-color: #d98484a8;
   text-align: left;
+  overflow-wrap: break-word;
 }
 .DescripcionAdmPlanning {
   text-decoration: none;
@@ -132,6 +133,7 @@
   width: 50%;
   text-align: center;
   margin: 0px auto;
+  word-break: break-word;
 }
 .tituloPlnUs {
   font-size: 35px;

@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import "./newNot.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const NewNot = () => {
   const [note, setNote] = useState({
     title: "",
@@ -10,16 +12,31 @@ const NewNot = () => {
   });
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
+
   const onChangeInput = (e) => {
     const { name, value } = e.target;
     if (note !== null) {
       setNote({ ...note, [name]: value });
     }
     console.log(note);
+    if (note === "fecha") {
+      const currentDate = new Date().toISOString().split("T")[0];
+      if (value >= currentDate) {
+        setNote({ ...note, [note]: value });
+      } else {
+        toast.error("Por favor selecciona una fecha actual o proxima ");
+      }
+    } else {
+      setNote({ ...note, [name]: value });
+    }
   };
 
   const noteSubmit = async (event) => {
     event.preventDefault();
+    if (!note.title || !note.fecha || !note.tareas) {
+      toast.error("Por favor, completa todos los campos");
+      return;
+    }
     try {
       const response = await axios.post(
         "http://localhost:5000/api/notas",
@@ -46,6 +63,7 @@ const NewNot = () => {
 
   return (
     <div>
+      <ToastContainer />
       {role == 1 ? (
         <div className="cajaAdmNota">
           <form onSubmit={noteSubmit}>

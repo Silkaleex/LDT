@@ -35,7 +35,7 @@ function TodasLasAlarmas() {
               <div className="contenidoAlAdm">
                 {alarma.map((Alarma) => {
                   return (
-                    <div key={Alarma._id}>
+                    <div key={Alarma._id} className="llaveAlm">
                       <div className="cajaDesAlm">
                         <h2 className="fs-3">Descripcion: {Alarma.title}</h2>
                         <h3 className="fs-5">Hora: {Alarma.alarm}</h3>

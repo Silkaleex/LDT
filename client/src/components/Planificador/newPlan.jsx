@@ -1,12 +1,14 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./newPlan.css"
+import "./newPlan.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const NewPlan = () => {
   const [planif, setPlanif] = useState({
     title: "",
     description: "",
-    fecha:"",
+    fecha: "",
   });
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
@@ -17,10 +19,24 @@ const NewPlan = () => {
       setPlanif({ ...planif, [name]: value });
     }
     console.log(planif);
-  };
+    if (name === "fecha") {
+      const currentDate = new Date().toISOString().split("T")[0];
 
+      if (value >= currentDate) {
+        setPlanif({ ...planif, [name]: value });
+      } else {
+        toast.error("Por favor, selecciona una fecha actual o proxima");
+      }
+    } else {
+      setPlanif({ ...planif, [name]: value });
+    }
+  };
   const PlnSubmit = async (event) => {
     event.preventDefault();
+    if (!planif.title || !planif.fecha || !planif.description) {
+      toast.error('Por favor, completa todos los campos');
+      return;
+    }
     try {
       const response = await axios.post(
         "http://localhost:5000/api/planificador",
@@ -35,11 +51,15 @@ const NewPlan = () => {
       );
 
       console.log(response);
-      setPlanif(response);
+      setPlanif({
+        title: "",
+        description: "",
+        fecha: "",
+      });
 
-       setTimeout(() => {
-         window.location.href = "/tPlanificador";
-       }, 3000);
+      setTimeout(() => {
+        window.location.href = "/tPlanificador";
+      }, 3000);
     } catch (error) {
       console.log(error.response);
     }
@@ -47,6 +67,7 @@ const NewPlan = () => {
 
   return (
     <div>
+      <ToastContainer />
       {role == 1 ? (
         <div className="cajaAdmP">
           <form onSubmit={PlnSubmit}>
@@ -126,7 +147,7 @@ const NewPlan = () => {
                 onChange={onChangeInput}
                 value={planif ? planif.description : ""}
               />
-                 <label className="labelPUs" htmlFor="fecha">
+              <label className="labelPUs" htmlFor="fecha">
                 Fecha del planificador:
               </label>
               <input

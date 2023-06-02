@@ -27,17 +27,19 @@
   text-shadow: 1px 1px 1px #000;
   padding: 5% 5%;
 }
+.llaveAlm{
+  margin:0% 0% 5% 0%;
+}
 .cajaDesAlm {
   color: #d90429;
   text-shadow: 1px 1px 1px #000;
-  text-align: center;
+  text-align: left;
 }
 
 .enlacesAlAdm {
   text-decoration: none;
-  font-size: 20px;
   color: #d90429;
-  background-color: #ffffff;
+  background-color: #f1faee;
   padding: 0% 5%;
   text-shadow: 1px 1px 1px #000;
   transition: 1s all;

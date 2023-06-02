@@ -34,7 +34,7 @@ const Licencia = () => {
         "service_4h8c9cv",
         "template_6qancni",
         e.target,
-        "ZzHJiehSC1Ky4LVqZ"
+        // "ZzHJiehSC1Ky4LVqZ"
       )
       .then(() => {
         setIsSent(

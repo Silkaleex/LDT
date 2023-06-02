@@ -4,6 +4,15 @@ const alarmaRouter = express.Router();
 const User = require("../models/User");
 const UserRouter = require("./UserRouter");
 const auth = require("../middeleware/auth");
+const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+  service: "Gmail", // o tu proveedor de correo electrónico
+  auth: {
+    user: "alejandropascualsanchez@gmail.com",
+    pass: process.env.EMAIL_PASSWORD,
+  },
+});
 
 alarmaRouter.post("/alarms", auth, async (req, res) => {
   try {
@@ -37,6 +46,19 @@ alarmaRouter.post("/alarms", auth, async (req, res) => {
 
     await newAlarma.save();
 
+    // Enviar el aviso por correo electrónico
+    const destinatario = userId.email;
+    const asunto = `Alarma - ${title} (${fecha} - ${alarm})`;
+    const contenido = `Sobre: ${title}:
+  Hora: ${alarm}
+  Fecha: ${fecha}`;
+
+    transporter.sendMail({
+      from: "alejandropascualsanchez@gmail.com",
+      to: destinatario,
+      subject: asunto,
+      text: contenido,
+    });
     return res.status(200).send({
       success: true,
       message: "Tus datos se han guardado correctamente",
@@ -48,6 +70,7 @@ alarmaRouter.post("/alarms", auth, async (req, res) => {
     });
   }
 });
+
 alarmaRouter.get("/alarms", auth, async (req, res) => {
   try {
     let alarm = await alarma.find({}).populate();
@@ -103,6 +126,31 @@ alarmaRouter.put("/alarms/:id", async (req, res) => {
       alarm,
       fecha,
     });
+    // Obtener los detalles de la alarma modificada
+    const modifiedAlarma = await alarma.findById(id);
+
+    // Enviar el aviso de la alarma modificada por correo electrónico
+    const destinatario = "alejandropascualsanchez@gmail.com";
+    const asunto = `Alarma - ${modifiedAlarma.title}`;
+    const contenido = `La alarma "${modifiedAlarma.title}" ha sido modificada:
+    Nueva hora : ${modifiedAlarma.alarm}
+    Nueva fecha: ${modifiedAlarma.fecha}`;
+
+    transporter.sendMail(
+      {
+        from: "alejandropascualsanchez@gmail.com",
+        to: destinatario,
+        subject: asunto,
+        text: contenido,
+      },
+      (error, info) => {
+        if (error) {
+          console.error("Error al enviar el correo electrónico:", error);
+        } else {
+          console.log("Correo electrónico enviado con éxito");
+        }
+      }
+    );
     if (!alarm || !fecha) {
       return res.status(400).send({
         succcess: false,
@@ -111,7 +159,7 @@ alarmaRouter.put("/alarms/:id", async (req, res) => {
     }
     return res.status(200).send({
       success: true,
-      message: "Alarma modificado",
+      message: "Alarma modificada",
     });
   } catch (error) {
     return res.status(500).send({

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useNavigate, useParams, Link } from "react-router-dom";
 import "./modificacion.css";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ModifcacionAlm = () => {
   const token = localStorage.getItem("token");
@@ -21,17 +23,22 @@ const ModifcacionAlm = () => {
     console.log(Alm);
   };
   const getAl = async () => {
-    const response = await axios.get(
-      `http://localhost:5000/api/alarms/${alarmaId}`,
-      {
-        headers: {
-          Authorization: token,
-        },
-      }
-    );
-    console.log(response);
-    setAlm(response.data.alarms);
+    try {
+      const response = await axios.get(
+        `http://localhost:5000/api/alarms/${alarmaId}`,
+        {
+          headers: {
+            Authorization: token,
+          },
+        }
+      );
+      console.log(response);
+      setAlm(response.data.alarms);
+    } catch (error) {
+      console.log(error.response);
+    }
   };
+  
   useEffect(() => {
     getAl();
   }, []);
@@ -44,15 +51,20 @@ const ModifcacionAlm = () => {
         { ...Alm }
       );
       console.log(response);
-      setTimeout(() => {
-        Navigate(`/alarma/${alarmaId}`);
-      }, 2000);
-    } catch (error) {
-      console.log(error.response);
-    }
+     // Mostrar notificación de éxito
+     toast.success('Tu Alarma se modificó correctamente');
+     setTimeout(() => {
+       Navigate(`/alarma/${alarmaId}`);
+     }, 2000);
+   } catch (error) {
+     console.log(error.response);
+     // Mostrar notificación de error
+     toast.error('Hubo un problema al modificar la alarma');
+   }
   };
   return (
     <>
+       <ToastContainer />
       {role == 1 ? (
         <div className="cajaAdmAlm">
           <form onSubmit={modificacionSubmit}>

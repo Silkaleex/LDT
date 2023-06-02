@@ -16,7 +16,7 @@ const NavBar = () => {
         <nav>
           <div className="cajaGenUs">
             <div className="cajaUser">
-              <h4 className="tUsuario">Bienvenido/a {name}</h4>
+              <h4 className="tUsuario">Bienvenid@ {name}</h4>
               <ul className="listaUser">
                 <li className="listasUs">
                 <Link className="listaUser datosAdm" to="/usuario">
@@ -47,7 +47,7 @@ const NavBar = () => {
         <nav>
           <div className="cajaAdm ">
             <div className="containerAdm">
-              <h4 className="tAdmin">Bienvenido/a {name}</h4>
+              <h4 className="tAdmin">Bienvenid@ {name}</h4>
               <div className="datosAdmin">
                 <ul className="listaAd">
                 <li className="listasAdm">
