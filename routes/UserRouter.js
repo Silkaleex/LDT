@@ -314,7 +314,7 @@ UserRouter.get("/toAlarms", auth, async (req, res) => {
 
 UserRouter.get("/toCalen", auth, async (req, res) => {
   try {
-    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar fecha isPublic'});
+    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar fecha tipo'});
     if (!eventos) {
       return res.status(400).send({
         success: false,
@@ -337,6 +337,7 @@ UserRouter.get("/toCalen", auth, async (req, res) => {
 UserRouter.get("/toPlan", auth, async (req, res) => {
   try {
     let Planificador = await user.findById(req.user.id).populate({path:'planning', select:'title description fecha'});
+   console.log(Planificador)
     if (!Planificador) {
       return res.status(400).send({
         success: false,

@@ -37,8 +37,11 @@ const TodosLosEventos = () => {
                   <div className="card cartaEventoCal">
                     <div className="card-body cartaCalAdm">
                       <h2 className="fs-1">Titulo: {evento.title}</h2>
-                      <h3 className="fs-4">Evento: {evento.calendar}</h3>
+                      <h3 className="fs-4">Fecha: {evento.calendar}</h3>
                       <h3 className="fs-4">Fecha: {evento.fecha}</h3>
+                      <h3 className="fs-4">
+                        Evento: {evento.tipo === "publico" ? "Público" : "Privado"}
+                      </h3>
                       <Link
                         to={`/calendar/${evento._id}`}
                         className="card-link accederCal"
@@ -51,7 +54,7 @@ const TodosLosEventos = () => {
               );
             })}
             <div className="enlcEvnt">
-            <Link to="/eventos" className="otrosEventos">Otros eventos que pueden interesarte</Link>
+            <Link to="/eventosPublicos" className="otrosEventos">Otros eventos que te pueden interesar</Link>
             </div>
             <div className="cajaCirculoCalAdm">
               <Link to="/newCal" className="circuloCalAdm">
@@ -83,8 +86,8 @@ const TodosLosEventos = () => {
                 </div>
               );
             })}
-                 <div className="enlcEvntUs">
-            <Link to="/eventos" className="otrosEventosUs">Otros eventos que pueden interesarte</Link>
+              <div className="enlcEvntUs">
+            <Link to="/eventosPublicos" className="otrosEventosUs">Otros eventos que te pueden interesar</Link>
             </div>
           </div>
           <div className="cajaBtnCalendar">

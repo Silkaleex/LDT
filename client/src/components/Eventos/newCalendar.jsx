@@ -7,44 +7,46 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const NewCal = () => {
   const [calend, setCalend] = useState({
-    title:"",
-    calendar:"",
-    fecha:"",
+    title: "",
+    calendar: "",
+    fecha: "",
+    tipo: "publico", // Valor predeterminado para el tipo de evento
   });
+
   const token = localStorage.getItem("token");
   const role = localStorage.getItem("role");
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    if (calend !== null) {
-      setCalend({ ...calend, [name]: value });
-    }
-    console.log(calend);
+    setCalend((prevCalend) => ({
+      ...prevCalend,
+      [name]: value,
+    }));
+
     if (name === "fecha") {
       const currentDate = new Date().toISOString().split("T")[0];
-      
+
       if (value >= currentDate) {
-        setCalend({ ...calend, [name]: value });
+        setCalend((prevCalend) => ({
+          ...prevCalend,
+          [name]: value,
+        }));
       } else {
         toast.error("Por favor, selecciona una fecha actual o futura");
       }
-    } else {
-      setCalend({ ...calend, [name]: value });
     }
   };
 
   const calendarSubmit = async (event) => {
     event.preventDefault();
     if (!calend.title || !calend.fecha || !calend.calendar) {
-      toast.error('Por favor, completa todos los campos');
+      toast.error("Por favor, completa todos los campos");
       return;
     }
     try {
       const response = await axios.post(
         "http://localhost:5000/api/calendars",
-        {
-          ...calend,
-        },
+        calend,
         {
           headers: {
             Authorization: token,
@@ -53,16 +55,19 @@ const NewCal = () => {
       );
 
       console.log(response);
-      setCalend(response.data.eventos);
-
-       setTimeout(() => {
-         window.location.href = "/tCalendar";
-       }, 3000);
+      setCalend({
+        title: "",
+        calendar: "",
+        fecha: "",
+        tipo: "publico",
+      });
+      setTimeout(() => {
+        window.location.href = "/tCalendar";
+      }, 3000);
     } catch (error) {
       console.log(error.response);
     }
   };
-
   return ( 
     <div>
          <ToastContainer />
@@ -104,10 +109,23 @@ const NewCal = () => {
                 id="calendar"
                 name="calendar"
                 placeholder="Descripcion del evento"
-                onChange={onChangeInput}
-                
+                onChange={onChangeInput}             
                 value={calend ? calend.calendar : ""}
               />
+              <label className="labelCalAdm" htmlFor="tipo">
+                Tipo de Evento:
+              </label>
+              <select
+                className="inputCalAdm"
+                id="tipo"
+                name="tipo"
+                onChange={onChangeInput}
+                value={calend.tipo}
+              >
+                <option value="publico">Público</option>
+                <option value="privado">Privado</option>
+              </select>
+
               <div className="containerBotonesAdm">
                 <button  className="botonAddAlmAdm" type="submit">
                   Crear Evento

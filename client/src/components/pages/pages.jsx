@@ -28,6 +28,8 @@ import Usuarios from "../PerfilUsuario/Usuarios";
 import PUsuarios from "../PerfilUsuario/Pusuarios";
 import Dudas from "../Login/dudas";
 import EventosPublicos from "../Eventos/EventosPublicos";
+import ChatComponent from "../Eventos/ChatComponent";
+
 const Pages = () => {
   return (
     <Routes>
@@ -43,9 +45,9 @@ const Pages = () => {
       <Route path="/tNotas" element={<TodasLasNotas />} />
       <Route path="/notas/:notaId" element={<Notas />} />
       <Route path="/newNot" element={<NewNot />} />
-       {/* Eventos Publicos/Pivados + chat */}
-       
-      <Route path="/eventos" element={<EventosPublicos />} />
+      {/* Eventos Publicos/Pivados + chat */}
+      <Route path="/chats/:eventId" element={<ChatComponent />} />
+     <Route path="/eventosPublicos" element={<EventosPublicos />} />
       {/* Eventos */}
       <Route path="/tCalendar" element={<TodosLosCalendar />} />
       <Route path="/calendar/:eventoId" element={<Calendar />} />

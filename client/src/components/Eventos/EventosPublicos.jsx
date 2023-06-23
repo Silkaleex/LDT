@@ -2,38 +2,40 @@
 import axios from "axios";
 import "./todosLosCalendar.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "./EventosPublicos.css";
+import ChatComponent from "../Eventos/ChatComponent";
 
 const EventosPublicos = () => {
-  const [event, setEvent] = useState([]);
-  const token = localStorage.getItem("token");
+  const [events, setEvents] = useState([]);
 
-  const getEvent = async () => {
-    const response = await axios.get("http://localhost:5000/api/toCalen", {
-      headers: {
-        Authorization: token,
-      },
-    });
-    console.log(response);
-    setEvent(response.data.eventos.calendar);
+  const getEvents = async () => {
+    try {
+      const response = await axios.get(`http://localhost:5000/api/calendars`);
+      setEvents(response.data.calendars);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {
-    getEvent();
+    getEvents();
   }, []);
+
   return (
     <>
       <div className="fondoPublico">
         <div className="cajaPublico">
           <h1 className="tituloPublico fs-1">Tus Eventos</h1>
-          {event.map((evento) => {
+          {events.map((evento) => {
             return (
               <div key={evento._id}>
                 <div className="cajaContenidoPublico">
                   <h2 className="fs-3">Titulo: {evento.title}</h2>
                   <h3 className="fs-3">Descripción: {evento.calendar}</h3>
                   <h3 className="fs-3">Fecha: {evento.fecha}</h3>
-                  <h3 className="fs-3">Evento: {evento.isPublic}</h3>
+                  <h3 className="fs-3">Evento: {evento.tipo}</h3>
+                  <Link to={`/chats/${evento._id}`}>Ir al chat</Link>
                 </div>
               </div>
             );

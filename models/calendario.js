@@ -12,9 +12,10 @@ const calendarSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  isPublic:{
-    type:String,
+    tipo: {
+    type: String,
     required: true,
+    enum: ['publico', 'privado'],
   },
   user: {
     type: mongoose.Types.ObjectId,

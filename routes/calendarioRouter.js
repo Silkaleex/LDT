@@ -6,19 +6,13 @@ const auth = require("../middeleware/auth");
 
 calendarRouter.post("/calendars", auth, async (req, res) => {
   try {
-    const { title, calendar, fecha } = req.body;
+    const { title, calendar, fecha, tipo } = req.body;
     let userId = await User.findById(req.user.id);
 
-    if (!title || !calendar || !fecha) {
+    if (!title || !calendar || !fecha || !tipo ||title.length < 3) {
       return res.status(400).send({
         success: false,
-        message: "No completastes todos los pasos",
-      });
-    }
-    if (title.length < 3) {
-      return res.status(400).send({
-        success: false,
-        message: "No completastes todos los pasos",
+        message: "No completaste todos los pasos",
       });
     }
 
@@ -26,6 +20,7 @@ calendarRouter.post("/calendars", auth, async (req, res) => {
       title,
       fecha,
       calendar,
+      tipo,
       user: userId,
     });
 
@@ -48,6 +43,7 @@ calendarRouter.post("/calendars", auth, async (req, res) => {
     });
   }
 });
+
 calendarRouter.get("/calendars/:id", auth, async (req, res) => {
   try {
     const { id } = req.params;
@@ -122,4 +118,28 @@ calendarRouter.delete("/calendars/:id", auth, async (req, res) => {
     });
   }
 });
+
+
+calendarRouter.get("/calendars", async (req, res) => {
+  try {
+    const publicCalendars = await calendario.find({ tipo: 'publico' }).populate({
+      path: "user",
+      select: "name",
+    });
+
+    return res.status(200).send({
+      success: true,
+      message: "Eventos públicos encontrados correctamente",
+      calendars: publicCalendars,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+
+
 module.exports = calendarRouter;
