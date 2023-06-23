@@ -12,6 +12,10 @@ const calendarSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  isPublic:{
+    type:String,
+    required: true,
+  },
   user: {
     type: mongoose.Types.ObjectId,
     ref: "User",

@@ -27,6 +27,7 @@ import ModificacionUsuario from "../modificacion/modificacionUsuario";
 import Usuarios from "../PerfilUsuario/Usuarios";
 import PUsuarios from "../PerfilUsuario/Pusuarios";
 import Dudas from "../Login/dudas";
+import EventosPublicos from "../Eventos/EventosPublicos";
 const Pages = () => {
   return (
     <Routes>
@@ -42,6 +43,9 @@ const Pages = () => {
       <Route path="/tNotas" element={<TodasLasNotas />} />
       <Route path="/notas/:notaId" element={<Notas />} />
       <Route path="/newNot" element={<NewNot />} />
+       {/* Eventos Publicos/Pivados + chat */}
+       
+      <Route path="/eventos" element={<EventosPublicos />} />
       {/* Eventos */}
       <Route path="/tCalendar" element={<TodosLosCalendar />} />
       <Route path="/calendar/:eventoId" element={<Calendar />} />

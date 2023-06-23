@@ -172,19 +172,6 @@ UserRouter.put("/users_desban/:id", auth, authAdmin, async (req, res) => {
   const { id } = req.params;
 
   try {
-    // Actualizar la propiedad "banned" del usuario a false
-    //   await user.findByIdAndUpdate(
-    //   id,
-    //   { banned: false },
-    //   { new: true }
-    // );
-    // const updatedUser = user.findById(id)
-    // console.log(updatedUser)
-    //   return res.status(200).send({
-    //     success: true,
-    //     message: `El usuario ha sido desbaneado exitosamente`,
-    //     updatedUser
-    //   });
     const User = await user.findById(id);
 
     if (!User) {
@@ -327,7 +314,7 @@ UserRouter.get("/toAlarms", auth, async (req, res) => {
 
 UserRouter.get("/toCalen", auth, async (req, res) => {
   try {
-    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar fecha'});
+    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar fecha isPublic'});
     if (!eventos) {
       return res.status(400).send({
         success: false,
@@ -350,7 +337,6 @@ UserRouter.get("/toCalen", auth, async (req, res) => {
 UserRouter.get("/toPlan", auth, async (req, res) => {
   try {
     let Planificador = await user.findById(req.user.id).populate({path:'planning', select:'title description fecha'});
-   console.log(Planificador)
     if (!Planificador) {
       return res.status(400).send({
         success: false,

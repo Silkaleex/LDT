@@ -50,6 +50,9 @@ const TodosLosEventos = () => {
                 </div>
               );
             })}
+            <div className="enlcEvnt">
+            <Link to="/eventos" className="otrosEventos">Otros eventos que pueden interesarte</Link>
+            </div>
             <div className="cajaCirculoCalAdm">
               <Link to="/newCal" className="circuloCalAdm">
                 <CgNotes />
@@ -80,6 +83,9 @@ const TodosLosEventos = () => {
                 </div>
               );
             })}
+                 <div className="enlcEvntUs">
+            <Link to="/eventos" className="otrosEventosUs">Otros eventos que pueden interesarte</Link>
+            </div>
           </div>
           <div className="cajaBtnCalendar">
             <Link to="/newCal" className="circuloCalUs">

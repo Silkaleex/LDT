@@ -24,9 +24,21 @@
   color: #d90429;
   text-shadow: 1px 1px 1px #000;
   transition: 1s all;
-  width: 30%;
+  width: 35%;
   margin: 1% auto;
 }
+.enlcEvnt{
+  padding: 0% 39%;
+  margin: 3% 0%;
+}
+
+.otrosEventos {
+  background-color: #000;
+  color: #d90429;
+  text-decoration: none;
+  padding: 1% 2%;
+}
+
 .cajaCirculoCalAdm {
   margin: 2% 49%;
 }
@@ -46,7 +58,7 @@
   transition: 1s all;
   padding: 0% 5%;
 }
-@media screen and (max-width:380px){
+@media screen and (max-width: 380px) {
   .fondoAdmCal {
     border-top: 5px dashed #edf2f4;
     background: rgb(43, 45, 66);
@@ -72,9 +84,21 @@
     color: #d90429;
     text-shadow: 1px 1px 1px #000;
     transition: 1s all;
-    width: 70%;
+    width: 90%;
     margin: 1% auto;
   }
+  
+.enlcEvnt{
+  padding: 0% 15%;
+  margin: 3% 0%;
+}
+
+.otrosEventos {
+  background-color: #000;
+  color: #d90429;
+  text-decoration: none;
+  padding: 1% 2%;
+}
   .cajaCirculoCalAdm {
     margin: 2% 49%;
   }
@@ -84,7 +108,7 @@
     color: #d90429;
     transition: 1s all;
     padding: 0% 80%;
-    border:3px groove  #d90429;
+    border: 3px groove #d90429;
   }
   .accederCal {
     color: #d90429;
@@ -138,26 +162,38 @@
   padding: 0% 3%;
   transition: 1s all;
 }
-.cajaBtnCalendar{
+.cajaBtnCalendar {
   margin: 0% 48%;
 }
-.circuloCalUs {
-  padding:0% 40%;
+.enlcEvntUs{
+  padding: 0% 39%;
+  margin: 3% 0%;
+}
+
+.otrosEventosUs {
   background-color: #e4d9ff;
   color: #04052e;
-  border:1px solid #000;
+  text-decoration: none;
+  padding: 1% 2%;
+}
+
+.circuloCalUs {
+  padding: 0% 40%;
+  background-color: #e4d9ff;
+  color: #04052e;
+  border: 1px solid #000;
   text-decoration: none;
   transition: 1s all;
 }
 .circuloCalUs:hover {
-  padding:0% 40%;
+  padding: 0% 40%;
   color: #e4d9ff;
-  border:1px solid #000;
+  border: 1px solid #000;
   background-color: #04052e;
   text-decoration: none;
   transition: 1s all;
 }
-@media screen and (max-width:380px){
+@media screen and (max-width: 380px) {
   .fondoUsCalendar {
     background: rgb(226, 149, 120);
     background: linear-gradient(
@@ -166,15 +202,15 @@
       rgba(237, 246, 249, 1) 50%,
       rgba(0, 109, 119, 1) 100%
     );
-  
+
     padding: 7% 0% 7% 0%;
   }
-  
+
   .cajaUsuCalen {
     margin: 0px auto;
     padding: 2% 0% 10.3% 0%;
   }
-  
+
   .letraCalUs {
     color: #fec89a;
     text-shadow: 1px 1px 1px #000;
@@ -199,24 +235,35 @@
     padding: 0% 3%;
     transition: 1s all;
   }
-  .cajaBtnCalendar{
+  .cajaBtnCalendar {
     margin: 0% 48%;
   }
+    
+.enlcEvnt{
+  padding: 0% 15%;
+  margin: 3% 0%;
+}
+
+.otrosEventos {
+  background-color: #e4d9ff;
+  color: #04052e;
+  text-decoration: none;
+  padding: 1% 2%;
+}
   .circuloCalUs {
-    padding:0% 40%;
+    padding: 0% 40%;
     background-color: #e4d9ff;
     color: #04052e;
-    border:1px solid #000;
+    border: 1px solid #000;
     text-decoration: none;
     transition: 1s all;
   }
   .circuloCalUs:hover {
-    padding:0% 40%;
+    padding: 0% 40%;
     color: #e4d9ff;
-    border:1px solid #000;
+    border: 1px solid #000;
     background-color: #04052e;
     text-decoration: none;
     transition: 1s all;
   }
-  
 }
