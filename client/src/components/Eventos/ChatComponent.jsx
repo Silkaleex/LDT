@@ -1,21 +1,28 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
+import axios from "axios";
 
-const Message = ({ content, sender }) => {
-  return (
-    <div>
-      <p>
-        {sender}: {content}
-      </p>
-    </div>
-  );
-};
+
 
 const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
+  const [User, setUser] = useState({});
   const [inputMessage, setInputMessage] = useState("");
   const socket = io("http://localhost:5000");
-
+  const token = localStorage.getItem("token");
+  
+  useEffect(() => {
+    const getUser = async () => {
+      const response = await axios.get("http://localhost:5000/api/user", {
+        headers: {
+          Authorization: token,
+        },
+      });
+      console.log(response);
+      setUser(response.data.User);
+    };
+    getUser();
+  }, []);
   useEffect(() => {
     // Solicitar los mensajes guardados al cargar la página
     socket.emit("get-chat-messages");
@@ -53,7 +60,15 @@ const ChatComponent = () => {
 
     setInputMessage("");
   };
-
+  const Message = ({ content, sender }) => {
+    return (
+      <div>
+        <p>
+        <h5>{User.name}: {content}</h5> 
+        </p>
+      </div>
+    );
+  };
   return (
     <div>
       <h1>Sala de Chat</h1>

@@ -139,45 +139,7 @@ calendarRouter.get("/calendars", async (req, res) => {
     });
   }
 });
-//nombre usuario
 
-calendarRouter.put("/calendars/:id/update-username", auth, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const { name } = req.body;
 
-    // Verifica si el nombre de usuario está presente en la solicitud
-    if (!name) {
-      return res.status(400).send({
-        success: false,
-        message: "No proporcionaste un nuevo nombre de usuario",
-      });
-    }
-
-    // Encuentra la sala de chat por su ID y actualiza el nombre de usuario
-    const calendar = await calendario.findById(id);
-    if (!calendar) {
-      return res.status(404).send({
-        success: false,
-        message: "Sala de chat no encontrada",
-      });
-    }
-
-    // Actualiza el nombre de usuario en la sala de chat
-    calendar.user.name = name;
-    await calendar.save();
-
-    return res.status(200).send({
-      success: true,
-      message: "Nombre de usuario actualizado correctamente en la sala de chat",
-      calendar,
-    });
-  } catch (error) {
-    return res.status(500).send({
-      success: false,
-      message: error.message,
-    });
-  }
-});
 
 module.exports = calendarRouter;
