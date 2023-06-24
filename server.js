@@ -44,9 +44,8 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
   io.on("connection", (socket) => {
-    console.log("Nuevo cliente conectado al chat");
+    console.log("Estas conectado al chat");
   
     socket.on("chatMessage", (data) => {
       // Guardar el mensaje en la base de datos utilizando el modelo de chat
@@ -65,11 +64,26 @@ mongoose
         });
     });
   
+    socket.on("get-chat-messages", () => {
+      // Obtener los mensajes de chat guardados y enviarlos al cliente
+      Chat.find()
+        .sort({ timestamp: 1 })
+        .lean()
+        .then(messages => {
+          // Emitir los mensajes guardados al cliente
+          socket.emit("chat-messages", messages);
+        })
+        .catch(error => {
+          console.log(error);
+        });
+    });
+  
     socket.on("disconnect", () => {
-      console.log("Cliente desconectado del chat");
+      console.log("te fuistes del chat");
     });
   });
   
-  http.listen(5000, () => {
-    console.log("Servidor en el puerto 5000");
-  });
+
+http.listen(5000, () => {
+  console.log("Servidor en el puerto 5000");
+});

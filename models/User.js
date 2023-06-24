@@ -42,6 +42,12 @@ const userSchema = new mongoose.Schema(
         ref: "Planificador",
       },
     ],
+    Chat: [
+      {
+        type: mongoose.Types.ObjectId,
+        ref: "Chat",
+      },
+    ],
     banned: {
       type: Boolean,
       default: false,

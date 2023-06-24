@@ -14,9 +14,12 @@ const Message = ({ content, sender }) => {
 const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
   const [inputMessage, setInputMessage] = useState("");
-  const socket = io("http://localhost:5000"); // Cambia la URL con la dirección de tu servidor de sockets
+  const socket = io("http://localhost:5000");
 
   useEffect(() => {
+    // Solicitar los mensajes guardados al cargar la página
+    socket.emit("get-chat-messages");
+
     // Lógica para recibir mensajes del servidor
     socket.on("chat-message", (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
@@ -24,14 +27,21 @@ const ChatComponent = () => {
 
     // Lógica para manejar la desconexión del servidor
     socket.on("disconnect", () => {
-      console.log("usuario conectado");
+      console.log("Usuario desconectado");
     });
 
     // Limpiar la conexión al desmontar el componente
     return () => {
       socket.disconnect();
-      console.log("usuario desconectado");
+      console.log("Usuario desconectado");
     };
+  }, []);
+
+  useEffect(() => {
+    // Lógica para cargar los mensajes guardados al iniciar
+    socket.on("chat-messages", (messages) => {
+      setMessages(messages);
+    });
   }, []);
 
   const sendMessage = (e) => {
@@ -43,6 +53,7 @@ const ChatComponent = () => {
 
     setInputMessage("");
   };
+
   return (
     <div>
       <h1>Sala de Chat</h1>
