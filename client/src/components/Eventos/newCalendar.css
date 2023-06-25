@@ -115,11 +115,15 @@
   border-top: 2px solid #fafaff;
   transition: 1s all;
 }
-@media screen and (max-width:380px){
+@media screen and (max-width: 380px) {
   .cajaAdmCal {
-    background: linear-gradient( 45deg, rgba(43, 45, 66, 1) 0%, rgba(237, 242, 244, 1) 50%, rgba(141, 153, 174, 1) 100% );
+    background: linear-gradient(
+      45deg,
+      rgba(43, 45, 66, 1) 0%,
+      rgba(237, 242, 244, 1) 50%,
+      rgba(141, 153, 174, 1) 100%
+    );
     padding: 24% 0% 30.5% 0%;
-
   }
   .containerCalAdm {
     display: flex;
@@ -145,7 +149,7 @@
     text-shadow: 1px 1px 1px #000;
     transition: 1s all;
   }
-  
+
   .inputCalAdm:focus {
     background-color: #5e548ea9;
     border: 2px groove #fafaff;
@@ -196,7 +200,7 @@
     font-size: 15px;
     transition: 1s all;
   }
-  
+
   .botonVolCalAdm {
     color: #fafaff;
     background-color: #231942;
@@ -209,7 +213,7 @@
     border-top: 2px solid #231942;
     transition: 1s all;
   }
-  
+
   .botonVolCalAdm:hover {
     background-color: #231942;
     color: #fafaff;
@@ -250,6 +254,13 @@
   letter-spacing: 2px;
   color: #e0e1dd;
   font-size: 20px;
+}
+.textareaCalendarUs {
+  background-color: #1b263ba2;
+  color: #e0e1dd;
+  text-shadow: 1px 1px 1px #000;
+  font-size: 20px;
+  width: 50%;
 }
 .inputCalUs {
   background-color: #1b263ba2;
@@ -340,9 +351,14 @@
   transition: 1s all;
 }
 
-@media screen and (max-width:380px){
+@media screen and (max-width: 380px) {
   .cajaUsCale {
-    background: linear-gradient( 45deg, rgba(226, 149, 120, 1) 0%, rgba(237, 246, 249, 1) 50%, rgba(0, 109, 119, 1) 100% );
+    background: linear-gradient(
+      45deg,
+      rgba(226, 149, 120, 1) 0%,
+      rgba(237, 246, 249, 1) 50%,
+      rgba(0, 109, 119, 1) 100%
+    );
     padding: 5% 0% 10% 0%;
   }
   .containerCalUs {
@@ -359,8 +375,8 @@
     color: #e0e1dd;
     font-size: 20px;
   }
-  .textareaCalendarUs{
-        background-color: #1b263ba2;
+  .textareaCalendarUs {
+    background-color: #1b263ba2;
     color: #e0e1dd;
     text-shadow: 1px 1px 1px #000;
     font-size: 20px;

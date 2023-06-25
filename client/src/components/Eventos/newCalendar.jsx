@@ -169,7 +169,7 @@ const NewCal = () => {
                 Descripcion del Evento:
               </label>
               <textarea
-                className="textareaCalendarUs txt-hidden"
+                className="textareaCalendarUs"
                 type="textarea"
                 id="calendar"
                 name="calendar"
