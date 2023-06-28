@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import io from "socket.io-client";
 import axios from "axios";
-
-
+import "./chatComponent.css";
 
 const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
@@ -10,7 +9,7 @@ const ChatComponent = () => {
   const [inputMessage, setInputMessage] = useState("");
   const socket = io("http://localhost:5000");
   const token = localStorage.getItem("token");
-  
+
   useEffect(() => {
     const getUser = async () => {
       const response = await axios.get("http://localhost:5000/api/user", {
@@ -60,38 +59,43 @@ const ChatComponent = () => {
 
     setInputMessage("");
   };
-  const Message = ({ content, sender }) => {
+  const Message = ({ content}) => {
     return (
-      <div>
-        <p>
-        <h5>{User.name}: {content}</h5> 
-        </p>
-      </div>
+      <div className="message-user">
+        <h5>
+          {User.name} 
+        </h5>
+        <p className="separation-message"> - </p>
+        <p>{content}</p>
+</div>
     );
   };
   return (
-    <div>
-      <h1>Sala de Chat</h1>
+    <div className="message">
+      <h1 className="title-message">Sala de Chat</h1>
       <div className="message-list">
         {messages.map((message, index) => (
           <Message
             key={index}
             content={message.content}
             sender={message.sender}
+            messageId={message._id}
           />
         ))}
       </div>
-      <form onSubmit={sendMessage}>
+      <form onSubmit={sendMessage} className="write-form">
         <input
           type="text"
           value={inputMessage}
           onChange={(e) => setInputMessage(e.target.value)}
           placeholder="Escribe tu mensaje aquí..."
+          className="txt-message"
         />
-        <button type="submit">Enviar</button>
+        <button type="submit" className="btn-message">Enviar</button>
       </form>
     </div>
   );
 };
+
 
 export default ChatComponent;
