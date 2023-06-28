@@ -7,6 +7,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 require("dotenv").config();
 const Chat = require('./models/chat'); // Importa el modelo de chat
+const uuid = require("uuid");
 
 // Configuración de Socket.IO
 const http = require("http").createServer(app);
@@ -44,45 +45,43 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-  io.on("connection", (socket) => {
-    console.log("Estas conectado al chat");
-  
-    socket.on("chatMessage", (data) => {
-      // Guardar el mensaje en la base de datos utilizando el modelo de chat
-      const chatMessage = new Chat({
-        sender: data.sender,
-        content: data.content
+
+  // Lógica de manejo de eventos de socket.io
+io.on("connection", (socket) => {
+  console.log("Estás conectado al chat");
+
+  socket.on("chatMessage", (data) => {
+    const chatMessage = new Chat({
+      messageId: uuid.v4(),
+      sender: data.sender,
+      content: data.content
+    });
+
+    chatMessage.save()
+      .then(savedMessage => {
+        io.emit("chat-message", savedMessage);
+      })
+      .catch(error => {
+        console.log(error);
       });
-  
-      chatMessage.save()
-        .then(savedMessage => {
-          // Emitir el mensaje a todos los clientes conectados
-          io.emit("chat-message", savedMessage);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    });
-  
-    socket.on("get-chat-messages", () => {
-      // Obtener los mensajes de chat guardados y enviarlos al cliente
-      Chat.find()
-        .sort({ timestamp: 1 })
-        .lean()
-        .then(messages => {
-          // Emitir los mensajes guardados al cliente
-          socket.emit("chat-messages", messages);
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    });
-  
-    socket.on("disconnect", () => {
-      console.log("te fuistes del chat");
-    });
   });
-  
+
+  socket.on("get-chat-messages", () => {
+    Chat.find()
+      .sort({ timestamp: 1 })
+      .lean()
+      .then(messages => {
+        socket.emit("chat-messages", messages);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  });
+
+  socket.on("disconnect", () => {
+    console.log("Te fuiste del chat");
+  });
+});
 
 http.listen(5000, () => {
   console.log("Servidor en el puerto 5000");
