@@ -37,12 +37,12 @@ function TodasLasAlarmas() {
                   return (
                     <div key={Alarma._id} className="llaveAlm">
                       <div className="cajaDesAlm">
-                        <h2 className="fs-3">Descripcion: {Alarma.title}</h2>
-                        <h3 className="fs-5">Hora: {Alarma.alarm}</h3>
-                        <h3 className="fs-5">Fecha: {Alarma.fecha}</h3>
+                        <h2 className="fs-3 fs3">Descripcion: {Alarma.title}</h2>
+                        <h3 className="fs-5 fs5">Hora: {Alarma.alarm}</h3>
+                        <h3 className="fs-5 fs5">Fecha: {Alarma.fecha}</h3>
                         <Link
                           to={`/Alarma/${Alarma._id}`}
-                          className="enlacesAlAdm fs-4"
+                          className="enlacesAlAdm"
                         >
                           Acceder a Alarma
                         </Link>

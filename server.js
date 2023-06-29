@@ -45,8 +45,7 @@ mongoose
   .catch((error) => {
     console.log(error);
   });
-
-  // Lógica de manejo de eventos de socket.io
+// Lógica de manejo de eventos de socket.io
 io.on("connection", (socket) => {
   console.log("Estás conectado al chat");
 
@@ -54,7 +53,8 @@ io.on("connection", (socket) => {
     const chatMessage = new Chat({
       messageId: uuid.v4(),
       sender: data.sender,
-      content: data.content
+      content: data.content,
+      timestamp: Date.now()
     });
 
     chatMessage.save()

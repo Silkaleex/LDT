@@ -59,14 +59,19 @@ const ChatComponent = () => {
 
     setInputMessage("");
   };
-  const Message = ({ content}) => {
+  const Message = ({ content,timestamp}) => {
+    const messageTime = new Date(timestamp).toLocaleTimeString();
+
     return (
       <div className="message-user">
+        <div className="burbble-chat">
         <h5>
           {User.name} 
         </h5>
         <p className="separation-message"> - </p>
         <p>{content}</p>
+        <p className="message-time">enviado a las: {messageTime}</p>
+</div>
 </div>
     );
   };
@@ -80,6 +85,7 @@ const ChatComponent = () => {
             content={message.content}
             sender={message.sender}
             messageId={message._id}
+            timestamp={message.timestamp}
           />
         ))}
       </div>

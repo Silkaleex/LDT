@@ -104,17 +104,22 @@
   color: #d90429;
   letter-spacing: 2px;
   text-shadow: 1px 1px 1px #000;
+  padding: 0% 5%;
+}
+.listaComponent{
+  display:flex;
+  margin: 0% 40%;
 }
 .datosAdmin {
   margin: 0% 30%;
 }
 .containerAdm {
   display: flex;
-  padding: 2% 8%;
+  padding: 2% 0%;
 }
 .listaAd {
   display: flex;
-  margin: 0% 20%;
+  margin: 0% 30%;
 }
 .listasAdm {
   margin: 0% 90%;
@@ -143,20 +148,30 @@
     letter-spacing: 2px;
     text-shadow: 1px 1px 1px #000;
   }
+  .listaComponent{
+    display: flex;
+    margin: 0% 79% 0% 0%;
+    font-size: 15px;
+    flex-wrap: wrap;
+  }
   .datosAdmin {
     margin: 0% 0%;
   }
   .containerAdm {
     display: flex;
-    padding: 2% 0% 1% 1%;
+    padding: 2% 9% 1% 3%;
   }
   .listaAd {
   display: grid;
-    margin: 0% 30%;
+    margin: 0% 0%;
     justify-items: center;
   }
   .listasAdm {
     margin: 0% 0%;
+    list-style: none;
+  }
+  .listasAdm {
+    margin: 0% 20%;
     list-style: none;
   }
   .listaAdmin {

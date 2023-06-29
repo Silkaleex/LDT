@@ -19,15 +19,15 @@ const NavBar = () => {
               <h4 className="tUsuario">Bienvenid@ {name}</h4>
               <ul className="listaUser">
                 <li className="listasUs">
-                <Link className="listaUser datosAdm" to="/usuario">
+                  <Link className="listaUser datosAdm" to="/usuario">
                     Home
-                    </Link>
+                  </Link>
                 </li>
                 <li className="listaUs">
                   <Link className="listaUser datosUs" to="/DatosUsuario">
                     Perfil
                   </Link>
-                  </li>
+                </li>
                 <li className="listasUs">
                   <Link className="listaUser datosUs" to="/logout">
                     <BsBoxArrowInLeft />
@@ -48,13 +48,29 @@ const NavBar = () => {
           <div className="cajaAdm ">
             <div className="containerAdm">
               <h4 className="tAdmin">Bienvenid@ {name}</h4>
+              <div >
+                <ul className="listaComponent">
+                  <li className="listasAdm">
+                    <Link to="/tNotas" className="listaAdmin">Notas</Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link to="/tCalendar" className="listaAdmin">Eventos</Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link to="/tAlarma" className="listaAdmin">Alarmas</Link>
+                  </li>
+                  <li className="listasAdm">
+                    <Link to="/tPlanificador" className="listaAdmin">Planificador</Link>
+                  </li>
+                </ul>
+              </div>
               <div className="datosAdmin">
                 <ul className="listaAd">
-                <li className="listasAdm">
+                  <li className="listasAdm">
                     <Link className="listaAdmin" to="/usuario">
-                    Home
+                      Home
                     </Link>
-                    </li>
+                  </li>
                   <li className="listasAdm">
                     <Link className="listaAdmin" to="/DatosUsuario">
                       Perfil

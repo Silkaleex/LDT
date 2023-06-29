@@ -85,7 +85,7 @@
     text-shadow: 1px 1px 1px #000;
     transition: 1s all;
     width: 90%;
-    margin: 1% auto;
+    margin: 16% 5%;
   }
   
 .enlcEvnt{
@@ -99,6 +99,7 @@
   text-decoration: none;
   padding: 1% 2%;
 }
+
   .cajaCirculoCalAdm {
     margin: 2% 49%;
   }
@@ -244,7 +245,7 @@
   margin: 3% 0%;
 }
 
-.otrosEventos {
+.otrosEventosUs {
   background-color: #e4d9ff;
   color: #04052e;
   text-decoration: none;

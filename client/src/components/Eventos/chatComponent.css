@@ -40,12 +40,30 @@
 .message-user {
   padding: 3% 30%;
   text-align: center;
+
+}
+.burbble-chat{
+  background-color:#fff;
   display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 139%;
+  padding: 0% 24%;
+  margin: 0% -20%;
+  border-top-left-radius: 26%;
+  border-top-right-radius: 57%;
+  border-bottom-left-radius: 67%;
+  border-bottom-right-radius: 0%;
+}
+.bubble-chat-user{
+  background-color:#fff;
 }
 .separation-message {
   padding: 0% 5% 0% 2%;
 }
-
+.message-time{
+  
+}
 .message-list::-webkit-scrollbar {
   width: 12px;
 }
