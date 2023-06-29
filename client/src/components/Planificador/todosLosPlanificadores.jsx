@@ -33,62 +33,67 @@ const TodosLosPlanificadores = () => {
         <div className="fondoAdmPlaning">
           <div className="cajaAdmPlanning">
             <h1 className="tituloAdmPlanning">Tu Planing del mes</h1>
-            <div className="contenidoAdmPlanning">
-              {plan.map((pln) => {
-                return (
-                  <div key={pln._id} className="DescripcionAdmPlanning">
-                    <h2 className="letraPlnAdmin">Titulo: {pln.title}</h2>
-                    <h3 className="letraPlnAdmin">Descripcion: {pln.description}</h3>
-                    <h3 className="letraPlnAdmin">Fecha: {pln.fecha}</h3>
-                    <Link
-                      to={`/planificar/${pln._id}`}
-                      className="accesoAdmPlanning"
-                    >
-                      ver el Planning
-                    </Link>
+            {plan.map((pln) => {
+              return (
+                <div key={pln._id} className="DescripcionAdmPlanning">
+                  <div className="contenidoAdmPlanning">
+                    <div>
+                      <h2 className="letraPlnAdmin">Titulo: {pln.title}</h2>
+                      <h3 className="letraPlnAdmin">
+                        Descripcion: {pln.description}
+                      </h3>
+                      <h3 className="letraPlnAdmin">Fecha: {pln.fecha}</h3>
+                      <Link
+                        to={`/planificar/${pln._id}`}
+                        className="accesoAdmPlanning"
+                      >
+                        ver el Planning
+                      </Link>
+                    </div>
                   </div>
-                );
-              })}
+                </div>
+              );
+            })}
+            <div className="cajaEnlaceAdmPLanning">
+              <Link to="/newPLan" className="enlaceAdmPlanning">
+                <TbColorPicker />
+              </Link>
             </div>
-          </div>
-          <div className="cajaEnlaceAdmPLanning">
-            <Link to="/newPLan" className="enlaceAdmPlanning">
-              <TbColorPicker />
-            </Link>
           </div>
         </div>
       ) : (
         <>
           <Card className="fondoPlanUs">
-            <CardBody >
+            <CardBody>
               <CardTitle tag="h2" className="tituloPlnUs ">
                 Tus Planificadores
               </CardTitle>
-                {plan.map((pln) => {
-                  return (
-                    <CardBody key={pln._id} className="descripcionPlanUs">
-                      <CardText className="txtPlnUs">Titulo: {pln.title}</CardText>
-                      <CardText className="txtPlnUs">Descripción: {pln.description}</CardText>
-                      <CardText className="txtPlnUs">Fecha: {pln.fecha}</CardText>
-                      <Link
-                        to={`/planificar/${pln._id}`}
-                        className="accesoUsPlanning"
-                      >
-                        Ver el Planning
-                      </Link>
-                     
-                    </CardBody>
-                  );
-                })}
+              {plan.map((pln) => {
+                return (
+                  <CardBody key={pln._id} className="descripcionPlanUs">
+                    <CardText className="txtPlnUs">
+                      Titulo: {pln.title}
+                    </CardText>
+                    <CardText className="txtPlnUs">
+                      Descripción: {pln.description}
+                    </CardText>
+                    <CardText className="txtPlnUs">Fecha: {pln.fecha}</CardText>
+                    <Link
+                      to={`/planificar/${pln._id}`}
+                      className="accesoUsPlanning"
+                    >
+                      Ver el Planning
+                    </Link>
+                  </CardBody>
+                );
+              })}
             </CardBody>
             <Link to="/newPLan" className="addPlnUs">
-                        <CiPen />
-                      </Link>
+              <CiPen />
+            </Link>
           </Card>
-  
         </>
       )}
-     
     </>
   );
 };

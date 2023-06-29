@@ -167,7 +167,7 @@
   margin: 0% 48%;
 }
 .enlcEvntUs{
-  padding: 0% 39%;
+  padding: 0% 38%;
   margin: 3% 0%;
 }
 
@@ -175,7 +175,7 @@
   background-color: #e4d9ff;
   color: #04052e;
   text-decoration: none;
-  padding: 1% 2%;
+  padding: 1% 5%;
 }
 
 .circuloCalUs {
@@ -204,7 +204,7 @@
       rgba(0, 109, 119, 1) 100%
     );
 
-    padding: 7% 0% 7% 0%;
+    padding: 16% 0%;
   }
 
   .cajaUsuCalen {
@@ -226,7 +226,7 @@
     text-align: center;
     background-color: #1b263ba0;
     width: 85%;
-    margin: 2% 8%;
+    margin: 7% 8%;
   }
   .accederCalUs {
     text-decoration: none;
@@ -240,7 +240,7 @@
     margin: 0% 48%;
   }
     
-.enlcEvnt{
+.enlcEvntUs{
   padding: 0% 15%;
   margin: 3% 0%;
 }

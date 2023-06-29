@@ -32,36 +32,42 @@ const TodasLasNotas = () => {
         <div className="fondoNotasAdm">
           <div className="contenedorNotasAdm">
             <h1 className="tituloNotaAdm">Tus Notas</h1>
-            <div className="contenidoNotaAdm">
-              {notes.map((Notas) => {
-                return (
-                  <div key={Notas._id} className="bordeCajaEnlcAdm">
-                    <h2>Titulo: {Notas.title}</h2>
-                    <h3>Fecha: {Notas.fecha}</h3>
-                    <h3>Descripción: {Notas.tareas}</h3>
-                    <Link to={`/Notas/${Notas._id}`} className="enlacesNotaAdm">
-                      {" "}
-                      Ver Nota
-                    </Link>
+            {notes.map((Notas) => {
+              return (
+                <div key={Notas._id} className="bordeCajaEnlcAdm">
+                  <div className="contenidoNotaAdm">
+                    <div>
+                      <h2>Titulo: {Notas.title}</h2>
+                      <h3>Fecha: {Notas.fecha}</h3>
+                      <h3>Descripción: {Notas.tareas}</h3>
+                      <Link
+                        to={`/Notas/${Notas._id}`}
+                        className="enlacesNotaAdm"
+                      >
+                        {" "}
+                        Ver Nota
+                      </Link>
+                    </div>
                   </div>
-                );
-              })}
+                </div>
+              );
+            })}
+            <div className="cajaCirculoNotAdm">
+              <Link to="/newNot" className="circuloNotaAdm">
+                <BsPencilSquare />
+              </Link>
             </div>
-          </div>
-          <div className="cajaCirculoNotAdm">
-            <Link to="/newNot" className="circuloNotaAdm">
-              <BsPencilSquare />
-            </Link>
           </div>
         </div>
       ) : (
         <div className="card fondoNotasUs">
           <div className="card-body contenedorNotasUs">
             <h1 className="card-title tituloNotaUs">Tus Notas</h1>
-            <div className="contenidoNotaUs card-text">
-              {notes.map((Notas) => {
-                return (
-                  <div key={Notas._id}>
+            {notes.map((Notas) => {
+              return (
+                <div key={Notas._id}>
+                  <div className="contenidoNotaUs card-text">
+                    <div>
                     <h2>{Notas.title}</h2>
                     <h3>{Notas.fecha}</h3>
                     <h3>{Notas.tareas}</h3>
@@ -69,9 +75,10 @@ const TodasLasNotas = () => {
                       Ver notas
                     </Link>
                   </div>
-                );
-              })}
-            </div>
+                  </div>
+                </div>
+              );
+            })}
           </div>
           <div className="cajaCirculoNotUs">
             <Link to="/newNot" className="circuloNotaUs">

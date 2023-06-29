@@ -17,6 +17,22 @@ const NavBar = () => {
           <div className="cajaGenUs">
             <div className="cajaUser">
               <h4 className="tUsuario">Bienvenid@ {name}</h4>
+              <div >
+                <ul className="containerSections">
+                  <li className="listasDeUsuario">
+                    <Link to="/tNotas" className="enlaceSecciones">Notas</Link>
+                  </li>
+                  <li className="listasDeUsuario">
+                    <Link to="/tCalendar" className="enlaceSecciones">Eventos</Link>
+                  </li>
+                  <li className="listasDeUsuario">
+                    <Link to="/tAlarma" className="enlaceSecciones">Alarmas</Link>
+                  </li>
+                  <li className="listasDeUsuario">
+                    <Link to="/tPlanificador" className="enlaceSecciones">Planificador</Link>
+                  </li>
+                </ul>
+              </div>
               <ul className="listaUser">
                 <li className="listasUs">
                   <Link className="listaUser datosAdm" to="/usuario">
