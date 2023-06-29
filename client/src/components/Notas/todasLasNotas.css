@@ -37,7 +37,7 @@
   color: #d90429;
   text-shadow: 1px 1px 1px #000;
   transition: 1s all;
-  background-color: #f5f3f4;
+  background-color: #000;
   padding: 0% 4%;
 }
 .cajaCirculoNotAdm {
@@ -78,7 +78,7 @@
     background-color: #d98484a8;
     color: #d90429;
     text-shadow: 1px 1px 1px #000;
-    padding: 2% 2%;
+    padding: 6% 8%;
   }
   .bordeCajaEnlcAdm {
     margin: 7% 7%;
@@ -89,7 +89,7 @@
     color: #d90429;
     text-shadow: 1px 1px 1px #000;
     transition: 1s all;
-    background-color: #f5f3f4;
+    background-color: #000;
     padding: 0% 4%;
   }
   .cajaCirculoNotAdm {

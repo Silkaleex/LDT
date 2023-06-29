@@ -80,16 +80,18 @@
     text-shadow: 1px 1px 1px#000;
   }
   .contenidoAdmPlanning {
-    width: 90%;
+    width: 100%;
     margin: 0% auto;
     background-color: #d98484a8;
-    text-align: left;
+    text-align: left;  
+    padding: 8% 6%;
+
   }
   .DescripcionAdmPlanning {
     text-decoration: none;
     color: #d90429;
     text-shadow: 1px 1px 1px#000;
-    padding: 5%;
+    padding: 5% 3%;
   }
   .letraPlnAdmin {
     font-size: 25px;
@@ -97,7 +99,7 @@
   .accesoAdmPlanning {
     text-decoration: none;
     color: #d90429;
-    background-color: #f5f3f4;
+    background-color: #000;
     text-shadow: 1px 1px 1px#000;
     font-size: 20px;
     transition: 1s all;
