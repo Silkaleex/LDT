@@ -11,6 +11,13 @@
   margin: 1% 37%;
   text-shadow:1px 1px 1px #ffd60a;
 }
+.warning-message{
+  margin: 1% 25%;
+  padding: 1% 1%;
+  border-radius: 15px;
+  background-color: #ff0000;
+  text-shadow: 1px 1px 1px #635252;
+}
 .message-list {
   height: 300px;
   overflow-y: scroll;
@@ -86,6 +93,14 @@
   .title-message {
     margin: 1% 22%;
     text-shadow:1px 1px 1px #ffd60a;
+  }
+  .warning-message{
+    margin: 3% -12%;
+    padding: 1% 1%;
+    border-radius: 15px;
+    background-color: #ff0000;
+    text-shadow: 1px 1px 1px #635252;
+    font-size: 13px;
   }
   .message-list {
     height: 300px;

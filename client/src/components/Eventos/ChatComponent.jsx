@@ -7,6 +7,7 @@ const ChatComponent = () => {
   const [messages, setMessages] = useState([]);
   const [User, setUser] = useState({});
   const [inputMessage, setInputMessage] = useState("");
+  const [warningMessage, setWarningMessage] = useState(""); // Nuevo estado para el mensaje de advertencia
   const socket = io("http://localhost:5000");
   const token = localStorage.getItem("token");
 
@@ -22,6 +23,7 @@ const ChatComponent = () => {
     };
     getUser();
   }, []);
+
   useEffect(() => {
     // Solicitar los mensajes guardados al cargar la página
     socket.emit("get-chat-messages");
@@ -35,6 +37,14 @@ const ChatComponent = () => {
     socket.on("disconnect", () => {
       console.log("Usuario desconectado");
     });
+
+    // Lógica para recibir advertencias de violación del servidor
+    socket.on("violationWarning", (message) => {
+      setWarningMessage(message);
+      setTimeout(() => {
+        setWarningMessage("");
+      }, 2000);
+    },[]);
 
     // Limpiar la conexión al desmontar el componente
     return () => {
@@ -59,31 +69,32 @@ const ChatComponent = () => {
 
     setInputMessage("");
   };
-  const Message = ({ content,timestamp}) => {
+
+  const Message = ({ content, timestamp }) => {
     const messageTime = new Date(timestamp).toLocaleTimeString();
 
     return (
       <div className="message-user">
         <div className="burbble-chat">
-        <h5>
-          {User.name} 
-        </h5>
-        <p className="separation-message"> - </p>
-        <p>{content}</p>
-        <p className="message-time">enviado a las: {messageTime}</p>
-</div>
-</div>
+          <h5>{User.name}</h5>
+          <p className="separation-message"> - </p>
+          <p>{content}</p>
+          <p className="message-time">enviado a las: {messageTime}</p>
+        </div>
+      </div>
     );
   };
+
   return (
     <div className="message">
       <h1 className="title-message">Sala de Chat</h1>
+      {warningMessage && <div className="warning-message">{warningMessage}</div>} 
       <div className="message-list">
         {messages.map((message, index) => (
           <Message
             key={index}
             content={message.content}
-            sender={message.sender}
+            sender={User.name}
             messageId={message._id}
             timestamp={message.timestamp}
           />
@@ -97,11 +108,12 @@ const ChatComponent = () => {
           placeholder="Escribe tu mensaje aquí..."
           className="txt-message"
         />
-        <button type="submit" className="btn-message">Enviar</button>
+        <button type="submit" className="btn-message">
+          Enviar
+        </button>
       </form>
     </div>
   );
 };
-
 
 export default ChatComponent;
