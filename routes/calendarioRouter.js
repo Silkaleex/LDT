@@ -31,7 +31,9 @@ calendarRouter.post("/calendars", auth, async (req, res) => {
     });
 
     await newCalendar.save();
-
+    if (tipo === 'privado') {
+      newCalendar.solicitud = true;
+    }
     return res.status(200).send({
       success: true,
       message: "Tus datos se han guardado correctamente",
@@ -120,17 +122,52 @@ calendarRouter.delete("/calendars/:id", auth, async (req, res) => {
 });
 
 
-calendarRouter.get("/calendars", async (req, res) => {
+calendarRouter.get("/calendars", auth, async (req, res) => {
   try {
-    const publicCalendars = await calendario.find({ tipo: 'publico' }).populate({
+    const calendars = await calendario.find().populate({
       path: "user",
       select: "name",
     });
 
     return res.status(200).send({
       success: true,
-      message: "Eventos públicos encontrados correctamente",
-      calendars: publicCalendars,
+      message: "Eventos encontrados correctamente",
+      calendars,
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+
+calendarRouter.post("/calendars/:id/request", auth, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const userId = req.user.id;
+
+    const event = await calendario.findById(id);
+    if (!event) {
+      return res.status(400).send({
+        success: false,
+        message: "Evento no encontrado",
+      });
+    }
+
+    // Verificar si el evento es privado y si el usuario que realiza la solicitud no es el propietario del evento
+    if (event.tipo === 'privado' && event.user != userId) {
+      // Actualizar el campo "solicitud" en el evento a "true"
+      event.solicitud = true;
+      await event.save();
+
+      // Enviar un mensaje al propietario del evento para notificar la solicitud
+      // ... Aquí puedes agregar la lógica para enviar el mensaje
+    }
+
+    return res.status(200).send({
+      success: true,
+      message: "Solicitud enviada correctamente",
     });
   } catch (error) {
     return res.status(500).send({
