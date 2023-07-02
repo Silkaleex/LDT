@@ -42,7 +42,7 @@ const userSchema = new mongoose.Schema(
         ref: "Planificador",
       },
     ],
-    Chat: [
+    chat: [
       {
         type: mongoose.Types.ObjectId,
         ref: "Chat",
@@ -55,8 +55,8 @@ const userSchema = new mongoose.Schema(
     role: {
       type: Number,
       default: 0,
-      //0:Users
-      //1:Administrators
+      //0: Users
+      //1: Administrators
     },
   },
   { timestamp: true }

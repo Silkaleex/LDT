@@ -116,11 +116,13 @@ UserRouter.post("/login", async (req, res) => {
      * a lafuncion que me crea el token, y a esta funcion me pase como argumento al id del usuario
      */
     const accessToken = createToken({ id: User._id });
+    const userName = User.name; // Obtener el nombre del usuario
 
     return res.status(200).send({
       success: true,
       message: "Login Correcto",
       User,
+      userName, 
       accessToken,
       /**
        * accessToken es importantisimo que el token devuelva
