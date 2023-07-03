@@ -19,34 +19,34 @@
   text-shadow: 1px 1px 1px #2b2d42;
 }
 /* diseño para filter */
-.inputFilter{
+.inputFilter {
   width: 68%;
 }
-.btnFiltro{
-  color:#fcab10;
-  background-color:rgba(71, 83, 248, 0.72);
-  text-shadow:1px 1px 1px #000;
-  border:none;
-  margin:3% 5%;
+.btnFiltro {
+  color: #fcab10;
+  background-color: rgba(71, 83, 248, 0.72);
+  text-shadow: 1px 1px 1px #000;
+  border: none;
+  margin: 3% 5%;
 }
 /* diseño para botones de ordenamiento */
-.sort{
+.sort {
   margin: 0% 10%;
 }
-.btnOrden1{
+.btnOrden1 {
   margin: 0% 5%;
-    color:#fcab10;
-  background-color:rgba(71, 83, 248, 0.72);
-  text-shadow:1px 1px 1px #000;
-  border:none;
+  color: #fcab10;
+  background-color: rgba(71, 83, 248, 0.72);
+  text-shadow: 1px 1px 1px #000;
+  border: none;
 }
-.btnOrden2{
-  color:#fcab10;
-  background-color:rgba(71, 83, 248, 0.72);
-  text-shadow:1px 1px 1px #000;
-  border:none;
+.btnOrden2 {
+  color: #fcab10;
+  background-color: rgba(71, 83, 248, 0.72);
+  text-shadow: 1px 1px 1px #000;
+  border: none;
 }
-/*  */
+/*diseño de los eventos creados  */
 .cajaContenidoPublico {
   margin: 5% 0%;
   padding: 3% 6%;
@@ -57,6 +57,37 @@
   border-radius: 15%;
   overflow-wrap: break-word;
 }
+/* diseño del filtrado de eventos por paginas */
+.pagination {
+  margin: 0% 19%;
+}
+.pages {
+  background-color: #028090;
+  padding: 2% 3%;
+  margin: 0% 3%;
+  color: #fcab10;
+  text-shadow: 1px 1px 1px #2b2d42;
+  border-radius:5px;
+}
+.previous-btn {
+  background-color: #0466c8;
+  color: #fcab10;
+  border: none;
+  text-shadow: 1px 1px 1px #2b2d42;
+  border-top-left-radius: 50%;
+  border-bottom-left-radius: 50%;
+  padding: 0% 3%;
+}
+.next-btn {
+  background-color: #0466c8;
+  color: #fcab10;
+  border: none;
+  text-shadow: 1px 1px 1px #2b2d42;
+  border-top-right-radius: 50%;
+  border-bottom-right-radius: 50%;
+  padding: 0% 3%;
+}
+
 @media screen and (max-width: 380px) {
   .fondoPublico {
     background: linear-gradient(
@@ -77,7 +108,7 @@
     letter-spacing: 3px;
     color: #fcab10;
     text-shadow: 1px 1px 1px #2b2d42;
-    width:116%;
+    width: 116%;
   }
   .cajaContenidoPublico {
     margin: 5% -48%;
