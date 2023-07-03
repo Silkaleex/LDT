@@ -37,7 +37,7 @@ const TodosLosEventos = () => {
                   <div className="card cartaEventoCal">
                     <div className="card-body cartaCalAdm">
                       <h2 className="fs-1">Titulo: {evento.title}</h2>
-                      <h3 className="fs-4">Fecha: {evento.calendar}</h3>
+                      <h3 className="fs-4">Descripcion: {evento.calendar}</h3>
                       <h3 className="fs-4">Fecha: {evento.fecha}</h3>
                       <h3 className="fs-4">
                         Evento: {evento.tipo === "publico" ? "Público" : "Privado"}

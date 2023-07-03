@@ -18,6 +18,35 @@
   color: #fcab10;
   text-shadow: 1px 1px 1px #2b2d42;
 }
+/* diseño para filter */
+.inputFilter{
+  width: 68%;
+}
+.btnFiltro{
+  color:#fcab10;
+  background-color:rgba(71, 83, 248, 0.72);
+  text-shadow:1px 1px 1px #000;
+  border:none;
+  margin:3% 5%;
+}
+/* diseño para botones de ordenamiento */
+.sort{
+  margin: 0% 10%;
+}
+.btnOrden1{
+  margin: 0% 5%;
+    color:#fcab10;
+  background-color:rgba(71, 83, 248, 0.72);
+  text-shadow:1px 1px 1px #000;
+  border:none;
+}
+.btnOrden2{
+  color:#fcab10;
+  background-color:rgba(71, 83, 248, 0.72);
+  text-shadow:1px 1px 1px #000;
+  border:none;
+}
+/*  */
 .cajaContenidoPublico {
   margin: 5% 0%;
   padding: 3% 6%;
