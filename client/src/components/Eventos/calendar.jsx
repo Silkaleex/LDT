@@ -65,6 +65,7 @@ function Eventos() {
               <h5 className="card-text">Evento: {event.title}</h5>
               <h5 className="card-text">Descripción: {event.calendar}</h5>
               <h5 className="card-text">Fecha: {event.fecha}</h5>
+              <h5 className="card-text">Ubicacion: {event.ubicacion}</h5>
               <div className="cajaBtnCalAdm">
                 <Link to="/usuario" className="botonEvAdm card-link">
                   Volver

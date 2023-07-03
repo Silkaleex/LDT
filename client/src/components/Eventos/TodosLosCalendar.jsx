@@ -39,6 +39,7 @@ const TodosLosEventos = () => {
                       <h2 className="fs-1">Titulo: {evento.title}</h2>
                       <h3 className="fs-4">Descripcion: {evento.calendar}</h3>
                       <h3 className="fs-4">Fecha: {evento.fecha}</h3>
+                      <h3 className="fs-4">Ubicación: {evento.ubicacion}</h3>
                       <h3 className="fs-4">
                         Evento: {evento.tipo === "publico" ? "Público" : "Privado"}
                       </h3>
@@ -75,6 +76,7 @@ const TodosLosEventos = () => {
                       <h2 className="fs-1">{evento.title}</h2>
                       <h3 className="fs-4">{evento.calendar}</h3>
                       <h3 className="fs-4">{evento.fecha}</h3>
+                      <h3 className="fs-4">{evento.ubicacion}</h3>
                       <Link
                         to={`/calendar/${evento._id}`}
                         className="card-link accederCalUs"

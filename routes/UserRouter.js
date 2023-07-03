@@ -316,7 +316,7 @@ UserRouter.get("/toAlarms", auth, async (req, res) => {
 
 UserRouter.get("/toCalen", auth, async (req, res) => {
   try {
-    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar fecha tipo'});
+    let eventos = await user.findById(req.user.id).populate({path:'calendar', select:'title calendar fecha tipo ubicacion'});
     if (!eventos) {
       return res.status(400).send({
         success: false,

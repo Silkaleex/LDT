@@ -60,7 +60,7 @@ const EventosPublicos = () => {
               placeholder="Titulo de evento que desees buscar"
               value={filter}
               onChange={(e) => setFilter(e.target.value)}
-            />
+            />       
             <button className="btnFiltro" onClick={() => setFilter("")}>
               Limpiar filtro
             </button>
@@ -74,6 +74,10 @@ const EventosPublicos = () => {
               Ordenar por fecha{" "}
               {sortBy === "fecha" && sortDirection === "asc" ? "↑" : "↓"}
             </button>
+            <button className="btnOrden3" onClick={() => handleSort("tipo")}>
+    Ordenar por tipo de evento{" "}
+    {sortBy === "tipo" && sortDirection === "asc" ? "↑" : "↓"}
+  </button>
           </div>
           {/* componente de todos los eventos a traves de map y filtrado por titulo y fecha */}
           {filteredEvents

@@ -16,6 +16,9 @@ const calendarSchema = new mongoose.Schema({
     type: String,
     required: true,
     enum: ['publico', 'privado'],
+  },  ubicacion: {
+    type: String,
+    required: true,
   },
   user: {
     type: mongoose.Types.ObjectId,

@@ -1,16 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./newCalendar.css"
-import { toast,ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import "./newCalendar.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const NewCal = () => {
   const [calend, setCalend] = useState({
     title: "",
     calendar: "",
     fecha: "",
-    tipo: "publico", // Valor predeterminado para el tipo de evento
+    tipo: "publico",
+    ubicacion: "",
   });
 
   const token = localStorage.getItem("token");
@@ -60,6 +61,7 @@ const NewCal = () => {
         calendar: "",
         fecha: "",
         tipo: "publico",
+        ubicacion: "",
       });
       setTimeout(() => {
         window.location.href = "/tCalendar";
@@ -68,9 +70,9 @@ const NewCal = () => {
       console.log(error.response);
     }
   };
-  return ( 
+  return (
     <div>
-         <ToastContainer />
+      <ToastContainer />
       {role == 1 ? (
         <div className="cajaAdmCal">
           <form onSubmit={calendarSubmit}>
@@ -87,8 +89,8 @@ const NewCal = () => {
                 onChange={onChangeInput}
                 value={calend ? calend.title : ""}
               />
-               <label className="labelCalAdm" htmlFor="fecha">
-               Fecha del evento:
+              <label className="labelCalAdm" htmlFor="fecha">
+                Fecha del evento:
               </label>
               <input
                 className="inputCalAdm"
@@ -104,13 +106,25 @@ const NewCal = () => {
                 Descripcion del Evento:
               </label>
               <textarea
-                className="inputCalAdm txt-hidden"
+                className="inputCalAdm txt-hidden DescEvt"
                 type="textarea"
                 id="calendar"
                 name="calendar"
                 placeholder="Descripcion del evento"
-                onChange={onChangeInput}             
+                onChange={onChangeInput}
                 value={calend ? calend.calendar : ""}
+              />
+              <label className="labelCalAdm" htmlFor="ubicacion">
+                Ubicacion del evento
+              </label>
+              <input
+                className="inputCalAdm txt-hidden inputUbc"
+                type="text"
+                name="ubicacion"
+                id="ubicacion"
+                placeholder="Ubicación del evento ej: Oviedo"
+                value={calend.ubicacion}
+                onChange={onChangeInput}
               />
               <label className="labelCalAdm" htmlFor="tipo">
                 Tipo de Evento:
@@ -127,7 +141,7 @@ const NewCal = () => {
               </select>
 
               <div className="containerBotonesAdm">
-                <button  className="botonAddAlmAdm" type="submit">
+                <button className="botonAddAlmAdm" type="submit">
                   Crear Evento
                 </button>
                 <Link to="/usuario" className="botonVolCalAdm">
@@ -153,8 +167,8 @@ const NewCal = () => {
                 onChange={onChangeInput}
                 value={calend ? calend.title : ""}
               />
-                  <label className="labelCalUs" htmlFor="fecha">
-                  Fecha del evento:
+              <label className="labelCalUs" htmlFor="fecha">
+                Fecha del evento:
               </label>
               <input
                 className="inputCalUs"
@@ -179,6 +193,32 @@ const NewCal = () => {
                 onChange={onChangeInput}
                 value={calend ? calend.calendar : ""}
               />
+              <label className="labelCalUs" htmlFor="ubicacion">
+                Ubicacion del evento
+              </label>
+              <input
+                className="inputCalUs txt-hidden inputUbcUs"
+                type="text"
+                name="ubicacion"
+                id="ubicacion"
+                placeholder="Ubicación del evento ej: Oviedo"
+                value={calend.ubicacion}
+                onChange={onChangeInput}
+              />
+              <label className="labelCalUs" htmlFor="tipo">
+                Tipo de Evento:
+              </label>
+              <select
+                className="inputCalUs"
+                id="tipo"
+                name="tipo"
+                onChange={onChangeInput}
+                value={calend.tipo}
+              >
+                <option value="publico">Público</option>
+                <option value="privado">Privado</option>
+              </select>
+
               <div className="containerBotonesUs">
                 <button to="/usuario" className="botonAddCalUs" type="submit">
                   Crear Evento

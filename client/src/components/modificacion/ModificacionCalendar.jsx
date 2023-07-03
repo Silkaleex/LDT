@@ -9,8 +9,10 @@ const ModifcacionEvt = () => {
   const { eventoId } = useParams();
   const Navigate = useNavigate();
   const [evt, setEvt] = useState({
-    calendar:"",
-    fecha:""
+    calendar: "",
+    fecha: "",
+    tipo: "",
+    ubicacion: "",
   });
 
   const onChangeInput = (e) => {
@@ -77,7 +79,30 @@ const ModifcacionEvt = () => {
                 value={evt.fecha}
                 onChange={onChangeInput}
               />
-              
+              <label className="labelCalAdm" htmlFor="ubicacion">
+                Ubicacion del evento
+              </label>
+              <input
+                className="tareasAdm inputAdm"
+                type="textarea"
+                name="ubicacion"
+                id="ubicacion"
+                value={evt.ubicacion}
+                onChange={onChangeInput}
+              />
+              <label className="labelCalAdm" htmlFor="tipo">
+                Tipo de Evento:
+              </label>
+              <select
+                className="inputCalAdm"
+                id="tipo"
+                name="tipo"
+                onChange={onChangeInput}
+                value={evt.tipo}
+              >
+                <option value="publico">Público</option>
+                <option value="privado">Privado</option>
+              </select>
               <div className="containerBotonesAdm">
                 <button className="botonModCalAdm">Modificar Evento</button>
                 <Link to="/usuario" className="botonVolCalAdm">
@@ -91,11 +116,11 @@ const ModifcacionEvt = () => {
         <div className="cajaUsCal">
           <form onSubmit={modificacionSubmit}>
             <div className="containerCalUs">
-               <label className="labelCalUs" htmlFor="calendar">
+              <label className="labelCalUs" htmlFor="calendar">
                 Evento:
               </label>
               <textarea
-                className="tareasUs inputUs"
+                className="tareasUs inputUs Ev-Ub"
                 placeholder="Descripcion de tu Evento"
                 type="textarea"
                 name="calendar"
@@ -114,7 +139,31 @@ const ModifcacionEvt = () => {
                 id="fecha"
                 value={evt.fecha}
                 onChange={onChangeInput}
+              />{" "}
+              <label className="labelCalUs" htmlFor="ubicacion">
+                Ubicacion del evento
+              </label>
+              <input
+                className="tareasUs inputUs Ev-Ub"
+                type="textarea"
+                name="ubicacion"
+                id="ubicacion"
+                value={evt.ubicacion}
+                onChange={onChangeInput}
               />
+              <label className="labelCalUs" htmlFor="tipo">
+                Tipo de Evento:
+              </label>
+              <select
+                className="inputCalUs"
+                id="tipo"
+                name="tipo"
+                onChange={onChangeInput}
+                value={evt.tipo}
+              >
+                <option value="publico">Público</option>
+                <option value="privado">Privado</option>
+              </select>
               <div className="containerBotonesUs">
                 <button className="botonModCalUs">Modificar Evento</button>
                 <Link to="/usuario" className="botonVolCalUs">

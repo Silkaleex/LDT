@@ -6,10 +6,17 @@ const auth = require("../middeleware/auth");
 
 calendarRouter.post("/calendars", auth, async (req, res) => {
   try {
-    const { title, calendar, fecha, tipo } = req.body;
+    const { title, calendar, fecha, tipo, ubicacion } = req.body;
     let userId = await User.findById(req.user.id);
 
-    if (!title || !calendar || !fecha || !tipo ||title.length < 3) {
+    if (
+      !title ||
+      !calendar ||
+      !fecha ||
+      !tipo ||
+      !ubicacion ||
+      title.length < 3
+    ) {
       return res.status(400).send({
         success: false,
         message: "No completaste todos los pasos",
@@ -21,6 +28,7 @@ calendarRouter.post("/calendars", auth, async (req, res) => {
       fecha,
       calendar,
       tipo,
+      ubicacion,
       user: userId,
     });
 
@@ -31,7 +39,7 @@ calendarRouter.post("/calendars", auth, async (req, res) => {
     });
 
     await newCalendar.save();
-    if (tipo === 'privado') {
+    if (tipo === "privado") {
       newCalendar.solicitud = true;
     }
     return res.status(200).send({
@@ -74,15 +82,17 @@ calendarRouter.get("/calendars/:id", auth, async (req, res) => {
 calendarRouter.put("/calendars/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const { title, calendar, fecha } = req.body;
+    const { title, calendar, fecha, ubicacion, tipo } = req.body;
 
     await calendario.findByIdAndUpdate(id, {
       title,
       calendar,
       fecha,
+      ubicacion,
+      tipo,
     });
 
-    if (!title || !fecha) {
+    if (!title || !fecha || !tipo || !ubicacion) {
       return res.status(400).send({
         succcess: false,
         message: "No completastes todos los campos",
@@ -121,7 +131,6 @@ calendarRouter.delete("/calendars/:id", auth, async (req, res) => {
   }
 });
 
-
 calendarRouter.get("/calendars", auth, async (req, res) => {
   try {
     const calendars = await calendario.find().populate({
@@ -141,6 +150,5 @@ calendarRouter.get("/calendars", auth, async (req, res) => {
     });
   }
 });
-
 
 module.exports = calendarRouter;

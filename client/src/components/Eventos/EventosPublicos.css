@@ -31,16 +31,30 @@
 }
 /* diseño para botones de ordenamiento */
 .sort {
-  margin: 0% 10%;
+  margin: 0% 0%;
+  display: flex;
 }
 .btnOrden1 {
-  margin: 0% 5%;
   color: #fcab10;
   background-color: rgba(71, 83, 248, 0.72);
   text-shadow: 1px 1px 1px #000;
   border: none;
 }
 .btnOrden2 {
+  color: #fcab10;
+  background-color: rgba(71, 83, 248, 0.72);
+  text-shadow: 1px 1px 1px #000;
+  border: none;
+  margin:0% 3%;
+}
+.btnOrden3 {
+  color: #fcab10;
+  background-color: rgba(71, 83, 248, 0.72);
+  text-shadow: 1px 1px 1px #000;
+  border: none;
+  margin:0% 3%;
+}
+.btnOrden4 {
   color: #fcab10;
   background-color: rgba(71, 83, 248, 0.72);
   text-shadow: 1px 1px 1px #000;

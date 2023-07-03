@@ -27,6 +27,17 @@
   font-size: 20px;
   text-shadow: 1px 1px 1px #000;
 }
+
+.inputUbc{
+  width:25%;
+  padding:0% 0% 3% 0%;
+  word-break: break-word;
+}
+.DescEvt{
+  width:25%;
+  padding:0% 0% 3% 0%;
+  word-break: break-word;
+}
 .inputCalAdm {
   background-color: #5e548ea9;
   border-bottom: 2px solid #fafaff;
@@ -36,14 +47,15 @@
   color: #fafaff;
   text-shadow: 1px 1px 1px #000;
   transition: 1s all;
+  
 }
-
 .inputCalAdm:focus {
   background-color: #5e548ea9;
   border: 2px groove #fafaff;
   color: #fafaff;
   text-shadow: 1px 1px 1px #000;
   transition: 1s all;
+ 
 }
 .inputCalAdm:hover {
   background-color: #5e548ea9;
@@ -138,6 +150,16 @@
     color: #fafaff;
     font-size: 20px;
     text-shadow: 1px 1px 1px #000;
+  }
+  .inputUbc{
+    width:25%;
+    padding:0% 0% 3% 0%;
+    word-break: break-word;
+  }
+  .DescEvt{
+    width:25%;
+    padding:0% 0% 3% 0%;
+    word-break: break-word;
   }
   .inputCalAdm {
     background-color: #5e548ea9;
@@ -262,6 +284,11 @@
   font-size: 20px;
   width: 50%;
 }
+.inputUbcUs{
+  width:25%;
+  padding:0% 0% 3% 0%;
+  word-break: break-word;
+}
 .inputCalUs {
   background-color: #1b263ba2;
   color: #e0e1dd;
@@ -359,7 +386,7 @@
       rgba(237, 246, 249, 1) 50%,
       rgba(0, 109, 119, 1) 100%
     );
-    padding: 5% 0% 10% 0%;
+    padding: 9% 0% 27% 0%;
   }
   .containerCalUs {
     display: flex;
@@ -381,7 +408,11 @@
     text-shadow: 1px 1px 1px #000;
     font-size: 20px;
     width: 80%;
-    padding: 0% 0% 8.9% 0%;
+  }
+  .inputUbcUs{
+    width:60%;
+    padding:0% 0% 3% 0%;
+    word-break: break-word;
   }
   .inputCalUs {
     background-color: #1b263ba2;
