@@ -142,41 +142,5 @@ calendarRouter.get("/calendars", auth, async (req, res) => {
   }
 });
 
-calendarRouter.post("/calendars/:id/request", auth, async (req, res) => {
-  try {
-    const { id } = req.params;
-    const userId = req.user.id;
-
-    const event = await calendario.findById(id);
-    if (!event) {
-      return res.status(400).send({
-        success: false,
-        message: "Evento no encontrado",
-      });
-    }
-
-    // Verificar si el evento es privado y si el usuario que realiza la solicitud no es el propietario del evento
-    if (event.tipo === 'privado' && event.user != userId) {
-      // Actualizar el campo "solicitud" en el evento a "true"
-      event.solicitud = true;
-      await event.save();
-
-      // Enviar un mensaje al propietario del evento para notificar la solicitud
-      // ... Aquí puedes agregar la lógica para enviar el mensaje
-    }
-
-    return res.status(200).send({
-      success: true,
-      message: "Solicitud enviada correctamente",
-    });
-  } catch (error) {
-    return res.status(500).send({
-      success: false,
-      message: error.message,
-    });
-  }
-});
-
-
 
 module.exports = calendarRouter;

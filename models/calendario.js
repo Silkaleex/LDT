@@ -17,10 +17,6 @@ const calendarSchema = new mongoose.Schema({
     required: true,
     enum: ['publico', 'privado'],
   },
-  solicitud: {
-    type: Boolean,
-    default: false,
-  },
   user: {
     type: mongoose.Types.ObjectId,
     ref: "User",

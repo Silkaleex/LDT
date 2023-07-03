@@ -22,31 +22,6 @@ const EventosPublicos = () => {
     }
   };
 
-  const sendAccessRequest = async (eventId) => {
-    try {
-      const message = prompt("Escribe tu mensaje de solicitud");
-      if (!message) {
-        return;
-      }
-
-      await axios.post(
-        `http://localhost:5000/api/calendars/${eventId}/request`,
-        { message },
-        {
-          headers: {
-            Authorization: token,
-          },
-        }
-      );
-      getEvents(); // Actualizar la lista de eventos después de enviar la solicitud
-
-      // Mostrar mensaje de éxito o realizar otras acciones necesarias
-    } catch (error) {
-      console.log(error);
-      // Mostrar mensaje de error o realizar otras acciones necesarias
-    }
-  };
-
   useEffect(() => {
     getEvents();
   }, []);
@@ -64,25 +39,10 @@ const EventosPublicos = () => {
                   <h3 className="fs-3">Descripción: {evento.calendar}</h3>
                   <h3 className="fs-3">Fecha: {evento.fecha}</h3>
                   <h3 className="fs-3">Evento: {evento.tipo}</h3>
-                  {evento.tipo === "privado" && evento.solicitud ? (
-                    <div>
-                      <p>
-                        Solicitud de acceso enviada. Esperando aprobación del
-                        propietario.
-                      </p>
-                    </div>
-                  ) : evento.tipo === "privado" && !evento.solicitud ? (
-                    <div>
-                      <button onClick={() => sendAccessRequest(evento._id)}>
-                        Enviar solicitud
-                      </button>
-                    </div>
-                  ) : (
-                    // Código para eventos públicos
                     <Link to={`/chats/${evento._id}`}>
                       Acceder al chat
                     </Link>
-                  )}
+     
                 </div>
               </div>
             );
