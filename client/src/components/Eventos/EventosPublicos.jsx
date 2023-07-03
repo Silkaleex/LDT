@@ -1,66 +1,100 @@
-import axios from "axios";
-import "./todosLosCalendar.css";
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import "./EventosPublicos.css";
+import axios from "axios"; // Importa la biblioteca Axios para hacer solicitudes HTTP
+import React, { useState, useEffect } from "react"; // Importa funciones de React
+import { Link } from "react-router-dom"; 
+import "./EventosPublicos.css"; 
 
 const EventosPublicos = () => {
-  const [events, setEvents] = useState([]);
-  const token = localStorage.getItem("token");
-  const [filter, setFilter] = useState("");
-  const [sortBy, setSortBy] = useState("title");
-  const [sortDirection, setSortDirection] = useState("asc");
-  const eventsPerPage = 5;
-  const [displayedEvents, setDisplayedEvents] = useState(1);
+  const [events, setEvents] = useState([]); // Estado para almacenar la lista de eventos
+  const [filter, setFilter] = useState(""); // Estado para el filtro de búsqueda
+  const [sortBy, setSortBy] = useState("title"); // Estado para el campo utilizado para ordenar los eventos
+  const [sortDirection, setSortDirection] = useState("asc"); // Estado para la dirección de ordenamiento
+  const [currentPage, setCurrentPage] = useState(1); // Estado para la página actual
+  const eventsPerPage = 5; // Número de eventos por página
+  const token = localStorage.getItem("token"); // Obtiene el token almacenado en el almacenamiento local del navegador
+  const [loading, setLoading] = useState(false); // Estado para indicar si se está cargando
 
+  // Función para obtener los eventos desde el servidor
   const getEvents = async () => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/calendars`, {
+      setLoading(true); // Establece el estado de carga en true
+      const response = await axios.get("http://localhost:5000/api/calendars", {
         headers: {
-          Authorization: token,
+          Authorization: token, // Agrega el token de autorización en el encabezado de la solicitud
         },
       });
-      setEvents(response.data.calendars);
+      setEvents(response.data.calendars); // Actualiza el estado de la lista de eventos con los datos recibidos del servidor
+      setLoading(false); // Establece el estado de carga en false
     } catch (error) {
-      console.log(error);
+      console.log(error); // Muestra cualquier error en la consola
+      setLoading(false); // Establece el estado de carga en false
     }
   };
 
+  // Efecto que se ejecuta una vez, al montar el componente
   useEffect(() => {
-    getEvents();
-  }, []); // Dependencia vacía para ejecutar solo una vez al cargar el componente
+    getEvents(); // Obtiene los eventos al cargar el componente
+  }, []);
 
+  // Función para manejar el ordenamiento de los eventos
   const handleSort = (field) => {
     if (sortBy === field) {
-      setSortDirection(sortDirection === "asc" ? "desc" : "asc");
+      setSortDirection(sortDirection === "asc" ? "desc" : "asc"); // Cambia la dirección del ordenamiento si el campo ya está siendo ordenado
     } else {
-      setSortBy(field);
-      setSortDirection("asc");
+      setSortBy(field); // Establece el campo utilizado para ordenar
+      setSortDirection("asc"); // Establece la dirección del ordenamiento como ascendente
     }
   };
 
+  // Función para eliminar un evento
+  const handleDeleteEvent = async (eventId) => {
+    let opcion = window.confirm("¿Estás seguro de borrar el Evento?"); // Muestra una ventana de confirmación al usuario
+    if (opcion == true) { // Si el usuario confirma
+      try {
+        await axios.delete(`http://localhost:5000/api/calendars/${eventId}`, {
+          headers: {
+            Authorization: token, // Agrega el token de autorización en el encabezado de la solicitud
+          },
+        });
+        const updatedEvents = events.filter((evento) => evento._id !== eventId); // Filtra los eventos para eliminar el evento correspondiente al eventId
+        setEvents(updatedEvents); // Actualiza el estado de la lista de eventos después de eliminar un evento
+      } catch (error) {
+        console.log(error); // Muestra cualquier error en la consola
+      }
+    }
+  };
+
+  // Filtra los eventos según el criterio de búsqueda y los campos de título y descripción
   const filteredEvents = events.filter(
     (evento) =>
       evento.title.toLowerCase().includes(filter.toLowerCase()) ||
       evento.calendar.toLowerCase().includes(filter.toLowerCase())
   );
 
-  const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
+  const totalPages = Math.ceil(filteredEvents.length / eventsPerPage); // Calcula el número total de páginas
+  const displayedEvents = filteredEvents.slice(
+    (currentPage - 1) * eventsPerPage,
+    currentPage * eventsPerPage
+  ); // Obtiene los eventos a mostrar en la página actual
 
+  // Función para cargar más eventos
+  const loadMoreEvents = () => {
+    setCurrentPage(currentPage + 1); // Incrementa la página actual
+  };
+
+  // Renderizado del componente
   return (
     <>
       <div className="fondoPublico">
         <div className="cajaPublico">
           <h1 className="tituloPublico">Tus Eventos</h1>
-          {/* filtracion de eventos */}
           <div className="filter">
             <input
               type="text"
               className="inputFilter"
               placeholder="Titulo de evento que desees buscar"
               value={filter}
-              onChange={(e) => setFilter(e.target.value)}
-            />       
+              onChange={(e) => setFilter(e.target.value)} // Actualiza el estado de filtro al cambiar el valor del campo de búsqueda
+            />
             <button className="btnFiltro" onClick={() => setFilter("")}>
               Limpiar filtro
             </button>
@@ -75,62 +109,39 @@ const EventosPublicos = () => {
               {sortBy === "fecha" && sortDirection === "asc" ? "↑" : "↓"}
             </button>
             <button className="btnOrden3" onClick={() => handleSort("tipo")}>
-    Ordenar por tipo de evento{" "}
-    {sortBy === "tipo" && sortDirection === "asc" ? "↑" : "↓"}
-  </button>
+              Ordenar por tipo de evento{" "}
+              {sortBy === "tipo" && sortDirection === "asc" ? "↑" : "↓"}
+            </button>
           </div>
-          {/* componente de todos los eventos a traves de map y filtrado por titulo y fecha */}
-          {filteredEvents
-            .sort((a, b) => {
-              const aValue = a[sortBy];
-              const bValue = b[sortBy];
-              if (sortDirection === "asc") {
-                if (sortBy === "fecha") {
-                  return new Date(aValue) - new Date(bValue);
-                } else {
-                  return aValue.localeCompare(bValue);
-                }
-              } else {
-                if (sortBy === "fecha") {
-                  return new Date(bValue) - new Date(aValue);
-                } else {
-                  return bValue.localeCompare(aValue);
-                }
-              }
-            })
-            .slice((displayedEvents - 1) * eventsPerPage, displayedEvents * eventsPerPage)
-            .map((evento) => (
-              <div key={evento._id}>
-                <div className="cajaContenidoPublico">
-                  <h2 className="fs-3">Titulo: {evento.title}</h2>
-                  <h3 className="fs-3">Descripción: {evento.calendar}</h3>
-                  <h3 className="fs-3">Fecha: {evento.fecha}</h3>
-                  <h3 className="fs-3">Evento: {evento.tipo}</h3>
-                  <Link to={`/chats/${evento._id}`}>Acceder al chat</Link>
+          {loading ? (
+            <div className="loader">Cargando eventos...</div>
+          ) : (
+            <>
+              {displayedEvents.map((evento) => (
+                <div key={evento._id}>
+                  <div className="cajaContenidoPublico">
+                    <h2 className="fs-3">Titulo: {evento.title}</h2>
+                    <h3 className="fs-3">Descripción: {evento.calendar}</h3>
+                    <h3 className="fs-3">Fecha: {evento.fecha}</h3>
+                    <h3 className="fs-3">Evento: {evento.tipo}</h3>
+                    <Link to={`/chats/${evento._id}`}>Acceder al chat</Link>
+                    <div className="evento-acciones">
+                      {localStorage.getItem("role") === "1" && (
+                        <button
+                          className="del-btnAdm"
+                          onClick={() => handleDeleteEvent(evento._id)}
+                        >
+                          Eliminar
+                        </button>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ))}
-            {/* filtrado de eventos por paginas */}
-          {totalPages > 1 && (
-            <div className="pagination">
-              <button
-              className="previous-btn"
-                onClick={() => setDisplayedEvents(displayedEvents - 1)}
-                disabled={displayedEvents === 1}
-              >
-                Anterior
-              </button>
-              <span className="pages">
-                Página {displayedEvents} de {totalPages}
-              </span>
-              <button
-              className="next-btn"
-                onClick={() => setDisplayedEvents(displayedEvents + 1)}
-                disabled={displayedEvents === totalPages}
-              >
-                Siguiente
-              </button>
-            </div>
+              ))}
+              {totalPages > 1 && currentPage < totalPages && (
+                <button onClick={loadMoreEvents}>Cargar más eventos</button>
+              )}
+            </>
           )}
         </div>
       </div>

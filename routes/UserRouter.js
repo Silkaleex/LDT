@@ -418,6 +418,24 @@ UserRouter.delete("/user/:id", auth, authAdmin, async (req, res) => {
   }
 });
 
+UserRouter.delete("/eventos/:id", auth, authAdmin, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const evento = await evento.findById(id);
+
+    if (!evento) {
+      return res.status(404).json({ message: "El evento no existe" });
+    }
+
+    await evento.findByIdAndRemove(id);
+
+    return res.status(200).json({ message: "El evento ha sido eliminado correctamente" });
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ message: "Error en el servidor" });
+  }
+});
+
 module.exports = UserRouter;
 
 //BCRYPT - es una dependencia que nos ayuda a hash / encriptar nuestra contraseña

@@ -45,14 +45,14 @@
   background-color: rgba(71, 83, 248, 0.72);
   text-shadow: 1px 1px 1px #000;
   border: none;
-  margin:0% 3%;
+  margin: 0% 3%;
 }
 .btnOrden3 {
   color: #fcab10;
   background-color: rgba(71, 83, 248, 0.72);
   text-shadow: 1px 1px 1px #000;
   border: none;
-  margin:0% 3%;
+  margin: 0% 3%;
 }
 .btnOrden4 {
   color: #fcab10;
@@ -71,6 +71,26 @@
   border-radius: 15%;
   overflow-wrap: break-word;
 }
+/*Botón que el administrador puede eliminar ese evento*/
+.del-btnAdm {
+  color: #d90429;
+  background-color: #2b2d42;
+  border-bottom: 2px solid #d90429;
+  border-right: 2px solid #d90429;
+  border-left: 2px solid #2b2d42;
+  border-top: 2px solid #2b2d42; 
+  transition:1s all;
+}
+.del-btnAdm:hover {
+  color: #d90429;
+  background-color: #2b2d42;
+  border-left: 2px solid #d90429;
+  border-top: 2px solid #d90429;
+  border-bottom: 2px solid #2b2d42;
+  border-right: 2px solid #2b2d42;
+  transition:1s all;
+}
+
 /* diseño del filtrado de eventos por paginas */
 .pagination {
   margin: 0% 19%;
@@ -81,7 +101,7 @@
   margin: 0% 3%;
   color: #fcab10;
   text-shadow: 1px 1px 1px #2b2d42;
-  border-radius:5px;
+  border-radius: 5px;
 }
 .previous-btn {
   background-color: #0466c8;
