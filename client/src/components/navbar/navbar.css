@@ -114,10 +114,10 @@
 }
 .listaComponent {
   display: flex;
-  margin: 0% 40%;
+  margin: 5% 40%;
 }
 .datosAdmin {
-  margin: 0% 30%;
+  margin: 1% 30%;
 }
 .containerAdm {
   display: flex;
