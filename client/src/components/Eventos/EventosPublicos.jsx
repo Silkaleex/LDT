@@ -89,7 +89,7 @@ const EventosPublicos = () => {
     return 0;
   });
 
-  const totalPages = Math.ceil(sortedEvents.length / eventsPerPage);
+  const totalPages = Math.ceil(sortedEvents.length / eventsPerPage);// Calcula el número total de páginas
   const displayedEvents = sortedEvents.slice(
     (currentPage - 1) * eventsPerPage,
     currentPage * eventsPerPage
@@ -97,12 +97,12 @@ const EventosPublicos = () => {
 
   // Función para cargar más eventos
   const loadPage = (pageNumber) => {
-    setCurrentPage(pageNumber);
+    setCurrentPage(pageNumber); // Maneja el cambio de página
   };
 
   const loadMoreEvents = () => {
     if (currentPage < totalPages) {
-      loadPage(currentPage + 1);
+      loadPage(currentPage + 1);// Carga más eventos aumentando el número de página
     }
   };
 
