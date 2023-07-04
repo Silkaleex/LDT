@@ -1,7 +1,10 @@
 import axios from "axios"; // Importa la biblioteca Axios para hacer solicitudes HTTP
 import React, { useState, useEffect } from "react"; // Importa funciones de React
-import { Link } from "react-router-dom"; 
-import "./EventosPublicos.css"; 
+import { Link } from "react-router-dom"; // Importa el componente Link de React Router para crear enlaces
+import "./EventosPublicos.css"; // Importa un archivo de estilos CSS específico para este componente
+import { ClipLoader } from "react-spinners"; // Importa el componente ClipLoader de la biblioteca react-spinners para mostrar un spinner de carga
+import { ToastContainer, toast } from 'react-toastify'; // Importa los componentes ToastContainer y toast de la biblioteca react-toastify para mostrar notificaciones emergentes
+import 'react-toastify/dist/ReactToastify.css';// Importa los estilos CSS de react-toastify
 
 const EventosPublicos = () => {
   const [events, setEvents] = useState([]); // Estado para almacenar la lista de eventos
@@ -48,7 +51,8 @@ const EventosPublicos = () => {
   // Función para eliminar un evento
   const handleDeleteEvent = async (eventId) => {
     let opcion = window.confirm("¿Estás seguro de borrar el Evento?"); // Muestra una ventana de confirmación al usuario
-    if (opcion == true) { // Si el usuario confirma
+    if (opcion == true) {
+      // Si el usuario confirma
       try {
         await axios.delete(`http://localhost:5000/api/calendars/${eventId}`, {
           headers: {
@@ -58,7 +62,9 @@ const EventosPublicos = () => {
         const updatedEvents = events.filter((evento) => evento._id !== eventId); // Filtra los eventos para eliminar el evento correspondiente al eventId
         setEvents(updatedEvents); // Actualiza el estado de la lista de eventos después de eliminar un evento
       } catch (error) {
-        console.log(error); // Muestra cualquier error en la consola
+        console.log(error);
+        toast.error('Ha ocurrido un error al cargar/eliminar los eventos.'); // Muestra una notificación de error
+        setLoading(false);
       }
     }
   };
@@ -69,21 +75,40 @@ const EventosPublicos = () => {
       evento.title.toLowerCase().includes(filter.toLowerCase()) ||
       evento.calendar.toLowerCase().includes(filter.toLowerCase())
   );
+  const sortedEvents = filteredEvents.sort((a, b) => {
+    // Función de comparación para el ordenamiento
+    const fieldA = a[sortBy]?.toLowerCase();
+    const fieldB = b[sortBy]?.toLowerCase();
 
-  const totalPages = Math.ceil(filteredEvents.length / eventsPerPage); // Calcula el número total de páginas
-  const displayedEvents = filteredEvents.slice(
+    if (fieldA < fieldB) {
+      return sortDirection === "asc" ? -1 : 1;
+    }
+    if (fieldA > fieldB) {
+      return sortDirection === "asc" ? 1 : -1;
+    }
+    return 0;
+  });
+
+  const totalPages = Math.ceil(sortedEvents.length / eventsPerPage);
+  const displayedEvents = sortedEvents.slice(
     (currentPage - 1) * eventsPerPage,
     currentPage * eventsPerPage
   ); // Obtiene los eventos a mostrar en la página actual
 
   // Función para cargar más eventos
-  const loadMoreEvents = () => {
-    setCurrentPage(currentPage + 1); // Incrementa la página actual
+  const loadPage = (pageNumber) => {
+    setCurrentPage(pageNumber);
   };
 
-  // Renderizado del componente
+  const loadMoreEvents = () => {
+    if (currentPage < totalPages) {
+      loadPage(currentPage + 1);
+    }
+  };
+
   return (
     <>
+      <ToastContainer /> {/* Contenedor para mostrar las notificaciones */}
       <div className="fondoPublico">
         <div className="cajaPublico">
           <h1 className="tituloPublico">Tus Eventos</h1>
@@ -114,7 +139,10 @@ const EventosPublicos = () => {
             </button>
           </div>
           {loading ? (
-            <div className="loader">Cargando eventos...</div>
+            <div className="loader">
+              <ClipLoader color="#ffffff" loading={loading} size={30} />
+              Cargando eventos...
+            </div>
           ) : (
             <>
               {displayedEvents.map((evento) => (
@@ -125,7 +153,9 @@ const EventosPublicos = () => {
                     <h3 className="fs-3">Fecha: {evento.fecha}</h3>
                     <h3 className="fs-3">Evento: {evento.tipo}</h3>
                     <div className="cajaBtnChat">
-                    <Link className="btn-chat" to={`/chats/${evento._id}`}>Acceder al chat</Link>
+                      <Link className="btn-chat" to={`/chats/${evento._id}`}>
+                        Acceder al chat
+                      </Link>
                     </div>
                     <div className="evento-acciones">
                       {localStorage.getItem("role") === "1" && (
@@ -140,6 +170,36 @@ const EventosPublicos = () => {
                   </div>
                 </div>
               ))}
+              {totalPages > 1 && (
+                <div className="pagination">
+                  {Array.from({ length: totalPages }, (_, index) => (
+                    <button
+                      key={index}
+                      className={`page-link ${
+                        currentPage === index + 1 ? "active" : ""
+                      }`}
+                      onClick={() => loadPage(index + 1)}
+                    >
+                      {index + 1}
+                    </button>
+                  ))}
+                </div>
+              )}
+              {totalPages > 1 && (
+                <div className="pagination">
+                  {Array.from({ length: totalPages }, (_, index) => (
+                    <button
+                      key={index}
+                      className={`page-link ${
+                        currentPage === index + 1 ? "active" : ""
+                      }`}
+                      onClick={() => loadPage(index + 1)}
+                    >
+                      {index + 1}
+                    </button>
+                  ))}
+                </div>
+              )}
               {totalPages > 1 && currentPage < totalPages && (
                 <button onClick={loadMoreEvents}>Cargar más eventos</button>
               )}
