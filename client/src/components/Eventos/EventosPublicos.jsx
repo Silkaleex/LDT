@@ -124,7 +124,9 @@ const EventosPublicos = () => {
                     <h3 className="fs-3">Descripción: {evento.calendar}</h3>
                     <h3 className="fs-3">Fecha: {evento.fecha}</h3>
                     <h3 className="fs-3">Evento: {evento.tipo}</h3>
-                    <Link to={`/chats/${evento._id}`}>Acceder al chat</Link>
+                    <div className="cajaBtnChat">
+                    <Link className="btn-chat" to={`/chats/${evento._id}`}>Acceder al chat</Link>
+                    </div>
                     <div className="evento-acciones">
                       {localStorage.getItem("role") === "1" && (
                         <button

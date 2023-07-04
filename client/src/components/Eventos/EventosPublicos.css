@@ -71,7 +71,34 @@
   border-radius: 15%;
   overflow-wrap: break-word;
 }
+/* boton de chat */
+.cajaBtnChat{
+  margin:3% 0%;
+}
+.btn-chat{
+  text-decoration: none;
+  background-color: rgba(68, 175, 105, 1);
+  color: #fcab10;
+  padding: 0% 5%;
+  border-bottom: 2px solid  #fcab10;
+  border-right: 2px solid  #fcab10;
+  border-left: 2px solid  rgba(68, 175, 105, 1);
+  border-top: 2px solid  rgba(68, 175, 105, 1); 
+}
+.btn-chat:hover{
+  text-decoration: none;
+  background-color: rgba(68, 175, 105, 1);
+  color: #fcab10;
+  padding: 0% 5%;
+  border-bottom: 2px solid  #fcab10;
+  border-right: 2px solid  #fcab10;
+  border-left: 2px solid  rgba(68, 175, 105, 1);
+  border-top: 2px solid  rgba(68, 175, 105, 1); 
+}
 /*Botón que el administrador puede eliminar ese evento*/
+.evento-acciones{
+  margin: 2% 80%;
+}
 .del-btnAdm {
   color: #d90429;
   background-color: #2b2d42;
