@@ -130,6 +130,7 @@
   text-shadow: 1px 1px 1px #2b2d42;
   border-radius: 5px;
 }
+/* Botones de pasar pagina o retroceder */
 .previous-btn {
   background-color: #0466c8;
   color: #fcab10;
@@ -138,6 +139,7 @@
   border-top-left-radius: 50%;
   border-bottom-left-radius: 50%;
   padding: 0% 3%;
+  margin: 0% 3%;
 }
 .next-btn {
   background-color: #0466c8;
@@ -147,8 +149,26 @@
   border-top-right-radius: 50%;
   border-bottom-right-radius: 50%;
   padding: 0% 3%;
+  margin: 0% 3%;
 }
-
+.page-link{
+  background-color: #0466c8;
+  color: #fcab10;
+  border:none;
+  text-shadow:1px 1px 1px #000;
+}
+.page-link:hover{
+  background-color: #0466c8;
+  color: #fcab10;
+  border:none;
+  text-shadow:1px 1px 1px  #0466c8;
+}
+.page-link.active{
+  color: #0466c8;
+  background-color: #fcab10;
+  border:none;
+  text-shadow:1px 1px 1px #000;
+}
 @media screen and (max-width: 380px) {
   .fondoPublico {
     background: linear-gradient(

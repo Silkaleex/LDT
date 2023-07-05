@@ -16,6 +16,28 @@ const EventosPublicos = () => {
   const token = localStorage.getItem("token"); // Obtiene el token almacenado en el almacenamiento local del navegador
   const [loading, setLoading] = useState(false); // Estado para indicar si se está cargando
 
+    // Función para manejar el evento de página anterior
+    const handlePreviousPage = () => {
+      if (currentPage > 1) {
+        loadPage(currentPage - 1);
+      }
+    };
+  
+    // Función para manejar el evento de página siguiente
+    const handleNextPage = () => {
+      if (currentPage < totalPages) {
+        loadPage(currentPage + 1);
+      }
+    };
+  
+    // Función para manejar el cambio de página
+    const handlePageChange = (pageNumber) => {
+      loadPage(pageNumber);
+    };
+  
+    const isAuthenticated = localStorage.getItem("token") !== null;
+    const userRole = localStorage.getItem("role");
+
   // Función para obtener los eventos desde el servidor
   const getEvents = async () => {
     try {
@@ -35,8 +57,8 @@ const EventosPublicos = () => {
 
   // Efecto que se ejecuta una vez, al montar el componente
   useEffect(() => {
-    getEvents(); // Obtiene los eventos al cargar el componente
-  }, []);
+    getEvents(currentPage, eventsPerPage);; // Obtiene los eventos al cargar el componente
+  }, [currentPage, eventsPerPage]);
 
   // Función para manejar el ordenamiento de los eventos
   const handleSort = (field) => {
@@ -75,6 +97,7 @@ const EventosPublicos = () => {
       evento.title.toLowerCase().includes(filter.toLowerCase()) ||
       evento.calendar.toLowerCase().includes(filter.toLowerCase())
   );
+   // Ordenar los eventos según el campo y dirección de ordenamiento seleccionados
   const sortedEvents = filteredEvents.sort((a, b) => {
     // Función de comparación para el ordenamiento
     const fieldA = a[sortBy]?.toLowerCase();
@@ -88,12 +111,15 @@ const EventosPublicos = () => {
     }
     return 0;
   });
+// Calcula el número total de páginas
+  const totalPages = Math.ceil(sortedEvents.length / eventsPerPage);
+  
+   
+   // Obtiene los eventos a mostrar en la página actual
+   const startIndex = (currentPage - 1) * eventsPerPage;
+   const endIndex = startIndex + eventsPerPage;
+   const displayedEvents = sortedEvents.slice(startIndex, endIndex);
 
-  const totalPages = Math.ceil(sortedEvents.length / eventsPerPage);// Calcula el número total de páginas
-  const displayedEvents = sortedEvents.slice(
-    (currentPage - 1) * eventsPerPage,
-    currentPage * eventsPerPage
-  ); // Obtiene los eventos a mostrar en la página actual
 
   // Función para cargar más eventos
   const loadPage = (pageNumber) => {
@@ -170,39 +196,23 @@ const EventosPublicos = () => {
                   </div>
                 </div>
               ))}
-              {totalPages > 1 && (
-                <div className="pagination">
-                  {Array.from({ length: totalPages }, (_, index) => (
-                    <button
-                      key={index}
-                      className={`page-link ${
-                        currentPage === index + 1 ? "active" : ""
-                      }`}
-                      onClick={() => loadPage(index + 1)}
-                    >
-                      {index + 1}
-                    </button>
-                  ))}
-                </div>
-              )}
-              {totalPages > 1 && (
-                <div className="pagination">
-                  {Array.from({ length: totalPages }, (_, index) => (
-                    <button
-                      key={index}
-                      className={`page-link ${
-                        currentPage === index + 1 ? "active" : ""
-                      }`}
-                      onClick={() => loadPage(index + 1)}
-                    >
-                      {index + 1}
-                    </button>
-                  ))}
-                </div>
-              )}
-              {totalPages > 1 && currentPage < totalPages && (
-                <button onClick={loadMoreEvents}>Cargar más eventos</button>
-              )}
+            {totalPages > 1 && (
+              <div className="pagination">
+                <button className="previous-btn" onClick={handlePreviousPage}>Página anterior</button>
+                {Array.from({ length: totalPages }, (_, index) => (
+                  <button
+                    key={index}
+                    className={`page-link ${
+                      currentPage === index + 1 ? "active" : ""
+                    }`}
+                    onClick={() => handlePageChange(index + 1)}
+                  >
+                    {index + 1}
+                  </button>
+                ))}
+                <button className="next-btn" onClick={handleNextPage}>Página siguiente</button>
+              </div>
+            )}
             </>
           )}
         </div>
