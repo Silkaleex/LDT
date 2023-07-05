@@ -154,20 +154,24 @@
 .page-link{
   background-color: #0466c8;
   color: #fcab10;
-  border:none;
+  border: 1px solid black;
   text-shadow:1px 1px 1px #000;
+  transition:1s all;
 }
 .page-link:hover{
   background-color: #0466c8;
   color: #fcab10;
-  border:none;
+  margin: -2% 0% -2% 0%;
+  border: 1px solid black;
   text-shadow:1px 1px 1px  #0466c8;
+  transition:1s all;
 }
 .page-link.active{
   color: #0466c8;
   background-color: #fcab10;
-  border:none;
+  border: 1px solid black;
   text-shadow:1px 1px 1px #000;
+  transition:1s all;
 }
 @media screen and (max-width: 380px) {
   .fondoPublico {
