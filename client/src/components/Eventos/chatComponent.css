@@ -8,8 +8,8 @@
   );
 }
 .title-message {
-  margin: 1% 37%;
-  text-shadow:1px 1px 1px #ffd60a;
+  margin: 2.2% 23%;
+  text-shadow: 1px 1px 1px #ffd60a;
 }
 .warning-message{
   margin: 1% 25%;
@@ -47,29 +47,51 @@
 .message-user {
   padding: 3% 30%;
   text-align: center;
-
 }
+
 .burbble-chat{
-  background-color:#fff;
+  color: #e2fdff;
+  text-shadow: 1px 1px 1px #000;
+  background-color: #5465ff;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   width: 139%;
-  padding: 0% 24%;
+  padding: 27% 7%;
   margin: 0% -20%;
-  border-top-left-radius: 26%;
-  border-top-right-radius: 57%;
-  border-bottom-left-radius: 67%;
+  border-top-left-radius: 37%;
+  border-top-right-radius: 52%;
+  border-bottom-left-radius: 48%;
   border-bottom-right-radius: 0%;
 }
+
 .bubble-chat-user{
   background-color:#fff;
+}
+.current-user {
+  color: #242423;
+  text-shadow: 1px 1px 1px #ff7f51;
+  background-color: #f5cb5c;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 139%;
+  padding: 27% 12%;
+  margin: 0% -20%;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 151%;
+  border-top-left-radius: 94%;
+  border-top-right-radius: 112%;
 }
 .separation-message {
   padding: 0% 5% 0% 2%;
 }
-.message-time{
-  
+.delete-button{
+  background-color: #d80032;
+  color: #edf2f4;
+  border: none;
+  padding: 0% 5%;
+  margin: 0% 7%;
 }
 .message-list::-webkit-scrollbar {
   width: 12px;

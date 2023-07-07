@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import io from "socket.io-client";
 import axios from "axios";
 import "./chatComponent.css";
 
 const ChatComponent = () => {
+  const messageListRef = useRef(null);
+  
   // Estado para almacenar los mensajes
   const [messages, setMessages] = useState([]);
 
@@ -15,6 +17,9 @@ const ChatComponent = () => {
 
   // Estado para el mensaje de advertencia
   const [warningMessage, setWarningMessage] = useState("");
+
+  // Estado para almacenar los usuarios que están escribiendo
+  const [typingUsers, setTypingUsers] = useState([]);
 
   // Conexión al servidor de Socket.IO
   const socket = io("http://localhost:5000");
@@ -58,6 +63,16 @@ const ChatComponent = () => {
       }, 2000);
     });
 
+    // Lógica para manejar el evento de escritura de otros usuarios
+    socket.on("typing", (user) => {
+      setTypingUsers((prevUsers) => [...prevUsers, user]);
+    });
+
+    // Lógica para manejar el evento de parar de escribir de otros usuarios
+    socket.on("stopTyping", (user) => {
+      setTypingUsers((prevUsers) => prevUsers.filter((u) => u !== user));
+    });
+
     // Limpiar la conexión al desmontar el componente
     return () => {
       socket.disconnect();
@@ -72,23 +87,31 @@ const ChatComponent = () => {
     });
   }, []);
 
+  // Dentro del useEffect para actualizar el desplazamiento automáticamente
+  useEffect(() => {
+    messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+  }, [messages]);
+
   // Función para enviar un mensaje
   const sendMessage = (e) => {
     e.preventDefault();
-    socket.emit("chatMessage", {
-      sender: User.name,
-      content: inputMessage,
-    });
-    setInputMessage("");
+    if (inputMessage.trim() !== "") {
+      socket.emit("chatMessage", {
+        sender: User.name,
+        content: inputMessage,
+      });
+      setInputMessage("");
+    }
   };
 
   // Componente para mostrar un mensaje
   const Message = ({ content, timestamp, sender }) => {
     const messageTime = new Date(timestamp).toLocaleTimeString();
+    const isCurrentUser = sender === User.name;
 
     return (
       <div className="message-user">
-        <div className="burbble-chat">
+        <div className={`burbble-chat ${isCurrentUser ? "current-user" : ""}`}>
           <h5>{sender}</h5>
           <p className="separation-message"> - </p>
           <p>{content}</p>
@@ -100,11 +123,9 @@ const ChatComponent = () => {
 
   return (
     <div className="message">
-      <h1 className="title-message">Sala de Chat</h1>
-      {warningMessage && (
-        <div className="warning-message">{warningMessage}</div>
-      )}
-      <div className="message-list">
+      <h1 className="title-message">Bienvenido al chat - {User.name}</h1>
+      {warningMessage && <div className="warning-message">{warningMessage}</div>}
+      <div className="message-list" ref={messageListRef}>
         {messages.map((message, index) => (
           <Message
             key={index}
@@ -115,12 +136,15 @@ const ChatComponent = () => {
           />
         ))}
       </div>
+      {typingUsers.map((user) => (
+        <p key={user}>{`${user} está escribiendo...`}</p>
+      ))}
       <form onSubmit={sendMessage} className="write-form">
         <input
           type="text"
           value={inputMessage}
           onChange={(e) => setInputMessage(e.target.value)}
-          placeholder="Escribe tu mensaje aquí..."
+          placeholder="Escribe tu mensaje aquí"
           className="txt-message"
         />
         <button type="submit" className="btn-message">

@@ -173,6 +173,8 @@
   text-shadow:1px 1px 1px #000;
   transition:1s all;
 }
+
+
 @media screen and (max-width: 380px) {
   .fondoPublico {
     background: linear-gradient(

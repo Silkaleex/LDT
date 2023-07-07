@@ -15,7 +15,7 @@ const EventosPublicos = () => {
   const eventsPerPage = 5; // Número de eventos por página
   const token = localStorage.getItem("token"); // Obtiene el token almacenado en el almacenamiento local del navegador
   const [loading, setLoading] = useState(false); // Estado para indicar si se está cargando
-  const [updatedEvents, setUpdatedEvents] = useState([]);
+
 
     // Función para manejar el evento de página anterior
     const handlePreviousPage = () => {
@@ -35,9 +35,7 @@ const EventosPublicos = () => {
     const handlePageChange = (pageNumber) => {
       loadPage(pageNumber);
     };
-  
-    const isAuthenticated = localStorage.getItem("token") !== null;
-    const userRole = localStorage.getItem("role");
+
 
   // Función para obtener los eventos desde el servidor
   const getEvents = async () => {
@@ -132,17 +130,6 @@ const EventosPublicos = () => {
       loadPage(currentPage + 1);// Carga más eventos aumentando el número de página
     }
   };
-// Función para filtrar eventos pasados
-const filterExpiredEvents = (eventsList) => {
-  const currentDate = new Date();
-
-  const filteredEvents = eventsList.filter((evento) => {
-    const eventDate = new Date(evento.date); // Corregir aquí: utilizar evento.date en lugar de evento.fecha
-    return eventDate >= currentDate; // Mantener solo los eventos cuya fecha sea posterior o igual a la fecha actual
-  });
-
-  return filteredEvents;
-};
 
   return (
     <>
