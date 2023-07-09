@@ -2,32 +2,22 @@ import React, { useRef, useState, useEffect } from "react";
 import io from "socket.io-client";
 import axios from "axios";
 import "./chatComponent.css";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const ChatComponent = () => {
   const messageListRef = useRef(null);
-  
-  // Estado para almacenar los mensajes
   const [messages, setMessages] = useState([]);
-
-  // Estado para almacenar la información del usuario
   const [User, setUser] = useState({});
-
-  // Estado para el mensaje de entrada
   const [inputMessage, setInputMessage] = useState("");
-
-  // Estado para el mensaje de advertencia
   const [warningMessage, setWarningMessage] = useState("");
-
-  // Estado para almacenar los usuarios que están escribiendo
   const [typingUsers, setTypingUsers] = useState([]);
-
-  // Conexión al servidor de Socket.IO
-  const socket = io("http://localhost:5000");
-
-  // Obtener el token de autenticación del localStorage
+  const [isConnected, setIsConnected] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
+  const typingTimeoutRef = useRef(null);
+  const socket = useRef(null);
   const token = localStorage.getItem("token");
 
-  // Obtener la información del usuario al cargar la página
   useEffect(() => {
     const getUser = async () => {
       const response = await axios.get("http://localhost:5000/api/user", {
@@ -40,23 +30,31 @@ const ChatComponent = () => {
     getUser();
   }, []);
 
-  // Configuración de los eventos de Socket.IO
   useEffect(() => {
+    socket.current = io("http://localhost:5000");
+
     // Solicitar los mensajes guardados al cargar la página
-    socket.emit("get-chat-messages");
+    socket.current.emit("get-chat-messages");
 
     // Lógica para recibir mensajes del servidor
-    socket.on("chat-message", (message) => {
+    socket.current.on("chat-message", (message) => {
       setMessages((prevMessages) => [...prevMessages, message]);
     });
 
     // Lógica para manejar la desconexión del servidor
-    socket.on("disconnect", () => {
+    socket.current.on("disconnect", () => {
       console.log("Usuario desconectado");
+      setIsConnected(false);
+    });
+
+    // Lógica para manejar la conexión exitosa al servidor
+    socket.current.on("connect", () => {
+      console.log("Usuario conectado");
+      setIsConnected(true);
     });
 
     // Lógica para recibir advertencias de violación del servidor
-    socket.on("violationWarning", (message) => {
+    socket.current.on("violationWarning", (message) => {
       setWarningMessage(message);
       setTimeout(() => {
         setWarningMessage("");
@@ -64,47 +62,65 @@ const ChatComponent = () => {
     });
 
     // Lógica para manejar el evento de escritura de otros usuarios
-    socket.on("typing", (user) => {
+    socket.current.on("typing", (user) => {
       setTypingUsers((prevUsers) => [...prevUsers, user]);
     });
 
     // Lógica para manejar el evento de parar de escribir de otros usuarios
-    socket.on("stopTyping", (user) => {
+    socket.current.on("stopTyping", (user) => {
       setTypingUsers((prevUsers) => prevUsers.filter((u) => u !== user));
     });
 
-    // Limpiar la conexión al desmontar el componente
     return () => {
-      socket.disconnect();
+      socket.current.disconnect();
       console.log("Usuario desconectado");
     };
   }, []);
 
-  // Cargar los mensajes guardados al iniciar
   useEffect(() => {
-    socket.on("chat-messages", (messages) => {
+    socket.current.on("chat-messages", (messages) => {
       setMessages(messages);
     });
   }, []);
 
-  // Dentro del useEffect para actualizar el desplazamiento automáticamente
   useEffect(() => {
     messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
   }, [messages]);
 
-  // Función para enviar un mensaje
   const sendMessage = (e) => {
     e.preventDefault();
+    if (inputMessage.trim() === "") {
+      toast.error("El mensaje no puede estar vacío.");
+      return;
+    }
+    if (inputMessage.length > 40) {
+      toast.error("El mensaje no puede exceder los 40 caracteres.");
+      return;
+    }
     if (inputMessage.trim() !== "") {
-      socket.emit("chatMessage", {
+      socket.current.emit("chatMessage", {
         sender: User.name,
         content: inputMessage,
       });
       setInputMessage("");
     }
+    
   };
 
-  // Componente para mostrar un mensaje
+  const handleTyping = () => {
+    if (!isTyping) {
+      socket.current.emit("typing", User.name);
+      setIsTyping(true);
+    }
+
+    clearTimeout(typingTimeoutRef.current);
+
+    typingTimeoutRef.current = setTimeout(() => {
+      socket.current.emit("stopTyping", User.name);
+      setIsTyping(false);
+    }, 2000);
+  };
+
   const Message = ({ content, timestamp, sender }) => {
     const messageTime = new Date(timestamp).toLocaleTimeString();
     const isCurrentUser = sender === User.name;
@@ -114,7 +130,7 @@ const ChatComponent = () => {
         <div className={`burbble-chat ${isCurrentUser ? "current-user" : ""}`}>
           <h5>{sender}</h5>
           <p className="separation-message"> - </p>
-          <p>{content}</p>
+          <p className="message-txt">{content}</p>
           <p className="message-time">enviado a las: {messageTime}</p>
         </div>
       </div>
@@ -123,7 +139,14 @@ const ChatComponent = () => {
 
   return (
     <div className="message">
-      <h1 className="title-message">Bienvenido al chat - {User.name}</h1>
+      <ToastContainer/>
+      <h1 className="title-message">Bienvenido al chat:</h1>
+      <h2 className="title-message2">{User.name}</h2>
+      {isConnected ? (
+        <div className="connection-status">Estas Conectado</div>
+      ) : (
+        <div className="connection-status"> Estas Desconectado</div>
+      )}
       {warningMessage && <div className="warning-message">{warningMessage}</div>}
       <div className="message-list" ref={messageListRef}>
         {messages.map((message, index) => (
@@ -143,7 +166,10 @@ const ChatComponent = () => {
         <input
           type="text"
           value={inputMessage}
-          onChange={(e) => setInputMessage(e.target.value)}
+          onChange={(e) => {
+            setInputMessage(e.target.value);
+            handleTyping();
+          }}
           placeholder="Escribe tu mensaje aquí"
           className="txt-message"
         />

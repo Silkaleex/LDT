@@ -3,6 +3,7 @@ const calendario = require("../models/calendario");
 const calendarRouter = express.Router();
 const User = require("../models/User");
 const auth = require("../middeleware/auth");
+const cron = require("node-cron");
 
 calendarRouter.post("/calendars", auth, async (req, res) => {
   try {
@@ -116,7 +117,7 @@ calendarRouter.delete("/calendars/:id", auth, async (req, res) => {
     if (!id) {
       return res.status(400).send({
         success: false,
-        message: "No se a encontrado la Evento que buscabas",
+        message: "No se a encontrado el Evento que buscabas",
       });
     }
     return res.status(200).send({
@@ -150,5 +151,34 @@ calendarRouter.get("/calendars", auth, async (req, res) => {
     });
   }
 });
+// Agrega la siguiente ruta para eliminar eventos pasados
+calendarRouter.delete("/calendars/past", async (req, res) => {
+  try {
+    const currentDate = new Date();
+     // Elimina los eventos cuya fecha sea anterior a la fecha actual
+    await calendario.deleteMany({ fecha: { $lt: currentDate } });//deleteMany, elimina los eventos pasados
 
+    return res.status(200).send({
+      success: true,
+      message: "Eventos pasados eliminados correctamente",
+    });
+  } catch (error) {
+    return res.status(500).send({
+      success: false,
+      message: error.message,
+    });
+  }
+});
+// Programa la tarea para ejecutarse todos los días a la medianoche
+cron.schedule("0 0 * * *", async () => {
+  try {
+    const currentDate = new Date();
+     // Elimina los eventos cuya fecha sea anterior a la fecha actual
+    await calendario.deleteMany({ fecha: { $lt: currentDate } });
+
+    console.log("Eventos pasados eliminados correctamente");
+  } catch (error) {
+    console.error("Error al eliminar eventos pasados:", error.message);
+  }
+});
 module.exports = calendarRouter;
