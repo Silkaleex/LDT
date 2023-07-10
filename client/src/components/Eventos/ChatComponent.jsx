@@ -11,13 +11,13 @@ const ChatComponent = () => {
   const [User, setUser] = useState({});
   const [inputMessage, setInputMessage] = useState("");
   const [warningMessage, setWarningMessage] = useState("");
-  const [typingUsers, setTypingUsers] = useState([]);
   const [isConnected, setIsConnected] = useState(false);
-  const [isTyping, setIsTyping] = useState(false);
-  const typingTimeoutRef = useRef(null);
   const socket = useRef(null);
   const token = localStorage.getItem("token");
-
+  const [isTyping, setIsTyping] = useState(false);
+  const typingTimeoutRef = useRef(null);
+  const prevMessage = useRef("");
+  
   useEffect(() => {
     const getUser = async () => {
       const response = await axios.get("http://localhost:5000/api/user", {
@@ -63,12 +63,12 @@ const ChatComponent = () => {
 
     // Lógica para manejar el evento de escritura de otros usuarios
     socket.current.on("typing", (user) => {
-      setTypingUsers((prevUsers) => [...prevUsers, user]);
+      setIsTyping(true);
     });
 
     // Lógica para manejar el evento de parar de escribir de otros usuarios
-    socket.current.on("stopTyping", (user) => {
-      setTypingUsers((prevUsers) => prevUsers.filter((u) => u !== user));
+    socket.current.on("stopTyping", () => {
+      setIsTyping(false);
     });
 
     return () => {
@@ -103,22 +103,22 @@ const ChatComponent = () => {
         content: inputMessage,
       });
       setInputMessage("");
+      setIsTyping(false); // Desactivar el estado de escritura cuando se envía el mensaje
     }
-    
   };
 
   const handleTyping = () => {
-    if (!isTyping) {
-      socket.current.emit("typing", User.name);
+    const trimmedMessage = inputMessage.trim();
+
+    if (!isTyping && trimmedMessage !== "") {
+      socket.current.emit("typing");
       setIsTyping(true);
-    }
-
-    clearTimeout(typingTimeoutRef.current);
-
-    typingTimeoutRef.current = setTimeout(() => {
-      socket.current.emit("stopTyping", User.name);
+    } else if (isTyping && (trimmedMessage === "" || trimmedMessage === prevMessage.current)) {
+      socket.current.emit("stopTyping");
       setIsTyping(false);
-    }, 2000);
+    }
+  
+    prevMessage.current = trimmedMessage;
   };
 
   const Message = ({ content, timestamp, sender }) => {
@@ -139,15 +139,17 @@ const ChatComponent = () => {
 
   return (
     <div className="message">
-      <ToastContainer/>
+      <ToastContainer />
       <h1 className="title-message">Bienvenido al chat:</h1>
       <h2 className="title-message2">{User.name}</h2>
       {isConnected ? (
-        <div className="connection-status">Estas Conectado</div>
+        <div className="connection-status">Estás Conectado</div>
       ) : (
-        <div className="connection-status"> Estas Desconectado</div>
+        <div className="connection-status">Estás Desconectado</div>
       )}
-      {warningMessage && <div className="warning-message">{warningMessage}</div>}
+      {warningMessage && (
+        <div className="warning-message">{warningMessage}</div>
+      )}
       <div className="message-list" ref={messageListRef}>
         {messages.map((message, index) => (
           <Message
@@ -158,17 +160,19 @@ const ChatComponent = () => {
             timestamp={message.timestamp}
           />
         ))}
+        {isTyping && <div className="typing-users">{`${User.name} está escribiendo...`}</div>}
       </div>
-      {typingUsers.map((user) => (
-        <p key={user}>{`${user} está escribiendo...`}</p>
-      ))}
       <form onSubmit={sendMessage} className="write-form">
         <input
           type="text"
           value={inputMessage}
           onChange={(e) => {
             setInputMessage(e.target.value);
-            handleTyping();
+            handleTyping(); // Manejar el evento de escritura del usuario
+          }}
+          onBlur={() => {
+            clearTimeout(typingTimeoutRef.current);
+            setIsTyping(false);
           }}
           placeholder="Escribe tu mensaje aquí"
           className="txt-message"

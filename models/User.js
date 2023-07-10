@@ -58,8 +58,14 @@ const userSchema = new mongoose.Schema(
       //0: Users
       //1: Administrators
     },
+    amistads: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Amistad",
+      },
+    ],
   },
-  { timestamp: true }
+  { timestamps: true }
 );
 
 module.exports = mongoose.model("User", userSchema);

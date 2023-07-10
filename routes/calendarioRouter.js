@@ -4,6 +4,7 @@ const calendarRouter = express.Router();
 const User = require("../models/User");
 const auth = require("../middeleware/auth");
 const cron = require("node-cron");
+const currentDate = new Date();
 
 calendarRouter.post("/calendars", auth, async (req, res) => {
   try {
@@ -79,6 +80,8 @@ calendarRouter.get("/calendars/:id", auth, async (req, res) => {
       message: error.message,
     });
   }
+
+
 });
 calendarRouter.put("/calendars/:id", async (req, res) => {
   try {
@@ -134,10 +137,14 @@ calendarRouter.delete("/calendars/:id", auth, async (req, res) => {
 
 calendarRouter.get("/calendars", auth, async (req, res) => {
   try {
-    const calendars = await calendario.find().populate({
+    const currentDate = new Date();
+
+    let calendars = await calendario.find().populate({
       path: "user",
       select: "name",
     });
+
+    calendars = calendars.filter((evento) => new Date(evento.fecha) > currentDate);
 
     return res.status(200).send({
       success: true,
@@ -149,36 +156,6 @@ calendarRouter.get("/calendars", auth, async (req, res) => {
       success: false,
       message: error.message,
     });
-  }
-});
-// Agrega la siguiente ruta para eliminar eventos pasados
-calendarRouter.delete("/calendars/past", async (req, res) => {
-  try {
-    const currentDate = new Date();
-     // Elimina los eventos cuya fecha sea anterior a la fecha actual
-    await calendario.deleteMany({ fecha: { $lt: currentDate } });//deleteMany, elimina los eventos pasados
-
-    return res.status(200).send({
-      success: true,
-      message: "Eventos pasados eliminados correctamente",
-    });
-  } catch (error) {
-    return res.status(500).send({
-      success: false,
-      message: error.message,
-    });
-  }
-});
-// Programa la tarea para ejecutarse todos los días a la medianoche
-cron.schedule("0 0 * * *", async () => {
-  try {
-    const currentDate = new Date();
-     // Elimina los eventos cuya fecha sea anterior a la fecha actual
-    await calendario.deleteMany({ fecha: { $lt: currentDate } });
-
-    console.log("Eventos pasados eliminados correctamente");
-  } catch (error) {
-    console.error("Error al eliminar eventos pasados:", error.message);
   }
 });
 module.exports = calendarRouter;

@@ -49,6 +49,20 @@ mongoose
 
 // Lógica de manejo de eventos de socket.io
 io.on("connection", (socket) => {
+  let typingUsers = []; // Almacenar usuarios que están escribiendo
+
+  socket.on("typing", (user) => {
+    if (!typingUsers.includes(user)) {
+      typingUsers.push(user);
+      io.emit("typing", typingUsers); // Emitir a todos los demás usuarios, incluido el que está escribiendo
+    }
+  });
+
+  socket.on("stopTyping", (user) => {
+    typingUsers = typingUsers.filter((u) => u !== user);
+    io.emit("typing", typingUsers); // Emitir a todos los demás usuarios, excluyendo al que dejó de escribir
+  });
+
   console.log("Estás conectado al chat");
   const palabrasOfensivas = [
     "Abanto",
