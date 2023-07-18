@@ -458,7 +458,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 ### Mejorar la sección de terminos y condiciones
 ### Organización de eventos con otros usuarios
 ### En eventos crear una seccion de chat en cada evento y se hable de ese evento en concreto
-### Separar la sección de eventos publicos y privados, es decir que en los privados tengamos que enviar una peticion al usuario que creo ese evento, y en la de publicos se pueda acceder al chat sin ningun problema
+### Separar la sección de eventos publicos y privados, es decir que en los privados tengamos que enviar una peticion al usuario que creo ese evento, y este acepte o deniege la solicitud para unirse al chat, En Publicos se pueda acceder al chat sin ningun problema.
 ### Que se pueda expulsar al usuario del chat si no cumple las normas de licencia, bloqueandolo o denunciandolo y el admin tome las decisiones sobre que hacer con ese usuario.
 ### Poner un reloj en la hora en vez de escribirlo manualmente
   
