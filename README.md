@@ -385,7 +385,7 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 #### ![image](https://github.com/Silkaleex/LDT/assets/82760991/c9f051ab-de99-43de-8787-fc84ea9fc033)
 
 ## añadiendo un formulario de dudas en la seccion de Licencia
-  ### Añadí un formulario para que un nuevo usuario cuando tenga dudas nos pueda escribir a nuestro correo, y así resolver todas las dudas posibles, poniendo sus datos, con su nombre e email y un texto sobre duda que tenga sobre las normas de licencia de LDT o otras cuestiones que quiera comentar sobre la aplicación.
+### Añadí un formulario para que un nuevo usuario cuando tenga dudas nos pueda escribir a nuestro correo, y así resolver todas las dudas posibles, poniendo sus datos, con su nombre e email y un texto sobre duda que tenga sobre las normas de licencia de LDT o otras cuestiones que quiera comentar sobre la aplicación.
   ### Lo primero que hice es entrar en EmailJs y hacerme una cuenta de usuario con mi email
   ### Lo segundo es crear un nuevo servicio ("Add New Service")
   ### En esta captura ya tengo tengo una creada, pero para empezar debemos seleccionar la casilla azul mencionada
@@ -454,10 +454,12 @@ y en caso de que los datos que pongamos no sean correctos pues nos dara un error
 ### Cogemos la llave pública (Public Key) y la pegamos en nuestra línea 37
 
 ## To Do
-### Darle una solucion al usuario en caso de Banneo, que se ponga en contacto con nosotros
-### Mejorar la seccion de terminos y condiciones
+### Darle una solución al usuario en caso de Banneo, que se ponga en contacto con nosotros
+### Mejorar la sección de terminos y condiciones
 ### Organización de eventos con otros usuarios
-### La sección de Alarma nos envie un mensaje al correo de Alerta
+### En eventos crear una seccion de chat en cada evento y se hable de ese evento en concreto
+### Separar la sección de eventos publicos y privados, es decir que en los privados tengamos que enviar una peticion al usuario que creo ese evento, y en la de publicos se pueda acceder al chat sin ningun problema
+### Que se pueda expulsar al usuario del chat si no cumple las normas de licencia, bloqueandolo o denunciandolo y el admin tome las decisiones sobre que hacer con ese usuario.
 ### Poner un reloj en la hora en vez de escribirlo manualmente
   
 
