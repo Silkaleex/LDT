@@ -18,7 +18,7 @@
 #### node "unarchivo.js" => nos visualizará los datos de todo el proyecto
 #### npm Init => nos crea un archivo desde cero, un package.json y le añade contenido
 #### npm install express => instala los datos de express en nuestro package.json
-#### npm i nodemon --D => instala nodemon, una extensión de nodeJs que nos verificará de si funcionará o contiene errores nuestro backend.
+#### npm install -g nodemon => instala nodemon, una extensión de nodeJs que nos verificará de si funcionará o contiene errores nuestro backend.
 
 # Verbos HTTP
 ### 1- Get: Es el que recibe los Datos
