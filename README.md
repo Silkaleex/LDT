@@ -73,8 +73,7 @@
 # Volvemos a Express
 ### Volvemos a server.js en mi caso
 ### dotenv es una dependencia que nos esconderá las claves de mi base de datos.
-el archivo dontenv trae el archivo privado de mi extensión .env y poder utilizarlo previamente.
-Por otro lado declararemos la variable con mongoose para acceder a nuestra base de datos, a través de URl = progress.env."mongo_db" que es la variable donde esta nuestra clave
+### el archivo dontenv trae el archivo privado de mi extensión .env y poder utilizarlo previamente. Por otro lado declararemos la variable con mongoose para acceder a nuestra base de datos, a través de URl = progress.env."mongo_db" que es la variable donde esta nuestra clave
 ##### ![image](https://user-images.githubusercontent.com/82760991/236813674-96912499-15c9-4604-8444-55f522624c7a.png)
 ### Una vez puesto esto añadiremos nuestras puertos en el backend es el puerto 5000 y en el frontend 3000, con una bucle then y catch en el que empezará a verificar si funciona o contiene errores nuestro servidor.
 ##### ![image](https://user-images.githubusercontent.com/82760991/236813867-3caad8d7-8c51-4271-a47b-8dfd24e2991c.png)
